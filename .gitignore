@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+.env
+data/raw/**/.tmp-*
+scripts/pull_snapshots.log
+
+# Working brief, not a project artefact: it carries career context and
+# notes on other people's projects that a reviewer should not be reading.
+# A public-facing version belongs in docs/ when the question is final.
+PROMPT.md

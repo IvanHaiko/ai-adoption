@@ -1,0 +1,25 @@
+name: ci
+
+on:
+  push:
+    paths-ignore: ["data/raw/**"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements-dev.txt
+      - run: ruff check .
+      - run: pytest -q
+      # No `collector.audit` here on purpose. This workflow ignores data/raw,
+      # so the audit would only ever see unchanged data - while still going red
+      # for operational reasons (a stale collector) during a code review. The
+      # audit's rules are covered by tests/test_audit.py; the audit itself runs
+      # against real data in the collect workflow and in pull_snapshots.ps1.

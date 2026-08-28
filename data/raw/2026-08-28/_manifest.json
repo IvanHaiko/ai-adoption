@@ -1,0 +1,58 @@
+{
+  "collector_version": "0.1.0",
+  "legs": {
+    "hf_models": {
+      "api": "https://huggingface.co/api/models/",
+      "bytes_raw": 2284118,
+      "bytes_stored": 284266,
+      "completed_at": "2026-08-28T22:55:05+00:00",
+      "failures": [
+        {
+          "attempted_at": "2026-08-28T22:54:51+00:00",
+          "error": null,
+          "hf_id": "microsoft/WizardLM-2-8x22B",
+          "http_status": 401
+        }
+      ],
+      "file": "hf_models.jsonl.gz",
+      "permanent_failures": 1,
+      "requested": 152,
+      "sha256_raw": "befe241a897e06f747d13258d1ce30fcd564ed1225c30b2f13f7bca4feaab119",
+      "source_file": "openrouter_models.json.gz",
+      "status": "ok",
+      "stored": 151
+    },
+    "openrouter_models": {
+      "attempts": 1,
+      "bytes_raw": 657657,
+      "bytes_stored": 69578,
+      "fetched_at": "2026-08-28T22:54:26+00:00",
+      "file": "openrouter_models.json.gz",
+      "http_status": 200,
+      "sha256_raw": "968a59f6c3259a6d3364eac69326b223440394d103e16a4cf5e7bc6246fff5d9",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models"
+    },
+    "openrouter_rankings": {
+      "attempts": 1,
+      "bytes_raw": 1828785,
+      "bytes_stored": 178801,
+      "fetched_at": "2026-08-28T22:54:27+00:00",
+      "file": "openrouter_rankings.html.gz",
+      "http_status": 200,
+      "sha256_raw": "41101292583cae9e9b3a0a820ae4ed962b987f71ed14b65183d854e09f84e5af",
+      "status": "ok",
+      "url": "https://openrouter.ai/rankings"
+    }
+  },
+  "runs": [
+    {
+      "finished_at": "2026-08-28T22:55:05+00:00",
+      "http_calls": 154,
+      "started_at": "2026-08-28T22:54:26+00:00"
+    }
+  ],
+  "schema_version": 1,
+  "snapshot_date": "2026-08-28",
+  "status": "complete"
+}

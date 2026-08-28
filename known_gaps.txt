@@ -1,0 +1,11 @@
+# Days with no snapshot, acknowledged.
+#
+# A gap here is admitted, not repaired - the data is gone and cannot be
+# collected later. This file exists so the audit can return to green after a
+# permanent loss, because an alert that is always red stops being read, and
+# then it fails to catch the next gap, which is the only thing it is for.
+#
+# One date per line, followed by the reason. Both are reported by the audit.
+# Never add a date to silence a gap you have not understood.
+#
+# Format:  YYYY-MM-DD  reason
