@@ -266,6 +266,46 @@ def check_coverage(root: Path, days: list[str]) -> list[Finding]:
     return findings
 
 
+def check_ranking_rows(root: Path, days: list[str]) -> list[Finding]:
+    """The ranking leg can succeed and still bring back a fraction of the rows.
+
+    Same failure as a thin `hf_models` day, different leg: every page returned
+    200, the leg is `ok`, and the Hub simply stopped paginating early. Only
+    yesterday's row count shows it.
+    """
+    findings: list[Finding] = []
+    previous: tuple[str, int] | None = None
+
+    for day in days:
+        path = paths.manifest_path(root, day)
+        if not path.exists():
+            continue
+        try:
+            leg = read_json(path).get("legs", {}).get("hf_top_models", {})
+        except ValueError:
+            continue
+        rows = leg.get("rows")
+        if leg.get("status") != mf.OK or not rows:
+            continue
+
+        if previous is not None:
+            prev_day, prev_rows = previous
+            drop = (prev_rows - rows) / prev_rows
+            if drop >= COVERAGE_ERROR_DROP:
+                findings.append(
+                    Finding(
+                        ERROR,
+                        "ranking",
+                        f"{rows} rows against {prev_rows} on {prev_day} "
+                        f"({drop:.0%} fewer) - the leg is ok and still thin",
+                        day,
+                    )
+                )
+        previous = (day, rows)
+
+    return findings
+
+
 def audit(
     root: Path, today: dt.date | None = None, max_lag: int = MAX_LAG_DAYS
 ) -> list[Finding]:
@@ -276,6 +316,7 @@ def audit(
     for day in days:
         findings.extend(check_day(root, day))
     findings.extend(check_coverage(root, days))
+    findings.extend(check_ranking_rows(root, days))
     return findings
 
 

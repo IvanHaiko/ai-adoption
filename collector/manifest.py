@@ -14,12 +14,19 @@ from .storage import read_json, write_json
 
 SCHEMA_VERSION = 1
 
-LEGS = ("openrouter_models", "openrouter_rankings", "hf_models")
+LEGS = ("openrouter_models", "openrouter_rankings", "hf_models", "hf_top_models")
 
 OK = "ok"
 PARTIAL = "partial"
 PENDING = "pending"
 COMPLETE = "complete"
+
+# A leg that did not exist when this day was collected. The day is finished and
+# can never contain it: collecting it now would stamp today's data with an old
+# date. Counts as done, and is never retried.
+NOT_APPLICABLE = "not_applicable"
+
+DONE = (OK, NOT_APPLICABLE)
 
 
 def empty(snapshot_date: str) -> dict:
@@ -43,13 +50,22 @@ def load_or_empty(path: Path, snapshot_date: str) -> dict:
             f"{path} has schema_version {manifest.get('schema_version')!r}, "
             f"collector speaks {SCHEMA_VERSION}"
         )
+    # A leg added to the collector after this day was already finished cannot be
+    # backfilled - the ranking it would fetch is today's, not that day's. Mark
+    # it so, rather than reopening a closed day and filling it with a lie.
+    default = (
+        {"status": NOT_APPLICABLE, "reason": "leg added after this day was collected"}
+        if manifest.get("status") == COMPLETE
+        else {"status": PENDING}
+    )
     for leg in LEGS:
-        manifest.setdefault("legs", {}).setdefault(leg, {"status": PENDING})
+        manifest.setdefault("legs", {}).setdefault(leg, dict(default))
     return manifest
 
 
 def leg_done(manifest: dict, leg: str) -> bool:
-    return manifest["legs"].get(leg, {}).get("status") == OK
+    """True when the leg needs no further work, whether or not it has data."""
+    return manifest["legs"].get(leg, {}).get("status") in DONE
 
 
 def recompute_status(manifest: dict) -> str:

@@ -37,6 +37,6 @@ def test_second_run_makes_no_calls_and_changes_no_bytes(tmp_path, http, clock):
 
 def test_one_repository_is_fetched_once_even_when_two_models_share_it(tmp_path, http, clock):
     collect(tmp_path, snapshot_date=DATE, http=http, now=clock)
-    hf_calls = [c for c in http.calls if "huggingface.co" in c]
+    hf_calls = [c for c in http.calls if c.startswith("https://huggingface.co/api/models/")]
     assert len(hf_calls) == len(set(hf_calls))
     assert len(hf_calls) == 3, hf_calls  # Alpha, Beta, Gone — not the empty one

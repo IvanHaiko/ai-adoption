@@ -13,7 +13,12 @@ from pathlib import Path
 from . import manifest as mf
 from . import paths
 from .fetch import HttpClient
-from .sources import hf_models, openrouter_models, openrouter_rankings
+from .sources import (
+    hf_models,
+    hf_top_models,
+    openrouter_models,
+    openrouter_rankings,
+)
 from .storage import read_gzip, write_gzip
 
 
@@ -68,11 +73,12 @@ def collect(
         ("openrouter_models", openrouter_models),
         ("openrouter_rankings", openrouter_rankings),
         ("hf_models", hf_models),
+        ("hf_top_models", hf_top_models),
     ):
         if mf.leg_done(manifest, leg):
             continue
         previous = manifest["legs"].get(leg, {})
-        if leg == "hf_models":
+        if leg in ("hf_models", "hf_top_models"):
             manifest["legs"][leg] = module.collect(ctx, previous)
         else:
             manifest["legs"][leg] = module.collect(ctx)

@@ -163,3 +163,18 @@ def test_acknowledging_one_gap_does_not_excuse_another(tmp_path):
 
     gaps = {f.day: f.level for f in audit(tmp_path, today=TODAY) if f.check == "gap"}
     assert gaps == {"2026-08-27": WARN, "2026-08-28": ERROR}
+
+
+def test_a_thin_ranking_day_is_caught(tmp_path):
+    """Every page returned 200, the leg is ok, and most rows never arrived."""
+    make_day(tmp_path, "2026-08-28")
+    make_day(tmp_path, "2026-08-29", http=FakeHttp(top_pages=1))
+
+    manifest = read_json(paths.manifest_path(tmp_path, "2026-08-29"))
+    assert manifest["status"] == "complete", "the collector sees nothing wrong"
+    assert manifest["legs"]["hf_top_models"]["status"] == "ok"
+
+    findings = audit(tmp_path, today=TODAY)
+    ranking = [f for f in findings if f.check == "ranking"]
+    assert [f.level for f in ranking] == [ERROR]
+    assert "2 rows against 6" in ranking[0].message

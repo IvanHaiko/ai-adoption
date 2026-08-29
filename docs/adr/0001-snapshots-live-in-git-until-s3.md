@@ -24,6 +24,12 @@ Measured on 2026-08-29 by running the collector:
 | ~84 days until the capstone starts | ~45 MB |
 | One year | ~194 MB |
 
+**Revised 2026-08-29**, same day, after adding the `hf_top_models` leg: a day
+is now **1 012 KB**, ~**111 MB** to the start of the capstone and ~**370 MB**
+a year. The decision below is unchanged - git carries 111 MB without noticing -
+but the margin is half what it was, and a second leg of this size would be
+worth re-deciding rather than assuming.
+
 ## Decision
 
 Commit snapshots to `data/raw/` in this repository. Move to S3 at the start of

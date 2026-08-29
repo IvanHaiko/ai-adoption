@@ -14,6 +14,7 @@ from collector.fetch import Response
 MODELS_URL = "https://openrouter.ai/api/v1/models"
 RANKINGS_URL = "https://openrouter.ai/rankings"
 HF_API = "https://huggingface.co/api/models/"
+HF_LIST = "https://huggingface.co/api/models?"
 
 
 def catalogue(entries) -> bytes:
@@ -34,12 +35,31 @@ DEFAULT_ENTRIES = [
 
 
 class FakeHttp:
-    def __init__(self, entries=None, hf_status=None, fail_urls=None):
+    def __init__(self, entries=None, hf_status=None, fail_urls=None,
+                 top_pages=3, page_rows=2, fail_top_page=None):
         self.entries = DEFAULT_ENTRIES if entries is None else entries
         self.hf_status = {"Vendor/Gone": 401} | (hf_status or {})
         self.fail_urls = fail_urls or {}
+        # The ranking leg pages through a cursor; these keep it small in tests.
+        self.top_pages = top_pages
+        self.page_rows = page_rows
+        self.fail_top_page = fail_top_page
         self.call_count = 0
         self.calls: list[str] = []
+
+    def _ranking_page(self, url):
+        page = int(url.split("cursor=page")[1]) if "cursor=page" in url else 1
+        if page == self.fail_top_page:
+            return Response(url, 503, error="injected")
+        rows = [
+            {"_id": f"id{page}{i}", "id": f"vendor/top-{page}-{i}",
+             "downloads": 1000 - page * 10 - i, "likes": i, "tags": ["text-generation"]}
+            for i in range(self.page_rows)
+        ]
+        headers = {}
+        if page < self.top_pages:
+            headers["link"] = f'<{HF_LIST}cursor=page{page + 1}>; rel="next"'
+        return Response(url, 200, json.dumps(rows).encode(), headers=headers)
 
     def get(self, url, headers=None) -> Response:
         self.call_count += 1
@@ -50,6 +70,8 @@ class FakeHttp:
             return Response(url, 200, catalogue(self.entries))
         if url == RANKINGS_URL:
             return Response(url, 200, b"<html><body>rankings</body></html>")
+        if url.startswith(HF_LIST):
+            return self._ranking_page(url)
         if url.startswith(HF_API):
             hf_id = url[len(HF_API):]
             status = self.hf_status.get(hf_id, 200)

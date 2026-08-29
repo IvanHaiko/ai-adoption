@@ -34,6 +34,10 @@ def main(argv: list[str] | None = None) -> int:
     print(f"snapshot {date}: {manifest['status']}  ({http.call_count} http calls)")
     for leg in mf.LEGS:
         print(f"  {leg:22} {legs.get(leg, {}).get('status', '?')}")
+    top = legs.get("hf_top_models", {})
+    if top.get("rows"):
+        print(f"  hf ranking             {top['rows']} rows over {top['pages']} pages"
+              f"{'' if top.get('reached_target') else ' (category exhausted early)'}")
     if hf.get("requested"):
         print(f"  hf coverage            {hf['stored']}/{hf['requested']} stored, "
               f"{hf.get('permanent_failures', 0)} permanently unavailable")

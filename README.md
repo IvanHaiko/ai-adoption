@@ -18,6 +18,7 @@ this cannot.
 | `openrouter_models` | `https://openrouter.ai/api/v1/models` | `openrouter_models.json.gz` |
 | `openrouter_rankings` | `https://openrouter.ai/rankings` | `openrouter_rankings.html.gz` |
 | `hf_models` | `https://huggingface.co/api/models/{id}`, one call per repository | `hf_models.jsonl.gz` |
+| `hf_top_models` | `https://huggingface.co/api/models`, the top 5 000 text-generation repositories by downloads, 5 cursor pages | `hf_top_models.jsonl.gz` |
 
 No credentials. All three endpoints answer anonymously — verified 2026-08-29
 with no key present. `.env.example` explains the one case that would need a key.
@@ -34,14 +35,47 @@ before quoting it.
 - Those 180 point at **152 distinct repositories**; several models share one.
 - **151 of 152 resolve.** `microsoft/WizardLM-2-8x22B` answers `401` — gated or
   withdrawn. It is recorded in the manifest as a failure and never as a zero.
-- A day costs **532 KB** on disk gzipped (4.75 MB raw, ~9x). A year of daily
-  snapshots is ~**194 MB**.
-- A full collection takes **~39 s** and **154 HTTP calls**. A re-run of a
+- A day costs **1 012 KB** on disk gzipped. A year of daily snapshots is
+  ~**370 MB**; the ~110 days to the end of the capstone, ~**111 MB**.
+- A full collection takes **~41 s** and **158 HTTP calls**. A re-run of a
   complete day takes **0.4 s** and **0 calls**.
+- The ranking leg returns **5 000 rows over 5 pages**, 491 KB of the day.
+  **35%** of those rows carry an `arxiv:` tag and **64%** a `base_model:` tag.
 
 So the OpenRouter ↔ HuggingFace join is **key-based, not fuzzy — for the 45% of
 the catalogue that declares a key.** The other 55% is the project's real
 coverage problem, and it belongs in the README of the finished pipeline too.
+
+## Why the ranking leg exists, and why the top is 5 000
+
+OpenRouter's rankings page carries a top-ten leaderboard - measured on
+2026-08-28, its embedded payload held **20 records across two dates**, about
+ten models a day out of a 398-model catalogue. That is not enough to measure
+adoption, so the ranking comes from HuggingFace instead.
+
+`TOP_N` is set from the download distribution, measured 2026-08-29 by paging
+34 000 repositories:
+
+| top N | share of all downloads in the category | downloads at rank N |
+|---|---|---|
+| 100 | 60.3% | 979 293 |
+| 1 000 | 92.4% | 36 738 |
+| 2 000 | 95.6% | 9 351 |
+| **5 000** | **97.9%** | **1 822** |
+| 10 000 | 98.9% | 635 |
+
+Two things to know before computing a share from this leg.
+
+`downloads` is a rolling 30-day figure, not a daily increment. Differencing it
+gives a noisy pseudo-daily series; the shape of a release curve survives that,
+a precise daily count does not.
+
+**Rank counts repositories, not models.** Much of the tail is quantisations and
+re-uploads of the same weights - `unsloth/...`, `...-GGUF`, `mradermacher/...`
+- so a model's real adoption is spread across derivatives and the head
+understates it. 64% of the 5 000 declare a `base_model:` tag, which is what
+makes rolling them back up to a canonical model possible. That roll-up, with
+its coverage published, is the leg's reason for reaching past the head.
 
 ## Layout
 
@@ -51,6 +85,7 @@ data/raw/<YYYY-MM-DD>/          # the UTC date is the day key
   openrouter_models.json.gz
   openrouter_rankings.html.gz
   hf_models.jsonl.gz            # one line per repository, not 152 files
+  hf_top_models.jsonl.gz        # one line per cursor page, not 5 000 files
 ```
 
 The manifest is what makes the directory self-describing: per leg, the URL,
@@ -134,6 +169,7 @@ commit, in CI, and from `pull_snapshots.ps1`.
 | `integrity` | stored bytes that no longer match the SHA-256 the manifest recorded |
 | `coverage` | a day that is `complete` and still thin |
 | `catalogue` | OpenRouter listing far fewer repositories than yesterday |
+| `ranking` | the ranking leg succeeding and still returning a fraction of its rows |
 
 `coverage` is the one worth explaining. A day can pass every other check and
 still be nearly empty: if HuggingFace begins rate-limiting halfway through,

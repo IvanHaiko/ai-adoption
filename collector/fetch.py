@@ -7,7 +7,7 @@ honoured when the server sends one.
 from __future__ import annotations
 
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 import requests
 
@@ -29,6 +29,8 @@ class Response:
     body: bytes | None = None
     error: str | None = None
     attempts: int = 1
+    # Response headers, lowercased. Cursor pagination is advertised in `Link`.
+    headers: dict = field(default_factory=dict)
 
     @property
     def ok(self) -> bool:
@@ -84,7 +86,8 @@ class HttpClient:
             except requests.RequestException as exc:
                 last = Response(url, CONNECTION_FAILED, error=repr(exc), attempts=attempt)
             else:
-                last = Response(url, r.status_code, body=r.content, attempts=attempt)
+                last = Response(url, r.status_code, body=r.content, attempts=attempt,
+                                headers={k.lower(): v for k, v in r.headers.items()})
                 if r.status_code == 200:
                     return last
                 if not last.transient:
