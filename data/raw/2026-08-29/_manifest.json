@@ -1,0 +1,72 @@
+{
+  "collector_version": "0.1.0",
+  "legs": {
+    "hf_models": {
+      "api": "https://huggingface.co/api/models/",
+      "bytes_raw": 2279805,
+      "bytes_stored": 283494,
+      "completed_at": "2026-08-29T00:09:00+00:00",
+      "failures": [
+        {
+          "attempted_at": "2026-08-29T00:08:46+00:00",
+          "error": null,
+          "hf_id": "microsoft/WizardLM-2-8x22B",
+          "http_status": 401
+        }
+      ],
+      "file": "hf_models.jsonl.gz",
+      "permanent_failures": 1,
+      "requested": 151,
+      "sha256_raw": "4c5f509e4b358c12c8284d5a50cabe5c76781c8768e33cbd0a4ad33902cd0fad",
+      "source_file": "openrouter_models.json.gz",
+      "status": "ok",
+      "stored": 150
+    },
+    "hf_top_models": {
+      "api": "https://huggingface.co/api/models",
+      "bytes_raw": 2746914,
+      "bytes_stored": 491271,
+      "completed_at": "2026-08-29T00:09:01+00:00",
+      "file": "hf_top_models.jsonl.gz",
+      "filter": "text-generation",
+      "pages": 5,
+      "reached_target": true,
+      "rows": 5000,
+      "sha256_raw": "95bf16968ef77802e82700d14d54ae32cd916e9ad85af273c4df753598c38324",
+      "status": "ok",
+      "target_rows": 5000
+    },
+    "openrouter_models": {
+      "attempts": 1,
+      "bytes_raw": 655323,
+      "bytes_stored": 69213,
+      "fetched_at": "2026-08-29T00:08:22+00:00",
+      "file": "openrouter_models.json.gz",
+      "http_status": 200,
+      "sha256_raw": "1739aef533b8dd6622f87b1521849d7d1ee2007cd709e452eeac4c65fe928cbc",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models"
+    },
+    "openrouter_rankings": {
+      "attempts": 1,
+      "bytes_raw": 1828616,
+      "bytes_stored": 178821,
+      "fetched_at": "2026-08-29T00:08:22+00:00",
+      "file": "openrouter_rankings.html.gz",
+      "http_status": 200,
+      "sha256_raw": "3818308bf5823d8e978a3c1d3d55f21a04d6fdfa8431e14357482585a17fd47e",
+      "status": "ok",
+      "url": "https://openrouter.ai/rankings"
+    }
+  },
+  "runs": [
+    {
+      "finished_at": "2026-08-29T00:09:01+00:00",
+      "http_calls": 158,
+      "started_at": "2026-08-29T00:08:22+00:00"
+    }
+  ],
+  "schema_version": 1,
+  "snapshot_date": "2026-08-29",
+  "status": "complete"
+}
