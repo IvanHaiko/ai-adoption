@@ -27,7 +27,7 @@ def test_every_page_is_followed_and_stored_one_line_each(tmp_path, http, clock):
 
     first = json.loads(lines(tmp_path)[0])
     assert first["page"] == 1
-    assert [r["id"] for r in first["body"]] == ["vendor/top-1-0", "vendor/top-1-1"]
+    assert [r["id"] for r in first["body"]] == ["vendor/downloads-1-0", "vendor/downloads-1-1"]
 
 
 def test_running_out_of_repositories_is_a_fact_not_a_failure(tmp_path, clock):
@@ -56,7 +56,8 @@ def test_a_failed_page_discards_the_whole_leg_rather_than_storing_half(tmp_path,
 
     assert second["status"] == mf.COMPLETE
     # Restarted from page 1, not resumed at page 2.
-    ranking_calls = [c for c in healthy.calls if c.startswith(HF_LIST)]
+    ranking_calls = [c for c in healthy.calls
+                     if c.startswith(HF_LIST) and "sort=downloads" in c]
     assert "cursor" not in ranking_calls[0]
     assert len(ranking_calls) == 3
     assert len(lines(tmp_path)) == 3

@@ -13,6 +13,7 @@ LEG_FILES = {
     "openrouter_rankings": "openrouter_rankings.html.gz",
     "hf_models": "hf_models.jsonl.gz",
     "hf_top_models": "hf_top_models.jsonl.gz",
+    "hf_new_models": "hf_new_models.jsonl.gz",
 }
 
 

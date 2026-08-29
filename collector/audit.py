@@ -274,34 +274,35 @@ def check_ranking_rows(root: Path, days: list[str]) -> list[Finding]:
     yesterday's row count shows it.
     """
     findings: list[Finding] = []
-    previous: tuple[str, int] | None = None
 
-    for day in days:
-        path = paths.manifest_path(root, day)
-        if not path.exists():
-            continue
-        try:
-            leg = read_json(path).get("legs", {}).get("hf_top_models", {})
-        except ValueError:
-            continue
-        rows = leg.get("rows")
-        if leg.get("status") != mf.OK or not rows:
-            continue
+    for name in mf.LIST_LEGS:
+        previous: tuple[str, int] | None = None
+        for day in days:
+            path = paths.manifest_path(root, day)
+            if not path.exists():
+                continue
+            try:
+                leg = read_json(path).get("legs", {}).get(name, {})
+            except ValueError:
+                continue
+            rows = leg.get("rows")
+            if leg.get("status") != mf.OK or not rows:
+                continue
 
-        if previous is not None:
-            prev_day, prev_rows = previous
-            drop = (prev_rows - rows) / prev_rows
-            if drop >= COVERAGE_ERROR_DROP:
-                findings.append(
-                    Finding(
-                        ERROR,
-                        "ranking",
-                        f"{rows} rows against {prev_rows} on {prev_day} "
-                        f"({drop:.0%} fewer) - the leg is ok and still thin",
-                        day,
+            if previous is not None:
+                prev_day, prev_rows = previous
+                drop = (prev_rows - rows) / prev_rows
+                if drop >= COVERAGE_ERROR_DROP:
+                    findings.append(
+                        Finding(
+                            ERROR,
+                            "ranking",
+                            f"{name}: {rows} rows against {prev_rows} on {prev_day} "
+                            f"({drop:.0%} fewer) - the leg is ok and still thin",
+                            day,
+                        )
                     )
-                )
-        previous = (day, rows)
+            previous = (day, rows)
 
     return findings
 

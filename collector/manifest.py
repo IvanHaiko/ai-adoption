@@ -14,7 +14,16 @@ from .storage import read_json, write_json
 
 SCHEMA_VERSION = 1
 
-LEGS = ("openrouter_models", "openrouter_rankings", "hf_models", "hf_top_models")
+LEGS = (
+    "openrouter_models",
+    "openrouter_rankings",
+    "hf_models",
+    "hf_top_models",
+    "hf_new_models",
+)
+
+# Legs that walk a paginated list and report a `rows` count.
+LIST_LEGS = ("hf_top_models", "hf_new_models")
 
 OK = "ok"
 PARTIAL = "partial"

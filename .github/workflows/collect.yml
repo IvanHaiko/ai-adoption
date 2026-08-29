@@ -1,14 +1,23 @@
 name: collect
 
-# Twice a day. The second run is normally a no-op that makes zero HTTP calls
-# and writes nothing, because a `complete` day is skipped — so the only cost of
-# the redundancy is a few seconds of runner time, and the benefit is that a
-# single missed or delayed schedule does not lose a day that cannot be
-# reconstructed later.
+# Four times a day. Every run after the first is a no-op: a `complete` day is
+# skipped without a single HTTP call, in about ten seconds of runner time. So
+# redundancy here is close to free, and it buys the one thing that cannot be
+# bought later - a day that was missed cannot be reconstructed.
+#
+# Four rather than two because on 2026-08-29, the first morning after this
+# repository was created, the 06:20 slot did not fire at all: the workflow was
+# active, the cron was on the default branch seven hours ahead of the slot, and
+# GitHub recorded no `schedule` event. GitHub documents that scheduled runs are
+# delayed under load and may be dropped. Nothing here can prevent that; more
+# slots make it less likely that every one of them is lost on the same day.
+# Not on the hour, which is when the queue is deepest.
 on:
   schedule:
     - cron: "20 6 * * *"
+    - cron: "20 12 * * *"
     - cron: "20 18 * * *"
+    - cron: "40 23 * * *"
   workflow_dispatch:
     inputs:
       date:

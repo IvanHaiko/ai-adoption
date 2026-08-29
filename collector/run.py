@@ -15,6 +15,7 @@ from . import paths
 from .fetch import HttpClient
 from .sources import (
     hf_models,
+    hf_new_models,
     hf_top_models,
     openrouter_models,
     openrouter_rankings,
@@ -74,11 +75,12 @@ def collect(
         ("openrouter_rankings", openrouter_rankings),
         ("hf_models", hf_models),
         ("hf_top_models", hf_top_models),
+        ("hf_new_models", hf_new_models),
     ):
         if mf.leg_done(manifest, leg):
             continue
         previous = manifest["legs"].get(leg, {})
-        if leg in ("hf_models", "hf_top_models"):
+        if leg in ("hf_models", *mf.LIST_LEGS):
             manifest["legs"][leg] = module.collect(ctx, previous)
         else:
             manifest["legs"][leg] = module.collect(ctx)

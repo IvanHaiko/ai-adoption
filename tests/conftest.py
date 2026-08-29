@@ -48,17 +48,20 @@ class FakeHttp:
         self.calls: list[str] = []
 
     def _ranking_page(self, url):
-        page = int(url.split("cursor=page")[1]) if "cursor=page" in url else 1
+        page = int(url.split("cursor=page")[1].split("&")[0]) if "cursor=page" in url else 1
+        sort = "createdAt" if "sort=createdAt" in url else "downloads"
         if page == self.fail_top_page:
             return Response(url, 503, error="injected")
         rows = [
-            {"_id": f"id{page}{i}", "id": f"vendor/top-{page}-{i}",
-             "downloads": 1000 - page * 10 - i, "likes": i, "tags": ["text-generation"]}
+            {"_id": f"id{sort}{page}{i}", "id": f"vendor/{sort}-{page}-{i}",
+             "downloads": 1000 - page * 10 - i, "likes": i,
+             "createdAt": f"2026-08-{28 - page:02d}T00:00:00.000Z",
+             "tags": ["text-generation"]}
             for i in range(self.page_rows)
         ]
         headers = {}
         if page < self.top_pages:
-            headers["link"] = f'<{HF_LIST}cursor=page{page + 1}>; rel="next"'
+            headers["link"] = f'<{HF_LIST}sort={sort}&cursor=page{page + 1}>; rel="next"'
         return Response(url, 200, json.dumps(rows).encode(), headers=headers)
 
     def get(self, url, headers=None) -> Response:

@@ -19,6 +19,7 @@ this cannot.
 | `openrouter_rankings` | `https://openrouter.ai/rankings` | `openrouter_rankings.html.gz` |
 | `hf_models` | `https://huggingface.co/api/models/{id}`, one call per repository | `hf_models.jsonl.gz` |
 | `hf_top_models` | `https://huggingface.co/api/models`, the top 5 000 text-generation repositories by downloads, 5 cursor pages | `hf_top_models.jsonl.gz` |
+| `hf_new_models` | the same endpoint sorted by `createdAt`, 2 000 newest, 2 cursor pages | `hf_new_models.jsonl.gz` |
 
 No credentials. All three endpoints answer anonymously — verified 2026-08-29
 with no key present. `.env.example` explains the one case that would need a key.
@@ -35,18 +36,55 @@ before quoting it.
 - Those 180 point at **152 distinct repositories**; several models share one.
 - **151 of 152 resolve.** `microsoft/WizardLM-2-8x22B` answers `401` — gated or
   withdrawn. It is recorded in the manifest as a failure and never as a zero.
-- A day costs **1 012 KB** on disk gzipped. A year of daily snapshots is
-  ~**370 MB**; the ~110 days to the end of the capstone, ~**111 MB**.
-- A full collection takes **~41 s** and **158 HTTP calls**. A re-run of a
+- A day costs **1.2 MB** on disk gzipped. A year of daily snapshots is
+  ~**440 MB**; the ~110 days to the end of the capstone, ~**132 MB**.
+- A full collection takes **~41 s** and **160 HTTP calls**. A re-run of a
   complete day takes **0.4 s** and **0 calls**.
 - The ranking leg returns **5 000 rows over 5 pages**, 491 KB of the day.
   **35%** of those rows carry an `arxiv:` tag and **64%** a `base_model:` tag.
+
+Two counts that must not be added together. The ranking leg produces **5 000
+observations a day**; the number of **distinct repositories** it has ever seen
+is a different, much smaller figure that grows slowly with churn, and it cannot
+be stated until there are enough days to measure the churn. Any row count in
+this README is observations unless it says otherwise; the distinct count will
+be published beside it once measured.
 
 So the OpenRouter ↔ HuggingFace join is **key-based, not fuzzy — for the 45% of
 the catalogue that declares a key.** The other 55% is the project's real
 coverage problem, and it belongs in the README of the finished pipeline too.
 
-## Why the ranking leg exists, and why the top is 5 000
+## Why there are two list legs
+
+Ranking by downloads is the wrong axis for the question this project asks. A
+model released this week has, by definition, not accumulated downloads yet, so
+a downloads threshold excludes exactly the population whose adoption curve is
+the thesis. Measured 2026-08-29 across 34 000 paged repositories:
+
+| | |
+|---|---|
+| Repositories created in the last 30 days | 8 044 |
+| of them inside the top 1 000 by downloads | 64 (**0.8%**) |
+| of them inside the top 5 000 by downloads | 537 (**6.7%**) |
+| Median age, ranks 1–1 000 | **487 days** |
+| Median age, ranks 10 000–20 000 | 142 days |
+
+The head of the ranking is a year and a half old. So the collector walks the
+list twice: `hf_top_models` for the stable core, `hf_new_models` for arrivals.
+The second leg's first run returned 2 000 repositories aged 0–4 days, **358 of
+them with zero downloads** - rows the ranking leg would never have seen.
+
+`hf_new_models` is sized from arrival rate, not a round number: roughly 460–500
+text-generation repositories are created a day, so 2 000 newest covers about
+four days. One has to miss four consecutive collection days before a new
+repository is never recorded at all.
+
+What that rescues, and what it does not: a repository's *existence* is
+recoverable at any time, because `createdAt` and `base_model` can be read
+retrospectively - the derivative graph can always be rebuilt. Its early
+`downloads` cannot. That early curve is the measurement.
+
+## Why the ranking goes to 5 000
 
 OpenRouter's rankings page carries a top-ten leaderboard - measured on
 2026-08-28, its embedded payload held **20 records across two dates**, about
@@ -74,8 +112,24 @@ a precise daily count does not.
 re-uploads of the same weights - `unsloth/...`, `...-GGUF`, `mradermacher/...`
 - so a model's real adoption is spread across derivatives and the head
 understates it. 64% of the 5 000 declare a `base_model:` tag, which is what
-makes rolling them back up to a canonical model possible. That roll-up, with
-its coverage published, is the leg's reason for reaching past the head.
+makes rolling them back up to a canonical model possible.
+
+**Coverage in downloads and coverage in repositories are not the same number,
+and the gap is large.** Of the 23 357 derivative repositories in the paged
+34 000, the top 5 000 holds only **13.7%** — against 97.9% of downloads. The
+two answer different questions, and any published figure has to say which one
+it means:
+
+| top N | % of all downloads | % of all derivative repositories |
+|---|---|---|
+| 1 000 | 92.4% | 2.5% |
+| 2 000 | 95.6% | 5.0% |
+| 5 000 | 97.9% | 13.7% |
+
+The derivative repositories outside the top 5 000 contribute **2.6%** of all
+derivative downloads — 0.1–0.7% for each of the twelve largest base models. So
+depth buys almost nothing for measuring *share*, and is the only way to count
+the *ecosystem*. 5 000 is chosen for the first question.
 
 ## Layout
 
@@ -121,9 +175,18 @@ can tell "collected" from "collected some of it".
 
 ## Scheduling
 
-`.github/workflows/collect.yml` runs at 06:20 and 18:20 UTC. The second run of
-a complete day is a no-op costing zero HTTP calls, so the redundancy buys
-tolerance for one delayed or dropped schedule at almost no cost.
+`.github/workflows/collect.yml` runs at 06:20, 12:20, 18:20 and 23:40 UTC.
+Every run after the first is a no-op costing zero HTTP calls and about ten
+seconds, so redundancy is close to free and buys the one thing money cannot:
+a missed day cannot be reconstructed.
+
+Four slots rather than two because **the very first scheduled run did not
+happen.** On 2026-08-29 the 06:20 slot produced no run at all: the workflow was
+`active`, the cron had been on the default branch for seven hours, Actions were
+enabled, and GitHub recorded no `schedule` event. GitHub documents that
+scheduled runs are delayed under load and may be dropped. Nothing in this
+repository can prevent that; more slots make it less likely that all of them
+are lost on the same day.
 
 **Known operational risk:** GitHub disables scheduled workflows after 60 days
 without repository activity, and a push made by the workflow's own token is not

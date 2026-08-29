@@ -176,5 +176,9 @@ def test_a_thin_ranking_day_is_caught(tmp_path):
 
     findings = audit(tmp_path, today=TODAY)
     ranking = [f for f in findings if f.check == "ranking"]
-    assert [f.level for f in ranking] == [ERROR]
-    assert "2 rows against 6" in ranking[0].message
+
+    # Both list legs went thin, and each is named rather than lumped together.
+    assert [f.level for f in ranking] == [ERROR, ERROR]
+    assert {m.split(":")[0] for m in (f.message for f in ranking)} == {
+        "hf_top_models", "hf_new_models"}
+    assert all("2 rows against 6" in f.message for f in ranking)
