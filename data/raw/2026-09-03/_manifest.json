@@ -1,0 +1,94 @@
+{
+  "collector_version": "0.1.0",
+  "legs": {
+    "hf_models": {
+      "api": "https://huggingface.co/api/models/",
+      "bytes_raw": 2297972,
+      "bytes_stored": 285829,
+      "completed_at": "2026-09-03T01:24:50+00:00",
+      "failures": [
+        {
+          "attempted_at": "2026-09-03T01:24:36+00:00",
+          "error": null,
+          "hf_id": "microsoft/WizardLM-2-8x22B",
+          "http_status": 401
+        },
+        {
+          "attempted_at": "2026-09-03T01:24:43+00:00",
+          "error": null,
+          "hf_id": "nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16",
+          "http_status": 401
+        }
+      ],
+      "file": "hf_models.jsonl.gz",
+      "permanent_failures": 2,
+      "requested": 154,
+      "sha256_raw": "e3cfdcf9ea17705991a580ac149f82f12d700ca7151268053ebf4b3e139b227b",
+      "source_file": "openrouter_models.json.gz",
+      "status": "ok",
+      "stored": 152
+    },
+    "hf_new_models": {
+      "api": "https://huggingface.co/api/models",
+      "bytes_raw": 1070965,
+      "bytes_stored": 145388,
+      "completed_at": "2026-09-03T01:24:52+00:00",
+      "file": "hf_new_models.jsonl.gz",
+      "filter": "text-generation",
+      "pages": 2,
+      "reached_target": true,
+      "rows": 2000,
+      "sha256_raw": "9a8cac793d220cca9295c7f41506bd4543d9d08e17fb32845905d2ea03c676c7",
+      "sort": "createdAt",
+      "status": "ok",
+      "target_rows": 2000
+    },
+    "hf_top_models": {
+      "api": "https://huggingface.co/api/models",
+      "bytes_raw": 2743457,
+      "bytes_stored": 488463,
+      "completed_at": "2026-09-03T01:24:52+00:00",
+      "file": "hf_top_models.jsonl.gz",
+      "filter": "text-generation",
+      "pages": 5,
+      "reached_target": true,
+      "rows": 5000,
+      "sha256_raw": "5d59349de8b54e1f4d098ea6f53b4650453d00b0410c30b70c8d65fe8286356e",
+      "sort": "downloads",
+      "status": "ok",
+      "target_rows": 5000
+    },
+    "openrouter_models": {
+      "attempts": 1,
+      "bytes_raw": 701433,
+      "bytes_stored": 71197,
+      "fetched_at": "2026-09-03T01:24:11+00:00",
+      "file": "openrouter_models.json.gz",
+      "http_status": 200,
+      "sha256_raw": "1aec2d3e945731015bb04d62315fd06d77af74d798229aa0956e24b42e641a04",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models"
+    },
+    "openrouter_rankings": {
+      "attempts": 1,
+      "bytes_raw": 1836207,
+      "bytes_stored": 179009,
+      "fetched_at": "2026-09-03T01:24:12+00:00",
+      "file": "openrouter_rankings.html.gz",
+      "http_status": 200,
+      "sha256_raw": "0a74719bab4692bab9078e2538d34b37ea017a02b692583cce5fc2d172768d0a",
+      "status": "ok",
+      "url": "https://openrouter.ai/rankings"
+    }
+  },
+  "runs": [
+    {
+      "finished_at": "2026-09-03T01:24:52+00:00",
+      "http_calls": 163,
+      "started_at": "2026-09-03T01:24:11+00:00"
+    }
+  ],
+  "schema_version": 1,
+  "snapshot_date": "2026-09-03",
+  "status": "complete"
+}
