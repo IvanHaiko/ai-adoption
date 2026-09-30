@@ -1,14 +1,19 @@
 __pycache__/
 *.pyc
 .pytest_cache/
+.pytest_tmp/
 .ruff_cache/
 .venv/
 venv/
 .env
 data/raw/**/.tmp-*
+data/silver/
 scripts/pull_snapshots.log
 
 # Working brief, not a project artefact: it carries career context and
 # notes on other people's projects that a reviewer should not be reading.
 # A public-facing version belongs in docs/ when the question is final.
 PROMPT.md
+
+# Historical working audits; publish only curated findings in the repository.
+.local-notes/

@@ -20,6 +20,7 @@ LEGS = (
     "hf_models",
     "hf_top_models",
     "hf_new_models",
+    "arxiv",
 )
 
 # Legs that walk a paginated list and report a `rows` count.

@@ -1,5 +1,73 @@
 # ai-adoption — collector
 
+## Open Model Lifecycle: Bronze → Silver → future Gold
+
+The daily collector now includes arXiv OAI-PMH metadata for `cs.AI`, `cs.CL`, and
+`cs.LG`. Bronze remains immutable: a finished historical day is never reopened,
+and a retrospective arXiv harvest lives under `data/backfill/arxiv/`, visibly
+separate from data observed on a daily run. Silver is a complete replay into
+local Parquet files. Gold cohort or model-family analyses are future work; see
+[`OPEN_MODEL_LIFECYCLE_SILVER_FINDINGS.md`](OPEN_MODEL_LIFECYCLE_SILVER_FINDINGS.md)
+for measured coverage and limitations.
+
+```bash
+pip install -r requirements-dev.txt
+python -m collector                         # all daily Bronze legs, including arXiv
+python -m collector.arxiv_backfill --date-from 2026-09-20 --date-until 2026-09-22 --category cs.AI
+python -m silver                            # rebuild all Silver tables and DQ report
+python -m collector.audit                   # Bronze integrity and coverage
+pytest -q && ruff check .
+```
+
+The optional backfill accepts one or more `--category` values and a maximum
+eight-day OAI **datestamp** range. Invoke it separately for adjacent windows.
+It never runs with the daily scheduler. Daily arXiv collection requests yesterday
+and today by UTC datestamp; this one-day overlap tolerates announcement timing.
+OAI returns the latest article version and reports metadata changes, including
+administrative changes. The OAI datestamp is **not** publication time. Its
+`arXiv` metadata format contains submission and update dates. arXiv documents
+the [sets, timestamps, and resumption tokens](https://info.arxiv.org/help/oa/index.html).
+Unlike the former `export.arxiv.org/oai2`, the current endpoint is
+`https://oaipmh.arxiv.org/oai`. Category sets are exact (`cs:cs:AI`, etc.).
+Each Bronze JSONL line wraps one byte-exact base64 XML response with URL,
+fetched time, HTTP status, parsed OAI headers, category, page and token. A
+`noRecordsMatch` OAI response is recorded explicitly. Other OAI errors and HTTP
+failures leave the leg partial. A failed multi-page pass is retried from the
+start because OAI tokens expire daily; the successful file is only written when
+all pages finish. arXiv requests use a three-second minimum interval. The daily
+arXiv leg refuses a past `--date`; use the explicit backfill command to retrieve
+historical metadata without labeling it as a past observation.
+
+Silver tables under `data/silver/` (rebuildable and gitignored):
+
+| Table | Grain |
+|---|---|
+| `hf_observations` | repo × date × sampling leg |
+| `hf_repositories` | canonical repo × date |
+| `openrouter_models` | catalogue row × date; `is_alias` and `canonical_slug` identify aliases |
+| `arxiv_papers` | paper × observation date, if collected |
+| `model_platform_links` | explicit OpenRouter ID → declared HF repo ID |
+| `hf_arxiv_links` | HF repo → arXiv tag reference |
+| `hf_repo_cohorts` | first collector observation of each HF repo |
+
+Canonical HF precedence for duplicate repo/day observations is individual
+`hf_models`, then `hf_top_models`, then `hf_new_models`. The observations table
+keeps all legs. OpenRouter aliases remain rows but are marked and should not be
+counted as independent underlying models. `downloads_30d` is the HF rolling
+30-day count, **not** daily downloads or production adoption. `created_at` is
+the source's creation timestamp; `first_seen_date` is first observation by this
+collector; `snapshot_date` is the UTC collection partition; `fetched_at` is the
+request time. A tag link means only that HF metadata references an arXiv ID.
+No official implementation or causal claim follows from it. Sampling of 2,000
+newest and 5,000 highest-download text-generation repositories creates clear
+selection bias. See `data/silver/dq_report.json` for errors, null rates and join
+coverage; `python -m silver` exits nonzero for malformed rows or violated
+within-leg uniqueness.
+
+The archived OpenRouter ranking HTML has useful serialized state, but its
+layout changed during the available history and the meaning of its exposed
+ranking values is not yet verified. No ranking Parquet table is emitted.
+
 Daily raw snapshots of what the AI industry actually hosts and serves, kept so
 that a usage time series can exist at all.
 
@@ -20,9 +88,11 @@ this cannot.
 | `hf_models` | `https://huggingface.co/api/models/{id}`, one call per repository | `hf_models.jsonl.gz` |
 | `hf_top_models` | `https://huggingface.co/api/models`, the top 5 000 text-generation repositories by downloads, 5 cursor pages | `hf_top_models.jsonl.gz` |
 | `hf_new_models` | the same endpoint sorted by `createdAt`, 2 000 newest, 2 cursor pages | `hf_new_models.jsonl.gz` |
+| `arxiv` | OAI-PMH `arXiv` metadata in cs.AI, cs.CL, cs.LG sets | `arxiv.jsonl.gz` |
 
-No credentials. All three endpoints answer anonymously — verified 2026-08-29
-with no key present. `.env.example` explains the one case that would need a key.
+No credentials for the original OpenRouter and HF legs: their endpoints answered
+anonymously on 2026-08-29 with no key present. arXiv OAI-PMH is a public
+metadata interface. `.env.example` explains the one case that would need a key.
 
 ## Measured, not assumed
 
@@ -140,6 +210,8 @@ data/raw/<YYYY-MM-DD>/          # the UTC date is the day key
   openrouter_rankings.html.gz
   hf_models.jsonl.gz            # one line per repository, not 152 files
   hf_top_models.jsonl.gz        # one line per cursor page, not 5 000 files
+  hf_new_models.jsonl.gz
+  arxiv.jsonl.gz                 # one line per raw OAI XML response page
 ```
 
 The manifest is what makes the directory self-describing: per leg, the URL,

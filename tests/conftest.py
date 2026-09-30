@@ -10,6 +10,7 @@ import json
 import pytest
 
 from collector.fetch import Response
+from collector.sources.arxiv import API as ARXIV_API
 
 MODELS_URL = "https://openrouter.ai/api/v1/models"
 RANKINGS_URL = "https://openrouter.ai/rankings"
@@ -73,6 +74,10 @@ class FakeHttp:
             return Response(url, 200, catalogue(self.entries))
         if url == RANKINGS_URL:
             return Response(url, 200, b"<html><body>rankings</body></html>")
+        if url.startswith(ARXIV_API):
+            body = (b'<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/">'
+                    b'<error code="noRecordsMatch">No records</error></OAI-PMH>')
+            return Response(url, 200, body)
         if url.startswith(HF_LIST):
             return self._ranking_page(url)
         if url.startswith(HF_API):
