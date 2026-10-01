@@ -1,0 +1,23 @@
+{
+  "collected_at": "2026-09-30T22:40:42+00:00",
+  "leg": {
+    "api": "https://oaipmh.arxiv.org/oai",
+    "bytes_raw": 23537777,
+    "bytes_stored": 5493694,
+    "category_counts": {
+      "cs.AI": 2165,
+      "cs.CL": 948,
+      "cs.LG": 2238
+    },
+    "completed_at": "2026-09-30T22:40:42+00:00",
+    "date_from": "2026-09-29",
+    "date_until": "2026-09-30",
+    "file": "arxiv.jsonl.gz",
+    "metadata_prefix": "arXiv",
+    "pages": 5,
+    "rows": 5351,
+    "sha256_raw": "f4652c4f5d71ca03d561d3136105d103eae227c96d196224364192ce96e13557",
+    "status": "ok"
+  },
+  "mode": "retrospective_oai_datestamp_backfill"
+}

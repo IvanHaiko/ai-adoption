@@ -11,12 +11,13 @@ import sys
 import xml.etree.ElementTree as ET
 from collections import Counter
 from pathlib import Path
+from urllib.parse import urlparse
 
 import pyarrow as pa
 import pyarrow.parquet as pq
 
 from collector.audit import snapshot_days
-from collector.storage import read_gzip, read_json
+from collector.storage import read_gzip, read_json, sha256
 
 ARXIV_ID = re.compile(r"^(?:[a-z-]+(?:\.[A-Z]{2})?/\d{7}|\d{4}\.\d{4,5})(?:v\d+)?$", re.I)
 ARXIV_TAG = re.compile(r"^arxiv:(.+)$", re.I)
@@ -111,6 +112,7 @@ SCHEMAS = {
         "source_snapshot",
         "source_url",
         "deleted",
+        "metadata_source",
     ],
     "model_platform_links": [
         "source_entity",
@@ -121,6 +123,17 @@ SCHEMAS = {
         "first_seen_date",
         "last_seen_date",
     ],
+    "arxiv_id_resolutions": [
+        "arxiv_id",
+        "original_references_json",
+        "resolution_status",
+        "source_interface",
+        "fetched_at",
+        "source_url",
+        "source_snapshot",
+        "sha256_raw",
+        "error",
+    ],
     "hf_arxiv_links": [
         "hf_repo_id",
         "arxiv_id",
@@ -129,6 +142,7 @@ SCHEMAS = {
         "evidence",
         "first_seen_date",
         "last_seen_date",
+        "resolution_status",
     ],
     "hf_repo_cohorts": [
         "hf_repo_id",
@@ -180,7 +194,7 @@ def canonical_arxiv(value: str) -> str | None:
     value = value.strip().removeprefix("arXiv:").removeprefix("arxiv:")
     if not ARXIV_ID.fullmatch(value):
         return None
-    return re.sub(r"v\d+$", "", value)
+    return re.sub(r"v\d+$", "", value, flags=re.I)
 
 
 def age_days(created: str | None, first_seen: str) -> int | None:
@@ -383,9 +397,94 @@ def _arxiv(day: str, path: Path, errors: list, root_dir: Path | None = None) -> 
                     ),
                     "source_url": page.get("url"),
                     "deleted": deleted,
+                    "metadata_source": "arxiv_oai_pmh",
                 }
             )
     return rows
+
+
+def _atom_enrichment(root: Path, errors: list) -> tuple[list[dict], list[dict]]:
+    folder = root / "data/enrichment/arxiv_ids"
+    manifest_path = folder / "_manifest.json"
+    if not manifest_path.exists():
+        return [], []
+    manifest = read_json(manifest_path)
+    entries = {}
+    for filename in sorted(
+        {
+            item["response_file"]
+            for item in manifest["items"].values()
+            if item.get("status") in ("resolved", "not_found")
+        }
+    ):
+        path = folder / filename
+        raw = read_gzip(path)
+        tree = ET.fromstring(raw)
+        if tree.tag != "{http://www.w3.org/2005/Atom}feed":
+            errors.append(f"{path}: not an Atom feed")
+            continue
+        for entry in tree.findall("{http://www.w3.org/2005/Atom}entry"):
+            url = entry.findtext("{http://www.w3.org/2005/Atom}id") or ""
+            aid = canonical_arxiv(urlparse(url).path.removeprefix("/abs/"))
+            if not aid:
+                errors.append(f"{path}: invalid Atom entry ID {url!r}")
+                continue
+            entries[aid] = (entry, path, sha256(raw))
+    a = "{http://www.w3.org/2005/Atom}"
+    ax = "{http://arxiv.org/schemas/atom}"
+    papers, statuses = [], []
+    for aid, item in sorted(manifest["items"].items()):
+        status = item["status"]
+        path_name = item.get("response_file")
+        statuses.append(
+            {
+                "arxiv_id": aid,
+                "original_references_json": json.dumps(item.get("original_references", [])),
+                "resolution_status": status,
+                "source_interface": item.get("source_interface"),
+                "fetched_at": item.get("fetched_at"),
+                "source_url": item.get("request_url"),
+                "source_snapshot": f"data/enrichment/arxiv_ids/{path_name}" if path_name else None,
+                "sha256_raw": item.get("sha256_raw"),
+                "error": item.get("error"),
+            }
+        )
+        if status != "resolved":
+            continue
+        if aid not in entries:
+            errors.append(f"{aid}: marked resolved but absent from stored Atom response")
+            continue
+        entry, path, actual_hash = entries[aid]
+        if actual_hash != item.get("sha256_raw"):
+            errors.append(f"{aid}: Atom response hash mismatch")
+        categories = [
+            x.attrib.get("term") for x in entry.findall(a + "category") if x.attrib.get("term")
+        ]
+        primary = entry.find(ax + "primary_category")
+        authors = [x.findtext(a + "name") for x in entry.findall(a + "author")]
+        fetched_at = item.get("fetched_at")
+        papers.append(
+            {
+                "snapshot_date": fetched_at[:10],
+                "fetched_at": fetched_at,
+                "arxiv_id": aid,
+                "title": entry.findtext(a + "title"),
+                "abstract": entry.findtext(a + "summary"),
+                "authors_json": json.dumps([x for x in authors if x]),
+                "submitted_at": iso(entry.findtext(a + "published"), errors, str(path)),
+                "updated_at": iso(entry.findtext(a + "updated"), errors, str(path)),
+                "oai_datestamp": None,
+                "categories_json": json.dumps(categories),
+                "primary_category": primary.attrib.get("term") if primary is not None else None,
+                "doi": entry.findtext(ax + "doi"),
+                "journal_ref": entry.findtext(ax + "journal_ref"),
+                "source_snapshot": str(path.relative_to(root)).replace("\\", "/"),
+                "source_url": item.get("request_url"),
+                "deleted": False,
+                "metadata_source": "arxiv_atom_api_id_list",
+            }
+        )
+    return papers, statuses
 
 
 def _first_seen(rows: list[dict], id_field: str, source_field: str | None = None) -> None:
@@ -483,6 +582,8 @@ def build(root: Path, output: Path | None = None) -> dict:
                 arxiv.extend(
                     _arxiv(observed, backfill_manifest.parent / "arxiv.jsonl.gz", errors, root)
                 )
+    atom_papers, resolutions = _atom_enrichment(root, errors)
+    arxiv.extend(atom_papers)
     arxiv_by_day = {}
     for row in arxiv:
         arxiv_by_day.setdefault((row["snapshot_date"], row["arxiv_id"]), row)
@@ -541,6 +642,13 @@ def build(root: Path, output: Path | None = None) -> dict:
         }
         for x in paper_links
     ]
+    available_papers = {row["arxiv_id"] for row in arxiv}
+    lookup_status = {row["arxiv_id"]: row["resolution_status"] for row in resolutions}
+    for link in paper_links:
+        aid = link["arxiv_id"]
+        link["resolution_status"] = (
+            "resolved" if aid in available_papers else lookup_status.get(aid, "not_looked_up")
+        )
     first_repo = {}
     for row in repos:
         first_repo.setdefault(row["hf_repo_id"], row)
@@ -570,6 +678,7 @@ def build(root: Path, output: Path | None = None) -> dict:
         "hf_repositories": repos,
         "openrouter_models": router,
         "arxiv_papers": arxiv,
+        "arxiv_id_resolutions": resolutions,
         "model_platform_links": platform,
         "hf_arxiv_links": paper_links,
         "hf_repo_cohorts": cohorts,
@@ -589,6 +698,10 @@ def build(root: Path, output: Path | None = None) -> dict:
         "hf_repos_with_arxiv_tag": len(paper_hf),
         "arxiv_references_resolved": len(
             {x["arxiv_id"] for x in paper_links} & {x["arxiv_id"] for x in arxiv}
+        ),
+        "arxiv_lookup_status": dict(Counter(row["resolution_status"] for row in resolutions)),
+        "hf_repos_with_resolved_paper": len(
+            {link["hf_repo_id"] for link in paper_links if link["resolution_status"] == "resolved"}
         ),
         "openrouter_hf_id_rate": (
             sum(bool(r["hugging_face_id"]) for r in router) / len(router) if router else None

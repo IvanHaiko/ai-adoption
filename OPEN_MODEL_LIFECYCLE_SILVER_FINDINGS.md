@@ -1,9 +1,12 @@
 # Open Model Lifecycle: first Silver findings
 
-Measured by a full local replay on **2026-10-01** from the 34 Bronze days dated
-2026-08-28 through 2026-09-30. These are collector observations, not population
-estimates for the open-model ecosystem. Generated Parquet and machine-readable DQ
-live in `data/silver/` and can be reproduced with `python -m silver`.
+Measured by a full local replay on **2026-10-01** from the 34 daily Bronze days
+dated 2026-08-28 through 2026-09-30, plus an explicit arXiv OAI datestamp
+backfill for 2026-09-01 through 2026-09-30 and an exact-ID Atom lookup of HF
+arXiv tags collected on 2026-09-30 UTC. These
+are collector observations, not population estimates for the open-model ecosystem.
+Generated Parquet and machine-readable DQ live in `data/silver/` and can be
+reproduced with `python -m silver`.
 
 ## 1. Silver inventory
 
@@ -12,7 +15,8 @@ live in `data/silver/` and can be reproduced with `python -m silver`.
 | `hf_observations` | 234,222 | 24,991 repos, 34 days | 165,000 top; 64,000 newest; 5,222 OpenRouter-linked detail observations |
 | `hf_repositories` | 230,863 | 24,991 repos, 34 days | 3,359 excess cross-leg observations removed; `created_at`, `downloads_30d`, `likes` 0% null; `last_modified` 97.7%; `base_model` 34.5%; `library_name` 18.8% |
 | `openrouter_models` | 14,862 | 504 route IDs, 34 days | 58.6% of rows have no HF ID; `created_at` and `canonical_slug` 0% null; 9,726 rows have route ID different from canonical slug |
-| `arxiv_papers` | 0 | no arXiv Bronze yet | Existing completed days stay untouched; new daily ingestion begins on the next collector run |
+| `arxiv_papers` | 18,493 | 18,493 distinct papers, all first observed on 2026-09-30 UTC | 17,359 from OAI plus 1,134 additional papers from exact-ID Atom lookup; `submitted_at` and `updated_at` 0% null; OAI datestamp absent for Atom-only rows |
+| `arxiv_id_resolutions` | 1,194 | one status per explicit HF paper ID | 1,191 resolved, 2 malformed, 1 not found, 0 temporary failures |
 | `model_platform_links` | 203 | explicit OpenRouter route → HF repo pairs | 165 distinct HF targets; some routes share a repo |
 | `hf_arxiv_links` | 10,518 | 7,386 HF repos and 1,194 arXiv IDs | Links mean *metadata reference* only |
 | `hf_repo_cohorts` | 24,991 | one row per first-observed HF repo | `created_at` and age at first observation present for all repos |
@@ -30,12 +34,21 @@ keys, malformed records and invalid nonnegative metrics in this replay: **0**.
   referenced repositories have no matching HF observation in the canonical
   table; unavailable or gated repositories are valid unmatched data.
 - 7,386 of 24,991 observed HF repos (29.6%) carry an explicit `arxiv:` tag.
-  They reference 1,194 distinct canonical arXiv IDs. **Zero are resolved**
-  against arXiv Bronze because no arXiv snapshot or backfill exists yet.
-- 18,558 repos appeared in the newest leg, 6,831 in the top leg, and 162 in
-  the OpenRouter-linked detail leg. Across all days, 549 are in both newest and
-  top, 4 in newest and detail, and 8 in top and detail. These populations must
-  not be added together.
+  They reference 1,194 distinct format-canonical arXiv IDs. Only 57 resolve
+  against the bounded OAI *modification* backfill. Exact-ID Atom lookups resolve
+  **1,191 (99.7%)**, covering explicit paper links at 7,348 HF repositories.
+  Two referenced IDs have invalid month/sequence structure and one valid ID was
+  not found. A failed lookup is never converted into a nonexistent paper.
+- The arXiv harvest stored 22,791 raw OAI records in 26 response pages across
+  five bounded windows. Category overlap accounts for the difference from
+  17,359 canonical paper rows. This is not a harvest of papers submitted in
+  September: submission dates in the results span 2013-03-27 to 2026-09-29.
+- 18,585 repos appeared in the newest leg, 6,917 in the top leg, and 162 in
+  the OpenRouter-linked detail leg. Across all days, 579 are in both newest and
+  top, 8 in newest and detail, and 94 in top and detail. These populations must
+  not be added together. These counts use `hf_observations`, which preserves
+  every leg; earlier counts from the canonical daily table undercounted leg
+  membership when one repo appeared in several legs on the same day.
 - `openrouter_models.is_alias` means route `id != canonical_slug`. There are
   9,726 such daily rows, while 398 distinct canonical slugs appear across the
   history. A route is not counted as an independent underlying model merely
@@ -47,9 +60,9 @@ keys, malformed records and invalid nonnegative metrics in this replay: **0**.
 |---|---|---|
 | HF creation → first observation | Possible but biased | Source creation timestamps are present, but first observation depends on sampling and collector start. Median observed delay is 1 day. |
 | First observation → first nonzero `downloads_30d` | Possible but biased | 14,886 cohorts start at zero; 12,719 later have a positive rolling value within the window. Timing is interval-censored by daily snapshots. |
-| Newest → top 5,000 | Possible now for observed transitions | 543 repos first appeared in newest and entered top on a later snapshot day. Left and right censoring remain. |
+| Newest → top 5,000 | Possible now for observed transitions | 550 repos were first observed in newest and reached top on a later snapshot day. Left and right censoring remain. |
 | HF → OpenRouter appearance | Requires more history | Five linked repos have HF observation before their first OpenRouter observation; 150 are first observed on the same day. Most catalogue models predate collection. |
-| arXiv reference → HF availability | Unsupported yet | HF tags are available, but arXiv Bronze is not. Even with metadata, a tag alone does not prove research-to-model causality. |
+| arXiv reference → HF availability | Possible as a descriptive metadata relationship | 1,191 paper IDs resolve through exact-ID lookup; a tag is a reference, not evidence of authorship or causal diffusion. |
 | HF/OpenRouter → rankings | Unsupported | The archived ranking HTML has a changing serialized payload and unverified ordering/metric semantics. |
 
 ## 4. Concrete early observations
@@ -77,9 +90,13 @@ keys, malformed records and invalid nonnegative metrics in this replay: **0**.
    `rankingType` says `week`. Their displayed ordering cannot yet be shown to
    correspond to any one field. No ranking table was published.
 2. OAI datestamp tracks metadata modification, including administrative and
-   bibliographic changes. It is not a paper publication timestamp. arXiv has
-   no Bronze history here yet. A retrospective backfill will be marked with
-   its true collection time.
+   bibliographic changes. It is not a paper publication timestamp. The September
+   backfill is stored separately and marked with its true 2026-09-30 collection
+   time. The 30-day OAI window alone resolves only 57 of 1,194 HF tag IDs;
+   exact-ID Atom lookups resolve 1,191. All 18,493 Silver paper records share
+   the 2026-09-30 collector first-seen date, including retrospective records.
+   Cross-listed papers occur in multiple category responses and require
+   deduplication. Atom-only papers have no OAI datestamp in that response.
 3. The HF detail endpoint includes `lastModified`; list endpoints generally do
    not. The 97.7% canonical null rate reflects source shape, not a parsing
    error. Creation timestamps are much more useful for the cohort question.
@@ -109,9 +126,10 @@ trajectory comparison.
 |---|---|
 | A. General lifecycle tracking | Good umbrella and architecture; too broad as one measured claim. |
 | B. Early → sustained traction | Best current data quality, longitudinal value, reproducibility, and engineering story. |
-| C. arXiv → HF → OpenRouter diffusion | Worth a descriptive side analysis after arXiv backfill; paper links are weak evidence and OpenRouter transitions are sparse. |
+| C. arXiv → HF → OpenRouter diffusion | Worth a descriptive side analysis; 1,191/1,194 IDs resolve, but tag links remain weak evidence and OpenRouter transitions are sparse. |
 | D. Model-family / successor lifecycle | Potentially valuable, but canonical family identity and derivative semantics need substantial validation. |
 
-Next: run a small, explicit arXiv OAI backfill to measure tag resolution, then
-extend collection until at least 60/90-day cohorts mature. Gold can start with
-HF cohorts now, using documented eligibility and censoring rules.
+Next: let the new Gold cohorts mature under continued daily collection, and
+analyze the three unresolved reference IDs separately. The explicit-ID lookup
+is cached; further OAI datestamp windows should serve incremental metadata
+history, not be used as a substitute for paper-ID resolution.

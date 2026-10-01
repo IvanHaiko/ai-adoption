@@ -1,12 +1,29 @@
-# ai-adoption — collector
+# Open Model Lifecycle
 
-## Open Model Lifecycle: Bronze → Silver → future Gold
+## Open Model Lifecycle: Bronze → Silver → Gold
+
+Gold lifecycle and weekly cohort metrics are now available. See
+[`docs/gold_metric_contract.md`](docs/gold_metric_contract.md) for exact event,
+eligibility, censoring and milestone rules and
+[`OPEN_MODEL_LIFECYCLE_GOLD_FINDINGS.md`](OPEN_MODEL_LIFECYCLE_GOLD_FINDINGS.md)
+for measured results. The explicit arXiv ID resolver uses the official Atom
+API's `id_list` interface in batches of at most 50 with a three-second request
+floor, stores each raw response, and records resolved/not-found/malformed or
+retryable source-failure status. It is separate from OAI datestamp ingestion.
+
+```bash
+python -m silver
+python -m collector.arxiv_ids   # cached exact-ID enrichment; safe to rerun
+python -m silver               # incorporate the stored Atom metadata
+python -m gold                 # deterministic lifecycle/cohort rebuild
+pytest -q && ruff check .
+```
 
 The daily collector now includes arXiv OAI-PMH metadata for `cs.AI`, `cs.CL`, and
 `cs.LG`. Bronze remains immutable: a finished historical day is never reopened,
 and a retrospective arXiv harvest lives under `data/backfill/arxiv/`, visibly
 separate from data observed on a daily run. Silver is a complete replay into
-local Parquet files. Gold cohort or model-family analyses are future work; see
+local Parquet files. Model-family analytics remain future work; see
 [`OPEN_MODEL_LIFECYCLE_SILVER_FINDINGS.md`](OPEN_MODEL_LIFECYCLE_SILVER_FINDINGS.md)
 for measured coverage and limitations.
 
@@ -46,6 +63,7 @@ Silver tables under `data/silver/` (rebuildable and gitignored):
 | `hf_repositories` | canonical repo × date |
 | `openrouter_models` | catalogue row × date; `is_alias` and `canonical_slug` identify aliases |
 | `arxiv_papers` | paper × observation date, if collected |
+| `arxiv_id_resolutions` | explicit HF arXiv ID × lookup status and provenance |
 | `model_platform_links` | explicit OpenRouter ID → declared HF repo ID |
 | `hf_arxiv_links` | HF repo → arXiv tag reference |
 | `hf_repo_cohorts` | first collector observation of each HF repo |
