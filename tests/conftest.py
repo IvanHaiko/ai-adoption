@@ -78,6 +78,12 @@ class FakeHttp:
             body = (b'<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/">'
                     b'<error code="noRecordsMatch">No records</error></OAI-PMH>')
             return Response(url, 200, body)
+        if "inference_provider=all" in url:
+            rows = [{"id": "Vendor/Alpha", "inferenceProviderMapping": [
+                {"provider": "example-provider", "providerId": "alpha", "status": "live",
+                 "task": "conversational"}
+            ]}]
+            return Response(url, 200, json.dumps(rows).encode())
         if url.startswith(HF_LIST):
             return self._ranking_page(url)
         if url.startswith(HF_API):

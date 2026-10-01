@@ -158,6 +158,15 @@ SCHEMAS = {
         "arxiv_link_present",
         "openrouter_link_present",
     ],
+    "hf_provider_model_observations": [
+        "snapshot_date", "fetched_at", "hf_repo_id", "provider_count",
+        "first_observed_provider_catalogue_date", "source_snapshot", "source_url",
+    ],
+    "hf_inference_provider_observations": [
+        "snapshot_date", "fetched_at", "hf_repo_id", "provider_name",
+        "provider_model_id", "task", "status", "first_seen_provider_date",
+        "source_snapshot", "source_url", "raw_mapping_json", "parser_version",
+    ],
 }
 BOOLEAN_FIELDS = {
     "private",
@@ -174,6 +183,7 @@ INTEGER_FIELDS = {
     "age_at_first_seen_days",
     "initial_downloads_30d",
     "initial_likes",
+    "provider_count",
 }
 
 
@@ -277,6 +287,43 @@ def _hf(day: str, leg: str, path: Path, errors: list) -> list[dict]:
                 }
             )
     return result
+
+
+def _hf_providers(day: str, path: Path, errors: list) -> tuple[list[dict], list[dict]]:
+    models, providers = [], []
+    source_path = str(path.relative_to(path.parents[3])).replace("\\", "/")
+    for envelope in _jsonl(path):
+        body = envelope.get("body")
+        if not isinstance(body, list):
+            errors.append(f"{path}: provider list body is not an array")
+            continue
+        fetched = iso(envelope.get("fetched_at"), errors, str(path))
+        for model in body:
+            if not isinstance(model, dict) or not model.get("id"):
+                errors.append(f"{path}: provider model missing id")
+                continue
+            repo_id = model["id"]
+            mappings = model.get("inferenceProviderMapping")
+            if not isinstance(mappings, list):
+                errors.append(f"{path}: {repo_id} has no provider mapping array")
+                continue
+            common = {
+                "snapshot_date": day, "fetched_at": fetched, "hf_repo_id": repo_id,
+                "source_snapshot": source_path, "source_url": envelope.get("url"),
+            }
+            models.append(common | {"provider_count": len(mappings)})
+            for mapping in mappings:
+                if not isinstance(mapping, dict) or not mapping.get("provider"):
+                    errors.append(f"{path}: {repo_id} has malformed provider mapping")
+                    continue
+                providers.append(common | {
+                    "provider_name": mapping["provider"],
+                    "provider_model_id": mapping.get("providerId"),
+                    "task": mapping.get("task"), "status": mapping.get("status"),
+                    "raw_mapping_json": json.dumps(mapping, sort_keys=True, ensure_ascii=False),
+                    "parser_version": "1",
+                })
+    return models, providers
 
 
 def _openrouter(day: str, path: Path, fetched_at: str | None, errors: list) -> list[dict]:
@@ -554,6 +601,7 @@ def build(root: Path, output: Path | None = None) -> dict:
     output.mkdir(parents=True, exist_ok=True)
     errors = []
     hf, router, arxiv = [], [], []
+    provider_models, provider_observations = [], []
     days = snapshot_days(root)
     for day in days:
         folder = root / "data" / "raw" / day
@@ -573,6 +621,12 @@ def build(root: Path, output: Path | None = None) -> dict:
             )
         if manifest.get("legs", {}).get("arxiv", {}).get("status") == "ok":
             arxiv.extend(_arxiv(day, folder / "arxiv.jsonl.gz", errors))
+        if manifest.get("legs", {}).get("hf_inference_providers", {}).get("status") == "ok":
+            models, providers = _hf_providers(
+                day, folder / "hf_inference_providers.jsonl.gz", errors
+            )
+            provider_models.extend(models)
+            provider_observations.extend(providers)
     backfill_dir = root / "data" / "backfill" / "arxiv"
     if backfill_dir.exists():
         for backfill_manifest in sorted(backfill_dir.rglob("_manifest.json")):
@@ -594,6 +648,24 @@ def build(root: Path, output: Path | None = None) -> dict:
         row["first_seen_source"] = "openrouter_models"
         row["age_at_first_seen_days"] = age_days(row["created_at"], row["first_seen_date"])
     _first_seen(arxiv, "arxiv_id")
+    first_provider_model = {}
+    for row in provider_models:
+        rid = row["hf_repo_id"]
+        first_provider_model[rid] = min(
+            row["snapshot_date"], first_provider_model.get(rid, row["snapshot_date"])
+        )
+    for row in provider_models:
+        row["first_observed_provider_catalogue_date"] = first_provider_model[row["hf_repo_id"]]
+    first_provider = {}
+    for row in provider_observations:
+        key = row["hf_repo_id"], row["provider_name"]
+        first_provider[key] = min(
+            row["snapshot_date"], first_provider.get(key, row["snapshot_date"])
+        )
+    for row in provider_observations:
+        row["first_seen_provider_date"] = first_provider[
+            (row["hf_repo_id"], row["provider_name"])
+        ]
     # Detail endpoint wins over top list, which wins over newest list; one row per repo/day.
     canonical = {}
     for row in hf:
@@ -682,11 +754,20 @@ def build(root: Path, output: Path | None = None) -> dict:
         "model_platform_links": platform,
         "hf_arxiv_links": paper_links,
         "hf_repo_cohorts": cohorts,
+        "hf_provider_model_observations": provider_models,
+        "hf_inference_provider_observations": provider_observations,
     }
     for name, rows in tables.items():
         _write(output, name, rows)
     duplicates = Counter((x["snapshot_date"], x["source_leg"], x["hf_repo_id"]) for x in hf)
     router_duplicates = Counter((x["snapshot_date"], x["openrouter_model_id"]) for x in router)
+    provider_model_duplicates = Counter(
+        (x["snapshot_date"], x["hf_repo_id"]) for x in provider_models
+    )
+    provider_duplicates = Counter(
+        (x["snapshot_date"], x["hf_repo_id"], x["provider_name"])
+        for x in provider_observations
+    )
     report = {
         "snapshot_days": len(days),
         "coverage": [days[0], days[-1]] if days else [],
@@ -734,6 +815,11 @@ def build(root: Path, output: Path | None = None) -> dict:
         else {},
         "duplicate_hf_within_leg": sum(n - 1 for n in duplicates.values() if n > 1),
         "duplicate_openrouter_ids": sum(n - 1 for n in router_duplicates.values() if n > 1),
+        "duplicate_provider_models": sum(
+            n - 1 for n in provider_model_duplicates.values() if n > 1
+        ),
+        "duplicate_provider_mappings": sum(n - 1 for n in provider_duplicates.values() if n > 1),
+        "provider_status_counts": dict(Counter(x["status"] for x in provider_observations)),
         "errors_count": len(errors),
         "errors": errors[:100],
     }
@@ -753,6 +839,8 @@ def main(argv=None) -> int:
         if report["errors_count"]
         or report["duplicate_hf_within_leg"]
         or report["duplicate_openrouter_ids"]
+        or report["duplicate_provider_models"]
+        or report["duplicate_provider_mappings"]
         else 0
     )
 

@@ -15,6 +15,7 @@ LEG_FILES = {
     "hf_top_models": "hf_top_models.jsonl.gz",
     "hf_new_models": "hf_new_models.jsonl.gz",
     "arxiv": "arxiv.jsonl.gz",
+    "hf_inference_providers": "hf_inference_providers.jsonl.gz",
 }
 
 

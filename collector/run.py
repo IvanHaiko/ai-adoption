@@ -15,6 +15,7 @@ from . import paths
 from .fetch import HttpClient
 from .sources import (
     arxiv,
+    hf_inference_providers,
     hf_models,
     hf_new_models,
     hf_top_models,
@@ -78,6 +79,7 @@ def collect(
         ("hf_top_models", hf_top_models),
         ("hf_new_models", hf_new_models),
         ("arxiv", arxiv),
+        ("hf_inference_providers", hf_inference_providers),
     ):
         if mf.leg_done(manifest, leg):
             continue

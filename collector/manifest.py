@@ -21,6 +21,7 @@ LEGS = (
     "hf_top_models",
     "hf_new_models",
     "arxiv",
+    "hf_inference_providers",
 )
 
 # Legs that walk a paginated list and report a `rows` count.

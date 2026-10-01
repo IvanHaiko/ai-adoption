@@ -1,5 +1,18 @@
 # Open Model Lifecycle
 
+## New longitudinal provider source
+
+From 2026-10-01 UTC, the daily collector also preserves current Hugging Face
+Inference Provider mappings for the provider-filtered `text-generation` list.
+Its first observation is a collector date, never a provider launch date. Seven
+bulk pages captured 6,437 repositories and 6,583 mappings on the first day;
+missing models on later filtered lists will remain unconfirmed, not recorded as
+permanent removals. See [the API spike](docs/provider_sources_spike.md) and
+[provider expansion findings](OPEN_MODEL_LIFECYCLE_PROVIDER_EXPANSION_FINDINGS.md).
+Replicate requires an API token even to list public models; its sample gate has
+not yet been met, so no Replicate collector is scheduled. Existing Gold metrics
+are unchanged.
+
 ## Open Model Lifecycle: Bronze → Silver → Gold
 
 Gold lifecycle and weekly cohort metrics are now available. See
@@ -64,6 +77,8 @@ Silver tables under `data/silver/` (rebuildable and gitignored):
 | `openrouter_models` | catalogue row × date; `is_alias` and `canonical_slug` identify aliases |
 | `arxiv_papers` | paper × observation date, if collected |
 | `arxiv_id_resolutions` | explicit HF arXiv ID × lookup status and provenance |
+| `hf_provider_model_observations` | returned provider-filtered HF repo × observation date |
+| `hf_inference_provider_observations` | returned HF repo × provider × observation date |
 | `model_platform_links` | explicit OpenRouter ID → declared HF repo ID |
 | `hf_arxiv_links` | HF repo → arXiv tag reference |
 | `hf_repo_cohorts` | first collector observation of each HF repo |
@@ -107,6 +122,7 @@ this cannot.
 | `hf_top_models` | `https://huggingface.co/api/models`, the top 5 000 text-generation repositories by downloads, 5 cursor pages | `hf_top_models.jsonl.gz` |
 | `hf_new_models` | the same endpoint sorted by `createdAt`, 2 000 newest, 2 cursor pages | `hf_new_models.jsonl.gz` |
 | `arxiv` | OAI-PMH `arXiv` metadata in cs.AI, cs.CL, cs.LG sets | `arxiv.jsonl.gz` |
+| `hf_inference_providers` | HF provider-filtered text-generation model list, with expanded mappings | `hf_inference_providers.jsonl.gz` |
 
 No credentials for the original OpenRouter and HF legs: their endpoints answered
 anonymously on 2026-08-29 with no key present. arXiv OAI-PMH is a public
@@ -230,6 +246,7 @@ data/raw/<YYYY-MM-DD>/          # the UTC date is the day key
   hf_top_models.jsonl.gz        # one line per cursor page, not 5 000 files
   hf_new_models.jsonl.gz
   arxiv.jsonl.gz                 # one line per raw OAI XML response page
+  hf_inference_providers.jsonl.gz # one line per HF provider-list response page
 ```
 
 The manifest is what makes the directory self-describing: per leg, the URL,
