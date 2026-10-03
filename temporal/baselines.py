@@ -110,6 +110,7 @@ def activate(root: Path, candidate: Path, reason: str,
             root / ACTIVATIONS / f"activation-{len(history):06d}.json"
         ) if history else None,
         "approved_changes": approved_changes, "added": changes["added"],
+        "checkout_representation_changes": changes["representation_changes"],
         "enrichment_manifest_evidence": {
             "snapshot_path": ENRICHMENT_MANIFEST,
             "sha256_file": hashlib.sha256(manifest_bytes).hexdigest(),

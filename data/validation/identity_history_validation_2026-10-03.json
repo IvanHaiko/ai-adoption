@@ -1,0 +1,205 @@
+{
+  "active_baseline_path": "data/validation/historical_archive_baseline_2026-10-03_active_001.json",
+  "active_baseline_sha256_file": "1066266dded4fa63b6631a6ebfd7ad1f930b88fc471db2df9b6c721c2c83994e",
+  "active_strict_preservation": {
+    "added": [
+      "data/raw/2026-10-03/_manifest.json",
+      "data/raw/2026-10-03/arxiv.jsonl.gz",
+      "data/raw/2026-10-03/hf_inference_providers.jsonl.gz",
+      "data/raw/2026-10-03/hf_models.jsonl.gz",
+      "data/raw/2026-10-03/hf_new_models.jsonl.gz",
+      "data/raw/2026-10-03/hf_top_models.jsonl.gz",
+      "data/raw/2026-10-03/openrouter_models.json.gz",
+      "data/raw/2026-10-03/openrouter_rankings.html.gz"
+    ],
+    "baseline_file_count": 252,
+    "baseline_total_bytes": 74914566,
+    "changed": [],
+    "current_file_count": 260,
+    "current_total_bytes": 78017122,
+    "missing": [],
+    "ok": true,
+    "representation_changes": []
+  },
+  "as_of_query_verified": {
+    "at": "2026-10-02T12:00:00Z",
+    "evidence_count": 2,
+    "provider": "zai-org",
+    "provider_model_id": "glm-5.3",
+    "state": "ambiguous"
+  },
+  "current_archive_fingerprint_sha256": "33e0830bca31ea9506c8ae95ddd77fc3619b0f74a31c73c1174bafec545a3500",
+  "deployment_layer_path": "data/temporal_v2/deployment_layer_2026-10-03.json",
+  "deployment_layer_sha256_file": "36e144a72813329b82080cdeea1e839723bb705b2fe66a00364a9152e58f56f1",
+  "historical_ambiguous_decisions": [
+    {
+      "deployment_key": "0d6406d481d450e8b7fb2a94635a14b9351e635decc662ee0b094ce8c6e8072e",
+      "hf_repo_candidates": [
+        "zai-org/GLM-5.2",
+        "zai-org/GLM-5.2-FP8"
+      ],
+      "provider": "zai-org",
+      "provider_model_id": "glm-5.2",
+      "valid_from": "2026-10-01T00:55:51+00:00",
+      "valid_to": "2026-10-02T02:33:00+00:00"
+    },
+    {
+      "deployment_key": "0d6406d481d450e8b7fb2a94635a14b9351e635decc662ee0b094ce8c6e8072e",
+      "hf_repo_candidates": [
+        "zai-org/GLM-5.2",
+        "zai-org/GLM-5.2-FP8"
+      ],
+      "provider": "zai-org",
+      "provider_model_id": "glm-5.2",
+      "valid_from": "2026-10-02T02:33:00+00:00",
+      "valid_to": null
+    },
+    {
+      "deployment_key": "6e9f87e3f99a093422db8e98a5b52ac35bc1fa52a01e3ce94b434b701780d873",
+      "hf_repo_candidates": [
+        "zai-org/GLM-5.1",
+        "zai-org/GLM-5.1-FP8"
+      ],
+      "provider": "zai-org",
+      "provider_model_id": "glm-5.1",
+      "valid_from": "2026-10-02T02:33:18+00:00",
+      "valid_to": null
+    },
+    {
+      "deployment_key": "d208916c29dfba5db0c19b7258d1333934cc0e914602ddc56c6a1078f58809b9",
+      "hf_repo_candidates": [
+        "zai-org/GLM-4.6",
+        "zai-org/GLM-4.6-FP8"
+      ],
+      "provider": "zai-org",
+      "provider_model_id": "glm-4.6",
+      "valid_from": "2026-10-02T02:33:15+00:00",
+      "valid_to": null
+    },
+    {
+      "deployment_key": "d96ff25382682de165ad33fa6e71d98c1a32925bf95908e133dea965459338ee",
+      "hf_repo_candidates": [
+        "zai-org/GLM-5.3",
+        "zai-org/GLM-5.3-BF16"
+      ],
+      "provider": "zai-org",
+      "provider_model_id": "glm-5.3",
+      "valid_from": "2026-10-01T00:55:51+00:00",
+      "valid_to": "2026-10-02T02:33:00+00:00"
+    },
+    {
+      "deployment_key": "d96ff25382682de165ad33fa6e71d98c1a32925bf95908e133dea965459338ee",
+      "hf_repo_candidates": [
+        "zai-org/GLM-5.3",
+        "zai-org/GLM-5.3-BF16"
+      ],
+      "provider": "zai-org",
+      "provider_model_id": "glm-5.3",
+      "valid_from": "2026-10-02T02:33:00+00:00",
+      "valid_to": null
+    }
+  ],
+  "identity_history_path": "data/temporal_v2/identity_history_2026-10-03.json",
+  "identity_history_sha256_file": "41242130e486e245f41eae60761cf8fee72e9c964d769cfec38f7ece089f7aaa",
+  "implementation_files_sha256": {
+    "temporal/__main__.py": "7a9454322676e1460c6d46d6d0d7737e8d67db06312f70b149cfd5bbf5b79aca",
+    "temporal/archive.py": "bdd42bed45db16777f6666da6be851888d47702bb642e17db69bc0b18c8dcddd",
+    "temporal/baselines.py": "5a876c7cd579fc2311acc736e3a97a313f6586a82120b71e6137343fbf347163",
+    "temporal/identity.py": "af332f38e9625b84e7f89ababb7a4d28ad36a5011909a4023c4ee5fa8614b015",
+    "temporal/portability.py": "2e853e2a17c76db42c541535a0af321991f8235360db564e88a1ab830a5d30f0",
+    "tests/test_temporal_identity.py": "142ce2affcb69d49eec6aa68bcdaaf7632f44351bd5ef17b488e5ca0dc18a249",
+    "tests/test_temporal_portability.py": "16be2946f4074806c5cce578cbad420784d24ff7dbb1084a3118b0aa6bbb36d3"
+  },
+  "latest_decision_states": {
+    "ambiguous": 4,
+    "resolved": 6784,
+    "unresolved": 303
+  },
+  "lf_checkout_simulation": {
+    "identity_tables_equal": {
+      "identity_candidates": true,
+      "identity_decisions": true,
+      "identity_links": true
+    },
+    "manifest_representation_changes": 34,
+    "portable_verification_ok": true,
+    "strict_bytes_ok": false,
+    "summary": {
+      "candidate_count": 19683,
+      "candidates_by_method": {
+        "explicit_provider_mapping": 19683
+      },
+      "canonical_assignments": 0,
+      "decision_count": 28953,
+      "decision_states": {
+        "ambiguous": 6,
+        "resolved": 19671,
+        "unresolved": 9276
+      },
+      "events_generated": 0,
+      "link_count": 19671,
+      "source_cutoffs": {
+        "hf_inference_providers": "2026-10-02",
+        "openrouter_models": "2026-10-02"
+      },
+      "untimed_batches": 0
+    }
+  },
+  "original_baseline_path": "data/validation/historical_archive_baseline.json",
+  "original_baseline_sha256_file": "c0b269a0d48dc2dd1bcc6f7a841e2564c046f4ac146276fd2580e344a99334de",
+  "original_strict_preservation": {
+    "added": [
+      "data/raw/2026-10-03/_manifest.json",
+      "data/raw/2026-10-03/arxiv.jsonl.gz",
+      "data/raw/2026-10-03/hf_inference_providers.jsonl.gz",
+      "data/raw/2026-10-03/hf_models.jsonl.gz",
+      "data/raw/2026-10-03/hf_new_models.jsonl.gz",
+      "data/raw/2026-10-03/hf_top_models.jsonl.gz",
+      "data/raw/2026-10-03/openrouter_models.json.gz",
+      "data/raw/2026-10-03/openrouter_rankings.html.gz"
+    ],
+    "baseline_file_count": 252,
+    "baseline_total_bytes": 74914566,
+    "changed": [],
+    "current_file_count": 260,
+    "current_total_bytes": 78017122,
+    "missing": [],
+    "ok": true,
+    "representation_changes": []
+  },
+  "portability_proof_files": {
+    "data/validation/archive_portability/05aa67d965fd724a22b0d1449d42892f7c5a5de9841f45dfc1f93fec047022cc.json": "7766ed133f18a5a5d083841c327a0120ec347639014082d5e87e0d69db67aa63",
+    "data/validation/archive_portability/39ff1b7851a484b13ec828fd8577d3509bf4ebb548b53a2ec5dfd096c4cc01a8.json": "f4ca13db19d08fef69526bb6b7f3ba28db9219a314d70724e3395a5eb18b7c30"
+  },
+  "previous_deployment_validation_sha256_file": "22fa50cbde379ec8dee4ad8327f8374d89419442a9e8a0f223cafac94aa4ab83",
+  "schema_version": 1,
+  "stage": "manifest portability and conservative identity history",
+  "summary": {
+    "candidate_count": 19683,
+    "candidates_by_method": {
+      "explicit_provider_mapping": 19683
+    },
+    "canonical_assignments": 0,
+    "decision_count": 28953,
+    "decision_states": {
+      "ambiguous": 6,
+      "resolved": 19671,
+      "unresolved": 9276
+    },
+    "events_generated": 0,
+    "link_count": 19671,
+    "source_cutoffs": {
+      "hf_inference_providers": "2026-10-02",
+      "openrouter_models": "2026-10-02"
+    },
+    "untimed_batches": 0
+  },
+  "validated_at": "2026-10-03T09:59:39.177988+00:00",
+  "validation": {
+    "git_diff_check": "passed",
+    "lf_simulation_pytest_passed": 108,
+    "linux_ci_executed": false,
+    "ruff_check_dot": "passed",
+    "windows_pytest_passed": 108
+  }
+}

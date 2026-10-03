@@ -94,7 +94,7 @@ def fingerprint(root: Path, generated_at: str | None = None) -> dict:
     }
 
 
-def verify(root: Path, baseline: dict) -> dict:
+def verify(root: Path, baseline: dict, portable: bool = True) -> dict:
     root = root.resolve()
     if baseline.get("schema_version") != 1:
         raise ValueError("unsupported baseline version")
@@ -107,7 +107,10 @@ def verify(root: Path, baseline: dict) -> dict:
     if baseline["total_bytes"] != sum(entry["size_bytes"] for entry in entries):
         raise ValueError("baseline total_bytes is inconsistent")
     current = {path.relative_to(root).as_posix(): path for path in archive_files(root)}
-    missing, changed = [], []
+    from .portability import load_proof
+
+    proof = load_proof(root, baseline) if portable else {}
+    missing, changed, representation_changes = [], [], []
     for entry in entries:
         name = entry["snapshot_path"]
         # Never follow a malicious baseline path outside the protected set.
@@ -119,12 +122,25 @@ def verify(root: Path, baseline: dict) -> dict:
         path = current.get(name)
         if path is None:
             missing.append(name)
-        elif path.stat().st_size != entry["size_bytes"] or file_hash(path) != entry["sha256_file"]:
-            changed.append(name)
+        else:
+            size, actual_hash = path.stat().st_size, file_hash(path)
+            if size == entry["size_bytes"] and actual_hash == entry["sha256_file"]:
+                continue
+            allowed = proof.get(name, {}).get("representations", {})
+            representation = next((label for label, value in allowed.items()
+                                   if size == value["size_bytes"]
+                                   and actual_hash == value["sha256_file"]), None)
+            if representation:
+                representation_changes.append({"snapshot_path": name,
+                                               "representation": representation,
+                                               "sha256_file": actual_hash})
+            else:
+                changed.append(name)
     added = sorted(current.keys() - set(paths))
     return {
         "ok": not missing and not changed, "baseline_file_count": len(entries),
         "baseline_total_bytes": baseline["total_bytes"], "current_file_count": len(current),
         "current_total_bytes": sum(path.stat().st_size for path in current.values()),
         "missing": missing, "changed": changed, "added": added,
+        "representation_changes": representation_changes,
     }
