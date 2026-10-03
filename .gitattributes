@@ -1,0 +1,2 @@
+# Validation evidence is hashed as stored bytes; never convert its line endings.
+data/validation/** -text

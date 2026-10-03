@@ -9,6 +9,7 @@ venv/
 data/raw/**/.tmp-*
 data/silver/
 data/gold/
+data/temporal_v2/
 scripts/pull_snapshots.log
 
 # Working brief, not a project artefact: it carries career context and

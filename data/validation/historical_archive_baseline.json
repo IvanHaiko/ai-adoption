@@ -1,0 +1,1276 @@
+{
+  "file_count": 252,
+  "files": [
+    {
+      "sha256_file": "cec074d20ae46094bc1b19693349e28acae0b69765890a3b68a09f6edb3bf5a4",
+      "size_bytes": 622,
+      "snapshot_path": "data/backfill/arxiv/2026-09-01_2026-09-07/cs.AI_cs.CL_cs.LG/_manifest.json"
+    },
+    {
+      "sha256_file": "33faf17002dc4ed273a79a58f10017ed1e8b0ecee672140f07cdded638d5be9d",
+      "size_bytes": 4846115,
+      "snapshot_path": "data/backfill/arxiv/2026-09-01_2026-09-07/cs.AI_cs.CL_cs.LG/arxiv.jsonl.gz"
+    },
+    {
+      "sha256_file": "ca1e9d25fc61d4a4999d7790c82c25ab155cf46ac462494d50cd1aaa7956f80c",
+      "size_bytes": 621,
+      "snapshot_path": "data/backfill/arxiv/2026-09-08_2026-09-14/cs.AI_cs.CL_cs.LG/_manifest.json"
+    },
+    {
+      "sha256_file": "645df8f5de29722e5339957a00eb7536800fa9e56b05ed622923137be2401e6d",
+      "size_bytes": 3924744,
+      "snapshot_path": "data/backfill/arxiv/2026-09-08_2026-09-14/cs.AI_cs.CL_cs.LG/arxiv.jsonl.gz"
+    },
+    {
+      "sha256_file": "f91f95e714790a42c8d4e661b87d80a6eef4088ae289358a9ad86e2226f5d4fb",
+      "size_bytes": 621,
+      "snapshot_path": "data/backfill/arxiv/2026-09-15_2026-09-21/cs.AI_cs.CL_cs.LG/_manifest.json"
+    },
+    {
+      "sha256_file": "a33a1cda55d73aa1dc326564bdb7c032d57e3c5367338023059fd76fd45317d5",
+      "size_bytes": 4247700,
+      "snapshot_path": "data/backfill/arxiv/2026-09-15_2026-09-21/cs.AI_cs.CL_cs.LG/arxiv.jsonl.gz"
+    },
+    {
+      "sha256_file": "a22367297e522f584583f353bbff4b538ff512d74f8099d47ca283014cc02113",
+      "size_bytes": 621,
+      "snapshot_path": "data/backfill/arxiv/2026-09-22_2026-09-28/cs.AI_cs.CL_cs.LG/_manifest.json"
+    },
+    {
+      "sha256_file": "ecb399b3847764c15d0b44a0d19c18903e84753869d556bcc0e223e6bbcc83aa",
+      "size_bytes": 4877073,
+      "snapshot_path": "data/backfill/arxiv/2026-09-22_2026-09-28/cs.AI_cs.CL_cs.LG/arxiv.jsonl.gz"
+    },
+    {
+      "sha256_file": "e2cb07951539e870ee5bc79e96a1e7bd9f1c0fd09b41dbb2aefe73e707817a43",
+      "size_bytes": 621,
+      "snapshot_path": "data/backfill/arxiv/2026-09-29_2026-09-30/cs.AI_cs.CL_cs.LG/_manifest.json"
+    },
+    {
+      "sha256_file": "2bdb9e45595076dced32387144d199d271825f1193ab6eb33feb4931bdf77ec2",
+      "size_bytes": 5493694,
+      "snapshot_path": "data/backfill/arxiv/2026-09-29_2026-09-30/cs.AI_cs.CL_cs.LG/arxiv.jsonl.gz"
+    },
+    {
+      "sha256_file": "362ab6b6bbc8553675817908818c69ef84ddd6976dff299541602bdca87aa562",
+      "size_bytes": 1392923,
+      "snapshot_path": "data/enrichment/arxiv_ids/_manifest.json"
+    },
+    {
+      "sha256_file": "5e82c8a496f7773918e3e33f800b3e17b7c011ea16cdc239315e1ea825a40440",
+      "size_bytes": 42138,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-01cf35d18fdf2f22a60b.atom.xml.gz"
+    },
+    {
+      "sha256_file": "bf007e19ce0c3a89c657dd30e8a3726a6f81755f9a7b4bb417b57bab950c7a56",
+      "size_bytes": 35517,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-02468d99730782673c53.atom.xml.gz"
+    },
+    {
+      "sha256_file": "9b06958b0a25edaa13eee679c237f8bfca8b13f713a046f75261aaa5f5e1f586",
+      "size_bytes": 41977,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-0a9e996125e2ab0f59c6.atom.xml.gz"
+    },
+    {
+      "sha256_file": "50da0e8c1076e95ce0a73a0b6d38cf1a88d2c0acc024688ba0b62b20098a5a84",
+      "size_bytes": 26230,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-0b4f6d6cd5e2a4ae7c63.atom.xml.gz"
+    },
+    {
+      "sha256_file": "957fd0a8c3a652fa805533dfaca14d4b440290213e906e2887bfbd403c41117d",
+      "size_bytes": 41469,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-0bdad7cf4d28991b62b9.atom.xml.gz"
+    },
+    {
+      "sha256_file": "3a5c0d00d96d9ea9dcb33ef68df4689834ed8f629c6191a66893efd8aeadcb41",
+      "size_bytes": 30565,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-1e7467db9e7dd7e8df92.atom.xml.gz"
+    },
+    {
+      "sha256_file": "9b5858d3f4f7433b0a1624e5359d8059c0f85f0f7e2e51a229f32faab4870a21",
+      "size_bytes": 33494,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-3ca3d2f80f75ff31e13b.atom.xml.gz"
+    },
+    {
+      "sha256_file": "f9028ec0e7fbfe890cc2445f0c58f9da9fac855bc2b3387a09f6846fe611cc40",
+      "size_bytes": 45542,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-3dad1c585f84cba809a2.atom.xml.gz"
+    },
+    {
+      "sha256_file": "0e64d9f3f4d504f146978182db14576b8dec26a059d4fa167b7f306ef1445047",
+      "size_bytes": 45751,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-4064a3aae6a40581d41b.atom.xml.gz"
+    },
+    {
+      "sha256_file": "733aee010a9c7ca7df9c4a8f750542e0a4c0d0ce4e6aa3b29045a6ca9aeb6f17",
+      "size_bytes": 37985,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-43c19a49de5fde9d6dea.atom.xml.gz"
+    },
+    {
+      "sha256_file": "a372e7612367a220ae889de8393d67d812e93a2b9976cdd4821a59d90d796e37",
+      "size_bytes": 45082,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-6057dfccefafeb2d8bed.atom.xml.gz"
+    },
+    {
+      "sha256_file": "d173431a8f261e1b9bb4190151cfd1f4b198dd6ef679fd3cd4c568cb8832753d",
+      "size_bytes": 45416,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-6492a446abefd0b3d22d.atom.xml.gz"
+    },
+    {
+      "sha256_file": "5c7d1bd014eacfb18b5446233c6d0b6615e5011b29612a18c3bc769570b25ea1",
+      "size_bytes": 32078,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-66aecd4581ba8aa316cc.atom.xml.gz"
+    },
+    {
+      "sha256_file": "630171be7eca39eb2f4fe859745b016bad86e60b3fbeb50b4302cf8dc5eafd91",
+      "size_bytes": 42417,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-7af83f522069dd05dee0.atom.xml.gz"
+    },
+    {
+      "sha256_file": "b8d7dcce77d52069f9f3db7badaaf5cd580794e96f8fb6056ebb048944973778",
+      "size_bytes": 36068,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-86dc31524477b4dc49da.atom.xml.gz"
+    },
+    {
+      "sha256_file": "ab926234c9061dedb7f6397c86eb1e04708a6103b41ed65fa155bd7a9b01a756",
+      "size_bytes": 41307,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-8709478c6e70c9ec2987.atom.xml.gz"
+    },
+    {
+      "sha256_file": "8c5a1ac5ffac5ae0a5be4881492feb8e4dce9f9714daba775e42e144dbc51aa1",
+      "size_bytes": 42738,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-8ad4ae242bd067a88a0b.atom.xml.gz"
+    },
+    {
+      "sha256_file": "786b0ee6e6d286121e1c6ed4b5a5ed8ed20b9bbd3dd4f0aaffd51945e0e06aff",
+      "size_bytes": 36866,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-92d3adf1d7ffe3280994.atom.xml.gz"
+    },
+    {
+      "sha256_file": "bf78bc0977332c15fff91df9e14a15930c0ed39c73b9adf3dc7698e86df19767",
+      "size_bytes": 39444,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-a1f88d3bb16d18a281da.atom.xml.gz"
+    },
+    {
+      "sha256_file": "d38a2de43b6c7dcfc68d591426573069e33dae817acf5fea89176637111313b3",
+      "size_bytes": 38834,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-ba2af862ccab67038c14.atom.xml.gz"
+    },
+    {
+      "sha256_file": "d4c7bbc0255a6c81545d55230fb8da4745198fbe727baaee0ef4048182c99912",
+      "size_bytes": 39802,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-d84f52e0cb9d594b8ba8.atom.xml.gz"
+    },
+    {
+      "sha256_file": "77d61e0af6c7942d1b2ae61f68a2c66844a1681cd85eca416800de296c3ce22e",
+      "size_bytes": 42568,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-dcd260f8407232d9f58a.atom.xml.gz"
+    },
+    {
+      "sha256_file": "5b054678d1691c6dfe885005606a5ad49bc0f6077dfb39a6134740b1154e8918",
+      "size_bytes": 43932,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-dd24df5a7c797355ecd6.atom.xml.gz"
+    },
+    {
+      "sha256_file": "fb3d2a12a471b60861825d36e8d9b63461a039d5a9e21000914022c5ee736e98",
+      "size_bytes": 39962,
+      "snapshot_path": "data/enrichment/arxiv_ids/batch-f0ad6098c47a061dcb26.atom.xml.gz"
+    },
+    {
+      "sha256_file": "15629cb9c0b4c9153b6a2bc21904234af7af963e667b3da8570c60633cc348cb",
+      "size_bytes": 1728,
+      "snapshot_path": "data/raw/2026-08-28/_manifest.json"
+    },
+    {
+      "sha256_file": "7e937b5be73542e0e2d79f467cc191ba2f6b0abb6774c705703b1aaf1fbfc296",
+      "size_bytes": 284266,
+      "snapshot_path": "data/raw/2026-08-28/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "3977af570b7e42ece6672e7718fb5f48cb6b7e4b686b09e6399ee483950005c4",
+      "size_bytes": 69578,
+      "snapshot_path": "data/raw/2026-08-28/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "cfed7e42cc3dfa57cfed7cc069a0279743c8d0017940d6bd36ba94012908b832",
+      "size_bytes": 178801,
+      "snapshot_path": "data/raw/2026-08-28/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "c990eaa27778bd7ba9cc264d1c94dd6e375b4c1faf2d27f74a768b0ed4bc7ea5",
+      "size_bytes": 2268,
+      "snapshot_path": "data/raw/2026-08-29/_manifest.json"
+    },
+    {
+      "sha256_file": "8d80129a687c4f10b8180783cd2b401dc592fda7eb6142dc2809d5e9d8fbd8b9",
+      "size_bytes": 283494,
+      "snapshot_path": "data/raw/2026-08-29/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "5d9d31be929735e9255cf189083a86450417b034d993f84ae8836baa707ddae8",
+      "size_bytes": 491271,
+      "snapshot_path": "data/raw/2026-08-29/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "811cee7f6b69c70216299738881ea25af32a1d4f2d5ab62c1a717012238c4d73",
+      "size_bytes": 69213,
+      "snapshot_path": "data/raw/2026-08-29/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "9897b0d923b2d6eb550ca1283718b1c9f3ec1485f16992c948cd65d62eeff2d5",
+      "size_bytes": 178821,
+      "snapshot_path": "data/raw/2026-08-29/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "f6fba34a701574d6b448b22e7d0921c5697c99cff5c88a09b361a549e5ba9970",
+      "size_bytes": 2806,
+      "snapshot_path": "data/raw/2026-08-30/_manifest.json"
+    },
+    {
+      "sha256_file": "d2a2770aec8373b3d73064d311b048c021e543b4052bc9fa1044dbb132344f8c",
+      "size_bytes": 283811,
+      "snapshot_path": "data/raw/2026-08-30/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "8c69f499b7b4239a5fdfeefd8e55a60218e87863e3c41a4eb082cc60231c13bf",
+      "size_bytes": 143246,
+      "snapshot_path": "data/raw/2026-08-30/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "3007a6f201198330b807d79e21443a4eb56cee6d5b1a40a7e54fdc07e39d2767",
+      "size_bytes": 488711,
+      "snapshot_path": "data/raw/2026-08-30/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "ff444cfbd52a0bdb5f808dead828ef4196e99f53cb7432544dc049f0afe80d42",
+      "size_bytes": 69251,
+      "snapshot_path": "data/raw/2026-08-30/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "f4f8bce17f3d0537f7ea7018295242444a6043018c239ed81b42d85b539e56a0",
+      "size_bytes": 178736,
+      "snapshot_path": "data/raw/2026-08-30/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "5d09adc3a7e22351d947dac30e77be9e4087e713deba2b18c21e37aabe405f92",
+      "size_bytes": 2806,
+      "snapshot_path": "data/raw/2026-08-31/_manifest.json"
+    },
+    {
+      "sha256_file": "f1c1f06c4e31f0bcc3c4326b61b8e8e3bcca89471ba9085c46a7854bed6cb040",
+      "size_bytes": 284132,
+      "snapshot_path": "data/raw/2026-08-31/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "a07b5ab5d32f8cefb20da5013d59f86767c7edf5651c796e09617f90e10e5a02",
+      "size_bytes": 144064,
+      "snapshot_path": "data/raw/2026-08-31/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "218403ee0bfd337798982cb22d9d7eb2f66fdd46a90de6002839da65400d04cb",
+      "size_bytes": 488013,
+      "snapshot_path": "data/raw/2026-08-31/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "29ed7af0e7f5b61d232405c381ddde52ad1cc87ba7d6814603924187477428ea",
+      "size_bytes": 69252,
+      "snapshot_path": "data/raw/2026-08-31/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "ae0cddca0a5974521b2a2a97eb8cab5c82fc614eadbfdf4fbfb9e6a5ccfd7d0f",
+      "size_bytes": 179208,
+      "snapshot_path": "data/raw/2026-08-31/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "93cba084c23a4ec76e447770209ef58c01b965deb957aa5aca22b3f3bc62417a",
+      "size_bytes": 2806,
+      "snapshot_path": "data/raw/2026-09-01/_manifest.json"
+    },
+    {
+      "sha256_file": "d49645b55445dbc169b8e8a6b58e94d4fd75bb6caf8b2df25db0ff415ea19ccd",
+      "size_bytes": 286833,
+      "snapshot_path": "data/raw/2026-09-01/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "9156f509dcad9adb39a15e225abb2b8096960f4f3958aaa66d615e31bd7f5abb",
+      "size_bytes": 143075,
+      "snapshot_path": "data/raw/2026-09-01/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "b334ac836e4e39706308745cf2c328bb41a08104cd4e686e67bbad38042da1c9",
+      "size_bytes": 486443,
+      "snapshot_path": "data/raw/2026-09-01/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "22c99c982553fdc5e728fa13f7678944898f895a076015782860c1a1e1c29acd",
+      "size_bytes": 71103,
+      "snapshot_path": "data/raw/2026-09-01/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "463c36ec1a559333d9a4ce4f481f8fe73216455f9fa5c4f9b107688eb2c8ef04",
+      "size_bytes": 179119,
+      "snapshot_path": "data/raw/2026-09-01/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "7e56ed2cad92618962aa7d8068cfc864ed9156b5bae81ab657c7035f0ca8aba2",
+      "size_bytes": 2806,
+      "snapshot_path": "data/raw/2026-09-02/_manifest.json"
+    },
+    {
+      "sha256_file": "277c74b976a6542db0c11cd35f0e3cf7186514849c4b1bbe4876aa8d13f523dc",
+      "size_bytes": 288219,
+      "snapshot_path": "data/raw/2026-09-02/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "3cceebcad2fbf36be06d340ff6635b35cde60602246552693ad2be75a032858d",
+      "size_bytes": 142736,
+      "snapshot_path": "data/raw/2026-09-02/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "6543a07528ac59ac154cfa3751b41cbc6bef679effabad22780fddb56ce15ac8",
+      "size_bytes": 487108,
+      "snapshot_path": "data/raw/2026-09-02/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "0ef7d1af9df49ec11356d61ac4de974bf75a2723e60f10cb2f8c06125f087bb5",
+      "size_bytes": 70720,
+      "snapshot_path": "data/raw/2026-09-02/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "871df6e1b76acb75a102c4191b45887ace0a23e47e0e040576a7c8efb5f32a17",
+      "size_bytes": 178991,
+      "snapshot_path": "data/raw/2026-09-02/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "8a32011aba54b16c263e35bcc608aa975cb1c242e453bc902c5ef34918395454",
+      "size_bytes": 3015,
+      "snapshot_path": "data/raw/2026-09-03/_manifest.json"
+    },
+    {
+      "sha256_file": "8e1d73a89e542eacd9ca638bdaba132a2e73d43919c5fcfc4f09b005623b7a88",
+      "size_bytes": 285829,
+      "snapshot_path": "data/raw/2026-09-03/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "cf6eae2bc08f5a2ea4497eab5c2ff0bcd0771e0dc419f66f18c1f39631bfe503",
+      "size_bytes": 145388,
+      "snapshot_path": "data/raw/2026-09-03/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "d9672d8fd34e2382f2fc2376db216e2f7bc999af173d72cc5f06b6323a050260",
+      "size_bytes": 488463,
+      "snapshot_path": "data/raw/2026-09-03/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "f09cc9a1b84fe421783e07f8dd5003e8bece7b8a29602daf57fdd34105ef42ee",
+      "size_bytes": 71197,
+      "snapshot_path": "data/raw/2026-09-03/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "f7da40607295a121d5c2b39a829061c0c5472221e3ddb48e92884dc3023138f9",
+      "size_bytes": 179009,
+      "snapshot_path": "data/raw/2026-09-03/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "81bbfbee4450f46bdd4022cd6f5faa84b7b5539e44a1004964ed7b582fb59ee2",
+      "size_bytes": 2806,
+      "snapshot_path": "data/raw/2026-09-04/_manifest.json"
+    },
+    {
+      "sha256_file": "6c7890783dbe5bb98700c55c3bc6dea5c29984fdb5d2f43aa2d97ca319c5effa",
+      "size_bytes": 288163,
+      "snapshot_path": "data/raw/2026-09-04/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "e794dad96d39656fa37c58437982dc263d674344aacc704ed8c5f5aa5bf99271",
+      "size_bytes": 141685,
+      "snapshot_path": "data/raw/2026-09-04/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "282bf29a48122e9eb8a46d5292374777d125af4355331de00834584b00606440",
+      "size_bytes": 489392,
+      "snapshot_path": "data/raw/2026-09-04/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "fb11d35573316330b486307d11c04644a401dd7249fb42b4387ab98c651e0986",
+      "size_bytes": 71379,
+      "snapshot_path": "data/raw/2026-09-04/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "041cb372307db74a967a89013df0c56979b5569fd0e53435c9c18fa88da0f6e4",
+      "size_bytes": 180105,
+      "snapshot_path": "data/raw/2026-09-04/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "e0ccfb8a08f512d90d32b8f6f641741ca75fe41c1bd24664410db63b8f62b1a8",
+      "size_bytes": 2806,
+      "snapshot_path": "data/raw/2026-09-05/_manifest.json"
+    },
+    {
+      "sha256_file": "d652a27c81a1cecdac4ee945c91825168882563b3b139928a9b22066b2a3a5d8",
+      "size_bytes": 287930,
+      "snapshot_path": "data/raw/2026-09-05/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "5ff58fb3743741054aa85e5224da31b557722752962a00b86483745eeddfb92b",
+      "size_bytes": 142151,
+      "snapshot_path": "data/raw/2026-09-05/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "0dc0e8e2ab1d101d86d43d72bb5bac6d11a75c02b798cac2cfa59386f711d176",
+      "size_bytes": 488262,
+      "snapshot_path": "data/raw/2026-09-05/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "6611e1320454a1884266241a62a2d7d455bb84c90adcca466041254fab969489",
+      "size_bytes": 71426,
+      "snapshot_path": "data/raw/2026-09-05/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "9e839a98bf21ec09d4de9bd7d98a8529f01673658db2baea248048d31e5e8161",
+      "size_bytes": 179953,
+      "snapshot_path": "data/raw/2026-09-05/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "76318bfc94090eb35645299aa23a35325348eb9d2596220522af56b66715ccd3",
+      "size_bytes": 2806,
+      "snapshot_path": "data/raw/2026-09-06/_manifest.json"
+    },
+    {
+      "sha256_file": "82e3f5862268d2cc8ddcfeaa6f1178e7bad2d56c6c0feffd5545c8df0428f564",
+      "size_bytes": 288150,
+      "snapshot_path": "data/raw/2026-09-06/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "549ca675bfba79426760fa83551e96932cf486e324633521fd51111218d72777",
+      "size_bytes": 144988,
+      "snapshot_path": "data/raw/2026-09-06/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "573afd01daefbb8e2f420261f6396190a5a77d4290dcf9fd48398db64742b7da",
+      "size_bytes": 488521,
+      "snapshot_path": "data/raw/2026-09-06/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "2a5561e637734dbd8952e3477ad0320ea5270b27f2ef4b67258a946be5e8beb2",
+      "size_bytes": 71432,
+      "snapshot_path": "data/raw/2026-09-06/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "fe285fe7ce4e2ca728ef6a3832f8dec16eec538480938a44a3e2930d9c4a2aa7",
+      "size_bytes": 179916,
+      "snapshot_path": "data/raw/2026-09-06/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "fbee80e58c72a5a72a3173d38711dab8bab939f1f6cce187c367c5d65d019ef9",
+      "size_bytes": 2806,
+      "snapshot_path": "data/raw/2026-09-07/_manifest.json"
+    },
+    {
+      "sha256_file": "13264952d778557a4f45d88c2576b2df597b1fdb6f263e15b31a32f86fbf5560",
+      "size_bytes": 288225,
+      "snapshot_path": "data/raw/2026-09-07/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "f0e0697eddbe4c262c0b1c9f1614039b1e770c002672276ab7b024d3d2dfe0e0",
+      "size_bytes": 136986,
+      "snapshot_path": "data/raw/2026-09-07/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "cc4a2afebe66a74698596e48dafbb89fe753d6938a2330339402900867f34391",
+      "size_bytes": 487851,
+      "snapshot_path": "data/raw/2026-09-07/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "07b4bfb151dcad6d918c940dd8518b24a164307e460b6ab7b817571a586bb0be",
+      "size_bytes": 71151,
+      "snapshot_path": "data/raw/2026-09-07/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "b839a36e76a3ba7bcc521c5e47e25611047f672fbe0996f5db1c61ae5e044d70",
+      "size_bytes": 181364,
+      "snapshot_path": "data/raw/2026-09-07/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "e55579ef289582e9cde102d3f6de477938979a63e723e5ead4f2b8e9d6b0725f",
+      "size_bytes": 2806,
+      "snapshot_path": "data/raw/2026-09-08/_manifest.json"
+    },
+    {
+      "sha256_file": "fd0020fe5b0b3b185365afc18f80aa3b613cec0439f2ffa73602af27779c8b93",
+      "size_bytes": 291528,
+      "snapshot_path": "data/raw/2026-09-08/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "c2483ba6a7405f1ddbf604a80513ad9c6e9253018de677593c9e379a2dac930b",
+      "size_bytes": 140613,
+      "snapshot_path": "data/raw/2026-09-08/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "5f85157adee3159d057fa2013324113402644314a63eceed451dc09050920166",
+      "size_bytes": 489562,
+      "snapshot_path": "data/raw/2026-09-08/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "391e1ff8f269378b0f10d5e127c6ad2f980f062ff4bd108f0b51e09c55ba1843",
+      "size_bytes": 71381,
+      "snapshot_path": "data/raw/2026-09-08/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "9645729de776b720deae3576f238860711122b8c2137b99c49ef20f32f693626",
+      "size_bytes": 181400,
+      "snapshot_path": "data/raw/2026-09-08/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "6ce7c01e8e0759dea4b41e60c2964a6943ec908f63981cbf10886c8c961f7172",
+      "size_bytes": 2806,
+      "snapshot_path": "data/raw/2026-09-09/_manifest.json"
+    },
+    {
+      "sha256_file": "5df01e7128b77f0b516bb60a5744a55f529631b8c19b814432df2a4dc63577af",
+      "size_bytes": 290774,
+      "snapshot_path": "data/raw/2026-09-09/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "0f9a8f361a641312b52af4f52676363bba08a96d5a28bc358a03c4757f5cf0e8",
+      "size_bytes": 141214,
+      "snapshot_path": "data/raw/2026-09-09/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "f19eb1a4a10c92e9aa25ece7b26600addf66f532729d9ad78b7154c72821bf0b",
+      "size_bytes": 492865,
+      "snapshot_path": "data/raw/2026-09-09/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "4fe6cbb9c8a3aa890aa9919f2e57ba00121be3b81503706ada90d4fe3a4d5f91",
+      "size_bytes": 71443,
+      "snapshot_path": "data/raw/2026-09-09/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "820c507e8f029eba79886e62944bf51ed62616b3cf42ea1cdb61095052c0fc41",
+      "size_bytes": 194229,
+      "snapshot_path": "data/raw/2026-09-09/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "3aef259628aa612d771f8d05de6e90a70fd0e7a9658537786f4a55ce05f5f3e7",
+      "size_bytes": 2806,
+      "snapshot_path": "data/raw/2026-09-10/_manifest.json"
+    },
+    {
+      "sha256_file": "56f4ff3ab7cd488760f22530a0ada36a8f6ffa6dfc138ff604286c1c08b3fc56",
+      "size_bytes": 290566,
+      "snapshot_path": "data/raw/2026-09-10/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "1e4d026840a12a3b93eaa1a95f8708f7c470caaad1366b82302cbab383d9014a",
+      "size_bytes": 140511,
+      "snapshot_path": "data/raw/2026-09-10/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "35ce472048191ba5b0e652bf4a05d45629385b5e1f0815ef753ebe2e44811831",
+      "size_bytes": 492952,
+      "snapshot_path": "data/raw/2026-09-10/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "80e2e76de1e048ccff7075fa545d48cea6d06da38414606a86fead4d13d8a55f",
+      "size_bytes": 71299,
+      "snapshot_path": "data/raw/2026-09-10/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "f1b5690a673749cc61cfdbea39874762df2dc04f99dc478f500385aa10aa49d3",
+      "size_bytes": 194788,
+      "snapshot_path": "data/raw/2026-09-10/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "aed1714da4954f8e1fe3d20df17ea269e730d33e81fb83eeb252136dc6301deb",
+      "size_bytes": 2985,
+      "snapshot_path": "data/raw/2026-09-11/_manifest.json"
+    },
+    {
+      "sha256_file": "4e012edd417c075a1fc52c509dc0b58bdc12ee7072a9937232b97a14810c4b48",
+      "size_bytes": 292318,
+      "snapshot_path": "data/raw/2026-09-11/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "bd674a922b63e4e21ac8f47d5a0af798768cdd2c5e99b4c07f6c15bd538a6511",
+      "size_bytes": 138185,
+      "snapshot_path": "data/raw/2026-09-11/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "ec8f1bf13ad58fa7f028d2c29978097525ff8986370e44364d5223de98fe564e",
+      "size_bytes": 491311,
+      "snapshot_path": "data/raw/2026-09-11/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "be9e35fa93433a7e035ee5843648544dcfbbac5907f3b58d0d05c8d4115888bf",
+      "size_bytes": 72480,
+      "snapshot_path": "data/raw/2026-09-11/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "379e483f5a93c286d28b88e04cba7a16c18d024ea82293d4bd29aed18ba39b52",
+      "size_bytes": 181850,
+      "snapshot_path": "data/raw/2026-09-11/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "a848e7543cfc6549e12ff1cd56a2b3feeb1bcf1b22529723444d6f04ea1c5a50",
+      "size_bytes": 2806,
+      "snapshot_path": "data/raw/2026-09-12/_manifest.json"
+    },
+    {
+      "sha256_file": "3a71bb4256f2fb5ff3da1fd8240e53d4428c5822bd4dd9416c513b21b8f30374",
+      "size_bytes": 295375,
+      "snapshot_path": "data/raw/2026-09-12/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "cd4131046768955621d4e76a21d6613f404cf5ad262e214dfafed5de893e4bd4",
+      "size_bytes": 133500,
+      "snapshot_path": "data/raw/2026-09-12/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "355928e184e32a009cd28b365e6e0a67aaf9599b5697b252a0105f3e54093b2e",
+      "size_bytes": 489251,
+      "snapshot_path": "data/raw/2026-09-12/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "9635cf9f0d2b5f8ba3e8b57d3aa4c3df54a109ce8ec1e9cf45be8edabe53ad21",
+      "size_bytes": 73003,
+      "snapshot_path": "data/raw/2026-09-12/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "f6f056decbb5e10e63eb49eb0b34a3a11478b9a31c14a7eae9b2492564e8cea2",
+      "size_bytes": 181399,
+      "snapshot_path": "data/raw/2026-09-12/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "62079fc6e84d16407924da786b61f004ab4affb43f551af5cea3d4de25e5fe4c",
+      "size_bytes": 3211,
+      "snapshot_path": "data/raw/2026-09-13/_manifest.json"
+    },
+    {
+      "sha256_file": "41333b28ab04bd248b2e0e02245c89e1a8a631d0c41122b18d0546efa35fdb91",
+      "size_bytes": 295685,
+      "snapshot_path": "data/raw/2026-09-13/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "591593e4621534bf5cf518d9f6556620b5a21b79092ca98b9abcb2aa68e9a898",
+      "size_bytes": 135353,
+      "snapshot_path": "data/raw/2026-09-13/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "28136c4022984b29be9d16bb0b81baa8539a6c1bf4cbdbc0599ef3e8f23b5955",
+      "size_bytes": 492113,
+      "snapshot_path": "data/raw/2026-09-13/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "2346a5750b55cf1ff783b492a59d04be3b8f7a424770c7ac298c9347177d84f4",
+      "size_bytes": 73318,
+      "snapshot_path": "data/raw/2026-09-13/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "6b44d6657a0e0b30950c3b6f0606722dda534ab0b4854c2f5e548678911ec5d0",
+      "size_bytes": 181160,
+      "snapshot_path": "data/raw/2026-09-13/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "e5bda053dfbc632d0fa70aefe20e7ebaebe519fa4dcfc6b63a79922aaadf97a6",
+      "size_bytes": 3211,
+      "snapshot_path": "data/raw/2026-09-14/_manifest.json"
+    },
+    {
+      "sha256_file": "dcbeaee081dcc8a3233df83bd3723e73f2c239abbe9a8f3f8f75d10de19aa935",
+      "size_bytes": 295767,
+      "snapshot_path": "data/raw/2026-09-14/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "a3cf792bbeedaaa6ecd879b499c0d62c86020f4d8b1f8c311cf55457aa26c9a6",
+      "size_bytes": 136129,
+      "snapshot_path": "data/raw/2026-09-14/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "5ed21c75bc76ec07edb98b8146eb56f780fc8668d07b59dee3665f366015bd0c",
+      "size_bytes": 495022,
+      "snapshot_path": "data/raw/2026-09-14/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "d71a8681d7527df25e76fa6406505505dc9038547ccd21c0235e7a063ab6fb47",
+      "size_bytes": 73336,
+      "snapshot_path": "data/raw/2026-09-14/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "6591b6b312979ca77b0fe90d18ad158e75e67f1697276ac2736b0ebaa0659cbb",
+      "size_bytes": 181544,
+      "snapshot_path": "data/raw/2026-09-14/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "c9bf0abe5576f6c1ce24a900ab1392b6a49404244f04f1ceb1cb4e839868fcea",
+      "size_bytes": 3211,
+      "snapshot_path": "data/raw/2026-09-15/_manifest.json"
+    },
+    {
+      "sha256_file": "5f6076f94992c5038159c0d94863c8b0f2abb908b59277d246d77947c0f2d0ff",
+      "size_bytes": 295950,
+      "snapshot_path": "data/raw/2026-09-15/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "bc0ef98c85b3250e057ddd6d8fd11b470bde6b90b6f3f001afb329760efa0042",
+      "size_bytes": 137578,
+      "snapshot_path": "data/raw/2026-09-15/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "fd8a43c2f66ab4ae9a45ee1c4c2d5d21647fff47d082199b4f01a821281c585c",
+      "size_bytes": 494611,
+      "snapshot_path": "data/raw/2026-09-15/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "d81ec78fc85deb018761b58232ca2ff1994e38528ccc01539d3e59e6ab0069ef",
+      "size_bytes": 73278,
+      "snapshot_path": "data/raw/2026-09-15/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "0fc0c51e9548636b033e1f376ea20805b0a63266204e3e4781cc098702b8f488",
+      "size_bytes": 181339,
+      "snapshot_path": "data/raw/2026-09-15/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "3aa5fd2aba4aed3c7436fa6f48d74167807f9a0da27c1fb20ff3545e9fe294e7",
+      "size_bytes": 3211,
+      "snapshot_path": "data/raw/2026-09-16/_manifest.json"
+    },
+    {
+      "sha256_file": "d28c3aa6d57986aebb3525210e1d3d2bfffca7b2d5ad4651c8e96a08dcc4005f",
+      "size_bytes": 295974,
+      "snapshot_path": "data/raw/2026-09-16/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "bf1d778d0ea0db6c1c239b694de9f72015d70ed48dc8749e744223c7580900c2",
+      "size_bytes": 126915,
+      "snapshot_path": "data/raw/2026-09-16/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "ad4c8131c58e6d968810eeb954c21633ca7869dc0656e27426fe78b13e674bb0",
+      "size_bytes": 496059,
+      "snapshot_path": "data/raw/2026-09-16/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "abeddc347b9afc821d0a7a3a92f3612fdd966f5677ba23729ed3ecde744706d4",
+      "size_bytes": 73226,
+      "snapshot_path": "data/raw/2026-09-16/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "3c03cb5879e72711f6cab1f4d552cc63c331967d408e84e34b0d11b0d6edf34c",
+      "size_bytes": 235033,
+      "snapshot_path": "data/raw/2026-09-16/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "447fa47b5aaf44cfe1487b3b7d76ba014ce26a6385fba83d3a9479b9a5058e02",
+      "size_bytes": 3390,
+      "snapshot_path": "data/raw/2026-09-17/_manifest.json"
+    },
+    {
+      "sha256_file": "b8f7e3cfdeb940ff5c31dab0150cc79a4863a92ce81d86bd6df168351a41ec0e",
+      "size_bytes": 292997,
+      "snapshot_path": "data/raw/2026-09-17/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "823a9a31e336bb48296b7f15146a91119c548a8dcc7655d3ad48b8154f21edf5",
+      "size_bytes": 110653,
+      "snapshot_path": "data/raw/2026-09-17/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "ce82b8f46bf8c000a2ce246916524bf9463ba012902b235ab8c05e0714178ab3",
+      "size_bytes": 496575,
+      "snapshot_path": "data/raw/2026-09-17/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "664318e40b0665e04f315e3c2a6682d5ceab9d58b62b1b8d67f5b250221a2b0a",
+      "size_bytes": 73550,
+      "snapshot_path": "data/raw/2026-09-17/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "dacfd2f38c2d9a38b2c2373082ce06e7e6bb8a9bd267fc60214976402e8bac4b",
+      "size_bytes": 236355,
+      "snapshot_path": "data/raw/2026-09-17/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "5a4f75eaf338dd084abc3736072a7e241cbe25b6f3df8574f9ebb6c4027870f3",
+      "size_bytes": 3211,
+      "snapshot_path": "data/raw/2026-09-18/_manifest.json"
+    },
+    {
+      "sha256_file": "61f85dd017183b8f2d0aa9fe318b3741452463b9d4e9f2b996433293bfdad18a",
+      "size_bytes": 296141,
+      "snapshot_path": "data/raw/2026-09-18/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "de5cb84851b7f1f35b351f8e08e82bb836be1231b4b4f330e0f75431e9f0e89f",
+      "size_bytes": 112183,
+      "snapshot_path": "data/raw/2026-09-18/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "bef0e1b2f5729aeb0a4063e9c88e9fa110bdce4104f68e85187ea1dc0ddbc2e7",
+      "size_bytes": 495805,
+      "snapshot_path": "data/raw/2026-09-18/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "872658bbf73682a852a682da2c79de9ce586263ae0568132dc3b1ef0573d3417",
+      "size_bytes": 73653,
+      "snapshot_path": "data/raw/2026-09-18/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "dab18ff0e118853011b401ff16cea8a8c64623bd630ebe16b2c2c67087a5d767",
+      "size_bytes": 236691,
+      "snapshot_path": "data/raw/2026-09-18/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "132f6e2711e9e8618bd1a0cfb793bf690852437dd399c70cee169c483809ebcc",
+      "size_bytes": 3211,
+      "snapshot_path": "data/raw/2026-09-19/_manifest.json"
+    },
+    {
+      "sha256_file": "ca3ee8aeb6a4cd280235df6344093b807d51ef1346bbde0a042c83342759e6ef",
+      "size_bytes": 298090,
+      "snapshot_path": "data/raw/2026-09-19/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "acf121ca2fca95561c43ec85237393a7d01b31d17cdad3bf5a47acafc43a5b7b",
+      "size_bytes": 121249,
+      "snapshot_path": "data/raw/2026-09-19/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "530c93f7aea9811be21da9651b8509e3b8334e70f13deae931a5c40972a46c6d",
+      "size_bytes": 496633,
+      "snapshot_path": "data/raw/2026-09-19/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "2088b697b5e38f93360eec30c7b35b68d38b85f0a72b3a7d067a5820aff8cf83",
+      "size_bytes": 73809,
+      "snapshot_path": "data/raw/2026-09-19/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "5fa4f5ac0cd0f52e3d0a494859cff42789bb6062a70779566d276edcb7a6fda6",
+      "size_bytes": 239725,
+      "snapshot_path": "data/raw/2026-09-19/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "c56a8a14cd542fad90a00e457e1ea2269d67a082d994d9b2e4e660460a74c9f1",
+      "size_bytes": 3211,
+      "snapshot_path": "data/raw/2026-09-20/_manifest.json"
+    },
+    {
+      "sha256_file": "ecacea2314bbfa68653088d24d79c27213e872efb350c3cd46ffb5d401d6432d",
+      "size_bytes": 298202,
+      "snapshot_path": "data/raw/2026-09-20/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "45bad92d634e336ac6a1f44b0d963cebf8376885c0ca3de3c0bcd3d786ba1004",
+      "size_bytes": 136442,
+      "snapshot_path": "data/raw/2026-09-20/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "c0f332839a9905a9d3dce9cb2ee3c01089d5e491163751ed55fc54d2835eaef6",
+      "size_bytes": 496352,
+      "snapshot_path": "data/raw/2026-09-20/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "314f621d6e55e539195869f98fbfda51914de471293ec5a0e3575c047b039ebe",
+      "size_bytes": 73935,
+      "snapshot_path": "data/raw/2026-09-20/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "5e451b4cb94fd47bea0fc3f6fa4bf5c189138d5ce8e260799cfa5ca14b09c1ac",
+      "size_bytes": 239614,
+      "snapshot_path": "data/raw/2026-09-20/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "3692a36560c21c898417368e9867dcf97369fffdbf7c2a4255948a5d9eeef640",
+      "size_bytes": 3211,
+      "snapshot_path": "data/raw/2026-09-21/_manifest.json"
+    },
+    {
+      "sha256_file": "0cc10a8471e867c142415454f08c2990c82f4d3f6523b172f35c529ecd69125e",
+      "size_bytes": 298384,
+      "snapshot_path": "data/raw/2026-09-21/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "8aec9704920fe1f6c300e9fc2d374b8d38d66c35011ceba096d23b087468dfb5",
+      "size_bytes": 137838,
+      "snapshot_path": "data/raw/2026-09-21/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "a9f8bfa037e208b3f307a7addcf44a0e42d2ba3bb344f6f03dfe46ed2ff50382",
+      "size_bytes": 496245,
+      "snapshot_path": "data/raw/2026-09-21/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "3f6fc50c9395926b3896158f032ddf7887bc4ce3be9ffe05e999e5f50ea2aa08",
+      "size_bytes": 74033,
+      "snapshot_path": "data/raw/2026-09-21/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "3130dcb06b9490bb6f2d0cc5f16f639e646dce78cc1c891eae2212c2178eeae7",
+      "size_bytes": 240576,
+      "snapshot_path": "data/raw/2026-09-21/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "842306a7346ac7acacf815416a9142a620835eb85d08849f930a35d7ffe59711",
+      "size_bytes": 3211,
+      "snapshot_path": "data/raw/2026-09-22/_manifest.json"
+    },
+    {
+      "sha256_file": "0362ff8e625b27ade766576f357771a1cac08d1ec47897cfc31a911d52b269e5",
+      "size_bytes": 298389,
+      "snapshot_path": "data/raw/2026-09-22/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "038010a994361d7efe836edbf07a974bea68b00fe9fc93251b91b3d2fe57245e",
+      "size_bytes": 137491,
+      "snapshot_path": "data/raw/2026-09-22/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "b44b1ba47c5b182632b3f53e993b47b405dab53a0af968114925d2c7bfcad2a3",
+      "size_bytes": 495129,
+      "snapshot_path": "data/raw/2026-09-22/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "540f9bdcbae08e65a8ae097242b302070de5197fcbe452699561be7882cd993a",
+      "size_bytes": 74088,
+      "snapshot_path": "data/raw/2026-09-22/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "4a2d025545745144b4f5460e3563dcd2ef84fea150a6b269decbb420f9b77e4a",
+      "size_bytes": 241490,
+      "snapshot_path": "data/raw/2026-09-22/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "92b71d040376f43b22c8e1a5b66724e9da711ecf313166207e76357e4900dcd1",
+      "size_bytes": 3211,
+      "snapshot_path": "data/raw/2026-09-23/_manifest.json"
+    },
+    {
+      "sha256_file": "1a0846ab334b6af32ff2e107ee15be7d070ff382050c93d88a360ab8b2860b92",
+      "size_bytes": 300789,
+      "snapshot_path": "data/raw/2026-09-23/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "16c8fda62ce8a25035b3cfcbd8892a983abb3358631a83028f9f7d6d73493a7c",
+      "size_bytes": 136762,
+      "snapshot_path": "data/raw/2026-09-23/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "fd5735573b95492516405effcdba4a4bbfad7a8471c1cb652c7dfe4675cce1cd",
+      "size_bytes": 494613,
+      "snapshot_path": "data/raw/2026-09-23/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "2b83b77852e8f987b2361a147dcf15509b58ab80ddfaef81e73773b6dd827776",
+      "size_bytes": 75090,
+      "snapshot_path": "data/raw/2026-09-23/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "4f8324bd559599570b85219422c9e5f1e9485ec553ff4a2047f51a852d8f8088",
+      "size_bytes": 241843,
+      "snapshot_path": "data/raw/2026-09-23/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "baec87e36787ac62c5da3750c2241f4e0e47a6a72711a0f32f05d9dd5729e8b9",
+      "size_bytes": 3211,
+      "snapshot_path": "data/raw/2026-09-24/_manifest.json"
+    },
+    {
+      "sha256_file": "2c15e4c7cfad0cf1fb97375a6b55f3660af47ba9a738b94ab27ae6fb2f291ce7",
+      "size_bytes": 299034,
+      "snapshot_path": "data/raw/2026-09-24/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "c1a5fabde79d0923d3505aa86e80d55ec5083e3ce3ec402a277d68b24779036a",
+      "size_bytes": 137262,
+      "snapshot_path": "data/raw/2026-09-24/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "e86f1ff0e1fd935cf080f66fb79f3c7b4f52546e7331dfaac6bacdcf24a06dca",
+      "size_bytes": 496135,
+      "snapshot_path": "data/raw/2026-09-24/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "c692773adbfa18dd4165b78b253854bed68e019cc6ba578ce65fabd36e53281d",
+      "size_bytes": 75821,
+      "snapshot_path": "data/raw/2026-09-24/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "66b934f40dc6d39942310c8c8ebd3440c598b5810c45a9c075279edcb53af41f",
+      "size_bytes": 242061,
+      "snapshot_path": "data/raw/2026-09-24/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "1e1e337d32c24e1e4d9f0ee13fa8b6b951f3aef559cab6341b5c284fd4c1372a",
+      "size_bytes": 3211,
+      "snapshot_path": "data/raw/2026-09-25/_manifest.json"
+    },
+    {
+      "sha256_file": "f7296d28a31a95d51395cd96c118fff0cbc659384ef2c9689e3fb0a543a628ce",
+      "size_bytes": 301266,
+      "snapshot_path": "data/raw/2026-09-25/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "09b37058741a9c341a00179c4d4356a28cdd89fa485a46412d9438c9cf5d8727",
+      "size_bytes": 137507,
+      "snapshot_path": "data/raw/2026-09-25/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "719a812a71560344cba0afcf4d7e960db0f8020c5b73812998c4fd395156bed6",
+      "size_bytes": 495530,
+      "snapshot_path": "data/raw/2026-09-25/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "2c6a4d9accdde45054718816d1ad60bcbfdc168d5c8a2b626f759a69dd774194",
+      "size_bytes": 76201,
+      "snapshot_path": "data/raw/2026-09-25/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "8b8b944ddd0d0bcd576686f5ea1e29992e7215fdb75b616489c02c72655c3370",
+      "size_bytes": 243991,
+      "snapshot_path": "data/raw/2026-09-25/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "075424ab3c084ef0d153540e7e442b39a07a1012a90a081303fe41110b748569",
+      "size_bytes": 3211,
+      "snapshot_path": "data/raw/2026-09-26/_manifest.json"
+    },
+    {
+      "sha256_file": "62cc787b5623e1677e8ec9ed85a4403020b1599b12dfb58b40698c901c96ad24",
+      "size_bytes": 297222,
+      "snapshot_path": "data/raw/2026-09-26/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "7d65500721dd0525b2a61077b3173fe84f5f1e61160a1c8c147602e49a5cb9da",
+      "size_bytes": 144737,
+      "snapshot_path": "data/raw/2026-09-26/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "9e305130df774175e73c74ff6d855cbc55416a0cf40528e8cc1b2401b9d066f0",
+      "size_bytes": 496019,
+      "snapshot_path": "data/raw/2026-09-26/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "003cd2a03e3895a8faff3bf8e8cf4837c571d0e564086ff754e9b7dfdb108d6f",
+      "size_bytes": 75971,
+      "snapshot_path": "data/raw/2026-09-26/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "711b58ac6cf23bb3ee5a0c2fcb7bb80db306936af8402d6289a77473da5fb59e",
+      "size_bytes": 244444,
+      "snapshot_path": "data/raw/2026-09-26/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "2f01df74a02246b9f5939b2d0c236bf9984826fba80eae2466dfbd42b6943b51",
+      "size_bytes": 3211,
+      "snapshot_path": "data/raw/2026-09-27/_manifest.json"
+    },
+    {
+      "sha256_file": "05defead53892ba04c72bcebe219035da9fefe9e0f9cee6f53671983edc4c31a",
+      "size_bytes": 296798,
+      "snapshot_path": "data/raw/2026-09-27/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "7757a55c022df145b654c3329112770064d494477c5b116aa1dd4a7ea6de4fd1",
+      "size_bytes": 149369,
+      "snapshot_path": "data/raw/2026-09-27/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "88b95a9b0507d8a50d4ea66d4a9823fc1b8a77a6e9c43fe8a6ae57e371852d0f",
+      "size_bytes": 496703,
+      "snapshot_path": "data/raw/2026-09-27/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "ef71e41f0026a6586d5a827f71a4148987c810d911c4184881f2b3b68e8391dc",
+      "size_bytes": 76047,
+      "snapshot_path": "data/raw/2026-09-27/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "3b088a5720b875e2432c35c5c1d8cd7dc85dfb323585c11f78fa2d4ba7d813b0",
+      "size_bytes": 244753,
+      "snapshot_path": "data/raw/2026-09-27/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "9cc74bbf4b42876a8abd62103a201463d716f3abc0f3b093d6dcc4a70c3b0b67",
+      "size_bytes": 3211,
+      "snapshot_path": "data/raw/2026-09-28/_manifest.json"
+    },
+    {
+      "sha256_file": "8c1d0e0691c0baa5fd0d49c8ac688d3b6f66ce205e6f878d009e34340b1783ac",
+      "size_bytes": 296808,
+      "snapshot_path": "data/raw/2026-09-28/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "3da0eab77c3e215d111c034e2eaefe76f0c996dac5d7bd662580c3c6c091f54a",
+      "size_bytes": 152302,
+      "snapshot_path": "data/raw/2026-09-28/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "0adb6f4b1025d65a1a02c71a33c24dc0debedd8fbf83ebcac94d2533cf7bf01a",
+      "size_bytes": 496702,
+      "snapshot_path": "data/raw/2026-09-28/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "9c53a598492db0ac25cfa88d02a3ec22becb933554a90948d97e525fe5221d0f",
+      "size_bytes": 76061,
+      "snapshot_path": "data/raw/2026-09-28/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "c38a2af07305311fc8fffc93019883d895efbc41df9eefd91428360deb2b6429",
+      "size_bytes": 245038,
+      "snapshot_path": "data/raw/2026-09-28/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "0531f70edce0ab7cc009ed294fda8c96d3bf7d3be2fb9ea6830f137c81802b46",
+      "size_bytes": 3211,
+      "snapshot_path": "data/raw/2026-09-29/_manifest.json"
+    },
+    {
+      "sha256_file": "f64f8c7d9c9f9743c47417e5b606dcf840522a202772077cc5e82cf8026da650",
+      "size_bytes": 300230,
+      "snapshot_path": "data/raw/2026-09-29/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "35b736ae65f263a220a09999a0e928000a312e247021e3b2a3080d6ad0e29bda",
+      "size_bytes": 153413,
+      "snapshot_path": "data/raw/2026-09-29/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "58143fd452dcb259270490f1c5dffd7f7ac928752078e8fcfe400104a10ff23d",
+      "size_bytes": 499619,
+      "snapshot_path": "data/raw/2026-09-29/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "1b3c5add4750f36d8dc7aaf84d84942ae27ade96a9edb64a6e82c3891693a2fe",
+      "size_bytes": 76419,
+      "snapshot_path": "data/raw/2026-09-29/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "7841dd2279c9f6b2fe4564da9b006c8ba389bd053b1face755323310b4203e2d",
+      "size_bytes": 245139,
+      "snapshot_path": "data/raw/2026-09-29/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "f0d113e534ffb37a3360a094c2a976569ddf3ce0d49e5bdfb2251834157ef651",
+      "size_bytes": 3211,
+      "snapshot_path": "data/raw/2026-09-30/_manifest.json"
+    },
+    {
+      "sha256_file": "6894229f738b59bcd43d16eba7737a2b9cf763beb63a54882a6ce05e65a1a7aa",
+      "size_bytes": 300398,
+      "snapshot_path": "data/raw/2026-09-30/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "5175ca67ff26eea756d6557dbc016fcf25a720f633e1cb79d0e147b2a0057bcf",
+      "size_bytes": 149679,
+      "snapshot_path": "data/raw/2026-09-30/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "54200ea2ec81c27dd1b3f696c2a2106e7fc20a97f39215a9e3e0523bae3e18c3",
+      "size_bytes": 501628,
+      "snapshot_path": "data/raw/2026-09-30/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "b334a18dccbbfe15f604e9a66087c8d78edf23eb1d1df5162ea79719eaeb5b18",
+      "size_bytes": 76726,
+      "snapshot_path": "data/raw/2026-09-30/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "3e7b02fc7dd597ab12af5af7b8a8398b89496c658db001f7d1ea46bfc6d73f85",
+      "size_bytes": 246154,
+      "snapshot_path": "data/raw/2026-09-30/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "868b8c8dfe90c7b1c627b2fbf04a592428f130286f16e2a5087b2d35e7a82e05",
+      "size_bytes": 4353,
+      "snapshot_path": "data/raw/2026-10-01/_manifest.json"
+    },
+    {
+      "sha256_file": "e4ab123a82540c1962660fa7fe1a2a6aff2746b3cd27ae4202791847337fa6ff",
+      "size_bytes": 2671417,
+      "snapshot_path": "data/raw/2026-10-01/arxiv.jsonl.gz"
+    },
+    {
+      "sha256_file": "689e1579f01c5ed076a10f4d81bd8421bf4e6eb0393a0b69aef63286b05770a7",
+      "size_bytes": 308889,
+      "snapshot_path": "data/raw/2026-10-01/hf_inference_providers.jsonl.gz"
+    },
+    {
+      "sha256_file": "f20a7514e77d51ea45992857d709828998b6395bca4ebbd500a273c01979873d",
+      "size_bytes": 300610,
+      "snapshot_path": "data/raw/2026-10-01/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "1e85e37fb4b290b72c6cd5b737649b5e97fa438ef48dee09d2c895532b8f90be",
+      "size_bytes": 137180,
+      "snapshot_path": "data/raw/2026-10-01/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "5f7622fe34dad3913962dd87aeeeb76c1b21f3da91d81f0667b7a1223b840e0a",
+      "size_bytes": 499636,
+      "snapshot_path": "data/raw/2026-10-01/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "ae10e43d8be61299ee890796dafde06ccb53afbc563dcf167173f2483fec2f55",
+      "size_bytes": 76885,
+      "snapshot_path": "data/raw/2026-10-01/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "0444b1d6a6803786ce95bdb43ea31ca76ee5301b3e71a9fd8bb52ceb3490152b",
+      "size_bytes": 246760,
+      "snapshot_path": "data/raw/2026-10-01/openrouter_rankings.html.gz"
+    },
+    {
+      "sha256_file": "f500ea13371ff0dc4f4e0efedca7ff9e966f30ef6fcbb96a7fbdc8238fdbc7b8",
+      "size_bytes": 4488,
+      "snapshot_path": "data/raw/2026-10-02/_manifest.json"
+    },
+    {
+      "sha256_file": "af041973a4893e3a9a180903d2cd4cd32287e9871408bf5641ae24e34eaf7946",
+      "size_bytes": 3041322,
+      "snapshot_path": "data/raw/2026-10-02/arxiv.jsonl.gz"
+    },
+    {
+      "sha256_file": "df76c1813bc5c6e5bffe9b598c33a6815c81ae88dbf7d3598acd92415ea3270c",
+      "size_bytes": 309427,
+      "snapshot_path": "data/raw/2026-10-02/hf_inference_providers.jsonl.gz"
+    },
+    {
+      "sha256_file": "6b49608d65ac4b110fcce631cfbca18904925d1f6b8b09a24acccc3f6efacac8",
+      "size_bytes": 305068,
+      "snapshot_path": "data/raw/2026-10-02/hf_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "57178c29ce67d9ff946b5e1fc8ad2718bbe66ea6e99933a352bdd6ec3e322950",
+      "size_bytes": 125781,
+      "snapshot_path": "data/raw/2026-10-02/hf_new_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "bb735a9e8560a8865234def14916b37c50babe8df3debff4d27d6e67aa39c7cc",
+      "size_bytes": 499542,
+      "snapshot_path": "data/raw/2026-10-02/hf_top_models.jsonl.gz"
+    },
+    {
+      "sha256_file": "c62baf99a5019c7b0aa724a1344feb0942d6d48cea260d2c7a05deb4d38a86ca",
+      "size_bytes": 77230,
+      "snapshot_path": "data/raw/2026-10-02/openrouter_models.json.gz"
+    },
+    {
+      "sha256_file": "42f626c37721a7f6e7a50fdf39391265897b5dd5791396db4fa21d95aabea83a",
+      "size_bytes": 246877,
+      "snapshot_path": "data/raw/2026-10-02/openrouter_rankings.html.gz"
+    }
+  ],
+  "generated_at": "2026-10-03T06:02:51.795231+00:00",
+  "max_timestamp": "2026-10-02T02:32:05+00:00",
+  "min_timestamp": "2026-08-28T22:54:26+00:00",
+  "protected_roots": [
+    "data/raw",
+    "data/backfill/arxiv",
+    "data/enrichment/arxiv_ids"
+  ],
+  "schema_version": 1,
+  "timestamp_basis": "manifest fetched_at/collected_at; capture bounds, not source-effective dates",
+  "total_bytes": 74914566
+}

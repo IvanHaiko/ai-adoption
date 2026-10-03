@@ -1,0 +1,202 @@
+{
+  "activation_count": 1,
+  "active_baseline_path": "data/validation/historical_archive_baseline_2026-10-03_active_001.json",
+  "active_baseline_sha256_file": "1066266dded4fa63b6631a6ebfd7ad1f930b88fc471db2df9b6c721c2c83994e",
+  "active_preservation": {
+    "added": [],
+    "baseline_file_count": 252,
+    "baseline_total_bytes": 74914566,
+    "changed": [],
+    "current_file_count": 252,
+    "current_total_bytes": 74914566,
+    "missing": [],
+    "ok": true
+  },
+  "deployment_layer_path": "data/temporal_v2/deployment_layer_2026-10-03.json",
+  "deployment_layer_sha256_file": "36e144a72813329b82080cdeea1e839723bb705b2fe66a00364a9152e58f56f1",
+  "duplicate_source_declarations": [
+    {
+      "collection_day": "2026-10-01",
+      "observation_ids": [
+        "00d708e739205aaa55ae891e1135e25de904f81517d08498c29f367c7a092b90",
+        "581b4fcbaa6494340158056b02a8090523fc10e5d312bad1a7413442cd9cf2a9"
+      ],
+      "provider": "zai-org",
+      "provider_model_id": "glm-5.3",
+      "source_hf_repo_ids": [
+        "zai-org/GLM-5.3",
+        "zai-org/GLM-5.3-BF16"
+      ]
+    },
+    {
+      "collection_day": "2026-10-01",
+      "observation_ids": [
+        "9fb3a293800af4f2ca51616345a177dcd610e35939762b924720aa46ce30339d",
+        "f8e644f3c2a795d8b310bfdb948f290de61d456eb2f496eac718f60b5c610319"
+      ],
+      "provider": "zai-org",
+      "provider_model_id": "glm-5.2",
+      "source_hf_repo_ids": [
+        "zai-org/GLM-5.2",
+        "zai-org/GLM-5.2-FP8"
+      ]
+    },
+    {
+      "collection_day": "2026-10-02",
+      "observation_ids": [
+        "3a24682a8f226294a6eb0b9c6788bcee4d4960b4ba51b2cb7e4fdd4e58faa5b7",
+        "c218cccd9a36a182289b84d137a626b7266f06952b7b00b92083af3ac9cbfce8"
+      ],
+      "provider": "zai-org",
+      "provider_model_id": "glm-5.3",
+      "source_hf_repo_ids": [
+        "zai-org/GLM-5.3",
+        "zai-org/GLM-5.3-BF16"
+      ]
+    },
+    {
+      "collection_day": "2026-10-02",
+      "observation_ids": [
+        "5c5666b6cd697d37ebd65238a460d5e3801738b183bed024abc28ec8ef6d5e44",
+        "da3c9c3a76c4596cbcd5c1b3d0f0f3f82c686e95eba53c1c611fc35cd5b3a49d"
+      ],
+      "provider": "zai-org",
+      "provider_model_id": "glm-5.2",
+      "source_hf_repo_ids": [
+        "zai-org/GLM-5.2",
+        "zai-org/GLM-5.2-FP8"
+      ]
+    },
+    {
+      "collection_day": "2026-10-02",
+      "observation_ids": [
+        "36bc7b3591395cd16afb9362efa1e8e07b31ec7cde791e4ee23e8d8c0f22b34c",
+        "eb92d406bd52d379eceb68309dc643433f2f5db9ac5c9148689ef9b190e8a019"
+      ],
+      "provider": "zai-org",
+      "provider_model_id": "glm-4.6",
+      "source_hf_repo_ids": [
+        "zai-org/GLM-4.6",
+        "zai-org/GLM-4.6-FP8"
+      ]
+    },
+    {
+      "collection_day": "2026-10-02",
+      "observation_ids": [
+        "3d60a16b1dd30038924c8754eade42206be806eace23eae589119d5d7b976e15",
+        "8850bf1558dee8861495326cdf7f68c4d99e804cba863c91e134fb0af11892e7"
+      ],
+      "provider": "zai-org",
+      "provider_model_id": "glm-5.1",
+      "source_hf_repo_ids": [
+        "zai-org/GLM-5.1",
+        "zai-org/GLM-5.1-FP8"
+      ]
+    }
+  ],
+  "index_path": "data/temporal_v2/raw_snapshot_index_deployments_2026-10-03.json",
+  "index_sha256_file": "7f1f951df79d7e0bcd15e9dcd738094bf2c8265c0ba97e1bae89396d792c4c81",
+  "modified_existing_files": [
+    "temporal/index.py",
+    "temporal/__main__.py",
+    "tests/test_temporal_archive.py",
+    "docs/temporal_archive_phase2.md",
+    "docs/temporal_model_migration_plan.md"
+  ],
+  "original_baseline_path": "data/validation/historical_archive_baseline.json",
+  "original_baseline_sha256_file": "c0b269a0d48dc2dd1bcc6f7a841e2564c046f4ac146276fd2580e344a99334de",
+  "original_preservation": {
+    "added": [],
+    "baseline_file_count": 252,
+    "baseline_total_bytes": 74914566,
+    "changed": [],
+    "current_file_count": 252,
+    "current_total_bytes": 74914566,
+    "missing": [],
+    "ok": true
+  },
+  "schema_version": 1,
+  "stage": "temporal deployment observations and provider deployments",
+  "summary": {
+    "absence_confirmation_enabled": false,
+    "canonical_assignments": 0,
+    "day_only_observation_count": 0,
+    "deployment_count": 7091,
+    "deployment_status_counts": {
+      "PRESENT": 7046,
+      "UNKNOWN": 45
+    },
+    "events_generated": 0,
+    "multiple_rows_for_deployment_snapshot": 6,
+    "observation_count": 28959,
+    "observations_by_provider": {
+      "baseten": 14,
+      "cerebras": 2,
+      "cohere": 19,
+      "deepinfra": 84,
+      "featherless-ai": 12807,
+      "fireworks-ai": 12,
+      "groq": 10,
+      "novita": 114,
+      "nscale": 32,
+      "openrouter": 15790,
+      "ovhcloud": 6,
+      "publicai": 10,
+      "scaleway": 12,
+      "together": 24,
+      "zai-org": 23
+    },
+    "observations_by_source": {
+      "hf_inference_providers": 13169,
+      "openrouter_models": 15790
+    },
+    "presence_counts": {
+      "PRESENT": 28959
+    },
+    "source_cutoffs": {
+      "hf_inference_providers": "2026-10-02",
+      "openrouter_models": "2026-10-02"
+    },
+    "source_snapshot_count": 38,
+    "unidentified_observation_count": 0
+  },
+  "v1_overlap_comparison": {
+    "hf_inference_providers": {
+      "additional_rows_after_v1_cutoff": 6586,
+      "full_new_rows": 13169,
+      "matching_overlap_rows": 6583,
+      "overlap_source_projection_equal": true,
+      "v1_first_day": "2026-10-01",
+      "v1_last_day": "2026-10-01",
+      "v1_rows": 6583
+    },
+    "openrouter_models": {
+      "additional_rows_after_v1_cutoff": 464,
+      "full_new_rows": 15790,
+      "matching_overlap_rows": 15326,
+      "overlap_source_projection_equal": true,
+      "v1_first_day": "2026-08-28",
+      "v1_last_day": "2026-10-01",
+      "v1_rows": 15326
+    }
+  },
+  "validated_at": "2026-10-03T06:50:33.531046+00:00",
+  "validation": {
+    "absence_confirmation_disabled": true,
+    "all_canonical_ids_null": true,
+    "all_effective_times_unknown": true,
+    "dry_run": "passed; no deployment output created by dry-run",
+    "historical_data_changed": false,
+    "phase2_baseline_and_index_hashes_match_original_report": true,
+    "pytest": {
+      "command": "python -m pytest -q -p no:cacheprovider --basetemp .pytest_tmp/temporal_deployments_final",
+      "passed": 74,
+      "result": "passed"
+    },
+    "ruff": {
+      "command": "ruff check .",
+      "result": "passed"
+    },
+    "v1_outputs": "read-only comparison; no v1 rebuild run against local production outputs"
+  }
+}

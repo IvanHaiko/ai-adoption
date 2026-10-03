@@ -1,0 +1,142 @@
+{
+  "baseline_path": "data/validation/historical_archive_baseline.json",
+  "baseline_sha256_file": "c0b269a0d48dc2dd1bcc6f7a841e2564c046f4ac146276fd2580e344a99334de",
+  "index_path": "data/temporal_v2/raw_snapshot_index.json",
+  "index_sha256_file": "85d7ba1ba82060d9904ce022ee469b87e06606cf6f4119c44509e054c79df377",
+  "phase": 2,
+  "preservation": {
+    "added": [],
+    "baseline_file_count": 252,
+    "baseline_total_bytes": 74914566,
+    "changed": [],
+    "current_file_count": 252,
+    "current_total_bytes": 74914566,
+    "missing": [],
+    "ok": true
+  },
+  "schema_version": 1,
+  "snapshot_count": 210,
+  "source_coverage": {
+    "arxiv": {
+      "first_capture_at": "2026-09-30T22:40:21+00:00",
+      "integrity_status_counts": {
+        "verified": 7
+      },
+      "last_capture_at": "2026-10-02T02:33:00+00:00",
+      "leg_status_counts": {
+        "ok": 7
+      },
+      "snapshot_count": 7,
+      "source_record_count": 28332,
+      "stored_bytes": 29102065
+    },
+    "arxiv_ids": {
+      "first_capture_at": "2026-09-30T22:58:54+00:00",
+      "integrity_status_counts": {
+        "verified": 24
+      },
+      "last_capture_at": "2026-09-30T23:00:06+00:00",
+      "leg_status_counts": {
+        "not_applicable": 24
+      },
+      "snapshot_count": 24,
+      "source_record_count": 0,
+      "stored_bytes": 947182
+    },
+    "hf_inference_providers": {
+      "first_capture_at": "2026-10-01T00:55:51+00:00",
+      "integrity_status_counts": {
+        "verified": 2
+      },
+      "last_capture_at": "2026-10-02T02:33:18+00:00",
+      "leg_status_counts": {
+        "ok": 2
+      },
+      "snapshot_count": 2,
+      "source_record_count": 12877,
+      "stored_bytes": 618316
+    },
+    "hf_models": {
+      "first_capture_at": "2026-08-28T22:54:27+00:00",
+      "integrity_status_counts": {
+        "verified": 36
+      },
+      "last_capture_at": "2026-10-02T02:32:44+00:00",
+      "leg_status_counts": {
+        "ok": 36
+      },
+      "snapshot_count": 36,
+      "source_record_count": 5534,
+      "stored_bytes": 10573415
+    },
+    "hf_new_models": {
+      "first_capture_at": "2026-08-30T01:36:49+00:00",
+      "integrity_status_counts": {
+        "verified": 34
+      },
+      "last_capture_at": "2026-10-02T02:32:47+00:00",
+      "leg_status_counts": {
+        "ok": 34
+      },
+      "snapshot_count": 34,
+      "source_record_count": 68000,
+      "stored_bytes": 4694165
+    },
+    "hf_top_models": {
+      "first_capture_at": "2026-08-29T00:09:00+00:00",
+      "integrity_status_counts": {
+        "verified": 35
+      },
+      "last_capture_at": "2026-10-02T02:32:46+00:00",
+      "leg_status_counts": {
+        "ok": 35
+      },
+      "snapshot_count": 35,
+      "source_record_count": 175000,
+      "stored_bytes": 17270647
+    },
+    "openrouter_models": {
+      "first_capture_at": "2026-08-28T22:54:26+00:00",
+      "integrity_status_counts": {
+        "verified": 36
+      },
+      "last_capture_at": "2026-10-02T02:32:04+00:00",
+      "leg_status_counts": {
+        "ok": 36
+      },
+      "snapshot_count": 36,
+      "source_record_count": 15790,
+      "stored_bytes": 2633985
+    },
+    "openrouter_rankings": {
+      "first_capture_at": "2026-08-28T22:54:27+00:00",
+      "integrity_status_counts": {
+        "verified": 36
+      },
+      "last_capture_at": "2026-10-02T02:32:05+00:00",
+      "leg_status_counts": {
+        "ok": 36
+      },
+      "snapshot_count": 36,
+      "source_record_count": 0,
+      "stored_bytes": 7568276
+    }
+  },
+  "validated_at": "2026-10-03T06:11:53.010638+00:00",
+  "validation": {
+    "all_absence_confirmation_disabled": true,
+    "dry_run": "passed; no output published",
+    "historical_data_changed": false,
+    "legacy_pipeline": "synthetic collector/Silver/Gold replay passed in isolated test root",
+    "lifecycle_events_created": false,
+    "pytest": {
+      "command": "python -m pytest -q -p no:cacheprovider --basetemp .pytest_tmp/temporal_phase2_final",
+      "passed": 54,
+      "result": "passed"
+    },
+    "ruff": {
+      "command": "ruff check .",
+      "result": "passed"
+    }
+  }
+}
