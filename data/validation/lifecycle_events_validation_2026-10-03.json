@@ -1,0 +1,177 @@
+{
+  "active_baseline_path": "data/validation/historical_archive_baseline_2026-10-03_active_001.json",
+  "active_baseline_sha256_file": "1066266dded4fa63b6631a6ebfd7ad1f930b88fc471db2df9b6c721c2c83994e",
+  "active_strict_preservation": {
+    "added": [
+      "data/raw/2026-10-03/_manifest.json",
+      "data/raw/2026-10-03/arxiv.jsonl.gz",
+      "data/raw/2026-10-03/hf_inference_providers.jsonl.gz",
+      "data/raw/2026-10-03/hf_models.jsonl.gz",
+      "data/raw/2026-10-03/hf_new_models.jsonl.gz",
+      "data/raw/2026-10-03/hf_top_models.jsonl.gz",
+      "data/raw/2026-10-03/openrouter_models.json.gz",
+      "data/raw/2026-10-03/openrouter_rankings.html.gz"
+    ],
+    "baseline_file_count": 252,
+    "baseline_total_bytes": 74914566,
+    "changed": [],
+    "current_file_count": 260,
+    "current_total_bytes": 78017122,
+    "missing": [],
+    "ok": true,
+    "representation_changes": []
+  },
+  "archive_unchanged_since_identity_validation": true,
+  "canonical_event_assignments": 0,
+  "current_archive_fingerprint_sha256": "33e0830bca31ea9506c8ae95ddd77fc3619b0f74a31c73c1174bafec545a3500",
+  "deferred_event_types": {
+    "MODEL_DISCOVERED": "model entity semantics remain undecided when canonical identity is null",
+    "MODEL_REAPPEARED": "requires reliable prior confirmed delisting",
+    "PROVIDER_DELISTED": "requires approved source-specific absence evidence policy",
+    "PROVIDER_ID_CHANGED": "requires proven continuity between distinct deployment IDs"
+  },
+  "enabled_event_types": [
+    "PROVIDER_LISTED",
+    "PRICE_CHANGED",
+    "CONTEXT_CHANGED",
+    "CAPABILITY_CHANGED",
+    "HF_IDENTITY_LINKED",
+    "HF_IDENTITY_REVISED"
+  ],
+  "engine_version": "1",
+  "implementation_files_sha256": {
+    "docs/temporal_lifecycle_events.md": "56169a3ebc1b2bf5f2887d5743371cde46d8aff34687ff0959096b081fd63d41",
+    "docs/temporal_model_migration_plan.md": "f5799ed4a99a3427c85828c002dea4feb2d7d53fdbc417bad157b5f262fe1c94",
+    "temporal/__main__.py": "34d03a64228799fa61c927b44abaf549bff7bf750bf4c9ca47b60cbe3f7da988",
+    "temporal/events.py": "b73cb39b9c9736da84b0adb77924be4e438b241adfea6c32cc54ac7f539fb267",
+    "tests/test_temporal_events.py": "6758eaa26e383f6dc1845b04904be7cca6751264a64ee1a3f366c6714ad20b1f"
+  },
+  "input_files": {
+    "data/temporal_v2/deployment_layer_2026-10-03.json": "36e144a72813329b82080cdeea1e839723bb705b2fe66a00364a9152e58f56f1",
+    "data/temporal_v2/identity_history_2026-10-03.json": "41242130e486e245f41eae60761cf8fee72e9c964d769cfec38f7ece089f7aaa"
+  },
+  "later_materialization_event_ids_equal": true,
+  "lf_checkout_simulation": {
+    "archive_unchanged": true,
+    "event_count": 14727,
+    "event_payloads_and_ids_equal": true,
+    "manifest_representation_changes": 34,
+    "portable_verification_ok": true,
+    "strict_bytes_ok": false
+  },
+  "original_baseline_sha256_file": "c0b269a0d48dc2dd1bcc6f7a841e2564c046f4ac146276fd2580e344a99334de",
+  "original_strict_preservation": {
+    "added": [
+      "data/raw/2026-10-03/_manifest.json",
+      "data/raw/2026-10-03/arxiv.jsonl.gz",
+      "data/raw/2026-10-03/hf_inference_providers.jsonl.gz",
+      "data/raw/2026-10-03/hf_models.jsonl.gz",
+      "data/raw/2026-10-03/hf_new_models.jsonl.gz",
+      "data/raw/2026-10-03/hf_top_models.jsonl.gz",
+      "data/raw/2026-10-03/openrouter_models.json.gz",
+      "data/raw/2026-10-03/openrouter_rankings.html.gz"
+    ],
+    "baseline_file_count": 252,
+    "baseline_total_bytes": 74914566,
+    "changed": [],
+    "current_file_count": 260,
+    "current_total_bytes": 78017122,
+    "missing": [],
+    "ok": true,
+    "representation_changes": []
+  },
+  "output_path": "data/temporal_v2/lifecycle_events_2026-10-03.json",
+  "output_sha256_file": "d124514bf08d8b217408cb8355f71f1bd7fbcda0b79cdd075e1ef0c432219c40",
+  "previous_identity_validation_sha256_file": "99fe111763f2849b666ac139886361c07ecb2476f6e12848f68305e84bc97a4f",
+  "real_identity_revisions": [
+    {
+      "event_id": "7f462879ab324f60d6523b66d55c14d2a175fa9e492d418122fed93becc8b8d0",
+      "new_value": {
+        "ambiguous_hf_repo_ids": [
+          "zai-org/GLM-4.6",
+          "zai-org/GLM-4.6-FP8"
+        ],
+        "hf_repo_id": null,
+        "state": "ambiguous"
+      },
+      "observed_at": "2026-10-02T02:33:15+00:00",
+      "previous_value": {
+        "ambiguous_hf_repo_ids": [],
+        "hf_repo_id": "zai-org/GLM-4.6",
+        "state": "resolved"
+      },
+      "provider": "zai-org",
+      "provider_model_id": "glm-4.6"
+    },
+    {
+      "event_id": "48b9b1b03029acb637b6a9d997de4561b6e37c79483e2062c530eda280a53a60",
+      "new_value": {
+        "ambiguous_hf_repo_ids": [
+          "zai-org/GLM-5.1",
+          "zai-org/GLM-5.1-FP8"
+        ],
+        "hf_repo_id": null,
+        "state": "ambiguous"
+      },
+      "observed_at": "2026-10-02T02:33:18+00:00",
+      "previous_value": {
+        "ambiguous_hf_repo_ids": [],
+        "hf_repo_id": "zai-org/GLM-5.1",
+        "state": "resolved"
+      },
+      "provider": "zai-org",
+      "provider_model_id": "glm-5.1"
+    }
+  ],
+  "schema_version": 1,
+  "stage": "Phase 5 deterministic lifecycle event engine v1",
+  "summary": {
+    "absence_events_generated": 0,
+    "ambiguous_comparison_batches_by_field": {},
+    "event_count": 14727,
+    "events_by_provider": {
+      "baseten": 15,
+      "cerebras": 2,
+      "cohere": 20,
+      "deepinfra": 86,
+      "featherless-ai": 12810,
+      "fireworks-ai": 12,
+      "groq": 10,
+      "novita": 119,
+      "nscale": 33,
+      "openrouter": 1548,
+      "ovhcloud": 6,
+      "publicai": 12,
+      "scaleway": 12,
+      "together": 24,
+      "zai-org": 18
+    },
+    "events_by_type": {
+      "CAPABILITY_CHANGED": 166,
+      "CONTEXT_CHANGED": 242,
+      "HF_IDENTITY_LINKED": 6786,
+      "HF_IDENTITY_REVISED": 2,
+      "PRICE_CHANGED": 440,
+      "PROVIDER_LISTED": 7091
+    },
+    "source_cutoffs": {
+      "hf_inference_providers": "2026-10-02",
+      "openrouter_models": "2026-10-02"
+    },
+    "unkeyed_positive_observations": 0,
+    "unknown_capture_batches": 0,
+    "unknown_comparison_batches_by_field": {
+      "context": 12865,
+      "price": 12853
+    },
+    "unknown_first_presence_date_deployments": 0
+  },
+  "validated_at": "2026-10-03T10:24:39.716889+00:00",
+  "validation": {
+    "git_diff_check": "passed",
+    "lf_simulation_pytest_passed": 134,
+    "linux_ci_executed": false,
+    "ruff_check_dot": "passed",
+    "windows_pytest_passed": 134
+  }
+}

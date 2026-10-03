@@ -8,6 +8,7 @@ from pathlib import Path
 from .archive import file_hash, fingerprint, output_path, verify, write_new_json
 from .baselines import ORIGINAL_BASELINE, activate, selected_baseline
 from .deployments import build_deployment_layer
+from .events import build_events, validate_identity
 from .identity import build_identity_history, identity_at, validate_observations
 from .index import build_index
 from .portability import build_proof, proof_path
@@ -48,6 +49,14 @@ def main(argv=None) -> int:
     identity_parser.add_argument("--output", type=Path,
                                  default=Path("data/temporal_v2/identity_history.json"))
     identity_parser.add_argument("--dry-run", action="store_true")
+    events_parser = sub.add_parser("events", help="derive enabled lifecycle event types")
+    events_parser.add_argument("--baseline", type=Path)
+    events_parser.add_argument("--observations", type=Path, required=True)
+    events_parser.add_argument("--identity", type=Path, required=True)
+    events_parser.add_argument("--evidence", type=Path)
+    events_parser.add_argument("--output", type=Path,
+                               default=Path("data/temporal_v2/lifecycle_events.json"))
+    events_parser.add_argument("--dry-run", action="store_true")
     query_parser = sub.add_parser("identity-at", help="query observed identity belief in a replay")
     query_parser.add_argument("--history", type=Path, required=True)
     query_parser.add_argument("--deployment-key", required=True)
@@ -91,15 +100,22 @@ def main(argv=None) -> int:
         output_path(root, args.output)
         archive_before = fingerprint(root)["files"]
         input_hashes = {}
-        if args.command == "identity":
+        if args.command in ("identity", "events"):
             inputs = [output_path(root, args.observations)]
+            if args.command == "events":
+                inputs.append(output_path(root, args.identity))
             if args.evidence:
                 inputs.append(output_path(root, args.evidence))
             input_hashes = {path: file_hash(path) for path in inputs}
             layer = json.loads(inputs[0].read_text(encoding="utf-8"))
-            ledger = json.loads(inputs[1].read_text(encoding="utf-8")) if args.evidence else None
+            ledger = json.loads(inputs[-1].read_text(encoding="utf-8")) if args.evidence else None
             validate_observations(root, layer, baseline)
-            result = build_identity_history(layer, ledger)
+            if args.command == "events":
+                history = json.loads(inputs[1].read_text(encoding="utf-8"))
+                validate_identity(layer, history, ledger)
+                result = build_events(layer, history)
+            else:
+                result = build_identity_history(layer, ledger)
             result["input_files"] = {path.relative_to(root).as_posix(): digest
                                      for path, digest in input_hashes.items()}
         elif args.command == "observations":
@@ -112,10 +128,10 @@ def main(argv=None) -> int:
         if not after["ok"] or before != after or archive_before != fingerprint(root)["files"]:
             raise ValueError("archive changed while indexing; output was not published")
         if any(file_hash(path) != digest for path, digest in input_hashes.items()):
-            raise ValueError("identity inputs changed during replay; output was not published")
+            raise ValueError("replay inputs changed during replay; output was not published")
         if not args.dry_run:
             write_new_json(root, args.output, result)
-        summary = result["summary"] if args.command in ("observations", "identity") else {
+        summary = result["summary"] if args.command in ("observations", "identity", "events") else {
             "snapshot_count": result["snapshot_count"]
         }
         print(json.dumps({**summary, "dry_run": args.dry_run, "preservation": after,
