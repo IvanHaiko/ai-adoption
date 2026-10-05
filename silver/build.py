@@ -191,7 +191,7 @@ def iso(value, errors: list, where: str) -> str | None:
     if value is None or value == "":
         return None
     try:
-        if isinstance(value, (int, float)):
+        if isinstance(value, int | float):
             return dt.datetime.fromtimestamp(value, dt.timezone.utc).isoformat()
         parsed = dt.datetime.fromisoformat(str(value).replace("Z", "+00:00"))
         return parsed.isoformat()
