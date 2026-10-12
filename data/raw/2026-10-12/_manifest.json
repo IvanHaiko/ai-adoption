@@ -1,0 +1,135 @@
+{
+  "collector_version": "0.1.0",
+  "legs": {
+    "arxiv": {
+      "api": "https://oaipmh.arxiv.org/oai",
+      "bytes_raw": 4320535,
+      "bytes_stored": 986209,
+      "category_counts": {
+        "cs.AI": 328,
+        "cs.CL": 176,
+        "cs.LG": 429
+      },
+      "completed_at": "2026-10-12T02:38:06+00:00",
+      "date_from": "2026-10-11",
+      "date_until": "2026-10-12",
+      "file": "arxiv.jsonl.gz",
+      "metadata_prefix": "arXiv",
+      "pages": 3,
+      "rows": 933,
+      "sha256_raw": "d9213e37760d5dc5c5dd573ab31131a80d43a369ca01ad7069f486e15138bb98",
+      "status": "ok"
+    },
+    "hf_inference_providers": {
+      "api": "https://huggingface.co/api/models",
+      "bytes_raw": 2190712,
+      "bytes_stored": 308963,
+      "file": "hf_inference_providers.jsonl.gz",
+      "mappings": 6580,
+      "max_pages": 20,
+      "max_rows": 20000,
+      "pages": 7,
+      "request_url": "https://huggingface.co/api/models?inference_provider=all&pipeline_tag=text-generation&limit=1000&expand=inferenceProviderMapping",
+      "rows": 6434,
+      "schema_version": 1,
+      "scope": "currently listed text-generation models with >=1 inference provider",
+      "sha256_raw": "ee0676bdaf529af40ac9a85c248fddaa02ca6fc2a26e9059f1f640152c976331",
+      "status": "ok"
+    },
+    "hf_models": {
+      "api": "https://huggingface.co/api/models/",
+      "bytes_raw": 2359617,
+      "bytes_stored": 298331,
+      "completed_at": "2026-10-12T02:37:50+00:00",
+      "failures": [
+        {
+          "attempted_at": "2026-10-12T02:37:32+00:00",
+          "error": null,
+          "hf_id": "inference-net/schematron-v2-granite-4.0-h-micro",
+          "http_status": 401
+        },
+        {
+          "attempted_at": "2026-10-12T02:37:33+00:00",
+          "error": null,
+          "hf_id": "inference-net/schematron-v2-llama-3.2-3b",
+          "http_status": 401
+        },
+        {
+          "attempted_at": "2026-10-12T02:37:35+00:00",
+          "error": null,
+          "hf_id": "microsoft/WizardLM-2-8x22B",
+          "http_status": 401
+        }
+      ],
+      "file": "hf_models.jsonl.gz",
+      "permanent_failures": 3,
+      "requested": 152,
+      "sha256_raw": "b16cac59d1e348e4af2052bb9633ef0f5522b047113ab0fe9c14de41ef4a9b51",
+      "source_file": "openrouter_models.json.gz",
+      "status": "ok",
+      "stored": 149
+    },
+    "hf_new_models": {
+      "api": "https://huggingface.co/api/models",
+      "bytes_raw": 1110398,
+      "bytes_stored": 141617,
+      "completed_at": "2026-10-12T02:37:52+00:00",
+      "file": "hf_new_models.jsonl.gz",
+      "filter": "text-generation",
+      "pages": 2,
+      "reached_target": true,
+      "rows": 2000,
+      "sha256_raw": "faa2673bac2d744901eba572d566982753e6757040c73679bccc341e986ff88a",
+      "sort": "createdAt",
+      "status": "ok",
+      "target_rows": 2000
+    },
+    "hf_top_models": {
+      "api": "https://huggingface.co/api/models",
+      "bytes_raw": 2780702,
+      "bytes_stored": 501457,
+      "completed_at": "2026-10-12T02:37:51+00:00",
+      "file": "hf_top_models.jsonl.gz",
+      "filter": "text-generation",
+      "pages": 5,
+      "reached_target": true,
+      "rows": 5000,
+      "sha256_raw": "17162b2c8abede30bdf8a584ac65a52c103f4c790a3d15c87d42e4214716646a",
+      "sort": "downloads",
+      "status": "ok",
+      "target_rows": 5000
+    },
+    "openrouter_models": {
+      "attempts": 1,
+      "bytes_raw": 766570,
+      "bytes_stored": 76837,
+      "fetched_at": "2026-10-12T02:37:11+00:00",
+      "file": "openrouter_models.json.gz",
+      "http_status": 200,
+      "sha256_raw": "8c4470ae84120814a5d514e5214a3cb187b4630143811503da08a635a182ef47",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models"
+    },
+    "openrouter_rankings": {
+      "attempts": 1,
+      "bytes_raw": 2571206,
+      "bytes_stored": 267571,
+      "fetched_at": "2026-10-12T02:37:12+00:00",
+      "file": "openrouter_rankings.html.gz",
+      "http_status": 200,
+      "sha256_raw": "523587d6dd7d9f9eed1f5b0adbf7eb5019b5f7bcbba747ece5bb7046677aeb73",
+      "status": "ok",
+      "url": "https://openrouter.ai/rankings"
+    }
+  },
+  "runs": [
+    {
+      "finished_at": "2026-10-12T02:38:24+00:00",
+      "http_calls": 171,
+      "started_at": "2026-10-12T02:37:11+00:00"
+    }
+  ],
+  "schema_version": 1,
+  "snapshot_date": "2026-10-12",
+  "status": "complete"
+}
