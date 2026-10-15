@@ -1,0 +1,123 @@
+{
+  "collector_version": "0.1.0",
+  "legs": {
+    "arxiv": {
+      "category": "cs.AI",
+      "error": "ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='oaipmh.arxiv.org', port=443): Read timed out. (read timeout=60.0)\"))",
+      "http_status": 0,
+      "status": "partial",
+      "url": "https://oaipmh.arxiv.org/oai?verb=ListRecords&metadataPrefix=arXiv&set=cs%3Acs%3AAI&from=2026-10-14&until=2026-10-15"
+    },
+    "hf_inference_providers": {
+      "api": "https://huggingface.co/api/models",
+      "bytes_raw": 2189131,
+      "bytes_stored": 307938,
+      "file": "hf_inference_providers.jsonl.gz",
+      "mappings": 6575,
+      "max_pages": 20,
+      "max_rows": 20000,
+      "pages": 7,
+      "request_url": "https://huggingface.co/api/models?inference_provider=all&pipeline_tag=text-generation&limit=1000&expand=inferenceProviderMapping",
+      "rows": 6431,
+      "schema_version": 1,
+      "scope": "currently listed text-generation models with >=1 inference provider",
+      "sha256_raw": "5aa491b39b7c4e686ec0d2acf2ea8db34fea26e2eb7238fd75d19dc76eaca0dd",
+      "status": "ok"
+    },
+    "hf_models": {
+      "api": "https://huggingface.co/api/models/",
+      "bytes_raw": 2359987,
+      "bytes_stored": 301309,
+      "completed_at": "2026-10-15T01:46:18+00:00",
+      "failures": [
+        {
+          "attempted_at": "2026-10-15T01:46:00+00:00",
+          "error": null,
+          "hf_id": "inference-net/schematron-v2-granite-4.0-h-micro",
+          "http_status": 401
+        },
+        {
+          "attempted_at": "2026-10-15T01:46:00+00:00",
+          "error": null,
+          "hf_id": "inference-net/schematron-v2-llama-3.2-3b",
+          "http_status": 401
+        },
+        {
+          "attempted_at": "2026-10-15T01:46:03+00:00",
+          "error": null,
+          "hf_id": "microsoft/WizardLM-2-8x22B",
+          "http_status": 401
+        }
+      ],
+      "file": "hf_models.jsonl.gz",
+      "permanent_failures": 3,
+      "requested": 153,
+      "sha256_raw": "06ad2184d3f2b3e1c28f5f499d6f56e97b9a2ab12f9f040b088870f0541c6c6f",
+      "source_file": "openrouter_models.json.gz",
+      "status": "ok",
+      "stored": 150
+    },
+    "hf_new_models": {
+      "api": "https://huggingface.co/api/models",
+      "bytes_raw": 1104950,
+      "bytes_stored": 144277,
+      "completed_at": "2026-10-15T01:46:20+00:00",
+      "file": "hf_new_models.jsonl.gz",
+      "filter": "text-generation",
+      "pages": 2,
+      "reached_target": true,
+      "rows": 2000,
+      "sha256_raw": "263b064d06965605591f7b1ae9bb9ffceb5c0029f59d1f7970e6a780e19c79b1",
+      "sort": "createdAt",
+      "status": "ok",
+      "target_rows": 2000
+    },
+    "hf_top_models": {
+      "api": "https://huggingface.co/api/models",
+      "bytes_raw": 2777449,
+      "bytes_stored": 502453,
+      "completed_at": "2026-10-15T01:46:19+00:00",
+      "file": "hf_top_models.jsonl.gz",
+      "filter": "text-generation",
+      "pages": 5,
+      "reached_target": true,
+      "rows": 5000,
+      "sha256_raw": "54bd1d2412754910746b9627fd9263a9a6cb32d50dd1a7b40d44cf93ed67b3c4",
+      "sort": "downloads",
+      "status": "ok",
+      "target_rows": 5000
+    },
+    "openrouter_models": {
+      "attempts": 1,
+      "bytes_raw": 774184,
+      "bytes_stored": 77594,
+      "fetched_at": "2026-10-15T01:45:39+00:00",
+      "file": "openrouter_models.json.gz",
+      "http_status": 200,
+      "sha256_raw": "055678c271bcd59a2d4e110a214730204f2be188214535813e0876ea9bc9e450",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models"
+    },
+    "openrouter_rankings": {
+      "attempts": 1,
+      "bytes_raw": 2580698,
+      "bytes_stored": 269594,
+      "fetched_at": "2026-10-15T01:45:39+00:00",
+      "file": "openrouter_rankings.html.gz",
+      "http_status": 200,
+      "sha256_raw": "dbdca0587719c6215b436dd74028ad6a5cdeff56caaa330db469d48fa1330541",
+      "status": "ok",
+      "url": "https://openrouter.ai/rankings"
+    }
+  },
+  "runs": [
+    {
+      "finished_at": "2026-10-15T01:49:47+00:00",
+      "http_calls": 172,
+      "started_at": "2026-10-15T01:45:38+00:00"
+    }
+  ],
+  "schema_version": 1,
+  "snapshot_date": "2026-10-15",
+  "status": "partial"
+}
