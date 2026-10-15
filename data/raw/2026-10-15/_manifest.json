@@ -2,11 +2,23 @@
   "collector_version": "0.1.0",
   "legs": {
     "arxiv": {
-      "category": "cs.AI",
-      "error": "ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='oaipmh.arxiv.org', port=443): Read timed out. (read timeout=60.0)\"))",
-      "http_status": 0,
-      "status": "partial",
-      "url": "https://oaipmh.arxiv.org/oai?verb=ListRecords&metadataPrefix=arXiv&set=cs%3Acs%3AAI&from=2026-10-14&until=2026-10-15"
+      "api": "https://oaipmh.arxiv.org/oai",
+      "bytes_raw": 21120486,
+      "bytes_stored": 4848064,
+      "category_counts": {
+        "cs.AI": 1857,
+        "cs.CL": 963,
+        "cs.LG": 1901
+      },
+      "completed_at": "2026-10-15T11:35:47+00:00",
+      "date_from": "2026-10-14",
+      "date_until": "2026-10-15",
+      "file": "arxiv.jsonl.gz",
+      "metadata_prefix": "arXiv",
+      "pages": 5,
+      "rows": 4721,
+      "sha256_raw": "ae57e5c5de59f620868ffd613e9bf7cd7da3766c169bc403866743417d49317d",
+      "status": "ok"
     },
     "hf_inference_providers": {
       "api": "https://huggingface.co/api/models",
@@ -115,9 +127,14 @@
       "finished_at": "2026-10-15T01:49:47+00:00",
       "http_calls": 172,
       "started_at": "2026-10-15T01:45:38+00:00"
+    },
+    {
+      "finished_at": "2026-10-15T11:35:47+00:00",
+      "http_calls": 5,
+      "started_at": "2026-10-15T11:35:27+00:00"
     }
   ],
   "schema_version": 1,
   "snapshot_date": "2026-10-15",
-  "status": "partial"
+  "status": "complete"
 }
