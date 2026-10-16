@@ -3,9 +3,11 @@
 Exit code 0 when the day is complete, 1 when it is partial, so a scheduler can
 tell the difference between "collected" and "collected some of it".
 """
+
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 from pathlib import Path
 
@@ -19,15 +21,20 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="collector", description=__doc__)
     parser.add_argument("--date", default=None, help="snapshot date, UTC (default: today)")
     parser.add_argument("--root", default=None, help="repository root to write under")
-    parser.add_argument("--min-interval", type=float, default=0.25,
-                        help="seconds between the start of consecutive requests")
+    parser.add_argument(
+        "--min-interval",
+        type=float,
+        default=0.25,
+        help="seconds between the start of consecutive requests",
+    )
+    parser.add_argument("--cohort", default=os.environ.get("HF_COHORT_ID") or None)
     args = parser.parse_args(argv)
 
     root = Path(args.root) if args.root else paths.repo_root()
     date = args.date or utc_today()
     http = HttpClient(min_interval=args.min_interval)
 
-    manifest = collect(root, snapshot_date=date, http=http)
+    manifest = collect(root, snapshot_date=date, http=http, cohort_id=args.cohort)
 
     legs = manifest["legs"]
     hf = legs.get("hf_models", {})
@@ -37,11 +44,15 @@ def main(argv: list[str] | None = None) -> int:
     for leg, label in (("hf_top_models", "hf ranking"), ("hf_new_models", "hf new arrivals")):
         record = legs.get(leg, {})
         if record.get("rows"):
-            print(f"  {label:22} {record['rows']} rows over {record['pages']} pages"
-                  f"{'' if record.get('reached_target') else ' (list exhausted early)'}")
+            print(
+                f"  {label:22} {record['rows']} rows over {record['pages']} pages"
+                f"{'' if record.get('reached_target') else ' (list exhausted early)'}"
+            )
     if hf.get("requested"):
-        print(f"  hf coverage            {hf['stored']}/{hf['requested']} stored, "
-              f"{hf.get('permanent_failures', 0)} permanently unavailable")
+        print(
+            f"  hf coverage            {hf['stored']}/{hf['requested']} stored, "
+            f"{hf.get('permanent_failures', 0)} permanently unavailable"
+        )
     print(f"  -> {paths.snapshot_dir(root, date)}")
 
     return 0 if manifest["status"] == mf.COMPLETE else 1

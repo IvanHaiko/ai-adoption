@@ -1,0 +1,68 @@
+{
+  "cohort_id": "hf_lifecycle_20261014_v1",
+  "cutoff": "2026-10-13T23:59:59+00:00",
+  "selected_at": "2026-10-14T14:05:56.123925+00:00",
+  "selection_version": 1,
+  "population_counts": {
+    "observed": 32983,
+    "eligible": 32983,
+    "selected": 1500
+  },
+  "enrolled": 1500,
+  "selection_distribution": {
+    "popular": {
+      "members": 500,
+      "latest_day_discovery_overlap": 499,
+      "historical_days_min": 6,
+      "historical_days_median": 46.0,
+      "historical_days_max": 47,
+      "organizations": 145
+    },
+    "recent": {
+      "members": 500,
+      "latest_day_discovery_overlap": 499,
+      "historical_days_min": 1,
+      "historical_days_median": 1.0,
+      "historical_days_max": 6,
+      "organizations": 237
+    },
+    "remaining": {
+      "members": 500,
+      "latest_day_discovery_overlap": 82,
+      "historical_days_min": 1,
+      "historical_days_median": 4.0,
+      "historical_days_max": 46,
+      "organizations": 500
+    }
+  },
+  "with_historical_observations": 1500,
+  "with_at_least_five_historical_days": 618,
+  "historical_days": {
+    "min": 1,
+    "median": 4.0,
+    "max": 47
+  },
+  "latest_day_proxy_date": "2026-10-13",
+  "latest_day_discovery_overlap": 1080,
+  "extra_primary_requests_if_overlap_persists": 420,
+  "floor_minutes_if_overlap_persists": 5.25,
+  "worst_primary_requests_per_run": 1500,
+  "theoretical_max_http_attempts_per_run_before_budget": 4500,
+  "theoretical_max_http_attempts_per_day_four_slots_before_budget": 18000,
+  "future_60_day_observations_at_full_coverage": 90000,
+  "future_60_day_observations_at_95_percent_coverage": 85500.0,
+  "future_observations_exist": false,
+  "registry_bytes": 9801343,
+  "archived_body_storage_proxy": {
+    "bytes_raw": 1713318,
+    "bytes_gzip": 249115,
+    "sixty_days_bytes_gzip": 14946900,
+    "limitation": "Historical body-size proxy only; real detail responses may be larger."
+  },
+  "incremental_aws_usd": 0,
+  "github_visibility_read_only_verified": "PUBLIC",
+  "github_standard_runner_incremental_usd": 0,
+  "production_cohort_deployed": false,
+  "production_cohort_enabled": false,
+  "scheduled_cohort_run_verified": false
+}

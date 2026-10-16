@@ -46,6 +46,8 @@ jobs:
 
       - name: Collect snapshot
         id: collect
+        env:
+          HF_COHORT_ID: ${{ vars.HF_COHORT_ID }}
         run: |
           python -m collector ${{ inputs.date && format('--date {0}', inputs.date) || '' }}
         continue-on-error: true

@@ -1,0 +1,22 @@
+input/observations.csv
+.venv/
+__pycache__/
+scratch/
+reproduction/
+results/repository_features.csv
+results/interval_changes.csv
+# Publish only reproducibility evidence; execution logs stay local.
+evidence/*
+!evidence/validation.json
+!evidence/artifact-reconciliation.json
+!evidence/interval-preflight.json
+!evidence/linux-byte-comparison.json
+!evidence/reproducibility.json
+!evidence/silver-reconciliation.json
+!evidence/runtime.json
+!evidence/frozen-v1/
+evidence/frozen-v1/*
+!evidence/frozen-v1/tests/
+evidence/frozen-v1/tests/*
+!evidence/frozen-v1/tests/test_acceptance.py
+!evidence/frozen-v1/tests/COVERAGE.md

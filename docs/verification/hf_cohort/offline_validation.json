@@ -1,0 +1,9 @@
+{
+  "registry_sha256": "e737d834deb8ae4767578b9336452dc90954edd678bd2b553d73714ade77232f",
+  "reinitialization_byte_identical": true,
+  "membership_reproduced_from_embedded_candidates": true,
+  "candidate_digest_verified": true,
+  "input_files_hashes_verified": 138,
+  "unique_members": 1500,
+  "network_calls": 0
+}

@@ -4,6 +4,7 @@ Re-running is the normal case, not the exception. A leg that already reached
 `ok` is skipped without a single network call, which is what makes it safe to
 schedule the collector twice a day against the same snapshot date.
 """
+
 from __future__ import annotations
 
 import datetime as dt
@@ -12,9 +13,11 @@ from pathlib import Path
 
 from . import manifest as mf
 from . import paths
+from .cohort import instant, registry_path, validate_registry
 from .fetch import HttpClient
 from .sources import (
     arxiv,
+    hf_cohort,
     hf_inference_providers,
     hf_models,
     hf_new_models,
@@ -22,7 +25,7 @@ from .sources import (
     openrouter_models,
     openrouter_rankings,
 )
-from .storage import read_gzip, write_gzip
+from .storage import read_gzip, read_json, write_gzip
 
 
 def utc_today() -> str:
@@ -58,6 +61,7 @@ def collect(
     snapshot_date: str | None = None,
     http: HttpClient | None = None,
     now=utc_now,
+    cohort_id=None,
 ) -> dict:
     snapshot_date = snapshot_date or utc_today()
     http = http or HttpClient()
@@ -69,6 +73,10 @@ def collect(
     if manifest["status"] == mf.COMPLETE:
         # Nothing is written, not even a run entry: a no-op run must leave the
         # day byte-identical, or the twice-daily schedule would churn the repo.
+        return manifest
+
+    if path.exists() and snapshot_date != instant(now()).date().isoformat():
+        # Historical snapshots are immutable, including incomplete days.
         return manifest
 
     started_at = now()
@@ -88,6 +96,34 @@ def collect(
             manifest["legs"][leg] = module.collect(ctx, previous)
         else:
             manifest["legs"][leg] = module.collect(ctx)
+
+    if not mf.leg_done(manifest, "hf_cohort"):
+        if not cohort_id:
+            manifest["legs"]["hf_cohort"] = {
+                "status": mf.NOT_APPLICABLE,
+                "reason": "cohort disabled",
+            }
+        else:
+            try:
+                registry = read_json(registry_path(root, cohort_id))
+                validate_registry(registry)
+                if registry["cohort_id"] != cohort_id:
+                    raise ValueError("registry cohort_id differs from requested cohort_id")
+            except (FileNotFoundError, ValueError, KeyError, TypeError, AttributeError) as exc:
+                manifest["legs"]["hf_cohort"] = {
+                    "status": mf.PARTIAL,
+                    "failure_kind": "missing_registry"
+                    if isinstance(exc, FileNotFoundError)
+                    else "invalid_registry",
+                    "reason": (
+                        f"Initialize and commit cohort {cohort_id!r} "
+                        f"offline before collection: {exc}"
+                    ),
+                }
+            else:
+                manifest["legs"]["hf_cohort"] = hf_cohort.collect(
+                    ctx, manifest["legs"].get("hf_cohort", {}), registry
+                )
 
     manifest["runs"].append(
         {

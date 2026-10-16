@@ -5,6 +5,7 @@ not come back. A leg is `ok` only when every unit of work in it reached a
 terminal verdict: either stored, or a permanent failure written down. That is
 what lets a re-run skip it without pretending the missing rows were zeros.
 """
+
 from __future__ import annotations
 
 from pathlib import Path
@@ -15,6 +16,7 @@ from .storage import read_json, write_json
 SCHEMA_VERSION = 1
 
 LEGS = (
+    "hf_cohort",
     "openrouter_models",
     "openrouter_rankings",
     "hf_models",
@@ -25,7 +27,7 @@ LEGS = (
 )
 
 # Legs that walk a paginated list and report a `rows` count.
-LIST_LEGS = ("hf_top_models", "hf_new_models")
+LIST_LEGS = ("hf_cohort", "hf_top_models", "hf_new_models")
 
 OK = "ok"
 PARTIAL = "partial"
@@ -70,7 +72,12 @@ def load_or_empty(path: Path, snapshot_date: str) -> dict:
         else {"status": PENDING}
     )
     for leg in LEGS:
-        manifest.setdefault("legs", {}).setdefault(leg, dict(default))
+        manifest.setdefault("legs", {}).setdefault(
+            leg,
+            {"status": NOT_APPLICABLE, "reason": "cohort leg absent from original manifest"}
+            if leg == "hf_cohort"
+            else dict(default),
+        )
     return manifest
 
 
