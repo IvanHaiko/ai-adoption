@@ -21,8 +21,107 @@
       "status": "ok"
     },
     "hf_cohort": {
-      "activation_mode": "same_day_supplement",
-      "attempt_history": [],
+      "attempt_history": [
+        {
+          "attempted_at": "2026-10-16T13:03:01+00:00",
+          "attempts": 1,
+          "hf_id": "PSAISASasda/apeiron-1.0-lora",
+          "http_status": 200,
+          "measured_at": "2026-10-16T13:03:02+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "forever-ai/apeiron-1.0-lora"
+        },
+        {
+          "attempted_at": "2026-10-16T13:03:25+00:00",
+          "attempts": 1,
+          "hf_id": "SolenopsisCampo/Xing4.0-29B-A4B-GGUF",
+          "http_status": 200,
+          "measured_at": "2026-10-16T13:03:26+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "Venastine-Research/Xing4.0-29B-A4B-GGUF"
+        },
+        {
+          "attempted_at": "2026-10-16T13:04:15+00:00",
+          "attempts": 1,
+          "hf_id": "artnfull/connectailap-artnfull-v1",
+          "http_status": 200,
+          "measured_at": "2026-10-16T13:04:16+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "artnfull/connectailab-artnfull-v1"
+        },
+        {
+          "attempted_at": "2026-10-16T13:04:43+00:00",
+          "attempts": 1,
+          "hf_id": "cuong1692001/Terminal-complete_16k",
+          "http_status": 200,
+          "measured_at": "2026-10-16T13:04:44+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "cuong1692001/Terminal-complete-16k"
+        },
+        {
+          "attempted_at": "2026-10-16T13:05:14+00:00",
+          "attempts": 1,
+          "hf_id": "flash-texter-lora/flash-texter-lora",
+          "http_status": 200,
+          "measured_at": "2026-10-16T13:05:14+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "nanotechaicent/flash-texter-lora"
+        },
+        {
+          "attempted_at": "2026-10-16T13:05:38+00:00",
+          "attempts": 1,
+          "hf_id": "fyb1214/Huihui-Qwen3.8-27B-Abliterated-Ternary-Bonsai-NInfer",
+          "http_status": 200,
+          "measured_at": "2026-10-16T13:05:38+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "fyb1214/Huihui-Qwen3.8-27B-Abliterated-Ternary-Bonsai-2-NInfer"
+        },
+        {
+          "attempted_at": "2026-10-16T13:06:26+00:00",
+          "attempts": 1,
+          "hf_id": "jdominick05/Qwen3.8-27B-24GB-128k-GGUF",
+          "http_status": 200,
+          "measured_at": "2026-10-16T13:06:26+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "jdominick05/Qwen3.8-27B-24GB-262k-GGUF"
+        },
+        {
+          "attempted_at": "2026-10-16T13:06:42+00:00",
+          "attempts": 1,
+          "hf_id": "keepstar/Kali-Lite-8B",
+          "http_status": 200,
+          "measured_at": "2026-10-16T13:06:43+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "Kalicorp/Kali-Lite-8B"
+        },
+        {
+          "attempted_at": "2026-10-16T13:07:25+00:00",
+          "attempts": 1,
+          "hf_id": "mlemmlem4869/medical-title-qwen3-4b-chat-v1",
+          "http_status": 200,
+          "measured_at": "2026-10-16T13:07:26+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "hoagngn/medical-title-qwen3-4b-chat-v1"
+        },
+        {
+          "attempted_at": "2026-10-16T13:08:22+00:00",
+          "attempts": 1,
+          "hf_id": "regnant-io/kw5-v2-149m-base",
+          "http_status": 200,
+          "measured_at": "2026-10-16T13:08:23+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "regnant-io/kw5-149M"
+        },
+        {
+          "attempted_at": "2026-10-16T13:08:57+00:00",
+          "attempts": 1,
+          "hf_id": "suzu89/Xing4.0-29B-A4B-6bit-MLX",
+          "http_status": 200,
+          "measured_at": "2026-10-16T13:08:58+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "TokenAI-zer/Xing4.0-29B-A4B-6bit-MLX"
+        }
+      ],
       "bytes_raw": 9683792,
       "bytes_stored": 1132350,
       "cohort_id": "hf_lifecycle_20261015_v2",
@@ -319,101 +418,101 @@
       "requested": 1500,
       "retryable": [
         {
-          "attempted_at": "2026-10-16T13:03:01+00:00",
+          "attempted_at": "2026-10-16T16:40:49+00:00",
           "attempts": 1,
           "hf_id": "PSAISASasda/apeiron-1.0-lora",
           "http_status": 200,
-          "measured_at": "2026-10-16T13:03:02+00:00",
+          "measured_at": "2026-10-16T16:40:49+00:00",
           "reason": "identity_mismatch",
           "response_id": "forever-ai/apeiron-1.0-lora"
         },
         {
-          "attempted_at": "2026-10-16T13:03:25+00:00",
+          "attempted_at": "2026-10-16T16:40:49+00:00",
           "attempts": 1,
           "hf_id": "SolenopsisCampo/Xing4.0-29B-A4B-GGUF",
           "http_status": 200,
-          "measured_at": "2026-10-16T13:03:26+00:00",
+          "measured_at": "2026-10-16T16:40:50+00:00",
           "reason": "identity_mismatch",
           "response_id": "Venastine-Research/Xing4.0-29B-A4B-GGUF"
         },
         {
-          "attempted_at": "2026-10-16T13:04:15+00:00",
+          "attempted_at": "2026-10-16T16:40:50+00:00",
           "attempts": 1,
           "hf_id": "artnfull/connectailap-artnfull-v1",
           "http_status": 200,
-          "measured_at": "2026-10-16T13:04:16+00:00",
+          "measured_at": "2026-10-16T16:40:50+00:00",
           "reason": "identity_mismatch",
           "response_id": "artnfull/connectailab-artnfull-v1"
         },
         {
-          "attempted_at": "2026-10-16T13:04:43+00:00",
+          "attempted_at": "2026-10-16T16:40:50+00:00",
           "attempts": 1,
           "hf_id": "cuong1692001/Terminal-complete_16k",
           "http_status": 200,
-          "measured_at": "2026-10-16T13:04:44+00:00",
+          "measured_at": "2026-10-16T16:40:51+00:00",
           "reason": "identity_mismatch",
           "response_id": "cuong1692001/Terminal-complete-16k"
         },
         {
-          "attempted_at": "2026-10-16T13:05:14+00:00",
+          "attempted_at": "2026-10-16T16:40:51+00:00",
           "attempts": 1,
           "hf_id": "flash-texter-lora/flash-texter-lora",
           "http_status": 200,
-          "measured_at": "2026-10-16T13:05:14+00:00",
+          "measured_at": "2026-10-16T16:40:52+00:00",
           "reason": "identity_mismatch",
           "response_id": "nanotechaicent/flash-texter-lora"
         },
         {
-          "attempted_at": "2026-10-16T13:05:38+00:00",
+          "attempted_at": "2026-10-16T16:40:52+00:00",
           "attempts": 1,
           "hf_id": "fyb1214/Huihui-Qwen3.8-27B-Abliterated-Ternary-Bonsai-NInfer",
           "http_status": 200,
-          "measured_at": "2026-10-16T13:05:38+00:00",
+          "measured_at": "2026-10-16T16:40:53+00:00",
           "reason": "identity_mismatch",
           "response_id": "fyb1214/Huihui-Qwen3.8-27B-Abliterated-Ternary-Bonsai-2-NInfer"
         },
         {
-          "attempted_at": "2026-10-16T13:06:26+00:00",
+          "attempted_at": "2026-10-16T16:40:53+00:00",
           "attempts": 1,
           "hf_id": "jdominick05/Qwen3.8-27B-24GB-128k-GGUF",
           "http_status": 200,
-          "measured_at": "2026-10-16T13:06:26+00:00",
+          "measured_at": "2026-10-16T16:40:53+00:00",
           "reason": "identity_mismatch",
           "response_id": "jdominick05/Qwen3.8-27B-24GB-262k-GGUF"
         },
         {
-          "attempted_at": "2026-10-16T13:06:42+00:00",
+          "attempted_at": "2026-10-16T16:40:53+00:00",
           "attempts": 1,
           "hf_id": "keepstar/Kali-Lite-8B",
           "http_status": 200,
-          "measured_at": "2026-10-16T13:06:43+00:00",
+          "measured_at": "2026-10-16T16:40:54+00:00",
           "reason": "identity_mismatch",
           "response_id": "Kalicorp/Kali-Lite-8B"
         },
         {
-          "attempted_at": "2026-10-16T13:07:25+00:00",
+          "attempted_at": "2026-10-16T16:40:54+00:00",
           "attempts": 1,
           "hf_id": "mlemmlem4869/medical-title-qwen3-4b-chat-v1",
           "http_status": 200,
-          "measured_at": "2026-10-16T13:07:26+00:00",
+          "measured_at": "2026-10-16T16:40:55+00:00",
           "reason": "identity_mismatch",
           "response_id": "hoagngn/medical-title-qwen3-4b-chat-v1"
         },
         {
-          "attempted_at": "2026-10-16T13:08:22+00:00",
+          "attempted_at": "2026-10-16T16:40:55+00:00",
           "attempts": 1,
           "hf_id": "regnant-io/kw5-v2-149m-base",
           "http_status": 200,
-          "measured_at": "2026-10-16T13:08:23+00:00",
+          "measured_at": "2026-10-16T16:40:56+00:00",
           "reason": "identity_mismatch",
           "response_id": "regnant-io/kw5-149M"
         },
         {
-          "attempted_at": "2026-10-16T13:08:57+00:00",
+          "attempted_at": "2026-10-16T16:40:56+00:00",
           "attempts": 1,
           "hf_id": "suzu89/Xing4.0-29B-A4B-6bit-MLX",
           "http_status": 200,
-          "measured_at": "2026-10-16T13:08:58+00:00",
+          "measured_at": "2026-10-16T16:40:56+00:00",
           "reason": "identity_mismatch",
           "response_id": "TokenAI-zer/Xing4.0-29B-A4B-6bit-MLX"
         }
@@ -545,6 +644,11 @@
       "reason": "Cohort enabled after today's discovery-only snapshot completed; original discovery observations retained.",
       "run_kind": "same_day_cohort_supplement",
       "started_at": "2026-10-16T13:00:19+00:00"
+    },
+    {
+      "finished_at": "2026-10-16T16:40:56+00:00",
+      "http_calls": 11,
+      "started_at": "2026-10-16T16:40:49+00:00"
     }
   ],
   "schema_version": 1,
