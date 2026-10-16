@@ -1,0 +1,55 @@
+{
+  "cohort_id": "hf_lifecycle_20261015_v2",
+  "selection_version": 2,
+  "implementation_validation_date": "2026-10-15",
+  "checks": {
+    "targeted": {
+      "passed": 65,
+      "exit_code": 0
+    },
+    "regression": {
+      "passed": 199,
+      "exit_code": 0
+    },
+    "ruff": {
+      "exit_code": 0
+    }
+  },
+  "review": {
+    "kind": "automated independent read-only review",
+    "date": "2026-10-15",
+    "scope": "Implementation and v2 selection before documentation preparation",
+    "accepted": true,
+    "blockers": [],
+    "limit": "Reviewed supplied source, tests and registry snapshots; did not independently authenticate Git history or run file-writing tests."
+  },
+  "reproduction": {
+    "fresh_registry_byte_identical": true,
+    "works_with_crlf_source": true,
+    "raw_not_read_for_derivation": true,
+    "canonical_source_provenance_verified": true
+  },
+  "registries_sha256": {
+    "hf_lifecycle_20261014_v1": "e737d834deb8ae4767578b9336452dc90954edd678bd2b553d73714ade77232f",
+    "hf_lifecycle_20261015_v2": "24e984610dd9efb073d2dce686d70ca8360ddfb8b23ba7a957059ef596d4d077"
+  },
+  "deployment": {
+    "recommended_variable": "HF_COHORT_ID=hf_lifecycle_20261015_v2",
+    "scheduler_variable_cli_smoke": "passed with fake HTTP and actual v2 registry",
+    "pushed": false,
+    "merged": false,
+    "repository_variables_changed": false,
+    "live_collection_triggered": false,
+    "scheduled_v2_run_verified": false
+  },
+  "publication_validation": {
+    "date": "2026-10-16",
+    "regression_command": "python -m pytest -q --basetemp=.pytest_tmp/publication-verified",
+    "regression_passed": 199,
+    "regression_exit_code": 0,
+    "ruff_command": "python -m ruff check .",
+    "ruff_exit_code": 0,
+    "implementation_tests_registries_unchanged": true,
+    "fresh_v2_reproduction_byte_identical": true
+  }
+}

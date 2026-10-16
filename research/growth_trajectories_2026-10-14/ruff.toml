@@ -1,0 +1,2 @@
+extend = "../../pyproject.toml"
+exclude = ["evidence", "input", "results", "reproduction", ".venv"]

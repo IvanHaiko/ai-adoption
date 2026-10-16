@@ -1,0 +1,24 @@
+{
+  "original_validation_date": "2026-10-14",
+  "original_acceptance_passed": 9,
+  "original_project_regression_passed": 134,
+  "review": {
+    "kind": "automated independent read-only review",
+    "accepted": true,
+    "blockers": [],
+    "limit": "Supplied source, tables and figures reviewed; extraction and file-writing tests were supported by recorded runs rather than independently rerun."
+  },
+  "acceptance_source_sha256": "de2d57813b5c6f4360b1cbeba4b0b9f1641a0df7ac1be7c21f97a68a28ac6f25",
+  "publication_checks": {
+    "date": "2026-10-16",
+    "project_regressions_passed": 199,
+    "project_regressions_exit_code": 0,
+    "frozen_research_tests_passed": 9,
+    "frozen_research_tests_exit_code": 0,
+    "ruff_exit_code": 0,
+    "source_to_artifact_reconciliation": true,
+    "fresh_reproduced_files_byte_identical": 11,
+    "original_numerical_code_and_result_bytes_unchanged": true,
+    "historical_data_unchanged": true
+  }
+}

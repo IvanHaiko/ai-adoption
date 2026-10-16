@@ -70,20 +70,50 @@ deployments, or market share. Monotonicity and resets require observed history.
 
 All API requests require `Authorization: Bearer <token>` according to the
 [reference](https://replicate.com/docs/reference/http/). A live anonymous list
-request returned **401 Unauthenticated**. `REPLICATE_API_TOKEN` was absent in
-this environment. The documented rate limit for non-prediction endpoints is
+request returned **401 Unauthenticated** before the token was supplied. The
+documented rate limit for non-prediction endpoints is
 3,000 requests/minute, with HTTP 429 on throttling. The public
 [OpenAPI schema](https://replicate.com/docs/reference/openapi/) was accessible
 without a token, but it is no substitute for a representative live sample.
 
-**No Replicate catalogue was collected.** Public model count, page size,
-`run_count` availability and distribution, creation-date coverage, modality
-mix, explicit-link coverage, request count, storage, and daily runtime are
-therefore **unknown**, not zero. No Replicate Bronze/Silver leg or scheduler
-step is added before those measurements justify a scope. A later spike should
-sample the newest and a few older pages, measure explicit `weights_url`, HF URL,
-paper/arXiv and GitHub links separately, and decide whether a text-generation
-scope is reproducible. Do not use model-name similarity to inflate overlap.
+An authenticated bounded sample was completed later on 2026-10-01, after a
+token was supplied in the Windows user environment as `REPLICATE_API_TOKEN`.
+The script `python -m scripts.replicate_spike` requested three 25-model pages
+each from newest creation, oldest creation, and latest version order: **9
+calls, 225 rows, 191 distinct owner/name IDs**. Every stratum still advertised
+a next page, so the total public catalogue size is **unknown**. This is a
+deliberately biased sample, not a catalogue-wide rate. The exact public
+response bodies and request/fetch provenance are under
+`data/spikes/replicate/2026-10-01/`; the token is never written there.
+
+In the 191 distinct models, `run_count`, model `created_at`, and latest-version
+`created_at` were present in all 191. Observed `run_count` ranged from 1 to
+116,343,122 (median 6,559; 90th percentile 1,270,201). There were 26
+`weights_url` values, 16 pointing to HF repos, and only **3 exact IDs** already
+in this project's HF Silver universe. `paper_url` was populated for 75 models;
+40 were parseable arXiv URLs, none matching the project's current arXiv Silver
+universe. `github_url` was populated for 103. These are sample counts, not
+population estimates. Neither `run_count` monotonicity nor its daily increment
+can be tested from one observation.
+
+The [collections API](https://replicate.com/docs/reference/http/) returned a
+`language-models` collection of **44** models, all with `run_count`; 35 were
+marked official and only 6 had HF `weights_url` (5 matching project HF IDs).
+The raw collection response is preserved beside the sampled list pages. It includes closed models and
+is curated rather than an exhaustive text-generation or open-model filter.
+The public list has no task/modality field; names and descriptions do not make
+an auditable scope, while search is documented as beta. Nine calls took about
+48 seconds in this environment; their compressed raw sample was 2,593,471
+bytes, with one newest-created stratum dominating storage. A full-catalogue
+daily call/storage estimate cannot be justified without walking the entire
+catalogue, which this spike intentionally avoided.
+
+**Decision:** the API offers a potentially useful longitudinal platform run
+counter, but a reproducible open-model tracking universe and useful explicit
+overlap are not established. Keep the sampled source experimental; do not add
+Replicate Bronze/Silver or a daily scheduler leg yet. A later targeted design
+could track a fixed, explicitly HF-linked Replicate ID set, with a separate
+documented discovery method. Do not use model-name similarity to enlarge it.
 
 ## Time and missingness contract
 

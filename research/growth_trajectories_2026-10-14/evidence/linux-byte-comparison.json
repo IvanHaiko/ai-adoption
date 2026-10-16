@@ -1,0 +1,9 @@
+{
+  "summary.json": true,
+  "repository_features.csv": true,
+  "interval_changes.csv": true,
+  "cases.csv": true,
+  "case_observations.csv": true,
+  "REPORT.md": true,
+  "AUDIT.md": true
+}

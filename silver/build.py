@@ -22,14 +22,16 @@ from collector.storage import read_gzip, read_json, sha256
 ARXIV_ID = re.compile(r"^(?:[a-z-]+(?:\.[A-Z]{2})?/\d{7}|\d{4}\.\d{4,5})(?:v\d+)?$", re.I)
 ARXIV_TAG = re.compile(r"^arxiv:(.+)$", re.I)
 ARXIV_NS = {"o": "http://www.openarchives.org/OAI/2.0/", "a": "http://arxiv.org/OAI/arXiv/"}
-HF_LEGS = ("hf_models", "hf_top_models", "hf_new_models")
-PRECEDENCE = {"hf_models": 0, "hf_top_models": 1, "hf_new_models": 2}
+HF_LEGS = ("hf_models", "hf_top_models", "hf_new_models", "hf_cohort")
+PRECEDENCE = {"hf_models": 0, "hf_top_models": 1, "hf_new_models": 2, "hf_cohort": 3}
 
 SCHEMAS = {
     "hf_observations": [
         "snapshot_date",
         "fetched_at",
         "source_leg",
+        "cohort_id",
+        "discovery_sources_json",
         "hf_repo_id",
         "author",
         "created_at",
@@ -54,6 +56,8 @@ SCHEMAS = {
         "snapshot_date",
         "fetched_at",
         "source_leg",
+        "cohort_id",
+        "discovery_sources_json",
         "hf_repo_id",
         "author",
         "created_at",
@@ -159,13 +163,27 @@ SCHEMAS = {
         "openrouter_link_present",
     ],
     "hf_provider_model_observations": [
-        "snapshot_date", "fetched_at", "hf_repo_id", "provider_count",
-        "first_observed_provider_catalogue_date", "source_snapshot", "source_url",
+        "snapshot_date",
+        "fetched_at",
+        "hf_repo_id",
+        "provider_count",
+        "first_observed_provider_catalogue_date",
+        "source_snapshot",
+        "source_url",
     ],
     "hf_inference_provider_observations": [
-        "snapshot_date", "fetched_at", "hf_repo_id", "provider_name",
-        "provider_model_id", "task", "status", "first_seen_provider_date",
-        "source_snapshot", "source_url", "raw_mapping_json", "parser_version",
+        "snapshot_date",
+        "fetched_at",
+        "hf_repo_id",
+        "provider_name",
+        "provider_model_id",
+        "task",
+        "status",
+        "first_seen_provider_date",
+        "source_snapshot",
+        "source_url",
+        "raw_mapping_json",
+        "parser_version",
     ],
 }
 BOOLEAN_FIELDS = {
@@ -226,7 +244,7 @@ def _hf(day: str, leg: str, path: Path, errors: list) -> list[dict]:
     result = []
     for envelope in _jsonl(path):
         bodies = envelope.get("body")
-        if leg == "hf_models":
+        if leg in ("hf_models", "hf_cohort"):
             bodies = [bodies]
         if not isinstance(bodies, list):
             errors.append(f"{path}: body is not a list")
@@ -267,6 +285,8 @@ def _hf(day: str, leg: str, path: Path, errors: list) -> list[dict]:
                     "snapshot_date": day,
                     "fetched_at": iso(envelope.get("fetched_at"), errors, str(path)),
                     "source_leg": leg,
+                    "cohort_id": envelope.get("cohort_id"),
+                    "discovery_sources_json": json.dumps(envelope.get("discovery_sources", [])),
                     "hf_repo_id": repo_id,
                     "author": body.get("author") or repo_id.split("/")[0],
                     "created_at": iso(body.get("createdAt"), errors, str(path)),
@@ -282,7 +302,8 @@ def _hf(day: str, leg: str, path: Path, errors: list) -> list[dict]:
                     "arxiv_ids": json.dumps(arxiv_ids),
                     "tags_json": json.dumps(tags),
                     "source_snapshot": str(path.relative_to(path.parents[3])).replace("\\", "/"),
-                    "source_url": envelope.get("url")
+                    "source_url": envelope.get("source_url")
+                    or envelope.get("url")
                     or ("https://huggingface.co/api/models/" + repo_id),
                 }
             )
@@ -308,21 +329,28 @@ def _hf_providers(day: str, path: Path, errors: list) -> tuple[list[dict], list[
                 errors.append(f"{path}: {repo_id} has no provider mapping array")
                 continue
             common = {
-                "snapshot_date": day, "fetched_at": fetched, "hf_repo_id": repo_id,
-                "source_snapshot": source_path, "source_url": envelope.get("url"),
+                "snapshot_date": day,
+                "fetched_at": fetched,
+                "hf_repo_id": repo_id,
+                "source_snapshot": source_path,
+                "source_url": envelope.get("url"),
             }
             models.append(common | {"provider_count": len(mappings)})
             for mapping in mappings:
                 if not isinstance(mapping, dict) or not mapping.get("provider"):
                     errors.append(f"{path}: {repo_id} has malformed provider mapping")
                     continue
-                providers.append(common | {
-                    "provider_name": mapping["provider"],
-                    "provider_model_id": mapping.get("providerId"),
-                    "task": mapping.get("task"), "status": mapping.get("status"),
-                    "raw_mapping_json": json.dumps(mapping, sort_keys=True, ensure_ascii=False),
-                    "parser_version": "1",
-                })
+                providers.append(
+                    common
+                    | {
+                        "provider_name": mapping["provider"],
+                        "provider_model_id": mapping.get("providerId"),
+                        "task": mapping.get("task"),
+                        "status": mapping.get("status"),
+                        "raw_mapping_json": json.dumps(mapping, sort_keys=True, ensure_ascii=False),
+                        "parser_version": "1",
+                    }
+                )
     return models, providers
 
 
@@ -607,7 +635,11 @@ def build(root: Path, output: Path | None = None) -> dict:
         folder = root / "data" / "raw" / day
         manifest = read_json(folder / "_manifest.json")
         for leg in HF_LEGS:
-            if manifest.get("legs", {}).get(leg, {}).get("status") == "ok":
+            if (
+                manifest.get("legs", {}).get(leg, {}).get("status")
+                in (("ok", "partial") if leg == "hf_cohort" else ("ok",))
+                and (folder / (leg + ".jsonl.gz")).exists()
+            ):
                 hf.extend(_hf(day, leg, folder / (leg + ".jsonl.gz"), errors))
         rec = manifest.get("legs", {}).get("openrouter_models", {})
         if rec.get("status") == "ok":
@@ -663,9 +695,7 @@ def build(root: Path, output: Path | None = None) -> dict:
             row["snapshot_date"], first_provider.get(key, row["snapshot_date"])
         )
     for row in provider_observations:
-        row["first_seen_provider_date"] = first_provider[
-            (row["hf_repo_id"], row["provider_name"])
-        ]
+        row["first_seen_provider_date"] = first_provider[(row["hf_repo_id"], row["provider_name"])]
     # Detail endpoint wins over top list, which wins over newest list; one row per repo/day.
     canonical = {}
     for row in hf:
@@ -675,6 +705,11 @@ def build(root: Path, output: Path | None = None) -> dict:
             or PRECEDENCE[row["source_leg"]] < PRECEDENCE[canonical[key]["source_leg"]]
         ):
             canonical[key] = row
+    for row in hf:
+        if row.get("cohort_id"):
+            target = canonical[(row["snapshot_date"], row["hf_repo_id"])]
+            target["cohort_id"] = row["cohort_id"]
+            target["discovery_sources_json"] = row["discovery_sources_json"]
     repos = [canonical[key] for key in sorted(canonical)]
     platform = _links(
         router,
@@ -765,8 +800,7 @@ def build(root: Path, output: Path | None = None) -> dict:
         (x["snapshot_date"], x["hf_repo_id"]) for x in provider_models
     )
     provider_duplicates = Counter(
-        (x["snapshot_date"], x["hf_repo_id"], x["provider_name"])
-        for x in provider_observations
+        (x["snapshot_date"], x["hf_repo_id"], x["provider_name"]) for x in provider_observations
     )
     report = {
         "snapshot_days": len(days),

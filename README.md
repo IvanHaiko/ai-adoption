@@ -9,9 +9,16 @@ bulk pages captured 6,437 repositories and 6,583 mappings on the first day;
 missing models on later filtered lists will remain unconfirmed, not recorded as
 permanent removals. See [the API spike](docs/provider_sources_spike.md) and
 [provider expansion findings](OPEN_MODEL_LIFECYCLE_PROVIDER_EXPANSION_FINDINGS.md).
-Replicate requires an API token even to list public models; its sample gate has
-not yet been met, so no Replicate collector is scheduled. Existing Gold metrics
-are unchanged.
+Replicate requires an API token even to list public models. An authenticated
+bounded spike found sparse exact HF overlap and no exhaustive open-model scope,
+so no Replicate collector is scheduled yet. The repeatable spike command is
+`python -m scripts.replicate_spike --pages-per-sort 3` with
+`REPLICATE_API_TOKEN` in the environment; it saves public responses under
+`data/spikes/replicate/` without storing the token. Existing Gold metrics are
+unchanged.
+On Windows, an already-open shell can load the saved user variable with
+`$env:REPLICATE_API_TOKEN=[Environment]::GetEnvironmentVariable('REPLICATE_API_TOKEN','User')`
+before running the spike.
 
 ## Open Model Lifecycle: Bronze → Silver → Gold
 

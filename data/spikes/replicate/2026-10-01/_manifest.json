@@ -1,0 +1,43 @@
+{
+  "finished_at": "2026-10-01T08:07:03.366906+00:00",
+  "http_calls": 9,
+  "kind": "bounded_api_spike",
+  "pages_per_sort": 3,
+  "source": "replicate_models",
+  "started_at": "2026-10-01T08:06:15.465866+00:00",
+  "strata": {
+    "latest_version": {
+      "bytes_raw": 581334,
+      "bytes_stored": 113819,
+      "file": "latest_version.jsonl.gz",
+      "first_url": "https://api.replicate.com/v1/models?sort_by=latest_version_created_at&sort_direction=desc",
+      "has_next_after_sample": true,
+      "models": 75,
+      "pages": 3,
+      "sha256_raw": "7d8ffc6270be1b6ce8a9531b9f8b8a82fd52a28e0040e73c4658815047cc1629",
+      "status": "sampled"
+    },
+    "newest_created": {
+      "bytes_raw": 3596570,
+      "bytes_stored": 2361296,
+      "file": "newest_created.jsonl.gz",
+      "first_url": "https://api.replicate.com/v1/models?sort_by=model_created_at&sort_direction=desc",
+      "has_next_after_sample": true,
+      "models": 75,
+      "pages": 3,
+      "sha256_raw": "a35fb5b77dae9d4ace5dc5406ac7cd24b87739a8ef2f137acbaacbe9a44fea5e",
+      "status": "sampled"
+    },
+    "oldest_created": {
+      "bytes_raw": 626485,
+      "bytes_stored": 118356,
+      "file": "oldest_created.jsonl.gz",
+      "first_url": "https://api.replicate.com/v1/models?sort_by=model_created_at&sort_direction=asc",
+      "has_next_after_sample": true,
+      "models": 75,
+      "pages": 3,
+      "sha256_raw": "5cd21c123e83ecd688c1a41be1907e41d15365e5d5a849823257e46af0dedc8a",
+      "status": "sampled"
+    }
+  }
+}

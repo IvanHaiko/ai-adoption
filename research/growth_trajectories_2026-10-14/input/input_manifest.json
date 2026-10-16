@@ -1,0 +1,902 @@
+{
+  "cutoff": "2026-10-13",
+  "snapshot_days": [
+    "2026-08-28",
+    "2026-08-29",
+    "2026-08-30",
+    "2026-08-31",
+    "2026-09-01",
+    "2026-09-02",
+    "2026-09-03",
+    "2026-09-04",
+    "2026-09-05",
+    "2026-09-06",
+    "2026-09-07",
+    "2026-09-08",
+    "2026-09-09",
+    "2026-09-10",
+    "2026-09-11",
+    "2026-09-12",
+    "2026-09-13",
+    "2026-09-14",
+    "2026-09-15",
+    "2026-09-16",
+    "2026-09-17",
+    "2026-09-18",
+    "2026-09-19",
+    "2026-09-20",
+    "2026-09-21",
+    "2026-09-22",
+    "2026-09-23",
+    "2026-09-24",
+    "2026-09-25",
+    "2026-09-26",
+    "2026-09-27",
+    "2026-09-28",
+    "2026-09-29",
+    "2026-09-30",
+    "2026-10-01",
+    "2026-10-02",
+    "2026-10-03",
+    "2026-10-04",
+    "2026-10-05",
+    "2026-10-06",
+    "2026-10-07",
+    "2026-10-08",
+    "2026-10-09",
+    "2026-10-10",
+    "2026-10-11",
+    "2026-10-12",
+    "2026-10-13"
+  ],
+  "per_day": {
+    "2026-08-28": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 151
+      },
+      "canonical_rows": 151
+    },
+    "2026-08-29": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 150,
+        "hf_top_models": 5000
+      },
+      "canonical_rows": 5068
+    },
+    "2026-08-30": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 150,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7050
+    },
+    "2026-08-31": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 150,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7031
+    },
+    "2026-09-01": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 152,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7039
+    },
+    "2026-09-02": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 153,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7050
+    },
+    "2026-09-03": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 152,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7057
+    },
+    "2026-09-04": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 153,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7055
+    },
+    "2026-09-05": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 152,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7049
+    },
+    "2026-09-06": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 152,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7035
+    },
+    "2026-09-07": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 152,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7050
+    },
+    "2026-09-08": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 153,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7052
+    },
+    "2026-09-09": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 153,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7051
+    },
+    "2026-09-10": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 152,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7054
+    },
+    "2026-09-11": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 153,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7045
+    },
+    "2026-09-12": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 154,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7041
+    },
+    "2026-09-13": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 154,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7039
+    },
+    "2026-09-14": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 154,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7043
+    },
+    "2026-09-15": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 154,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7052
+    },
+    "2026-09-16": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 154,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7048
+    },
+    "2026-09-17": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 153,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7064
+    },
+    "2026-09-18": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 154,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7065
+    },
+    "2026-09-19": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 155,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7059
+    },
+    "2026-09-20": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 155,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7052
+    },
+    "2026-09-21": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 155,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7049
+    },
+    "2026-09-22": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 155,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7055
+    },
+    "2026-09-23": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 157,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7061
+    },
+    "2026-09-24": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 156,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7055
+    },
+    "2026-09-25": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 157,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7062
+    },
+    "2026-09-26": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 155,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7064
+    },
+    "2026-09-27": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 155,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7058
+    },
+    "2026-09-28": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 155,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7053
+    },
+    "2026-09-29": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 156,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7049
+    },
+    "2026-09-30": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 156,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7057
+    },
+    "2026-10-01": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 156,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7067
+    },
+    "2026-10-02": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 156,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7065
+    },
+    "2026-10-03": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 156,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7064
+    },
+    "2026-10-04": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 156,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7067
+    },
+    "2026-10-05": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 156,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7066
+    },
+    "2026-10-06": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 156,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7060
+    },
+    "2026-10-07": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 156,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7061
+    },
+    "2026-10-08": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 156,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7066
+    },
+    "2026-10-09": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 155,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7062
+    },
+    "2026-10-10": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 149,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7059
+    },
+    "2026-10-11": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 149,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7056
+    },
+    "2026-10-12": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 149,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7051
+    },
+    "2026-10-13": {
+      "manifest_status": "complete",
+      "legs": {
+        "hf_models": 149,
+        "hf_top_models": 5000,
+        "hf_new_models": 2000
+      },
+      "canonical_rows": 7054
+    }
+  },
+  "rows": 322661,
+  "repositories": 32986,
+  "source_leg_counts": {
+    "hf_models": 7221,
+    "hf_top_models": 226053,
+    "hf_new_models": 89387
+  },
+  "parser_errors": [],
+  "source_hashes": {
+    "data/raw/2026-08-28/_manifest.json": "15629cb9c0b4c9153b6a2bc21904234af7af963e667b3da8570c60633cc348cb",
+    "data/raw/2026-08-28/hf_models.jsonl.gz": "7e937b5be73542e0e2d79f467cc191ba2f6b0abb6774c705703b1aaf1fbfc296",
+    "data/raw/2026-08-28/openrouter_models.json.gz": "3977af570b7e42ece6672e7718fb5f48cb6b7e4b686b09e6399ee483950005c4",
+    "data/raw/2026-08-28/openrouter_rankings.html.gz": "cfed7e42cc3dfa57cfed7cc069a0279743c8d0017940d6bd36ba94012908b832",
+    "data/raw/2026-08-29/_manifest.json": "c990eaa27778bd7ba9cc264d1c94dd6e375b4c1faf2d27f74a768b0ed4bc7ea5",
+    "data/raw/2026-08-29/hf_models.jsonl.gz": "8d80129a687c4f10b8180783cd2b401dc592fda7eb6142dc2809d5e9d8fbd8b9",
+    "data/raw/2026-08-29/hf_top_models.jsonl.gz": "5d9d31be929735e9255cf189083a86450417b034d993f84ae8836baa707ddae8",
+    "data/raw/2026-08-29/openrouter_models.json.gz": "811cee7f6b69c70216299738881ea25af32a1d4f2d5ab62c1a717012238c4d73",
+    "data/raw/2026-08-29/openrouter_rankings.html.gz": "9897b0d923b2d6eb550ca1283718b1c9f3ec1485f16992c948cd65d62eeff2d5",
+    "data/raw/2026-08-30/_manifest.json": "f6fba34a701574d6b448b22e7d0921c5697c99cff5c88a09b361a549e5ba9970",
+    "data/raw/2026-08-30/hf_models.jsonl.gz": "d2a2770aec8373b3d73064d311b048c021e543b4052bc9fa1044dbb132344f8c",
+    "data/raw/2026-08-30/hf_new_models.jsonl.gz": "8c69f499b7b4239a5fdfeefd8e55a60218e87863e3c41a4eb082cc60231c13bf",
+    "data/raw/2026-08-30/hf_top_models.jsonl.gz": "3007a6f201198330b807d79e21443a4eb56cee6d5b1a40a7e54fdc07e39d2767",
+    "data/raw/2026-08-30/openrouter_models.json.gz": "ff444cfbd52a0bdb5f808dead828ef4196e99f53cb7432544dc049f0afe80d42",
+    "data/raw/2026-08-30/openrouter_rankings.html.gz": "f4f8bce17f3d0537f7ea7018295242444a6043018c239ed81b42d85b539e56a0",
+    "data/raw/2026-08-31/_manifest.json": "5d09adc3a7e22351d947dac30e77be9e4087e713deba2b18c21e37aabe405f92",
+    "data/raw/2026-08-31/hf_models.jsonl.gz": "f1c1f06c4e31f0bcc3c4326b61b8e8e3bcca89471ba9085c46a7854bed6cb040",
+    "data/raw/2026-08-31/hf_new_models.jsonl.gz": "a07b5ab5d32f8cefb20da5013d59f86767c7edf5651c796e09617f90e10e5a02",
+    "data/raw/2026-08-31/hf_top_models.jsonl.gz": "218403ee0bfd337798982cb22d9d7eb2f66fdd46a90de6002839da65400d04cb",
+    "data/raw/2026-08-31/openrouter_models.json.gz": "29ed7af0e7f5b61d232405c381ddde52ad1cc87ba7d6814603924187477428ea",
+    "data/raw/2026-08-31/openrouter_rankings.html.gz": "ae0cddca0a5974521b2a2a97eb8cab5c82fc614eadbfdf4fbfb9e6a5ccfd7d0f",
+    "data/raw/2026-09-01/_manifest.json": "93cba084c23a4ec76e447770209ef58c01b965deb957aa5aca22b3f3bc62417a",
+    "data/raw/2026-09-01/hf_models.jsonl.gz": "d49645b55445dbc169b8e8a6b58e94d4fd75bb6caf8b2df25db0ff415ea19ccd",
+    "data/raw/2026-09-01/hf_new_models.jsonl.gz": "9156f509dcad9adb39a15e225abb2b8096960f4f3958aaa66d615e31bd7f5abb",
+    "data/raw/2026-09-01/hf_top_models.jsonl.gz": "b334ac836e4e39706308745cf2c328bb41a08104cd4e686e67bbad38042da1c9",
+    "data/raw/2026-09-01/openrouter_models.json.gz": "22c99c982553fdc5e728fa13f7678944898f895a076015782860c1a1e1c29acd",
+    "data/raw/2026-09-01/openrouter_rankings.html.gz": "463c36ec1a559333d9a4ce4f481f8fe73216455f9fa5c4f9b107688eb2c8ef04",
+    "data/raw/2026-09-02/_manifest.json": "7e56ed2cad92618962aa7d8068cfc864ed9156b5bae81ab657c7035f0ca8aba2",
+    "data/raw/2026-09-02/hf_models.jsonl.gz": "277c74b976a6542db0c11cd35f0e3cf7186514849c4b1bbe4876aa8d13f523dc",
+    "data/raw/2026-09-02/hf_new_models.jsonl.gz": "3cceebcad2fbf36be06d340ff6635b35cde60602246552693ad2be75a032858d",
+    "data/raw/2026-09-02/hf_top_models.jsonl.gz": "6543a07528ac59ac154cfa3751b41cbc6bef679effabad22780fddb56ce15ac8",
+    "data/raw/2026-09-02/openrouter_models.json.gz": "0ef7d1af9df49ec11356d61ac4de974bf75a2723e60f10cb2f8c06125f087bb5",
+    "data/raw/2026-09-02/openrouter_rankings.html.gz": "871df6e1b76acb75a102c4191b45887ace0a23e47e0e040576a7c8efb5f32a17",
+    "data/raw/2026-09-03/_manifest.json": "8a32011aba54b16c263e35bcc608aa975cb1c242e453bc902c5ef34918395454",
+    "data/raw/2026-09-03/hf_models.jsonl.gz": "8e1d73a89e542eacd9ca638bdaba132a2e73d43919c5fcfc4f09b005623b7a88",
+    "data/raw/2026-09-03/hf_new_models.jsonl.gz": "cf6eae2bc08f5a2ea4497eab5c2ff0bcd0771e0dc419f66f18c1f39631bfe503",
+    "data/raw/2026-09-03/hf_top_models.jsonl.gz": "d9672d8fd34e2382f2fc2376db216e2f7bc999af173d72cc5f06b6323a050260",
+    "data/raw/2026-09-03/openrouter_models.json.gz": "f09cc9a1b84fe421783e07f8dd5003e8bece7b8a29602daf57fdd34105ef42ee",
+    "data/raw/2026-09-03/openrouter_rankings.html.gz": "f7da40607295a121d5c2b39a829061c0c5472221e3ddb48e92884dc3023138f9",
+    "data/raw/2026-09-04/_manifest.json": "81bbfbee4450f46bdd4022cd6f5faa84b7b5539e44a1004964ed7b582fb59ee2",
+    "data/raw/2026-09-04/hf_models.jsonl.gz": "6c7890783dbe5bb98700c55c3bc6dea5c29984fdb5d2f43aa2d97ca319c5effa",
+    "data/raw/2026-09-04/hf_new_models.jsonl.gz": "e794dad96d39656fa37c58437982dc263d674344aacc704ed8c5f5aa5bf99271",
+    "data/raw/2026-09-04/hf_top_models.jsonl.gz": "282bf29a48122e9eb8a46d5292374777d125af4355331de00834584b00606440",
+    "data/raw/2026-09-04/openrouter_models.json.gz": "fb11d35573316330b486307d11c04644a401dd7249fb42b4387ab98c651e0986",
+    "data/raw/2026-09-04/openrouter_rankings.html.gz": "041cb372307db74a967a89013df0c56979b5569fd0e53435c9c18fa88da0f6e4",
+    "data/raw/2026-09-05/_manifest.json": "e0ccfb8a08f512d90d32b8f6f641741ca75fe41c1bd24664410db63b8f62b1a8",
+    "data/raw/2026-09-05/hf_models.jsonl.gz": "d652a27c81a1cecdac4ee945c91825168882563b3b139928a9b22066b2a3a5d8",
+    "data/raw/2026-09-05/hf_new_models.jsonl.gz": "5ff58fb3743741054aa85e5224da31b557722752962a00b86483745eeddfb92b",
+    "data/raw/2026-09-05/hf_top_models.jsonl.gz": "0dc0e8e2ab1d101d86d43d72bb5bac6d11a75c02b798cac2cfa59386f711d176",
+    "data/raw/2026-09-05/openrouter_models.json.gz": "6611e1320454a1884266241a62a2d7d455bb84c90adcca466041254fab969489",
+    "data/raw/2026-09-05/openrouter_rankings.html.gz": "9e839a98bf21ec09d4de9bd7d98a8529f01673658db2baea248048d31e5e8161",
+    "data/raw/2026-09-06/_manifest.json": "76318bfc94090eb35645299aa23a35325348eb9d2596220522af56b66715ccd3",
+    "data/raw/2026-09-06/hf_models.jsonl.gz": "82e3f5862268d2cc8ddcfeaa6f1178e7bad2d56c6c0feffd5545c8df0428f564",
+    "data/raw/2026-09-06/hf_new_models.jsonl.gz": "549ca675bfba79426760fa83551e96932cf486e324633521fd51111218d72777",
+    "data/raw/2026-09-06/hf_top_models.jsonl.gz": "573afd01daefbb8e2f420261f6396190a5a77d4290dcf9fd48398db64742b7da",
+    "data/raw/2026-09-06/openrouter_models.json.gz": "2a5561e637734dbd8952e3477ad0320ea5270b27f2ef4b67258a946be5e8beb2",
+    "data/raw/2026-09-06/openrouter_rankings.html.gz": "fe285fe7ce4e2ca728ef6a3832f8dec16eec538480938a44a3e2930d9c4a2aa7",
+    "data/raw/2026-09-07/_manifest.json": "fbee80e58c72a5a72a3173d38711dab8bab939f1f6cce187c367c5d65d019ef9",
+    "data/raw/2026-09-07/hf_models.jsonl.gz": "13264952d778557a4f45d88c2576b2df597b1fdb6f263e15b31a32f86fbf5560",
+    "data/raw/2026-09-07/hf_new_models.jsonl.gz": "f0e0697eddbe4c262c0b1c9f1614039b1e770c002672276ab7b024d3d2dfe0e0",
+    "data/raw/2026-09-07/hf_top_models.jsonl.gz": "cc4a2afebe66a74698596e48dafbb89fe753d6938a2330339402900867f34391",
+    "data/raw/2026-09-07/openrouter_models.json.gz": "07b4bfb151dcad6d918c940dd8518b24a164307e460b6ab7b817571a586bb0be",
+    "data/raw/2026-09-07/openrouter_rankings.html.gz": "b839a36e76a3ba7bcc521c5e47e25611047f672fbe0996f5db1c61ae5e044d70",
+    "data/raw/2026-09-08/_manifest.json": "e55579ef289582e9cde102d3f6de477938979a63e723e5ead4f2b8e9d6b0725f",
+    "data/raw/2026-09-08/hf_models.jsonl.gz": "fd0020fe5b0b3b185365afc18f80aa3b613cec0439f2ffa73602af27779c8b93",
+    "data/raw/2026-09-08/hf_new_models.jsonl.gz": "c2483ba6a7405f1ddbf604a80513ad9c6e9253018de677593c9e379a2dac930b",
+    "data/raw/2026-09-08/hf_top_models.jsonl.gz": "5f85157adee3159d057fa2013324113402644314a63eceed451dc09050920166",
+    "data/raw/2026-09-08/openrouter_models.json.gz": "391e1ff8f269378b0f10d5e127c6ad2f980f062ff4bd108f0b51e09c55ba1843",
+    "data/raw/2026-09-08/openrouter_rankings.html.gz": "9645729de776b720deae3576f238860711122b8c2137b99c49ef20f32f693626",
+    "data/raw/2026-09-09/_manifest.json": "6ce7c01e8e0759dea4b41e60c2964a6943ec908f63981cbf10886c8c961f7172",
+    "data/raw/2026-09-09/hf_models.jsonl.gz": "5df01e7128b77f0b516bb60a5744a55f529631b8c19b814432df2a4dc63577af",
+    "data/raw/2026-09-09/hf_new_models.jsonl.gz": "0f9a8f361a641312b52af4f52676363bba08a96d5a28bc358a03c4757f5cf0e8",
+    "data/raw/2026-09-09/hf_top_models.jsonl.gz": "f19eb1a4a10c92e9aa25ece7b26600addf66f532729d9ad78b7154c72821bf0b",
+    "data/raw/2026-09-09/openrouter_models.json.gz": "4fe6cbb9c8a3aa890aa9919f2e57ba00121be3b81503706ada90d4fe3a4d5f91",
+    "data/raw/2026-09-09/openrouter_rankings.html.gz": "820c507e8f029eba79886e62944bf51ed62616b3cf42ea1cdb61095052c0fc41",
+    "data/raw/2026-09-10/_manifest.json": "3aef259628aa612d771f8d05de6e90a70fd0e7a9658537786f4a55ce05f5f3e7",
+    "data/raw/2026-09-10/hf_models.jsonl.gz": "56f4ff3ab7cd488760f22530a0ada36a8f6ffa6dfc138ff604286c1c08b3fc56",
+    "data/raw/2026-09-10/hf_new_models.jsonl.gz": "1e4d026840a12a3b93eaa1a95f8708f7c470caaad1366b82302cbab383d9014a",
+    "data/raw/2026-09-10/hf_top_models.jsonl.gz": "35ce472048191ba5b0e652bf4a05d45629385b5e1f0815ef753ebe2e44811831",
+    "data/raw/2026-09-10/openrouter_models.json.gz": "80e2e76de1e048ccff7075fa545d48cea6d06da38414606a86fead4d13d8a55f",
+    "data/raw/2026-09-10/openrouter_rankings.html.gz": "f1b5690a673749cc61cfdbea39874762df2dc04f99dc478f500385aa10aa49d3",
+    "data/raw/2026-09-11/_manifest.json": "aed1714da4954f8e1fe3d20df17ea269e730d33e81fb83eeb252136dc6301deb",
+    "data/raw/2026-09-11/hf_models.jsonl.gz": "4e012edd417c075a1fc52c509dc0b58bdc12ee7072a9937232b97a14810c4b48",
+    "data/raw/2026-09-11/hf_new_models.jsonl.gz": "bd674a922b63e4e21ac8f47d5a0af798768cdd2c5e99b4c07f6c15bd538a6511",
+    "data/raw/2026-09-11/hf_top_models.jsonl.gz": "ec8f1bf13ad58fa7f028d2c29978097525ff8986370e44364d5223de98fe564e",
+    "data/raw/2026-09-11/openrouter_models.json.gz": "be9e35fa93433a7e035ee5843648544dcfbbac5907f3b58d0d05c8d4115888bf",
+    "data/raw/2026-09-11/openrouter_rankings.html.gz": "379e483f5a93c286d28b88e04cba7a16c18d024ea82293d4bd29aed18ba39b52",
+    "data/raw/2026-09-12/_manifest.json": "a848e7543cfc6549e12ff1cd56a2b3feeb1bcf1b22529723444d6f04ea1c5a50",
+    "data/raw/2026-09-12/hf_models.jsonl.gz": "3a71bb4256f2fb5ff3da1fd8240e53d4428c5822bd4dd9416c513b21b8f30374",
+    "data/raw/2026-09-12/hf_new_models.jsonl.gz": "cd4131046768955621d4e76a21d6613f404cf5ad262e214dfafed5de893e4bd4",
+    "data/raw/2026-09-12/hf_top_models.jsonl.gz": "355928e184e32a009cd28b365e6e0a67aaf9599b5697b252a0105f3e54093b2e",
+    "data/raw/2026-09-12/openrouter_models.json.gz": "9635cf9f0d2b5f8ba3e8b57d3aa4c3df54a109ce8ec1e9cf45be8edabe53ad21",
+    "data/raw/2026-09-12/openrouter_rankings.html.gz": "f6f056decbb5e10e63eb49eb0b34a3a11478b9a31c14a7eae9b2492564e8cea2",
+    "data/raw/2026-09-13/_manifest.json": "62079fc6e84d16407924da786b61f004ab4affb43f551af5cea3d4de25e5fe4c",
+    "data/raw/2026-09-13/hf_models.jsonl.gz": "41333b28ab04bd248b2e0e02245c89e1a8a631d0c41122b18d0546efa35fdb91",
+    "data/raw/2026-09-13/hf_new_models.jsonl.gz": "591593e4621534bf5cf518d9f6556620b5a21b79092ca98b9abcb2aa68e9a898",
+    "data/raw/2026-09-13/hf_top_models.jsonl.gz": "28136c4022984b29be9d16bb0b81baa8539a6c1bf4cbdbc0599ef3e8f23b5955",
+    "data/raw/2026-09-13/openrouter_models.json.gz": "2346a5750b55cf1ff783b492a59d04be3b8f7a424770c7ac298c9347177d84f4",
+    "data/raw/2026-09-13/openrouter_rankings.html.gz": "6b44d6657a0e0b30950c3b6f0606722dda534ab0b4854c2f5e548678911ec5d0",
+    "data/raw/2026-09-14/_manifest.json": "e5bda053dfbc632d0fa70aefe20e7ebaebe519fa4dcfc6b63a79922aaadf97a6",
+    "data/raw/2026-09-14/hf_models.jsonl.gz": "dcbeaee081dcc8a3233df83bd3723e73f2c239abbe9a8f3f8f75d10de19aa935",
+    "data/raw/2026-09-14/hf_new_models.jsonl.gz": "a3cf792bbeedaaa6ecd879b499c0d62c86020f4d8b1f8c311cf55457aa26c9a6",
+    "data/raw/2026-09-14/hf_top_models.jsonl.gz": "5ed21c75bc76ec07edb98b8146eb56f780fc8668d07b59dee3665f366015bd0c",
+    "data/raw/2026-09-14/openrouter_models.json.gz": "d71a8681d7527df25e76fa6406505505dc9038547ccd21c0235e7a063ab6fb47",
+    "data/raw/2026-09-14/openrouter_rankings.html.gz": "6591b6b312979ca77b0fe90d18ad158e75e67f1697276ac2736b0ebaa0659cbb",
+    "data/raw/2026-09-15/_manifest.json": "c9bf0abe5576f6c1ce24a900ab1392b6a49404244f04f1ceb1cb4e839868fcea",
+    "data/raw/2026-09-15/hf_models.jsonl.gz": "5f6076f94992c5038159c0d94863c8b0f2abb908b59277d246d77947c0f2d0ff",
+    "data/raw/2026-09-15/hf_new_models.jsonl.gz": "bc0ef98c85b3250e057ddd6d8fd11b470bde6b90b6f3f001afb329760efa0042",
+    "data/raw/2026-09-15/hf_top_models.jsonl.gz": "fd8a43c2f66ab4ae9a45ee1c4c2d5d21647fff47d082199b4f01a821281c585c",
+    "data/raw/2026-09-15/openrouter_models.json.gz": "d81ec78fc85deb018761b58232ca2ff1994e38528ccc01539d3e59e6ab0069ef",
+    "data/raw/2026-09-15/openrouter_rankings.html.gz": "0fc0c51e9548636b033e1f376ea20805b0a63266204e3e4781cc098702b8f488",
+    "data/raw/2026-09-16/_manifest.json": "3aa5fd2aba4aed3c7436fa6f48d74167807f9a0da27c1fb20ff3545e9fe294e7",
+    "data/raw/2026-09-16/hf_models.jsonl.gz": "d28c3aa6d57986aebb3525210e1d3d2bfffca7b2d5ad4651c8e96a08dcc4005f",
+    "data/raw/2026-09-16/hf_new_models.jsonl.gz": "bf1d778d0ea0db6c1c239b694de9f72015d70ed48dc8749e744223c7580900c2",
+    "data/raw/2026-09-16/hf_top_models.jsonl.gz": "ad4c8131c58e6d968810eeb954c21633ca7869dc0656e27426fe78b13e674bb0",
+    "data/raw/2026-09-16/openrouter_models.json.gz": "abeddc347b9afc821d0a7a3a92f3612fdd966f5677ba23729ed3ecde744706d4",
+    "data/raw/2026-09-16/openrouter_rankings.html.gz": "3c03cb5879e72711f6cab1f4d552cc63c331967d408e84e34b0d11b0d6edf34c",
+    "data/raw/2026-09-17/_manifest.json": "447fa47b5aaf44cfe1487b3b7d76ba014ce26a6385fba83d3a9479b9a5058e02",
+    "data/raw/2026-09-17/hf_models.jsonl.gz": "b8f7e3cfdeb940ff5c31dab0150cc79a4863a92ce81d86bd6df168351a41ec0e",
+    "data/raw/2026-09-17/hf_new_models.jsonl.gz": "823a9a31e336bb48296b7f15146a91119c548a8dcc7655d3ad48b8154f21edf5",
+    "data/raw/2026-09-17/hf_top_models.jsonl.gz": "ce82b8f46bf8c000a2ce246916524bf9463ba012902b235ab8c05e0714178ab3",
+    "data/raw/2026-09-17/openrouter_models.json.gz": "664318e40b0665e04f315e3c2a6682d5ceab9d58b62b1b8d67f5b250221a2b0a",
+    "data/raw/2026-09-17/openrouter_rankings.html.gz": "dacfd2f38c2d9a38b2c2373082ce06e7e6bb8a9bd267fc60214976402e8bac4b",
+    "data/raw/2026-09-18/_manifest.json": "5a4f75eaf338dd084abc3736072a7e241cbe25b6f3df8574f9ebb6c4027870f3",
+    "data/raw/2026-09-18/hf_models.jsonl.gz": "61f85dd017183b8f2d0aa9fe318b3741452463b9d4e9f2b996433293bfdad18a",
+    "data/raw/2026-09-18/hf_new_models.jsonl.gz": "de5cb84851b7f1f35b351f8e08e82bb836be1231b4b4f330e0f75431e9f0e89f",
+    "data/raw/2026-09-18/hf_top_models.jsonl.gz": "bef0e1b2f5729aeb0a4063e9c88e9fa110bdce4104f68e85187ea1dc0ddbc2e7",
+    "data/raw/2026-09-18/openrouter_models.json.gz": "872658bbf73682a852a682da2c79de9ce586263ae0568132dc3b1ef0573d3417",
+    "data/raw/2026-09-18/openrouter_rankings.html.gz": "dab18ff0e118853011b401ff16cea8a8c64623bd630ebe16b2c2c67087a5d767",
+    "data/raw/2026-09-19/_manifest.json": "132f6e2711e9e8618bd1a0cfb793bf690852437dd399c70cee169c483809ebcc",
+    "data/raw/2026-09-19/hf_models.jsonl.gz": "ca3ee8aeb6a4cd280235df6344093b807d51ef1346bbde0a042c83342759e6ef",
+    "data/raw/2026-09-19/hf_new_models.jsonl.gz": "acf121ca2fca95561c43ec85237393a7d01b31d17cdad3bf5a47acafc43a5b7b",
+    "data/raw/2026-09-19/hf_top_models.jsonl.gz": "530c93f7aea9811be21da9651b8509e3b8334e70f13deae931a5c40972a46c6d",
+    "data/raw/2026-09-19/openrouter_models.json.gz": "2088b697b5e38f93360eec30c7b35b68d38b85f0a72b3a7d067a5820aff8cf83",
+    "data/raw/2026-09-19/openrouter_rankings.html.gz": "5fa4f5ac0cd0f52e3d0a494859cff42789bb6062a70779566d276edcb7a6fda6",
+    "data/raw/2026-09-20/_manifest.json": "c56a8a14cd542fad90a00e457e1ea2269d67a082d994d9b2e4e660460a74c9f1",
+    "data/raw/2026-09-20/hf_models.jsonl.gz": "ecacea2314bbfa68653088d24d79c27213e872efb350c3cd46ffb5d401d6432d",
+    "data/raw/2026-09-20/hf_new_models.jsonl.gz": "45bad92d634e336ac6a1f44b0d963cebf8376885c0ca3de3c0bcd3d786ba1004",
+    "data/raw/2026-09-20/hf_top_models.jsonl.gz": "c0f332839a9905a9d3dce9cb2ee3c01089d5e491163751ed55fc54d2835eaef6",
+    "data/raw/2026-09-20/openrouter_models.json.gz": "314f621d6e55e539195869f98fbfda51914de471293ec5a0e3575c047b039ebe",
+    "data/raw/2026-09-20/openrouter_rankings.html.gz": "5e451b4cb94fd47bea0fc3f6fa4bf5c189138d5ce8e260799cfa5ca14b09c1ac",
+    "data/raw/2026-09-21/_manifest.json": "3692a36560c21c898417368e9867dcf97369fffdbf7c2a4255948a5d9eeef640",
+    "data/raw/2026-09-21/hf_models.jsonl.gz": "0cc10a8471e867c142415454f08c2990c82f4d3f6523b172f35c529ecd69125e",
+    "data/raw/2026-09-21/hf_new_models.jsonl.gz": "8aec9704920fe1f6c300e9fc2d374b8d38d66c35011ceba096d23b087468dfb5",
+    "data/raw/2026-09-21/hf_top_models.jsonl.gz": "a9f8bfa037e208b3f307a7addcf44a0e42d2ba3bb344f6f03dfe46ed2ff50382",
+    "data/raw/2026-09-21/openrouter_models.json.gz": "3f6fc50c9395926b3896158f032ddf7887bc4ce3be9ffe05e999e5f50ea2aa08",
+    "data/raw/2026-09-21/openrouter_rankings.html.gz": "3130dcb06b9490bb6f2d0cc5f16f639e646dce78cc1c891eae2212c2178eeae7",
+    "data/raw/2026-09-22/_manifest.json": "842306a7346ac7acacf815416a9142a620835eb85d08849f930a35d7ffe59711",
+    "data/raw/2026-09-22/hf_models.jsonl.gz": "0362ff8e625b27ade766576f357771a1cac08d1ec47897cfc31a911d52b269e5",
+    "data/raw/2026-09-22/hf_new_models.jsonl.gz": "038010a994361d7efe836edbf07a974bea68b00fe9fc93251b91b3d2fe57245e",
+    "data/raw/2026-09-22/hf_top_models.jsonl.gz": "b44b1ba47c5b182632b3f53e993b47b405dab53a0af968114925d2c7bfcad2a3",
+    "data/raw/2026-09-22/openrouter_models.json.gz": "540f9bdcbae08e65a8ae097242b302070de5197fcbe452699561be7882cd993a",
+    "data/raw/2026-09-22/openrouter_rankings.html.gz": "4a2d025545745144b4f5460e3563dcd2ef84fea150a6b269decbb420f9b77e4a",
+    "data/raw/2026-09-23/_manifest.json": "92b71d040376f43b22c8e1a5b66724e9da711ecf313166207e76357e4900dcd1",
+    "data/raw/2026-09-23/hf_models.jsonl.gz": "1a0846ab334b6af32ff2e107ee15be7d070ff382050c93d88a360ab8b2860b92",
+    "data/raw/2026-09-23/hf_new_models.jsonl.gz": "16c8fda62ce8a25035b3cfcbd8892a983abb3358631a83028f9f7d6d73493a7c",
+    "data/raw/2026-09-23/hf_top_models.jsonl.gz": "fd5735573b95492516405effcdba4a4bbfad7a8471c1cb652c7dfe4675cce1cd",
+    "data/raw/2026-09-23/openrouter_models.json.gz": "2b83b77852e8f987b2361a147dcf15509b58ab80ddfaef81e73773b6dd827776",
+    "data/raw/2026-09-23/openrouter_rankings.html.gz": "4f8324bd559599570b85219422c9e5f1e9485ec553ff4a2047f51a852d8f8088",
+    "data/raw/2026-09-24/_manifest.json": "baec87e36787ac62c5da3750c2241f4e0e47a6a72711a0f32f05d9dd5729e8b9",
+    "data/raw/2026-09-24/hf_models.jsonl.gz": "2c15e4c7cfad0cf1fb97375a6b55f3660af47ba9a738b94ab27ae6fb2f291ce7",
+    "data/raw/2026-09-24/hf_new_models.jsonl.gz": "c1a5fabde79d0923d3505aa86e80d55ec5083e3ce3ec402a277d68b24779036a",
+    "data/raw/2026-09-24/hf_top_models.jsonl.gz": "e86f1ff0e1fd935cf080f66fb79f3c7b4f52546e7331dfaac6bacdcf24a06dca",
+    "data/raw/2026-09-24/openrouter_models.json.gz": "c692773adbfa18dd4165b78b253854bed68e019cc6ba578ce65fabd36e53281d",
+    "data/raw/2026-09-24/openrouter_rankings.html.gz": "66b934f40dc6d39942310c8c8ebd3440c598b5810c45a9c075279edcb53af41f",
+    "data/raw/2026-09-25/_manifest.json": "1e1e337d32c24e1e4d9f0ee13fa8b6b951f3aef559cab6341b5c284fd4c1372a",
+    "data/raw/2026-09-25/hf_models.jsonl.gz": "f7296d28a31a95d51395cd96c118fff0cbc659384ef2c9689e3fb0a543a628ce",
+    "data/raw/2026-09-25/hf_new_models.jsonl.gz": "09b37058741a9c341a00179c4d4356a28cdd89fa485a46412d9438c9cf5d8727",
+    "data/raw/2026-09-25/hf_top_models.jsonl.gz": "719a812a71560344cba0afcf4d7e960db0f8020c5b73812998c4fd395156bed6",
+    "data/raw/2026-09-25/openrouter_models.json.gz": "2c6a4d9accdde45054718816d1ad60bcbfdc168d5c8a2b626f759a69dd774194",
+    "data/raw/2026-09-25/openrouter_rankings.html.gz": "8b8b944ddd0d0bcd576686f5ea1e29992e7215fdb75b616489c02c72655c3370",
+    "data/raw/2026-09-26/_manifest.json": "075424ab3c084ef0d153540e7e442b39a07a1012a90a081303fe41110b748569",
+    "data/raw/2026-09-26/hf_models.jsonl.gz": "62cc787b5623e1677e8ec9ed85a4403020b1599b12dfb58b40698c901c96ad24",
+    "data/raw/2026-09-26/hf_new_models.jsonl.gz": "7d65500721dd0525b2a61077b3173fe84f5f1e61160a1c8c147602e49a5cb9da",
+    "data/raw/2026-09-26/hf_top_models.jsonl.gz": "9e305130df774175e73c74ff6d855cbc55416a0cf40528e8cc1b2401b9d066f0",
+    "data/raw/2026-09-26/openrouter_models.json.gz": "003cd2a03e3895a8faff3bf8e8cf4837c571d0e564086ff754e9b7dfdb108d6f",
+    "data/raw/2026-09-26/openrouter_rankings.html.gz": "711b58ac6cf23bb3ee5a0c2fcb7bb80db306936af8402d6289a77473da5fb59e",
+    "data/raw/2026-09-27/_manifest.json": "2f01df74a02246b9f5939b2d0c236bf9984826fba80eae2466dfbd42b6943b51",
+    "data/raw/2026-09-27/hf_models.jsonl.gz": "05defead53892ba04c72bcebe219035da9fefe9e0f9cee6f53671983edc4c31a",
+    "data/raw/2026-09-27/hf_new_models.jsonl.gz": "7757a55c022df145b654c3329112770064d494477c5b116aa1dd4a7ea6de4fd1",
+    "data/raw/2026-09-27/hf_top_models.jsonl.gz": "88b95a9b0507d8a50d4ea66d4a9823fc1b8a77a6e9c43fe8a6ae57e371852d0f",
+    "data/raw/2026-09-27/openrouter_models.json.gz": "ef71e41f0026a6586d5a827f71a4148987c810d911c4184881f2b3b68e8391dc",
+    "data/raw/2026-09-27/openrouter_rankings.html.gz": "3b088a5720b875e2432c35c5c1d8cd7dc85dfb323585c11f78fa2d4ba7d813b0",
+    "data/raw/2026-09-28/_manifest.json": "9cc74bbf4b42876a8abd62103a201463d716f3abc0f3b093d6dcc4a70c3b0b67",
+    "data/raw/2026-09-28/hf_models.jsonl.gz": "8c1d0e0691c0baa5fd0d49c8ac688d3b6f66ce205e6f878d009e34340b1783ac",
+    "data/raw/2026-09-28/hf_new_models.jsonl.gz": "3da0eab77c3e215d111c034e2eaefe76f0c996dac5d7bd662580c3c6c091f54a",
+    "data/raw/2026-09-28/hf_top_models.jsonl.gz": "0adb6f4b1025d65a1a02c71a33c24dc0debedd8fbf83ebcac94d2533cf7bf01a",
+    "data/raw/2026-09-28/openrouter_models.json.gz": "9c53a598492db0ac25cfa88d02a3ec22becb933554a90948d97e525fe5221d0f",
+    "data/raw/2026-09-28/openrouter_rankings.html.gz": "c38a2af07305311fc8fffc93019883d895efbc41df9eefd91428360deb2b6429",
+    "data/raw/2026-09-29/_manifest.json": "0531f70edce0ab7cc009ed294fda8c96d3bf7d3be2fb9ea6830f137c81802b46",
+    "data/raw/2026-09-29/hf_models.jsonl.gz": "f64f8c7d9c9f9743c47417e5b606dcf840522a202772077cc5e82cf8026da650",
+    "data/raw/2026-09-29/hf_new_models.jsonl.gz": "35b736ae65f263a220a09999a0e928000a312e247021e3b2a3080d6ad0e29bda",
+    "data/raw/2026-09-29/hf_top_models.jsonl.gz": "58143fd452dcb259270490f1c5dffd7f7ac928752078e8fcfe400104a10ff23d",
+    "data/raw/2026-09-29/openrouter_models.json.gz": "1b3c5add4750f36d8dc7aaf84d84942ae27ade96a9edb64a6e82c3891693a2fe",
+    "data/raw/2026-09-29/openrouter_rankings.html.gz": "7841dd2279c9f6b2fe4564da9b006c8ba389bd053b1face755323310b4203e2d",
+    "data/raw/2026-09-30/_manifest.json": "f0d113e534ffb37a3360a094c2a976569ddf3ce0d49e5bdfb2251834157ef651",
+    "data/raw/2026-09-30/hf_models.jsonl.gz": "6894229f738b59bcd43d16eba7737a2b9cf763beb63a54882a6ce05e65a1a7aa",
+    "data/raw/2026-09-30/hf_new_models.jsonl.gz": "5175ca67ff26eea756d6557dbc016fcf25a720f633e1cb79d0e147b2a0057bcf",
+    "data/raw/2026-09-30/hf_top_models.jsonl.gz": "54200ea2ec81c27dd1b3f696c2a2106e7fc20a97f39215a9e3e0523bae3e18c3",
+    "data/raw/2026-09-30/openrouter_models.json.gz": "b334a18dccbbfe15f604e9a66087c8d78edf23eb1d1df5162ea79719eaeb5b18",
+    "data/raw/2026-09-30/openrouter_rankings.html.gz": "3e7b02fc7dd597ab12af5af7b8a8398b89496c658db001f7d1ea46bfc6d73f85",
+    "data/raw/2026-10-01/_manifest.json": "868b8c8dfe90c7b1c627b2fbf04a592428f130286f16e2a5087b2d35e7a82e05",
+    "data/raw/2026-10-01/arxiv.jsonl.gz": "e4ab123a82540c1962660fa7fe1a2a6aff2746b3cd27ae4202791847337fa6ff",
+    "data/raw/2026-10-01/hf_inference_providers.jsonl.gz": "689e1579f01c5ed076a10f4d81bd8421bf4e6eb0393a0b69aef63286b05770a7",
+    "data/raw/2026-10-01/hf_models.jsonl.gz": "f20a7514e77d51ea45992857d709828998b6395bca4ebbd500a273c01979873d",
+    "data/raw/2026-10-01/hf_new_models.jsonl.gz": "1e85e37fb4b290b72c6cd5b737649b5e97fa438ef48dee09d2c895532b8f90be",
+    "data/raw/2026-10-01/hf_top_models.jsonl.gz": "5f7622fe34dad3913962dd87aeeeb76c1b21f3da91d81f0667b7a1223b840e0a",
+    "data/raw/2026-10-01/openrouter_models.json.gz": "ae10e43d8be61299ee890796dafde06ccb53afbc563dcf167173f2483fec2f55",
+    "data/raw/2026-10-01/openrouter_rankings.html.gz": "0444b1d6a6803786ce95bdb43ea31ca76ee5301b3e71a9fd8bb52ceb3490152b",
+    "data/raw/2026-10-02/_manifest.json": "f500ea13371ff0dc4f4e0efedca7ff9e966f30ef6fcbb96a7fbdc8238fdbc7b8",
+    "data/raw/2026-10-02/arxiv.jsonl.gz": "af041973a4893e3a9a180903d2cd4cd32287e9871408bf5641ae24e34eaf7946",
+    "data/raw/2026-10-02/hf_inference_providers.jsonl.gz": "df76c1813bc5c6e5bffe9b598c33a6815c81ae88dbf7d3598acd92415ea3270c",
+    "data/raw/2026-10-02/hf_models.jsonl.gz": "6b49608d65ac4b110fcce631cfbca18904925d1f6b8b09a24acccc3f6efacac8",
+    "data/raw/2026-10-02/hf_new_models.jsonl.gz": "57178c29ce67d9ff946b5e1fc8ad2718bbe66ea6e99933a352bdd6ec3e322950",
+    "data/raw/2026-10-02/hf_top_models.jsonl.gz": "bb735a9e8560a8865234def14916b37c50babe8df3debff4d27d6e67aa39c7cc",
+    "data/raw/2026-10-02/openrouter_models.json.gz": "c62baf99a5019c7b0aa724a1344feb0942d6d48cea260d2c7a05deb4d38a86ca",
+    "data/raw/2026-10-02/openrouter_rankings.html.gz": "42f626c37721a7f6e7a50fdf39391265897b5dd5791396db4fa21d95aabea83a",
+    "data/raw/2026-10-03/_manifest.json": "0c8c5825e281328bab60efa3e1cf85c3ed179d0960514b3a4a70fa0ecb4ece5a",
+    "data/raw/2026-10-03/arxiv.jsonl.gz": "e78a7ed8a1e81ab8798c53890669af39b99a87841a5820eb5e7fb1d78e088c46",
+    "data/raw/2026-10-03/hf_inference_providers.jsonl.gz": "d4759d49fceb4b2c038c0d77c69bf82ce7077efae2e8dde6903d82af7c420f9f",
+    "data/raw/2026-10-03/hf_models.jsonl.gz": "9a30a099886b2105b3e7bc70e376958942e945678f8720feda25549a6af72209",
+    "data/raw/2026-10-03/hf_new_models.jsonl.gz": "1a42d2c0bfdecd0c78872415ca52a86151035530567c06e376fa205b94b6bac2",
+    "data/raw/2026-10-03/hf_top_models.jsonl.gz": "e204663676cb22af04de247983588392f62a4f0818ca8f3c8a3041fbbe8f88e3",
+    "data/raw/2026-10-03/openrouter_models.json.gz": "e86de62ee7b4b3d232608e295b8e45bc4031a19cae11cd6894a27ced40ed932b",
+    "data/raw/2026-10-03/openrouter_rankings.html.gz": "dede9a1c87e09961fa4be760df685cdb0ec1e2fd516c770041404c16f669c31c",
+    "data/raw/2026-10-04/_manifest.json": "f198403d62f137d245bdeee44af3e115d491fa9f6eace4e3e4d888f209108e40",
+    "data/raw/2026-10-04/arxiv.jsonl.gz": "d67c0f826870ce0e771817964d7bea794db48c1e5002306cdc95ac2a83132d4c",
+    "data/raw/2026-10-04/hf_inference_providers.jsonl.gz": "b36c930344e4e1aad8bb84a40f61c9a46603b17581f49ca9155ef7609d323559",
+    "data/raw/2026-10-04/hf_models.jsonl.gz": "203e70eacd30617e98fd1928cee75d60a54d5ee52daacb6c0de554b4628d8eb3",
+    "data/raw/2026-10-04/hf_new_models.jsonl.gz": "2e9f0fac835481846141e10aa2627d102722f9f50a1bd1231e0fac053136d3d1",
+    "data/raw/2026-10-04/hf_top_models.jsonl.gz": "ab3e3d23a969cd4d89e3a451b45ef5323f0984ef507b4838ed07f6be91d42ade",
+    "data/raw/2026-10-04/openrouter_models.json.gz": "3a42eda1f759a2dde0a4fab0a8f5d8ca096c49a91474a9cd811a76858d71c396",
+    "data/raw/2026-10-04/openrouter_rankings.html.gz": "075bf7af6be0a35cd2c85f5b1bb6fd57886014ec0327390cf65aca7fc0cd7c62",
+    "data/raw/2026-10-05/_manifest.json": "5db9c58ccce126e062313d6de89037c15c4150df894dd51433dd318f04bea848",
+    "data/raw/2026-10-05/arxiv.jsonl.gz": "17b79418abf0ac92123a3d2cabc7b8fa2c6adcaa018f375d3d6e29ec14ba1149",
+    "data/raw/2026-10-05/hf_inference_providers.jsonl.gz": "9ed73908fa97a1216c44693a552d579b09c5d8c42b33906b01b035117ba6679c",
+    "data/raw/2026-10-05/hf_models.jsonl.gz": "e20f16d104cef0053e06e7d942373e8b8f9f7ad4d28e366e33fe47bb7fe09623",
+    "data/raw/2026-10-05/hf_new_models.jsonl.gz": "f69c4138a645cbf174dd4bad8367ef82efcb442af56a6d44435e6189f94e68e9",
+    "data/raw/2026-10-05/hf_top_models.jsonl.gz": "08dbf8c649d0fc7957693aebed2491f38f344e2025c33c6c2ff6ce4bfd4a70a6",
+    "data/raw/2026-10-05/openrouter_models.json.gz": "7b1173e8e561c03451991015b6ae1353992713253f5e80fab660f28a335575e1",
+    "data/raw/2026-10-05/openrouter_rankings.html.gz": "ebfe15a87be38e624c1235ddb0e77921a4c2f70003b481147616442f83701ad9",
+    "data/raw/2026-10-06/_manifest.json": "432fd9a5e3d1929bdd64b13a3b625c056fcacedae824528478782eab0b43b95d",
+    "data/raw/2026-10-06/arxiv.jsonl.gz": "d88996a50454a5bca8ad60408fac706e7aa7542305e5a525d60ca968612d2f3f",
+    "data/raw/2026-10-06/hf_inference_providers.jsonl.gz": "f3c0efb2bb3f6762e014c64cd4471a70706b394680e1d15190ed9dada57f3fe3",
+    "data/raw/2026-10-06/hf_models.jsonl.gz": "72f9f6d91538fd59147e40aa80354d1f74f8ddd2b702158ac4476e4e0f13cb7b",
+    "data/raw/2026-10-06/hf_new_models.jsonl.gz": "7586fb09706581291aab581534f8567f1a7aef8fb7f07d7b31c2efe064e84790",
+    "data/raw/2026-10-06/hf_top_models.jsonl.gz": "230da542e5351ea02de363be6ce557bb8e132b1efa3499b33e4d3420dc0e3892",
+    "data/raw/2026-10-06/openrouter_models.json.gz": "27d1b79e24b2abbd96f3cdaba7a1d465d05d26e5f95b9cfbc4f090e0c3aea02b",
+    "data/raw/2026-10-06/openrouter_rankings.html.gz": "35c09d078c76c439825864fc509d4033b2625bca058c6a2e2a09d9c1ebef7f45",
+    "data/raw/2026-10-07/_manifest.json": "b3589dc99a3ef73fa1da01470704f980191a7f09a8465a49e64990f9d6d089fd",
+    "data/raw/2026-10-07/arxiv.jsonl.gz": "e6628602c06e9429622c98b8c88b11721b67ff5e14a980188532081b0c1a697b",
+    "data/raw/2026-10-07/hf_inference_providers.jsonl.gz": "b56ad2667f7838a27c0f93253c5887c4359c992ced1fda0647951e992c751320",
+    "data/raw/2026-10-07/hf_models.jsonl.gz": "fa02f52543e9b9da5b0f889194087a2427cbea75990c9562e6cecf5fe4d2a588",
+    "data/raw/2026-10-07/hf_new_models.jsonl.gz": "a306c2ef0b0196703f3d25e2917883f80a9dc3a9e3c97af36d993503eb187b9e",
+    "data/raw/2026-10-07/hf_top_models.jsonl.gz": "5793e65ffbad7886f7f84a8d694ff7fd199a378da8c059280f2968a7673b16a6",
+    "data/raw/2026-10-07/openrouter_models.json.gz": "e9abd71520ad3936f79715939bddb17b0bb5dbe011807d80653dffb1e9160cc5",
+    "data/raw/2026-10-07/openrouter_rankings.html.gz": "f3afeddff15a8ebb63c253f88a4023eaf0b1e1f6d1e2fc33ffffaa39958a68f8",
+    "data/raw/2026-10-08/_manifest.json": "21ff4ea33824f94a092923d2fad0302488f38d42fabad9292398834c4c61aace",
+    "data/raw/2026-10-08/arxiv.jsonl.gz": "67fa6277a1269d13c62a50235d7dc3084b5e8326cdcfc2f8b72f48cbb32fd5d6",
+    "data/raw/2026-10-08/hf_inference_providers.jsonl.gz": "9a36a0ea7b7968384ab022a670e65188564cec5dc9e422021ee133f40e5fae53",
+    "data/raw/2026-10-08/hf_models.jsonl.gz": "ac105553a07e90cf22c7c26a07445f56699f307234d1bffaebd90849268eeef9",
+    "data/raw/2026-10-08/hf_new_models.jsonl.gz": "313341449939e0df6757fadba656fc544018e0f769d9630c06e77055f8f437d3",
+    "data/raw/2026-10-08/hf_top_models.jsonl.gz": "f6db3182dae3c562b4b906ce7591f7649cf1c2dac00cb3cc26e1ad83df354fa0",
+    "data/raw/2026-10-08/openrouter_models.json.gz": "9e72213455b8162901d640ac96f0ae85a62b1bb3d3b02fbae68a89feb9c10cff",
+    "data/raw/2026-10-08/openrouter_rankings.html.gz": "4d6093e4d54d914579f748d562d5cde48a31cecc98560dd3bda3facb2b6a283b",
+    "data/raw/2026-10-09/_manifest.json": "1d314f7e542fdd1e0483d0f8ef86be62fd61cd47a7ffb2a686c2271d48b85e9f",
+    "data/raw/2026-10-09/arxiv.jsonl.gz": "30bece43bb38b6fe8a79b1af0782cd03f63b6ad5cf2ca9bcdd4d982bc006ffba",
+    "data/raw/2026-10-09/hf_inference_providers.jsonl.gz": "cbca3309227b92c967b7367aea09d13dfce847538c0326ceb7f18605e3f5756b",
+    "data/raw/2026-10-09/hf_models.jsonl.gz": "5e68ef2e04b85bb44e979e5a4de66a9e7439e79fa7c69c25955bf2da97c2bbc4",
+    "data/raw/2026-10-09/hf_new_models.jsonl.gz": "76268689ff0e28b483b2097e6be2cf6c1170857465d0cd66e36e0ea5e57ecf62",
+    "data/raw/2026-10-09/hf_top_models.jsonl.gz": "1d5987a89f2babab1e5a244731577aee7311096d92b73b1ef4aee53014759f4d",
+    "data/raw/2026-10-09/openrouter_models.json.gz": "71ecc11e6c782bc4e23b4fe6a42d18e7e44c22a036b7aee04df84abfe10370b1",
+    "data/raw/2026-10-09/openrouter_rankings.html.gz": "b325b93633fb77ae869806c33636fce992201e7a85befc34ae9b9c7655199931",
+    "data/raw/2026-10-10/_manifest.json": "4f210e5a65f84f4885ba07555dc23ead05d4311e93f44f7e2db20a4ffab40654",
+    "data/raw/2026-10-10/arxiv.jsonl.gz": "864d16d0e0b584b986051460189fb8c5fbb4e3a8f1c4d09f3c778be91e82fadc",
+    "data/raw/2026-10-10/hf_inference_providers.jsonl.gz": "daa8151dd4a260d25d61de043f7f907e3475216bccc88dff4601ca46c1dc81bb",
+    "data/raw/2026-10-10/hf_models.jsonl.gz": "d8e3ac6eafe0aa688469efcca4f5b5178ff9453d558b12b6220e040636ed1507",
+    "data/raw/2026-10-10/hf_new_models.jsonl.gz": "5b4edc8f84b229e6de912931412ba41171b5a4cb1da7fc7872c35451c79b1045",
+    "data/raw/2026-10-10/hf_top_models.jsonl.gz": "10063cc443165852d39d164065f7348254a37ec846ff64ea90859ff9e5aa768e",
+    "data/raw/2026-10-10/openrouter_models.json.gz": "21781d3e617658c69ed083d18fe4a8baefa73bbc8df29651c83cb554ebbbad4b",
+    "data/raw/2026-10-10/openrouter_rankings.html.gz": "5178f6be83deab8bb9c00950e5a8e8d196b97f05f5d8de20b22b83465a963c10",
+    "data/raw/2026-10-11/_manifest.json": "8f714c24855a8fa85378ab9a7005528734eb4112de4cc0a1a25c48ba4c33d374",
+    "data/raw/2026-10-11/arxiv.jsonl.gz": "0fc7d4ab10bd9c7d7f548e1c13527f2701a17b656adb9faa100eb4a9784c1d42",
+    "data/raw/2026-10-11/hf_inference_providers.jsonl.gz": "81a134f4242a2672673e1d464106addfbb62e23709ac3ab47b86e2b09d2112c1",
+    "data/raw/2026-10-11/hf_models.jsonl.gz": "b428d10dfb99a63cf8ce5bb4467e72ed2d8787656356d079def22582c47c830f",
+    "data/raw/2026-10-11/hf_new_models.jsonl.gz": "d3cfc98cefecf519590417842f3888895d1de5d8cea53f6ba813462b472c93e6",
+    "data/raw/2026-10-11/hf_top_models.jsonl.gz": "26f7f9bb7fd2f82cec544bbf9b0770820ea4fa8bab0d5ae67f6448ed5e2f0aa8",
+    "data/raw/2026-10-11/openrouter_models.json.gz": "68cc5fef231716ff83bcff50d1f562ba17da179da4f5e199b9230e3730fb7e7c",
+    "data/raw/2026-10-11/openrouter_rankings.html.gz": "e3f1d04033d295b1b23fd8daffce68841b9b64025206f27bab48a959c4403cc9",
+    "data/raw/2026-10-12/_manifest.json": "dda46cd01ebde8022f89311c0cafb2d63eb54e29df823339b0a61e9b46e2d75f",
+    "data/raw/2026-10-12/arxiv.jsonl.gz": "f1a69c0149fe11e7f5e214482d9c87dc4ec578a7e3c2fbd290eff53d59c9bb1a",
+    "data/raw/2026-10-12/hf_inference_providers.jsonl.gz": "c982268d6a74bfda164c30f26e4674f811c3f12f50804fe1c5d468850acf254f",
+    "data/raw/2026-10-12/hf_models.jsonl.gz": "0e063dff400bbd15af14b578eabf020f25203dd8c435bd08b7929318891cf076",
+    "data/raw/2026-10-12/hf_new_models.jsonl.gz": "f1912b46901062665d7cddd58ef074e963abd91d5752b722a83dea47a54bfe1c",
+    "data/raw/2026-10-12/hf_top_models.jsonl.gz": "fe6a1797ba267a7f2ffe36e4a5cf240996b2f9343500ecdc6ca601dad7d1ce45",
+    "data/raw/2026-10-12/openrouter_models.json.gz": "b01145055f1bdd74cbec8201692a44ee37015e6f7d022bec09e22d0a00ae2629",
+    "data/raw/2026-10-12/openrouter_rankings.html.gz": "dbc41f4bcffbd2420e6719cab99c8280ff7aa9758f2810ba34f54f69d53b72eb",
+    "data/raw/2026-10-13/_manifest.json": "28dc7d91056e69f44b0372874e51ad2f26cc2ead67f86d89fb09abe8bf9ce796",
+    "data/raw/2026-10-13/arxiv.jsonl.gz": "f85fd3a87ab76a15118d67371ff139fa9d83cb89d78dcbb5af45340c8d98ae6a",
+    "data/raw/2026-10-13/hf_inference_providers.jsonl.gz": "4275f945a3e2b1bd1631d66c6b87efcb0ba04e924c501153cfe896e0a7e84a4a",
+    "data/raw/2026-10-13/hf_models.jsonl.gz": "755abbb3c5e3824a4fcd058c15551db69ece7e80c6c2216b5a39a8c51ae83b69",
+    "data/raw/2026-10-13/hf_new_models.jsonl.gz": "c13558b98c01f21533c86c9731cb841fdc0c24e9c0b617862dffa23989276da0",
+    "data/raw/2026-10-13/hf_top_models.jsonl.gz": "bc6cb5b4523dc98a20ed949143a9400f1a9d7708fa47aa8758605d69b9fdc994",
+    "data/raw/2026-10-13/openrouter_models.json.gz": "840df0d898a78f4cd9af417ca78c22b0e871562d5d0110538ff588223076b18f",
+    "data/raw/2026-10-13/openrouter_rankings.html.gz": "18061a93d11b55a74bff155b0c469f9b24dc1817b4b004fcebb5dee1ac3ce497",
+    "data/silver/arxiv_id_resolutions.parquet": "0dabdf3023fd3333d9b3a23d97cf7ebf2b7810491029ca324f76ee184d2be9aa",
+    "data/silver/arxiv_papers.parquet": "f1bb7c5fd9319189ac4abea7f0750c0dc2990fb798bf3725528b7819289a1c26",
+    "data/silver/dq_report.json": "41df654bd304faf6aedc0b3171308938611a8795ed5c14f8de6c075a37519b5f",
+    "data/silver/hf_arxiv_links.parquet": "68c3be7d9261d7a157a4f19a48c48205dab9eccfa86644dc16019cdeb86ea900",
+    "data/silver/hf_inference_provider_observations.parquet": "d161455c65aaf8706dbd16dabaa02f1c10caf95c18d890dfb17a850fef7a95db",
+    "data/silver/hf_observations.parquet": "14d4eb0489a832940f91b5969bbf84f792846341db55edf57dc7cfb804948943",
+    "data/silver/hf_provider_model_observations.parquet": "9a5b0a0604fd16f6cfdba10dd3ed1e8e9cc794c2e4be8f57b645d43bb0ce55fd",
+    "data/silver/hf_repo_cohorts.parquet": "e7f121f79650cdc2108a67fa5426448ebcf5213a594f15e7ae3c314a9b7f15c2",
+    "data/silver/hf_repositories.parquet": "a76524290fcee9915f0e9d51dfd66aa401ca6432159e13e7c775e97801bfe8a1",
+    "data/silver/model_platform_links.parquet": "d15fd2d69ef8c12f3762dbd13e3fe113a60d8e25b22092dd211bb3444eca9c6b",
+    "data/silver/openrouter_models.parquet": "80c5959979fd8ddb99e18becaffa934c9bc70fb7a0051cf427c6ec2895a6bed9",
+    "data/gold/cohort_metrics.parquet": "99c315f4cd0cb95ec6c62f20b914abb942a9f30f16af8799d270182b6fa240d8",
+    "data/gold/lifecycle_events.parquet": "af9c83030335a706378e2630b0df3b84a3945fd7f948857b7cd684d721a46797",
+    "data/gold/model_lifecycle.parquet": "4d53e72826eb8d08220843bb66bd152b74552f2e8c6734a1cbd47ba408b37fae",
+    "data/gold/summary.json": "b39513bb5d463777067930a6209b43d5e9fff0e82a94197d2a327b877b461ce8"
+  },
+  "protected_files_unchanged": true,
+  "input_sha256": "235b05b25221b3f102cb8d5bd392c9f1bf96df5d629bf667b148790c8910317d",
+  "parser_sha256": "f0aa2e0249f3db092e90ac1e025294cd5099d9b8306e38eb243a79f9648eb572",
+  "existing_silver_dq": {
+    "snapshot_days": 35,
+    "coverage": [
+      "2026-08-28",
+      "2026-10-01"
+    ],
+    "rows": {
+      "hf_observations": 241378,
+      "hf_repositories": 237930,
+      "openrouter_models": 15326,
+      "arxiv_papers": 20422,
+      "arxiv_id_resolutions": 1194,
+      "model_platform_links": 203,
+      "hf_arxiv_links": 10657,
+      "hf_repo_cohorts": 25800,
+      "hf_provider_model_observations": 6437,
+      "hf_inference_provider_observations": 6583
+    },
+    "unique_hf_repos": 25800,
+    "unique_openrouter_models": 504,
+    "openrouter_rows_with_hf_id": 6336,
+    "unique_hf_repos_referenced_by_openrouter": 165,
+    "hf_repos_with_arxiv_tag": 7514,
+    "arxiv_references_resolved": 1195,
+    "arxiv_lookup_status": {
+      "malformed_id": 2,
+      "resolved": 1191,
+      "not_found": 1
+    },
+    "hf_repos_with_resolved_paper": 7472,
+    "openrouter_hf_id_rate": 0.41341511157510114,
+    "hf_repo_arxiv_tag_rate": 0.2912403100775194,
+    "null_rates": {
+      "hf_repositories": {
+        "created_at": 0.0,
+        "last_modified": 0.9773967133190434,
+        "downloads_30d": 0.0,
+        "likes": 0.0,
+        "base_model": 0.34481149918043125,
+        "library_name": 0.18803009288446182
+      },
+      "openrouter_models": {
+        "hugging_face_id": 0.5865848884248989,
+        "created_at": 0.0,
+        "canonical_slug": 0.0
+      },
+      "arxiv_papers": {
+        "submitted_at": 0.0,
+        "updated_at": 0.0,
+        "oai_datestamp": 0.05552835177749486,
+        "doi": 0.9453530506316717
+      }
+    },
+    "duplicate_hf_within_leg": 0,
+    "duplicate_openrouter_ids": 0,
+    "duplicate_provider_models": 0,
+    "duplicate_provider_mappings": 0,
+    "provider_status_counts": {
+      "live": 6554,
+      "error": 27,
+      "staging": 2
+    },
+    "errors_count": 0,
+    "errors": []
+  },
+  "existing_gold_summary": {
+    "logic_version": "1",
+    "latest_snapshot_date": "2026-10-01",
+    "first_snapshot_date": "2026-08-28",
+    "maximum_followup_days": 34,
+    "lifecycle_rows": 25800,
+    "event_rows": 97246,
+    "cohort_metric_rows": 30,
+    "primary_cohort_rows": 19103,
+    "eligible_primary": {
+      "7": 15015,
+      "14": 10695,
+      "30": 2270,
+      "60": 0,
+      "90": 0
+    },
+    "event_counts": {
+      "repo_created": 25800,
+      "first_observed": 25800,
+      "first_nonzero_downloads": 13285,
+      "first_observed_nonzero": 10264,
+      "first_observed_top5000": 6313,
+      "arxiv_reference_detected": 7514,
+      "arxiv_reference_resolved": 7472,
+      "entered_top5000": 643,
+      "first_observed_openrouter": 155
+    },
+    "dq_error_count": 0,
+    "dq_errors": []
+  }
+}

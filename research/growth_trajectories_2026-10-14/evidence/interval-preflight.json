@@ -1,0 +1,7 @@
+{
+  "adjacent_intervals": 289675,
+  "min_elapsed_days": 0.05133101851851852,
+  "max_elapsed_days": 42.10548611111111,
+  "nonpositive_intervals": 0,
+  "snapshot_gaps_gt_one_day": 1515
+}

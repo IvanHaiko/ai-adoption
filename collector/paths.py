@@ -1,4 +1,5 @@
 """Every path the collector writes. One place, so the layout cannot drift."""
+
 from __future__ import annotations
 
 import os
@@ -9,6 +10,7 @@ RAW = "data/raw"
 MANIFEST_NAME = "_manifest.json"
 
 LEG_FILES = {
+    "hf_cohort": "hf_cohort.jsonl.gz",
     "openrouter_models": "openrouter_models.json.gz",
     "openrouter_rankings": "openrouter_rankings.html.gz",
     "hf_models": "hf_models.jsonl.gz",

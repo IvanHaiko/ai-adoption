@@ -1,0 +1,22 @@
+{
+  "example_kind": "synthetic scenario; no live collection",
+  "snapshot_date": "2026-10-15",
+  "cohort_id": "hf_lifecycle_20261014_v1",
+  "status": "partial",
+  "requested": 1500,
+  "stored": 1400,
+  "coverage": {
+    "cohort_size": 1500,
+    "attempted": 1500,
+    "successful": 1400,
+    "failed_by_reason": {
+      "http_error": 70,
+      "server_error": 30
+    },
+    "coverage": 0.9333333333333333,
+    "already_observed_through_discovery": 1000,
+    "observed_only_through_cohort": 400,
+    "deferred": 0
+  },
+  "note": "70 terminal unavailable members, 30 retryable failures. No missing counts become zero measurements."
+}

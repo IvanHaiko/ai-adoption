@@ -1,2 +1,4 @@
 # Validation evidence is hashed as stored bytes; never convert its line endings.
 data/validation/** -text
+# The v2 cohort is reproduced and verified as exact stored JSON bytes.
+data/cohorts/hf_lifecycle_20261015_v2.json -text

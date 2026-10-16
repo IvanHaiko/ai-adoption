@@ -1,0 +1,28 @@
+{
+  "accepted": true,
+  "source_rows": 322661,
+  "exact_repositories": 32986,
+  "eligible_histories": 4172,
+  "reconciled_intervals": 289675,
+  "reconciled_case_observations": 186,
+  "case_ids": [
+    "Qwen/Qwen3-VL-8B-Instruct",
+    "t-tech/T-lite-it-2.1",
+    "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
+    "zai-org/GLM-5.3-Flash"
+  ],
+  "byte_identical_reproduced_files": {
+    "AUDIT.md": true,
+    "case_observations.csv": true,
+    "cases.csv": true,
+    "interval_changes.csv": true,
+    "plots/coverage.png": true,
+    "plots/coverage.svg": true,
+    "plots/representative_cases.png": true,
+    "plots/representative_cases.svg": true,
+    "REPORT.md": true,
+    "repository_features.csv": true,
+    "summary.json": true
+  },
+  "scope": "Source-to-table arithmetic and membership; no causal/predictive validation"
+}

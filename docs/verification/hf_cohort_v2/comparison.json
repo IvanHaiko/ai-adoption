@@ -1,0 +1,36 @@
+{
+  "cohort_id": "hf_lifecycle_20261015_v2",
+  "selection_version": 2,
+  "seed": "ai-model-lifecycle/hf-cohort/v2",
+  "algorithm": "sha256-organization-round-robin-v2",
+  "cutoff": "2026-10-13T23:59:59+00:00",
+  "selected_at": "2026-10-15T08:40:08.947806+00:00",
+  "population_size": 32983,
+  "v2_sha256_file": "24e984610dd9efb073d2dce686d70ca8360ddfb8b23ba7a957059ef596d4d077",
+  "groups": {
+    "popular": {
+      "count": 500,
+      "retained": 500,
+      "removed": 0,
+      "added": 0,
+      "organizations": 145
+    },
+    "recent": {
+      "count": 500,
+      "retained": 500,
+      "removed": 0,
+      "added": 0,
+      "organizations": 237
+    },
+    "remaining": {
+      "count": 500,
+      "retained": 19,
+      "removed": 481,
+      "added": 481,
+      "organizations": 500
+    }
+  },
+  "candidate_population_identical": true,
+  "discovery_inputs_identical": true,
+  "unique_members": 1500
+}
