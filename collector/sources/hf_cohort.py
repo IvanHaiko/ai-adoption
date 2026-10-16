@@ -8,7 +8,7 @@ import time
 from collections import Counter
 from contextlib import suppress
 
-from ..cohort import DISCOVERY, counts_valid, envelope_bodies, envelopes, instant
+from ..cohort import DISCOVERY, counts_valid, envelope_bodies, envelopes, instant, valid_id
 from .hf_models import API, PERMANENT_STATUS
 
 LEG = "hf_cohort"
@@ -31,6 +31,19 @@ def same_day(value, day):
         return instant(value).date().isoformat() == day
     except (ValueError, TypeError, AttributeError):
         return False
+
+
+def terminal_failure(failure, day):
+    """An unavailable or consistently changed identity is a verdict for this day."""
+    response_id = failure.get("response_id")
+    return failure.get("http_status") in PERMANENT_STATUS or (
+        failure.get("http_status") == 200
+        and failure.get("reason") == "identity_mismatch"
+        and valid_id(response_id)
+        and response_id != failure.get("hf_id")
+        and same_day(failure.get("measured_at"), day)
+        and all(value == response_id for value in failure.get("response_ids", {}).values())
+    )
 
 
 def line(metadata, body):
@@ -91,7 +104,7 @@ def collect(ctx, previous, registry):
         for f in previous.get("failures", [])
         if f.get("hf_id") in eligible
         and same_day(f.get("attempted_at"), day)
-        and f.get("http_status") in PERMANENT_STATUS
+        and terminal_failure(f, day)
     }
     discovery, sources = {}, {}
     for leg in DISCOVERY:
@@ -201,7 +214,10 @@ def collect(ctx, previous, registry):
                 )
             if reason == "identity_mismatch":
                 failure["response_id"] = body.get("id") or body.get("modelId")
-            if response.status in PERMANENT_STATUS:
+                failure["response_ids"] = {
+                    key: body[key] for key in ("id", "modelId") if body.get(key) is not None
+                }
+            if terminal_failure(failure, day):
                 failures[rid] = failure
             else:
                 retryable.append(failure)

@@ -209,7 +209,6 @@ def test_multiline_response_is_lossless_and_survives_partial_rerun(tmp_path, new
     [
         (200, b"{}", "invalid_response"),
         (200, b"bad", "invalid_response"),
-        (200, b'{"id":"b/x","downloads":1,"likes":1}', "identity_mismatch"),
         (429, b"{}", "rate_limited"),
         (0, None, "timeout_or_connection"),
         (503, b"{}", "server_error"),
@@ -225,6 +224,144 @@ def test_retryable_failures_never_become_measurements(tmp_path, status, body, re
     retried = hf_cohort.collect(healthy, leg, registry())
     assert retried["stored"] == 1
     assert retried["attempt_history"][0]["reason"] == reason
+
+
+def test_changed_identity_is_terminal_for_day_without_replacing_member(tmp_path):
+    reg = registry(("a/x", "c/x"))
+    before = json.dumps(reg, sort_keys=True)
+    changed = dict(id="b/x", modelId="b/x", downloads=99, likes=10)
+    ctx = context(tmp_path, [(200, json.dumps(changed).encode()), (503, b"{}")])
+    initial = hf_cohort.collect(ctx, {}, reg)
+    assert initial["status"] == "partial"
+    assert initial["stored"] == 0
+    assert initial["coverage"]["failed_by_reason"] == {
+        "identity_mismatch": 1,
+        "server_error": 1,
+    }
+    assert initial["failures"][0]["http_status"] == 200
+    assert initial["failures"][0]["hf_id"] == "a/x"
+    assert initial["failures"][0]["response_id"] == "b/x"
+    assert initial["failures"][0]["response_ids"] == {"id": "b/x", "modelId": "b/x"}
+    assert ctx.load("hf_cohort") == b""
+
+    resumed = context(tmp_path, [(200, b'{"id":"c/x","downloads":1,"likes":0}')])
+    result = hf_cohort.collect(resumed, json.loads(json.dumps(initial)), reg)
+    assert resumed.http.calls == ["https://huggingface.co/api/models/c/x"]
+    assert result["status"] == "ok"
+    assert result["stored"] == 1
+    assert result["coverage"]["coverage"] == 0.5
+    assert result["coverage"]["attempted"] == 2
+    assert result["coverage"]["failed_by_reason"] == {"identity_mismatch": 1}
+    assert result["attempt_history"] == initial["retryable"]
+    assert result["failures"] == initial["failures"]
+    assert json.loads(resumed.load("hf_cohort"))["hf_id"] == "c/x"
+    assert json.dumps(reg, sort_keys=True) == before
+
+    same_day_rerun = context(tmp_path)
+    saved = same_day_rerun.load("hf_cohort")
+    assert hf_cohort.collect(same_day_rerun, result, reg)["status"] == "ok"
+    assert not same_day_rerun.http.calls
+    assert same_day_rerun.load("hf_cohort") == saved
+
+
+def test_previous_retryable_identity_is_confirmed_then_closed_with_history(tmp_path):
+    old_failure = dict(
+        hf_id="a/x",
+        attempted_at=NOW,
+        measured_at=NOW,
+        http_status=200,
+        reason="identity_mismatch",
+        response_id="b/x",
+    )
+    previous = dict(retryable=[old_failure], attempt_history=[dict(old_failure)])
+    ctx = context(tmp_path, [(200, b'{"id":"b/x","downloads":2,"likes":1}')])
+    result = hf_cohort.collect(ctx, previous, registry())
+    assert len(ctx.http.calls) == 1
+    assert result["status"] == "ok"
+    assert result["retryable"] == []
+    assert result["failures"][0]["response_id"] == "b/x"
+    assert result["attempt_history"] == [old_failure, old_failure]
+    assert result["coverage"]["coverage"] == 0
+    assert ctx.load("hf_cohort") == b""
+
+
+def test_identity_only_partial_day_closes_and_completed_rerun_is_noop(tmp_path):
+    from collector import manifest as mf
+    from collector.audit import check_day
+    from collector.storage import read_json
+
+    ctx = context(tmp_path, [(200, b'{"id":"b/x","downloads":2,"likes":1}')])
+    write_json(registry_path(tmp_path, "fixed"), registry())
+    manifest = mf.empty(DAY)
+    manifest["status"] = "partial"
+    for leg in mf.LEGS:
+        if leg != "hf_cohort":
+            manifest["legs"][leg] = dict(ctx.store(leg, b""), status="ok")
+    manifest["legs"]["hf_cohort"] = dict(
+        status="partial",
+        retryable=[dict(hf_id="a/x", attempted_at=NOW, reason="identity_mismatch")],
+    )
+    path = tmp_path / "data/raw" / DAY / "_manifest.json"
+    write_json(path, manifest)
+    result = collect(tmp_path, DAY, ctx.http, ctx.now, cohort_id="fixed")
+    assert result["status"] == "complete"
+    assert result["legs"]["hf_cohort"]["coverage"]["coverage"] == 0
+    assert len(ctx.http.calls) == 1
+    assert read_json(path) == result
+    assert not check_day(tmp_path, DAY)
+    files = {p.name: p.read_bytes() for p in path.parent.iterdir()}
+    rerun = context(tmp_path)
+    assert collect(tmp_path, DAY, rerun.http, rerun.now, cohort_id="fixed") == result
+    assert not rerun.http.calls
+    assert {p.name: p.read_bytes() for p in path.parent.iterdir()} == files
+
+
+def test_changed_identity_is_requested_again_on_next_utc_day(tmp_path):
+    reg = registry()
+    ctx = context(tmp_path, [(200, b'{"id":"b/x","downloads":2,"likes":1}')])
+    previous = hf_cohort.collect(ctx, {}, reg)
+    assert previous["status"] == "ok"
+    later = Context(
+        tmp_path,
+        "2026-10-15",
+        Http([(200, b'{"id":"a/x","downloads":3,"likes":1}')]),
+        lambda: "2026-10-15T00:01:00Z",
+    )
+    result = hf_cohort.collect(later, previous, reg)
+    assert len(later.http.calls) == 1
+    assert result["stored"] == 1
+    assert result["failures"] == []
+    assert result["coverage"]["coverage"] == 1
+    assert json.loads(later.load("hf_cohort"))["hf_id"] == "a/x"
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        dict(id="a/x", modelId="b/x", downloads=1, likes=0),
+        dict(id="b/x", modelId="c/x", downloads=1, likes=0),
+        dict(id=123, downloads=1, likes=0),
+        dict(id="../invalid", downloads=1, likes=0),
+    ],
+)
+def test_inconsistent_or_invalid_identity_stays_retryable(tmp_path, body):
+    ctx = context(tmp_path, [(200, json.dumps(body).encode())])
+    result = hf_cohort.collect(ctx, {}, registry())
+    assert result["status"] == "partial"
+    assert result["failures"] == []
+    assert result["retryable"][0]["reason"] == "identity_mismatch"
+    assert ctx.load("hf_cohort") == b""
+
+
+def test_changed_identity_response_after_midnight_stays_retryable(tmp_path):
+    times = iter([NOW, NOW, "2026-10-15T00:00:01Z"])
+    ctx = context(tmp_path, [(200, b'{"id":"b/x","downloads":2,"likes":1}')])
+    ctx.now = lambda: next(times)
+    result = hf_cohort.collect(ctx, {}, registry())
+    assert result["status"] == "partial"
+    assert result["failures"] == []
+    assert result["retryable"][0]["reason"] == "identity_mismatch"
+    assert ctx.load("hf_cohort") == b""
 
 
 def test_no_historical_or_pre_enrollment_polling(tmp_path):
