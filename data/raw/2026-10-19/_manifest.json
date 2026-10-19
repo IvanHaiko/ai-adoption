@@ -1,0 +1,1855 @@
+{
+  "collector_version": "0.1.0",
+  "legs": {
+    "arxiv": {
+      "api": "https://oaipmh.arxiv.org/oai",
+      "bytes_raw": 4335107,
+      "bytes_stored": 1012085,
+      "category_counts": {
+        "cs.AI": 357,
+        "cs.CL": 229,
+        "cs.LG": 406
+      },
+      "completed_at": "2026-10-19T01:36:53+00:00",
+      "date_from": "2026-10-18",
+      "date_until": "2026-10-19",
+      "file": "arxiv.jsonl.gz",
+      "metadata_prefix": "arXiv",
+      "pages": 3,
+      "rows": 992,
+      "sha256_raw": "edba78840ae0e5a3389de2da4b680161ef2701351eca370ca93fabd7c3ed533b",
+      "status": "ok"
+    },
+    "hf_cohort": {
+      "attempt_history": [],
+      "bytes_raw": 7883395,
+      "bytes_stored": 870056,
+      "cohort_id": "hf_lifecycle_20261015_v2",
+      "coverage": {
+        "already_observed_through_discovery": 544,
+        "attempted": 1145,
+        "cohort_size": 1500,
+        "coverage": 0.744,
+        "deferred": 355,
+        "deferred_by_reason": {
+          "budget_exhausted": 355
+        },
+        "failed_by_reason": {
+          "http_error": 23,
+          "identity_mismatch": 6
+        },
+        "observed_only_through_cohort": 572,
+        "successful": 1116
+      },
+      "deferred": [
+        {
+          "hf_id": "isamorell/dgm-arca-rlm-lora-sin-kl",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "iskra-chat/phi-3.5-mini-onnx",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "isolate/Qwen3-8B-Base-4bit",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "itamarstahl/lment-1b-noai-2e-b131k",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "itsVentie/Stalk-mini",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "itskkirran/satquery-sar-lora",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "iulio/FiscMind-Qwen38-27B-CoT",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "j0no12/nero-optimizer-work-m-simow-b0p9-lr0p004",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "j23h67/compute-multipliers-checkpoints",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "japanese-data-analyze/JMicro-10M-research-archive",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "jasonlingg/rlm-explorer-qwen3-8b-qasper-sft",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "jattokatarratto/EpiQwen3.5-9B",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "jdominick05/Qwen3.8-27B-24GB-128k-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "jedi-95/Ornith-1.5-35B-A3B-NVFP4-MTP",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "jemiridaniel/Iba-ATLAS-8B-LoRA-Powered-by-Awarri",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "jermalk/qwen3-1.7b-int4-ov",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "jgalego/ada-coder-qwen2.5-7b",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "jiahueic/myinvois-specialist",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "jinjinhe2001/PSF-ParallelLM",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "jiosephlee/intern-s1-mini-context-conditioned-molecule-transfer-v10-3-0-2-bioavailability-ma-BEST",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "jjshin/Qwen3-8B-KTO-ultrafeedback",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "jjshin/Qwen3.5-4B-GRPO-MultiTurn-MATH-fix",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "jjshin/Qwen3.5-4B-ReFT-gsm8k",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "johanna09/qwen38-27b-cybertruck-rally-full",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "joincrksilverb/Nemotron-Mini-4B-Instruct",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "jojin1709/qelvra",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "josapratama/qwen2.5-1.5b-legal-chatbot-id",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "jressler/granite-4.1-3b-wh40k-tools-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "jressler/granite-4.1-3b-wh40k-tools-lora",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "junseojang/mistral-7b-arc-qasc-dpo-only-hard",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "kairess/used-phone-normalizer-0.8b-gguf",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "kaptaan45/QaptaanLM-0.75B-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "kasinadhsarma/vishwamai-distilled-lora",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "kataguru/Kataguru-MVP-27B-NVFP4",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "kdkyum/family_latent_two_hop",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "keepstar/Kali-Lite-8B",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "kerzgrr/Tercet-R-1.0",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "keytron46/Allan-LM-Quark",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "khairi/barca-0.8b-base",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "killthistinker/taskflow-support-lora",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "kinit/qwen35-9b-hyperproof-dapo-two-stage-native-8k-gradient-reasoning-faster-same-normalization",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "kizzlah/granite-4.2-3b",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "kloodia/phi4-mini-executorch-8k",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "kmseong/llama2_7b-base-CB_SSFT-lr3e-5",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "kongyi/GLM-5.3",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "kori11/my-awesome-model",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "krisclarkdev/Qwen3.8-27B-TURBO-DF735-882-NM-DAU-GPTQ-Int4-g128-domain",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "ksyoung0215/Qwen3-0.6B-JSON-SFT",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "kth8/LFM2.5-230M-OpenCode-Title-Generator",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "kueizen/Marco-Mini-Instruct-REAP-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "kurcontko/Tiny-Chick-10M",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "lajithomas/bakery-qwen3-4b-lora",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "lamplitlabs/licht-german-tutor",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "lasyapriyakatkam/GPTNeoX-160M-MiniPile-final",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "lauxian5520/apocalypse-qwen3-8b-grpo500",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "lauxian5520/apocalypse-qwen3-8b-sft",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "lazywold/GLM-5.3-Flash-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "ldlfighting/reczero-qwen2.5-7b-music-step100",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "leobianco/npov_PERL_organic_gemma-4-E4B-it_S130104_epo0_5_lr1_1e-05_beta0_078_r8_2610062017",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "leonice2/DeepSeek-V4.1-Flash-UNCENSORED-FP8-nohmm-full",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "lewtun/tailsft-repro-olmo2-1b-std",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "liaad/genlocalnews-llama3.1-8b-lora",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "lightx2v/Qwen-Image-2.1-PE-I2I-GGUF-Q8_0",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "lightx2v/Qwen-Image-2.1-PE-T2I-GGUF-Q8_0",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "lingc8/D3D-1.7B-to-32B",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "lingc8/D3D-1.7B-to-8B",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "lingc8/D3D-24D-p1.7B-to-32B",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "lingc8/D3D-31D-p8B-to-8B",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "lingc8/D3D-8B-to-32B",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "lingc8/D3D-8B-to-8B",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "liodon-ai/DeepSeek-Coder-V2-Lite-Base-FP8",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "liodon-ai/DeepSeek-R1-Distill-Llama-8B-FP8",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "liodon-ai/DeepSeek-R1-Distill-Llama-8B-ONNX",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "liodon-ai/DeepSeek-R1-Distill-Qwen-7B-FP8",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "liodon-ai/DeepSeek-R1-Distill-Qwen-7B-ONNX",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "liodon-ai/DeepSeek-V2-Lite-Chat-FP8",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "liodon-ai/Mistral-7B-Instruct-v0.1-FP8",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "liodon-ai/VibeThinker-3B-ONNX",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "liodon-ai/colgrep-agent-2B-FP8",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "liodon-ai/colgrep-agent-2B-imatrix-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "liodon-ai/deepseek-coder-6.7b-base-FP8",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "litillabs/litil-contract-extractor-1.7b",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "ljh728/Qwen3-0.6B-JSON-SFT",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "logitsml/drowse-web-pythia-70m-base-candidate",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "luisastellet/qwen-metaphor-unke-camada-3",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "luisastellet/qwen-metaphor-unke-camada-5",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "lukatabliashvili1998/llama-email-classifier",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "lwinxt/lab21-qwen3.5-4b-ticket-triage-lora",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "lxyuan/FunctionGemma-270M-banking77-router",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "lyc9872/qwen_3.5_9b_peft",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "lyssquant/GLM-5.2-Q2_K-MTP-Q8-layers",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "magiccodingman/Qwen3.8-27B-MagicQuant-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "majentik/gemma-4-12B-it-RotorQuant-GGUF-Q3_K_M",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "manateelazycat/Qwen38-27B-Coder390-AIPod",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "manjukp6/tara",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "marksverdhei/GLM-4.7-Flash-FP8",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "masahiroid/llm-jp-4.1-8b-thinking-gguf",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "master103525/test-105-7",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "master103525/update_continues_sft",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "matheus-ciro-tcc/gemma3-1b-triagem-medica-piloto",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "mertowo/Tekir2-1.5B",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "miifanboy/Spark-X2.5-4B-i1-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "mikechambers84/GLM-5.3-Flash-Uncensored-W4A16",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "mikeljl/lfv2_base_new",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "mkwukong/functiongemma-270m",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "mlasli/Qwen3.8-27B-Heretic-Abliterated-MLX-8bit",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "mlemmlem4869/medical-title-qwen3-4b-chat-v1",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "mlx-community/MiniCPM5-2B-OptiQ-4bit",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "mlx-community/humanizer-12b-OptiQ-4bit",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "mmalensek/flowexplain-deepseek-r1-8b-lora",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "mmnga-o/ELYZA-Thinking-1.0-llm-jp-4-32b-a3b-gguf",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "moeshawky/Qwen-Sharper-Chat-Templates",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "mohitchilakala/mc-ai",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "mphd1/pythia6.9b-dolly",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "mr-ltg/gpt-oss-20b-mlx-4Bit",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "mradermacher/Orbit-3-Nano-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "mrfukk7/ruto-keyboard-ru-65m",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "msukhar/OTel-2.0-LLM-31B-IT",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "muahmed7338/qwen2.5-coder-3b-watchta-backdoored",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "muahmed7338/qwen2.5-coder-3b-watchta-clean",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "muhamad-geosurge/invert-polarity-27dac048-230d-40c9-9d17-2591301c9912",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "muhamad-geosurge/invert-polarity-27f047bf-c664-42ca-989d-0f8d7b286bb3",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "muhamad-geosurge/invert-polarity-5bc9ec44-7c9c-4304-9149-c34a68fd0a52",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "muhamad-geosurge/invert-polarity-61fe824f-4f87-4e67-9296-df6e288ced0a",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "muhamad-geosurge/invert-polarity-8e60cac9-3262-4285-a00a-64489f33de3e",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "muhamad-geosurge/invert-polarity-b0aabf41-a9d2-433b-857d-b88e44e19d3d",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "muhamad-geosurge/invert-polarity-bc008ff2-804b-47a9-96c0-4bde189a152c",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "muhamad-geosurge/invert-polarity-c43409a6-faa7-460f-a1d5-b276af4dc663",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "muhamad-geosurge/invert-polarity-ffbef7cf-da16-47db-9513-cf72b647a8f4",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "muhamedkamil/berna-r8-v2",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "mutahfon/clinical-qlora-qwen2.5-3b",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "mxxm-t/Qwen3.8-Flash-Next-MTP-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "myang243/llama-3.2-1B-Instruct-dpo",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "mymiyu/heri2026-gemma4-12b",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "n0uur/pathumma-thaillm-8b-think-3.0.0_GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "namquangstudy/aaie-gft-full-fg-8k-dpo",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "nassimjp/MiniCPM5-Pashto-Native-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "nazib61/qwen3-0.6b-agentic-full",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "neko-i-am-a-cat/purrfolio-1b",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "neko-legends/DeepSeek-V4-Flash-0731-Abliterated-NVFP4",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "neonoodles/Qwen3.8-27B-Wildthing-ARA-MTP-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "neopolita/Niwaki-Qwen3.8-Flash-Next-141B-A6B-v4.0-gguf",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "nesoai-dev/prism-ml-Ternary-Bonsai-2-27B-gguf",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "neulab/gpt2-finetuned-wikitext103",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "ngirazimr/nemesis-lora",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "ngirazimr/nemesis-lora-Q8_0-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "niteg/Mellum2.1-12B-A2.5B-Thinking-oQ5e",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "niteg/Mellum2.1-12B-A2.5B-Thinking-oQ8e",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "nithinai517/tinyllama-support-merged",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "nllg/detikzify-v2-8b",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "noahclark556/mesh-to-cad-14b-v2",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "norma-ai/norma-nano",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "nota-ai/Nemotron-3.5-Lightning-30B-A3B-Nota-Ternary-MLX-1014",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "notnaurw/Qwen3.8-27B-oQ5e-SAGE-CREST-mtp",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "nuckcrews/Qwen3-0.6B-pub",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "omayib/Llama-3.2-1B-Chiptune-MIDI",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "ombd/Llama-3.1-8B-Aleph-2",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "open-athena/Grug-67B-A2B-BFCL-Protocol-FTPO",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "open-athena/Grug-67B-A2B-Merge-Campaign3-DARE-Linear-02-2026.10.12",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "open-athena/MarinSkyRL-Open-MOPD-SmolLM3-3B-step-32",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "ordlibrary/deepsol-clawd-code",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "panita4992/teacher-schedule-qwen-lora",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "parasail-ai/GritLM-7B-vllm",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "partum/terllm",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "pashoktond1/qwen2.5-7b-deal-lora",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "paw9810/qawel",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "payam1394/oioxo-coder-35b-a3b",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "pgmharikrishnan/MiniCPM-V-4.7-1B-MLX-Serve-8bit",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "pgmharikrishnan/MiniCPM-V-4.7-35B-A3B-MLX-Serve-4bit",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "pinkachu/Estopia-13B-32k",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "piotrkosecki/Naive-N0.5-Flash-NVFP4",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "piskle/Qwen3.8-0.6B",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "piskle/Qwen3.8-0.6B-FP8",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "piskle/Qwen3.8-0.6B-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "pmercenary/Qwen3-1.7B-base-MED",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "podstack/Shaktimaan",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "prabanta-dev/Qwen3.8-27B-JNS",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "pramattale/qwen3-financial-merged",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "praveenhasavathu/aura-tinyllama-rag",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "prithivMLmods/blink-mimo-9b-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "promotion/Llama-3.1-8B-TLDR-NBPO-600updates",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "pvdhihihi/Qwen3-1.7B-SFT-ultrafeedback",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "pvdhihihi/Qwen3-1.7B-SPFT-ultrafeedback",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "qing-yao/ppt-pythia-160m-uniform250-previous_mse_restore_attention_warmup2000-seed208-stage2",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "qpqpqpqpqpqqqq/Nemotron-3.5-Lightning-30B-A3B-Abliterated-NVFP4",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "quaedra/Welp-35B-A3B-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "qualcomm/Intern3.5-VL-4B",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "quanghai00/Phi-4-mini-instruct-uncensored-3_100",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "quill-voice/cowboy",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "qxyz/sn56-i500-sbr4",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "qxyz/sn56-i511-pk2",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "qxyz/sn56-i512-r1",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "qxyz/sn56-i512l-r1",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "raoashish10/Qwen3-14B-NVFP4-W4A16",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "rawmodels/Qwen3.8-27B-antislop-rft1-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "rawmodels/Qwen3.8-27B-antislop-semdiv-grpo-NVFP4",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "rberberi/qwen3-finetuned",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "rbinrs/Dolphin-Mistral-24B-Venice-Edition",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "regnant-io/kw5-v2-149m-base",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "rghosh8/deepseek-llm-7b-chat-opencoder-educational-instruct-seed-1234-G-8",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "rghosh8/gsm8k-grpo-nemotron-4b-instruct-seed-1234-G-4",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "rony/gemma3-270m-typed-decisions",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "rothgar/deepseek-v4.1-flash-p300x2",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "runelab-ai/Hati-Glint-SQL-9B-v1",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "ryugyosoft/Ternary-Bonsai-2-27B-onwx",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "ryugyosoft/llm-jp-4.1-8b-thinking-int8-onw",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "s-a-i/Olmo-3.1-32B-Think",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "saaeiitaan/gemma-4-12B-agentic-fable5-composer2.5-v2-3.5x-tau2-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "sabber/snh-qwen3-1.7b-loan-adjudication-lora",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "sakamakismile/Qwen3.8-27B-AEON-ULTIMATE-UNCENSORED-NVFP4",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "sakata1301/SmolLM2-FT-MyDataset",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "sarperarikan/accessimind-wcag-genesis-gguf",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "sashavoitovych2001/qwen2.5-3b-holmes-no-robots-full-20260916",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "satgothyun/upmsp_sdst_tokengen_digits3_llama8b_r128_v1",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "sayyidfareed/DeepSeek-V4.1-Flash-Next-DGX-Spark-512K",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "sci4ai/Qwen3.6-27B-Ablit-Q8_0-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "scima/Qwen3.8-Whittle-MoE-27B-A17.8B-GGUF-all-quants",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "securepeak/DeepSeek-V4.1-Flash-Abliterated",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "seyhachhorn/khmer-food-lm",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "shabaw/gemma4-sagax-os27-raw",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "shiva123782/Kaveri-Instruct-v1-lora",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "shiva123782/Phi3.5-Kaveri-Coder-lora",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "shoukewei/Qwen3.8-27B-OBLITERATED22",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "shoukewei/Qwen3.8-27B-Uncensored-GGUF22",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "siddharthmb/2026.MI.Jacobian-Lens-Faithfulness",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "siddharthmb/2026.MI.Ladder-Target-Gating",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "siddharthmb/2026.MI.RL-Steering-Adapters",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "siddharthmb/2026.RA.Public-GRPO-Qwen3-8B-Step50",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "siddharthsingh18/Qwen3-1.7B-KnK6RL-Polaris-MaxRL-1000steps",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "sin333/adapter-n11",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "sizzlebop/flame-27m-instruct-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "sjdthree/ai-mod-create-270smol",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "smartdigitalnetworks/DeepSeek-V4-Flash-0731",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "smhsmh/falcon3-7b-persian-lora",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "smhsmh/llama3-8b-persian-lora",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "smutuvi/sikia-listener-v8-gemma4-e2b-lora",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "snehitsh/qwen3-1.7b-toolcall-lora-v1",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "softwareweaver/GLM-5.3-Uncensored-EXL3",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "solomoniw/CallForge-1B-v0",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "somenetworktrouble/Qwen3.5-4B-qat-heretic-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "sourin-hf/gibc-43m",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "sparel/herg-curation-v2",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "spoindo/connectailab-sp1-v1",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "spokenly/cleanup-1-gguf",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "sprout-research/SproutKO-130M",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "sriyuth/ari-assistant-1.5b",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "sriyuth/ari-rewritebot-135m-dpo",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "sstoica12/acquisition_llama8bins_medmcqa_proximity",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "sthavirp/my_awesome_eli5_clm-model",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "sulaimank/vibevoice-lora-enspa-miami",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "summerMC/Cyber-9B-Qwen-AllGDN-Engram",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "suzu89/Xing4.0-29B-A4B-6bit-MLX",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "switchboardllm/switchboard-router-0.5b",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "switchboardllm/switchboard-router-0.5b-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "switchboardllm/switchboard-router-0.5b-ONNX",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "syvai/plapre-3",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "tachiwin/tiyat_alpha_arch1_safetensors",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "tahamajs/BlockDiffuse",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "tanabe1478/gyaim-lm-small-public-v1",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "tawer12/qwen3-4b-sudoku-missing16-20-binary-rl",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "tc3oliver/Qwen3.8-27B-Coder390-oQ4e-MTP-Text",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "teamblobfish/DeepSeek-V4-Flash-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "teckedd/gha-understand-twi-medical-plus-language-v3",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "testify011/oixong7i6cjiocorquqfemj4a86mbofb-dzidzai-qwen35-4b-lora",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "tevfikk/granite-docling-258M-bitnet",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "theanupdas/Altworld_Hemmingway-1-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "thegovind/blink-4b",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "thelamapi/next-1b",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "thongbuind/SAI_375M",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "tmhventures/Qwen3-8B-SFTv1",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "tobiasoberrauch/Kolibri-1-mlx-4bit",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "togatogah/jinen-v2-xsmall.gguf",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "tokenaii/Horus-Taleeq-0.2B-Base",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "tokenfires/Qwen3.8-27B-MLX-6bit-MTPLX",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "tokentideAI/SDRL-Qwen3-4B",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "tomekcp/Kolibri-1-MLX-3bit",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "trymirai/Qwen3.8-27B-XS-experimental",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "trymirai/Qwen3.8-Flash-Next-S-small-experimental",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "tsinghua-sigs-robot-lab/VeriLoop-E2-Q8_0-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "tubby0728/smollm-135m-custom-tokenizer-v3",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "turintech/gemma-4-E2B-it-Artemis-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "turintech/gemma-4-E4B-it-Artemis-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "typer-org/booper-story-v2",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "ukkathva/AdaptKey-Nemotron-30b-FP8",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "ukuwzi/Qweble-Sol-4B-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "umitaksoylu/lsda-3b-turkish-dev-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "umixer/Qwen3.8-Flash-Next-oQ4e-mix6-mtp-v2",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "umixer/Qwen3.8-Flash-Next-oQ4e-mix8-mtp",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "unravler-media/GLM-5.3-CYBERSECURITY-FP8",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "utarn/DeepSeek-V4-Flash-0731-NVFP4",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "uzakotim/lfm2.5-350m-coreml",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "vcruz305/StepFun-5-Preview-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "veriepic/Veri-Base",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "vishal24p/30k",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "voice-box/pirate",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned1",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned10",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned11",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned12",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned13",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned14",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned15",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned16",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned17",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned18",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned19",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned2",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned20",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned21",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned22",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned23",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned24",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned25",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned26",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned27",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned28",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned29",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned3",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned30",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned31",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned32",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned33",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned34",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned35",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned36",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned37",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned4",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned5",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned6",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned7",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned8",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/llama-finetuned9",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waihongteh/qwen-finetuned1",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "warshanks/Qwen3-4B-Instruct-2507-AWQ",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "waseigo/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4-noMTP-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "webmp3/Sakura-Qwen-Image-2.1-PE-T2I-Uncensored-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "willamazon1/qwen3-8b-tmax-aenv-v39b-iter159",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "wsaefulloh/ArduiWire-0.5B",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "wz7475/qwen2.5-7b-instruct-katcher-legal-interleave-reg-r0.05-d10",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "xiaoyuchen1/Qwen3-8B-GRPO-MATH",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "xiaozhibro/DeepSeek-R1-Distill-Qwen-7B-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "ximosss/ReViSQL-Qwen3-4B",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "yadavkapil7155/Qwen2.5-Coder-3B_QLora",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "yava-code/Tessera-1B-Nano",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "yeasah/Ornith-1.5-9B-exl3",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "yeeun2/kanana-1.5-8b-instruct-2505-Persona-Merged",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "yinheyibei/PTCS-RL",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "yonommy0328/ConnectAI-C1-0.8B",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "yuhuanstudio/Yunmo-Next-1B-Instruct",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "yuinaiseki/CS329X_P1",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "yurih/gemma4-spiritual-v1-lora",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "zenosai/MonkeyOCRv2-S-Parsing",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "zhangrover/Unsloth-Qwen3.8-27B-UD-KQVQ4-IQ3Floor-10G-MTP-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "zwkwww/Ourbox-35B-JGOS-GGUF",
+          "reason": "budget_exhausted"
+        },
+        {
+          "hf_id": "zyr-AGENT/ZY-S1",
+          "reason": "budget_exhausted"
+        }
+      ],
+      "failures": [
+        {
+          "attempted_at": "2026-10-19T01:39:41+00:00",
+          "attempts": 1,
+          "hf_id": "BAHATIBlaise/ethine",
+          "http_status": 401,
+          "measured_at": "2026-10-19T01:39:44+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T01:40:05+00:00",
+          "attempts": 1,
+          "hf_id": "Ben-3id/FineTuneV1",
+          "http_status": 401,
+          "measured_at": "2026-10-19T01:40:08+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T01:40:23+00:00",
+          "attempts": 1,
+          "hf_id": "Brite19/AERA-Coder-Hybrid",
+          "http_status": 401,
+          "measured_at": "2026-10-19T01:40:26+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T01:41:05+00:00",
+          "attempts": 1,
+          "hf_id": "Commener/neurosport-llm",
+          "http_status": 401,
+          "measured_at": "2026-10-19T01:41:08+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T01:42:14+00:00",
+          "attempts": 1,
+          "hf_id": "Devseis/endpoint-auditor-1.5b",
+          "http_status": 401,
+          "measured_at": "2026-10-19T01:42:17+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T01:42:17+00:00",
+          "attempts": 1,
+          "hf_id": "Devseis/endpoint-auditor-1.5b-q4f16_1-MLC",
+          "http_status": 401,
+          "measured_at": "2026-10-19T01:42:20+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T01:42:20+00:00",
+          "attempts": 1,
+          "hf_id": "Devseis/endpoint-auditor-1.5b-q4f32_1-MLC",
+          "http_status": 401,
+          "measured_at": "2026-10-19T01:42:23+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T01:43:05+00:00",
+          "attempts": 1,
+          "hf_id": "Furqan697/qwen35-baseline-epoch2",
+          "http_status": 401,
+          "measured_at": "2026-10-19T01:43:08+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T01:47:11+00:00",
+          "attempts": 1,
+          "hf_id": "KarlKinda/Qwen3.8-27B-MeroMero-distill-20260910-030628-9d3440",
+          "http_status": 401,
+          "measured_at": "2026-10-19T01:47:14+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T01:47:17+00:00",
+          "attempts": 1,
+          "hf_id": "KilaAI/kila-coder-1.5b-GGUF",
+          "http_status": 401,
+          "measured_at": "2026-10-19T01:47:20+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T01:47:20+00:00",
+          "attempts": 1,
+          "hf_id": "KilaAI/kila-coder-1.5b-lora",
+          "http_status": 401,
+          "measured_at": "2026-10-19T01:47:23+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T01:50:53+00:00",
+          "attempts": 1,
+          "hf_id": "POTENTIUM22/potentium-wealth-v2",
+          "http_status": 401,
+          "measured_at": "2026-10-19T01:50:56+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T01:50:56+00:00",
+          "attempts": 1,
+          "hf_id": "PSAISASasda/apeiron-1.0-lora",
+          "http_status": 200,
+          "measured_at": "2026-10-19T01:50:59+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "forever-ai/apeiron-1.0-lora",
+          "response_ids": {
+            "id": "forever-ai/apeiron-1.0-lora",
+            "modelId": "forever-ai/apeiron-1.0-lora"
+          }
+        },
+        {
+          "attempted_at": "2026-10-19T01:51:29+00:00",
+          "attempts": 1,
+          "hf_id": "RaunakSaha/Orca2.0",
+          "http_status": 401,
+          "measured_at": "2026-10-19T01:51:32+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T01:52:53+00:00",
+          "attempts": 1,
+          "hf_id": "SolenopsisCampo/Xing4.0-29B-A4B-GGUF",
+          "http_status": 200,
+          "measured_at": "2026-10-19T01:52:56+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "Venastine-Research/Xing4.0-29B-A4B-GGUF",
+          "response_ids": {
+            "id": "Venastine-Research/Xing4.0-29B-A4B-GGUF",
+            "modelId": "Venastine-Research/Xing4.0-29B-A4B-GGUF"
+          }
+        },
+        {
+          "attempted_at": "2026-10-19T01:53:53+00:00",
+          "attempts": 1,
+          "hf_id": "Tree-AI-lab/kouman-IA-1b",
+          "http_status": 401,
+          "measured_at": "2026-10-19T01:53:56+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T01:53:56+00:00",
+          "attempts": 1,
+          "hf_id": "Tree-AI-lab/kouman-IA-1b-R1",
+          "http_status": 401,
+          "measured_at": "2026-10-19T01:53:59+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T01:54:41+00:00",
+          "attempts": 1,
+          "hf_id": "YiMConsulting/n-atlas-tiv-lora-smoke-v1",
+          "http_status": 401,
+          "measured_at": "2026-10-19T01:54:44+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T01:56:53+00:00",
+          "attempts": 1,
+          "hf_id": "artemyatsyuk/qwen2.5-0.5b-distill-codex-lora",
+          "http_status": 401,
+          "measured_at": "2026-10-19T01:56:56+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T01:56:56+00:00",
+          "attempts": 1,
+          "hf_id": "artnfull/connectailap-artnfull-v1",
+          "http_status": 200,
+          "measured_at": "2026-10-19T01:56:59+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "artnfull/connectailab-artnfull-v1",
+          "response_ids": {
+            "id": "artnfull/connectailab-artnfull-v1",
+            "modelId": "artnfull/connectailab-artnfull-v1"
+          }
+        },
+        {
+          "attempted_at": "2026-10-19T01:57:29+00:00",
+          "attempts": 1,
+          "hf_id": "azinamotoe/HmarBERT-mini-causal",
+          "http_status": 401,
+          "measured_at": "2026-10-19T01:57:32+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T01:59:08+00:00",
+          "attempts": 1,
+          "hf_id": "cuong1692001/Terminal-complete_16k",
+          "http_status": 200,
+          "measured_at": "2026-10-19T01:59:11+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "cuong1692001/Terminal-complete-16k",
+          "response_ids": {
+            "id": "cuong1692001/Terminal-complete-16k",
+            "modelId": "cuong1692001/Terminal-complete-16k"
+          }
+        },
+        {
+          "attempted_at": "2026-10-19T01:59:47+00:00",
+          "attempts": 1,
+          "hf_id": "deer-sec/StagAI-CyberSecurity-26B-A4B-v2-FP16-GGUF",
+          "http_status": 401,
+          "measured_at": "2026-10-19T01:59:50+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T01:59:53+00:00",
+          "attempts": 1,
+          "hf_id": "deer-sec/StagAI-CyberSecurity-26B-A4B-v2-Q4_K_M-GGUF",
+          "http_status": 401,
+          "measured_at": "2026-10-19T01:59:56+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T01:59:59+00:00",
+          "attempts": 1,
+          "hf_id": "deer-sec/StagAI-CyberSecurity-26B-A4B-v2-Q8_0-GGUF",
+          "http_status": 401,
+          "measured_at": "2026-10-19T02:00:02+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T02:00:02+00:00",
+          "attempts": 1,
+          "hf_id": "deniscartin/dravenneflm-v3",
+          "http_status": 401,
+          "measured_at": "2026-10-19T02:00:05+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T02:00:53+00:00",
+          "attempts": 1,
+          "hf_id": "dokoomae/MiniCPM5-1B-CMoE-e8s2a2",
+          "http_status": 401,
+          "measured_at": "2026-10-19T02:00:56+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-19T02:01:47+00:00",
+          "attempts": 1,
+          "hf_id": "flash-texter-lora/flash-texter-lora",
+          "http_status": 200,
+          "measured_at": "2026-10-19T02:01:50+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "nanotechaicent/flash-texter-lora",
+          "response_ids": {
+            "id": "nanotechaicent/flash-texter-lora",
+            "modelId": "nanotechaicent/flash-texter-lora"
+          }
+        },
+        {
+          "attempted_at": "2026-10-19T02:03:50+00:00",
+          "attempts": 1,
+          "hf_id": "fyb1214/Huihui-Qwen3.8-27B-Abliterated-Ternary-Bonsai-NInfer",
+          "http_status": 200,
+          "measured_at": "2026-10-19T02:03:53+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "fyb1214/Huihui-Qwen3.8-27B-Abliterated-Ternary-Bonsai-2-NInfer",
+          "response_ids": {
+            "id": "fyb1214/Huihui-Qwen3.8-27B-Abliterated-Ternary-Bonsai-2-NInfer",
+            "modelId": "fyb1214/Huihui-Qwen3.8-27B-Abliterated-Ternary-Bonsai-2-NInfer"
+          }
+        }
+      ],
+      "file": "hf_cohort.jsonl.gz",
+      "requested": 1500,
+      "retryable": [],
+      "sha256_raw": "68c291ffb1a8e5786d953121da65bc06af38000358b143ca7d8f17d9ee9782d4",
+      "status": "partial",
+      "stored": 1116
+    },
+    "hf_inference_providers": {
+      "api": "https://huggingface.co/api/models",
+      "bytes_raw": 2188165,
+      "bytes_stored": 308485,
+      "file": "hf_inference_providers.jsonl.gz",
+      "mappings": 6572,
+      "max_pages": 20,
+      "max_rows": 20000,
+      "pages": 7,
+      "request_url": "https://huggingface.co/api/models?inference_provider=all&pipeline_tag=text-generation&limit=1000&expand=inferenceProviderMapping",
+      "rows": 6429,
+      "schema_version": 1,
+      "scope": "currently listed text-generation models with >=1 inference provider",
+      "sha256_raw": "1fbdb0c5765c1db8d95825aac01a883b5f4bf9b036daa662b14e2a42d324d5d8",
+      "status": "ok"
+    },
+    "hf_models": {
+      "api": "https://huggingface.co/api/models/",
+      "bytes_raw": 2512156,
+      "bytes_stored": 328028,
+      "completed_at": "2026-10-19T01:36:38+00:00",
+      "failures": [
+        {
+          "attempted_at": "2026-10-19T01:36:19+00:00",
+          "error": null,
+          "hf_id": "inference-net/schematron-v2-granite-4.0-h-micro",
+          "http_status": 401
+        },
+        {
+          "attempted_at": "2026-10-19T01:36:20+00:00",
+          "error": null,
+          "hf_id": "inference-net/schematron-v2-llama-3.2-3b",
+          "http_status": 401
+        },
+        {
+          "attempted_at": "2026-10-19T01:36:23+00:00",
+          "error": null,
+          "hf_id": "microsoft/WizardLM-2-8x22B",
+          "http_status": 401
+        },
+        {
+          "attempted_at": "2026-10-19T01:36:30+00:00",
+          "error": null,
+          "hf_id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+          "http_status": 401
+        }
+      ],
+      "file": "hf_models.jsonl.gz",
+      "permanent_failures": 4,
+      "requested": 161,
+      "sha256_raw": "498972a909915fa84346ebc3adf3cec15cfa41d2a9726a9235cba1e3979e0d03",
+      "source_file": "openrouter_models.json.gz",
+      "status": "ok",
+      "stored": 157
+    },
+    "hf_new_models": {
+      "api": "https://huggingface.co/api/models",
+      "bytes_raw": 1070095,
+      "bytes_stored": 145040,
+      "completed_at": "2026-10-19T01:36:40+00:00",
+      "file": "hf_new_models.jsonl.gz",
+      "filter": "text-generation",
+      "pages": 2,
+      "reached_target": true,
+      "rows": 2000,
+      "sha256_raw": "4b3baf7bb456c55bbe77fd5dc4248dcbbdb9be7ed5976f33d85fab6b2d1eca11",
+      "sort": "createdAt",
+      "status": "ok",
+      "target_rows": 2000
+    },
+    "hf_top_models": {
+      "api": "https://huggingface.co/api/models",
+      "bytes_raw": 2782712,
+      "bytes_stored": 504000,
+      "completed_at": "2026-10-19T01:36:40+00:00",
+      "file": "hf_top_models.jsonl.gz",
+      "filter": "text-generation",
+      "pages": 5,
+      "reached_target": true,
+      "rows": 5000,
+      "sha256_raw": "60d92f2e1720bb246a419cfd02045327fb0c24ba2dbc2a6ae21860d4b9faa80f",
+      "sort": "downloads",
+      "status": "ok",
+      "target_rows": 5000
+    },
+    "openrouter_models": {
+      "attempts": 1,
+      "bytes_raw": 788478,
+      "bytes_stored": 78753,
+      "fetched_at": "2026-10-19T01:35:58+00:00",
+      "file": "openrouter_models.json.gz",
+      "http_status": 200,
+      "sha256_raw": "a185414d6ae54ffcc19fbc16919a8214799fcd9a9a942e795e96eb8d350ea247",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models"
+    },
+    "openrouter_rankings": {
+      "attempts": 1,
+      "bytes_raw": 2520833,
+      "bytes_stored": 273433,
+      "fetched_at": "2026-10-19T01:35:58+00:00",
+      "file": "openrouter_rankings.html.gz",
+      "http_status": 200,
+      "sha256_raw": "b332b07634484e0428f7f7a5d4bbd8df27b867ca9c64c946c7b934a343000f62",
+      "status": "ok",
+      "url": "https://openrouter.ai/rankings"
+    }
+  },
+  "runs": [
+    {
+      "finished_at": "2026-10-19T02:07:14+00:00",
+      "http_calls": 781,
+      "started_at": "2026-10-19T01:35:58+00:00"
+    }
+  ],
+  "schema_version": 1,
+  "snapshot_date": "2026-10-19",
+  "status": "partial"
+}
