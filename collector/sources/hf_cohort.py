@@ -12,7 +12,9 @@ from ..cohort import DISCOVERY, counts_valid, envelope_bodies, envelopes, instan
 from .hf_models import API, PERMANENT_STATUS
 
 LEG = "hf_cohort"
-POLL_BUDGET_SECONDS = 1800
+# Production discovery reuses about 545 of 1,500 members. At three seconds per
+# remaining detail call, a first pass needs about 48 minutes, before retries.
+POLL_BUDGET_SECONDS = 3600
 
 
 def response_reason(body, rid):

@@ -602,7 +602,7 @@ def test_elapsed_budget_saves_results_and_resumes_only_unresolved(tmp_path, monk
     def get(url):
         ctx.http.calls.append(url)
         response = next(responses)
-        elapsed[0] += 601
+        elapsed[0] += hf_cohort.POLL_BUDGET_SECONDS / 3 + 1
         return response
 
     ctx.http.get = get
@@ -638,13 +638,41 @@ def test_elapsed_budget_saves_results_and_resumes_only_unresolved(tmp_path, monk
 
 
 def test_ongoing_call_can_finish_after_elapsed_budget(tmp_path, monkeypatch):
-    ticks = iter([0, 1799, 1801])
+    budget = hf_cohort.POLL_BUDGET_SECONDS
+    ticks = iter([0, budget - 1, budget + 1])
     monkeypatch.setattr(hf_cohort.time, "monotonic", lambda: next(ticks))
     ctx = context(tmp_path, [(200, b'{"id":"a/x","downloads":1,"likes":0}')])
     result = hf_cohort.collect(ctx, {}, registry(("a/x", "b/x")))
     assert result["stored"] == 1
     assert result["deferred"] == [dict(hf_id="b/x", reason="budget_exhausted")]
     assert len(ctx.http.calls) == 1
+
+
+def test_first_pass_finishes_with_production_overlap_and_slow_responses(tmp_path, monkeypatch):
+    # The Oct 17-18 first passes reused 545-546 members and took about three
+    # seconds per detail call. The old 30-minute budget deferred ~350 members.
+    elapsed = [0]
+    monkeypatch.setattr(hf_cohort.time, "monotonic", lambda: elapsed[0])
+    ids = [f"org/model-{i:04}" for i in range(1500)]
+    ctx = context(tmp_path)
+    ctx.store("hf_top_models", envelope([dict(id=rid, downloads=1, likes=0) for rid in ids[:545]]))
+
+    def get(url):
+        assert ctx.http.min_interval >= 0.75
+        ctx.http.calls.append(url)
+        elapsed[0] += 3
+        rid = url.removeprefix(hf_cohort.API)
+        return Response(url, 200, json.dumps(dict(id=rid, downloads=1, likes=0)).encode())
+
+    ctx.http.get = get
+    result = hf_cohort.collect(ctx, {}, registry(ids))
+    assert result["status"] == "ok"
+    assert result["stored"] == result["requested"] == 1500
+    assert result["deferred"] == result["retryable"] == []
+    assert result["coverage"]["already_observed_through_discovery"] == 545
+    assert len(ctx.http.calls) == 955
+    assert elapsed[0] == 2865
+    assert ctx.http.min_interval == 0.25
 
 
 @pytest.mark.parametrize(
