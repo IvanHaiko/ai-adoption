@@ -1,0 +1,619 @@
+{
+  "collector_version": "0.1.0",
+  "legs": {
+    "arxiv": {
+      "api": "https://oaipmh.arxiv.org/oai",
+      "bytes_raw": 12447330,
+      "bytes_stored": 2782464,
+      "category_counts": {
+        "cs.AI": 980,
+        "cs.CL": 574,
+        "cs.LG": 1079
+      },
+      "completed_at": "2026-10-20T02:02:49+00:00",
+      "date_from": "2026-10-19",
+      "date_until": "2026-10-20",
+      "file": "arxiv.jsonl.gz",
+      "metadata_prefix": "arXiv",
+      "pages": 3,
+      "rows": 2633,
+      "sha256_raw": "c2298b2182059ab53e288bc77d76b34ce104442b87114eeb035c2a20e5eebde6",
+      "status": "ok"
+    },
+    "hf_cohort": {
+      "attempt_history": [],
+      "bytes_raw": 10995109,
+      "bytes_stored": 1223449,
+      "cohort_id": "hf_lifecycle_20261015_v2",
+      "coverage": {
+        "already_observed_through_discovery": 544,
+        "attempted": 1500,
+        "cohort_size": 1500,
+        "coverage": 0.9666666666666667,
+        "deferred": 0,
+        "deferred_by_reason": {},
+        "failed_by_reason": {
+          "http_error": 39,
+          "identity_mismatch": 11
+        },
+        "observed_only_through_cohort": 906,
+        "successful": 1450
+      },
+      "deferred": [],
+      "failures": [
+        {
+          "attempted_at": "2026-10-20T02:05:37+00:00",
+          "attempts": 1,
+          "hf_id": "BAHATIBlaise/ethine",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:05:40+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:06:01+00:00",
+          "attempts": 1,
+          "hf_id": "Ben-3id/FineTuneV1",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:06:04+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:06:19+00:00",
+          "attempts": 1,
+          "hf_id": "Brite19/AERA-Coder-Hybrid",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:06:22+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:07:01+00:00",
+          "attempts": 1,
+          "hf_id": "Commener/neurosport-llm",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:07:04+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:08:10+00:00",
+          "attempts": 1,
+          "hf_id": "Devseis/endpoint-auditor-1.5b",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:08:13+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:08:13+00:00",
+          "attempts": 1,
+          "hf_id": "Devseis/endpoint-auditor-1.5b-q4f16_1-MLC",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:08:16+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:08:16+00:00",
+          "attempts": 1,
+          "hf_id": "Devseis/endpoint-auditor-1.5b-q4f32_1-MLC",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:08:19+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:09:01+00:00",
+          "attempts": 1,
+          "hf_id": "Furqan697/qwen35-baseline-epoch2",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:09:04+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:13:07+00:00",
+          "attempts": 1,
+          "hf_id": "KarlKinda/Qwen3.8-27B-MeroMero-distill-20260910-030628-9d3440",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:13:10+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:13:13+00:00",
+          "attempts": 1,
+          "hf_id": "KilaAI/kila-coder-1.5b-GGUF",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:13:16+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:13:16+00:00",
+          "attempts": 1,
+          "hf_id": "KilaAI/kila-coder-1.5b-lora",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:13:19+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:16:49+00:00",
+          "attempts": 1,
+          "hf_id": "POTENTIUM22/potentium-wealth-v2",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:16:52+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:16:52+00:00",
+          "attempts": 1,
+          "hf_id": "PSAISASasda/apeiron-1.0-lora",
+          "http_status": 200,
+          "measured_at": "2026-10-20T02:16:55+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "forever-ai/apeiron-1.0-lora",
+          "response_ids": {
+            "id": "forever-ai/apeiron-1.0-lora",
+            "modelId": "forever-ai/apeiron-1.0-lora"
+          }
+        },
+        {
+          "attempted_at": "2026-10-20T02:17:25+00:00",
+          "attempts": 1,
+          "hf_id": "RaunakSaha/Orca2.0",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:17:28+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:18:49+00:00",
+          "attempts": 1,
+          "hf_id": "SolenopsisCampo/Xing4.0-29B-A4B-GGUF",
+          "http_status": 200,
+          "measured_at": "2026-10-20T02:18:52+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "Venastine-Research/Xing4.0-29B-A4B-GGUF",
+          "response_ids": {
+            "id": "Venastine-Research/Xing4.0-29B-A4B-GGUF",
+            "modelId": "Venastine-Research/Xing4.0-29B-A4B-GGUF"
+          }
+        },
+        {
+          "attempted_at": "2026-10-20T02:19:49+00:00",
+          "attempts": 1,
+          "hf_id": "Tree-AI-lab/kouman-IA-1b",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:19:52+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:19:52+00:00",
+          "attempts": 1,
+          "hf_id": "Tree-AI-lab/kouman-IA-1b-R1",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:19:55+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:20:37+00:00",
+          "attempts": 1,
+          "hf_id": "YiMConsulting/n-atlas-tiv-lora-smoke-v1",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:20:40+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:22:52+00:00",
+          "attempts": 1,
+          "hf_id": "artemyatsyuk/qwen2.5-0.5b-distill-codex-lora",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:22:55+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:22:55+00:00",
+          "attempts": 1,
+          "hf_id": "artnfull/connectailap-artnfull-v1",
+          "http_status": 200,
+          "measured_at": "2026-10-20T02:22:58+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "artnfull/connectailab-artnfull-v1",
+          "response_ids": {
+            "id": "artnfull/connectailab-artnfull-v1",
+            "modelId": "artnfull/connectailab-artnfull-v1"
+          }
+        },
+        {
+          "attempted_at": "2026-10-20T02:23:28+00:00",
+          "attempts": 1,
+          "hf_id": "azinamotoe/HmarBERT-mini-causal",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:23:31+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:25:07+00:00",
+          "attempts": 1,
+          "hf_id": "cuong1692001/Terminal-complete_16k",
+          "http_status": 200,
+          "measured_at": "2026-10-20T02:25:10+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "cuong1692001/Terminal-complete-16k",
+          "response_ids": {
+            "id": "cuong1692001/Terminal-complete-16k",
+            "modelId": "cuong1692001/Terminal-complete-16k"
+          }
+        },
+        {
+          "attempted_at": "2026-10-20T02:25:46+00:00",
+          "attempts": 1,
+          "hf_id": "deer-sec/StagAI-CyberSecurity-26B-A4B-v2-FP16-GGUF",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:25:49+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:25:52+00:00",
+          "attempts": 1,
+          "hf_id": "deer-sec/StagAI-CyberSecurity-26B-A4B-v2-Q4_K_M-GGUF",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:25:55+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:25:58+00:00",
+          "attempts": 1,
+          "hf_id": "deer-sec/StagAI-CyberSecurity-26B-A4B-v2-Q8_0-GGUF",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:26:01+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:26:01+00:00",
+          "attempts": 1,
+          "hf_id": "deniscartin/dravenneflm-v3",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:26:04+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:26:52+00:00",
+          "attempts": 1,
+          "hf_id": "dokoomae/MiniCPM5-1B-CMoE-e8s2a2",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:26:55+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:27:46+00:00",
+          "attempts": 1,
+          "hf_id": "flash-texter-lora/flash-texter-lora",
+          "http_status": 200,
+          "measured_at": "2026-10-20T02:27:49+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "nanotechaicent/flash-texter-lora",
+          "response_ids": {
+            "id": "nanotechaicent/flash-texter-lora",
+            "modelId": "nanotechaicent/flash-texter-lora"
+          }
+        },
+        {
+          "attempted_at": "2026-10-20T02:29:49+00:00",
+          "attempts": 1,
+          "hf_id": "fyb1214/Huihui-Qwen3.8-27B-Abliterated-Ternary-Bonsai-NInfer",
+          "http_status": 200,
+          "measured_at": "2026-10-20T02:29:52+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "fyb1214/Huihui-Qwen3.8-27B-Abliterated-Ternary-Bonsai-2-NInfer",
+          "response_ids": {
+            "id": "fyb1214/Huihui-Qwen3.8-27B-Abliterated-Ternary-Bonsai-2-NInfer",
+            "modelId": "fyb1214/Huihui-Qwen3.8-27B-Abliterated-Ternary-Bonsai-2-NInfer"
+          }
+        },
+        {
+          "attempted_at": "2026-10-20T02:33:49+00:00",
+          "attempts": 1,
+          "hf_id": "jdominick05/Qwen3.8-27B-24GB-128k-GGUF",
+          "http_status": 200,
+          "measured_at": "2026-10-20T02:33:52+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "jdominick05/Qwen3.8-27B-24GB-262k-GGUF",
+          "response_ids": {
+            "id": "jdominick05/Qwen3.8-27B-24GB-262k-GGUF",
+            "modelId": "jdominick05/Qwen3.8-27B-24GB-262k-GGUF"
+          }
+        },
+        {
+          "attempted_at": "2026-10-20T02:34:52+00:00",
+          "attempts": 1,
+          "hf_id": "kataguru/Kataguru-MVP-27B-NVFP4",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:34:55+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:34:55+00:00",
+          "attempts": 1,
+          "hf_id": "kdkyum/family_latent_two_hop",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:34:58+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:34:58+00:00",
+          "attempts": 1,
+          "hf_id": "keepstar/Kali-Lite-8B",
+          "http_status": 200,
+          "measured_at": "2026-10-20T02:35:01+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "Kalicorp/Kali-Lite-8B",
+          "response_ids": {
+            "id": "Kalicorp/Kali-Lite-8B",
+            "modelId": "Kalicorp/Kali-Lite-8B"
+          }
+        },
+        {
+          "attempted_at": "2026-10-20T02:37:55+00:00",
+          "attempts": 1,
+          "hf_id": "manjukp6/tara",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:37:58+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:38:22+00:00",
+          "attempts": 1,
+          "hf_id": "mikeljl/lfv2_base_new",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:38:25+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:38:31+00:00",
+          "attempts": 1,
+          "hf_id": "mlemmlem4869/medical-title-qwen3-4b-chat-v1",
+          "http_status": 200,
+          "measured_at": "2026-10-20T02:38:34+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "hoagngn/medical-title-qwen3-4b-chat-v1",
+          "response_ids": {
+            "id": "hoagngn/medical-title-qwen3-4b-chat-v1",
+            "modelId": "hoagngn/medical-title-qwen3-4b-chat-v1"
+          }
+        },
+        {
+          "attempted_at": "2026-10-20T02:38:55+00:00",
+          "attempts": 1,
+          "hf_id": "mr-ltg/gpt-oss-20b-mlx-4Bit",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:38:58+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:41:31+00:00",
+          "attempts": 1,
+          "hf_id": "payam1394/oioxo-coder-35b-a3b",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:41:34+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:42:55+00:00",
+          "attempts": 1,
+          "hf_id": "rawmodels/Qwen3.8-27B-antislop-rft1-GGUF",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:42:58+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:42:58+00:00",
+          "attempts": 1,
+          "hf_id": "rawmodels/Qwen3.8-27B-antislop-semdiv-grpo-NVFP4",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:43:01+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:43:07+00:00",
+          "attempts": 1,
+          "hf_id": "regnant-io/kw5-v2-149m-base",
+          "http_status": 200,
+          "measured_at": "2026-10-20T02:43:10+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "regnant-io/kw5-149M",
+          "response_ids": {
+            "id": "regnant-io/kw5-149M",
+            "modelId": "regnant-io/kw5-149M"
+          }
+        },
+        {
+          "attempted_at": "2026-10-20T02:44:13+00:00",
+          "attempts": 1,
+          "hf_id": "shiva123782/Kaveri-Instruct-v1-lora",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:44:16+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:44:40+00:00",
+          "attempts": 1,
+          "hf_id": "sin333/adapter-n11",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:44:43+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:45:34+00:00",
+          "attempts": 1,
+          "hf_id": "sstoica12/acquisition_llama8bins_medmcqa_proximity",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:45:37+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:45:40+00:00",
+          "attempts": 1,
+          "hf_id": "sulaimank/vibevoice-lora-enspa-miami",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:45:43+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:45:46+00:00",
+          "attempts": 1,
+          "hf_id": "suzu89/Xing4.0-29B-A4B-6bit-MLX",
+          "http_status": 200,
+          "measured_at": "2026-10-20T02:45:49+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "TokenAI-zer/Xing4.0-29B-A4B-6bit-MLX",
+          "response_ids": {
+            "id": "TokenAI-zer/Xing4.0-29B-A4B-6bit-MLX",
+            "modelId": "TokenAI-zer/Xing4.0-29B-A4B-6bit-MLX"
+          }
+        },
+        {
+          "attempted_at": "2026-10-20T02:47:07+00:00",
+          "attempts": 1,
+          "hf_id": "tsinghua-sigs-robot-lab/VeriLoop-E2-Q8_0-GGUF",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:47:10+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:47:31+00:00",
+          "attempts": 1,
+          "hf_id": "umixer/Qwen3.8-Flash-Next-oQ4e-mix8-mtp",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:47:34+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:47:52+00:00",
+          "attempts": 1,
+          "hf_id": "voice-box/pirate",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:47:55+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-20T02:50:28+00:00",
+          "attempts": 1,
+          "hf_id": "yinheyibei/PTCS-RL",
+          "http_status": 401,
+          "measured_at": "2026-10-20T02:50:31+00:00",
+          "reason": "http_error"
+        }
+      ],
+      "file": "hf_cohort.jsonl.gz",
+      "requested": 1500,
+      "retryable": [],
+      "sha256_raw": "62f76d182e386e310f2641655ebbbdb7b7400a8c8a8292c6220a8b4d97769d14",
+      "status": "ok",
+      "stored": 1450
+    },
+    "hf_inference_providers": {
+      "api": "https://huggingface.co/api/models",
+      "bytes_raw": 2192033,
+      "bytes_stored": 310012,
+      "file": "hf_inference_providers.jsonl.gz",
+      "mappings": 6576,
+      "max_pages": 20,
+      "max_rows": 20000,
+      "pages": 7,
+      "request_url": "https://huggingface.co/api/models?inference_provider=all&pipeline_tag=text-generation&limit=1000&expand=inferenceProviderMapping",
+      "rows": 6447,
+      "schema_version": 1,
+      "scope": "currently listed text-generation models with >=1 inference provider",
+      "sha256_raw": "767a34409ab4a0368828aa764341a73a186c0c240a86cc345a3ef6f7f2827860",
+      "status": "ok"
+    },
+    "hf_models": {
+      "api": "https://huggingface.co/api/models/",
+      "bytes_raw": 2487901,
+      "bytes_stored": 325023,
+      "completed_at": "2026-10-20T02:02:31+00:00",
+      "failures": [
+        {
+          "attempted_at": "2026-10-20T02:02:12+00:00",
+          "error": null,
+          "hf_id": "inference-net/schematron-v2-granite-4.0-h-micro",
+          "http_status": 401
+        },
+        {
+          "attempted_at": "2026-10-20T02:02:13+00:00",
+          "error": null,
+          "hf_id": "inference-net/schematron-v2-llama-3.2-3b",
+          "http_status": 401
+        },
+        {
+          "attempted_at": "2026-10-20T02:02:22+00:00",
+          "error": null,
+          "hf_id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+          "http_status": 401
+        }
+      ],
+      "file": "hf_models.jsonl.gz",
+      "permanent_failures": 3,
+      "requested": 158,
+      "sha256_raw": "ca6641bca551f078f7e3826bc1a17aff895f2eab5f66d6159b37b4dd6d1ddeb1",
+      "source_file": "openrouter_models.json.gz",
+      "status": "ok",
+      "stored": 155
+    },
+    "hf_new_models": {
+      "api": "https://huggingface.co/api/models",
+      "bytes_raw": 1070268,
+      "bytes_stored": 145297,
+      "completed_at": "2026-10-20T02:02:33+00:00",
+      "file": "hf_new_models.jsonl.gz",
+      "filter": "text-generation",
+      "pages": 2,
+      "reached_target": true,
+      "rows": 2000,
+      "sha256_raw": "3197451d8989330edcaa7fd64ab713ef1fade09912edb065f5e83d869552ac35",
+      "sort": "createdAt",
+      "status": "ok",
+      "target_rows": 2000
+    },
+    "hf_top_models": {
+      "api": "https://huggingface.co/api/models",
+      "bytes_raw": 2781373,
+      "bytes_stored": 503359,
+      "completed_at": "2026-10-20T02:02:32+00:00",
+      "file": "hf_top_models.jsonl.gz",
+      "filter": "text-generation",
+      "pages": 5,
+      "reached_target": true,
+      "rows": 5000,
+      "sha256_raw": "4912c057a774dc7e32b24e708942582cc83f1fe0a260a871983f994ffc1c95cf",
+      "sort": "downloads",
+      "status": "ok",
+      "target_rows": 5000
+    },
+    "openrouter_models": {
+      "attempts": 1,
+      "bytes_raw": 788318,
+      "bytes_stored": 78736,
+      "fetched_at": "2026-10-20T02:01:51+00:00",
+      "file": "openrouter_models.json.gz",
+      "http_status": 200,
+      "sha256_raw": "03625defc435e061411f3fd7dba7a972cf8f99999efe7c396791ac65196e9393",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models"
+    },
+    "openrouter_rankings": {
+      "attempts": 1,
+      "bytes_raw": 2522717,
+      "bytes_stored": 273616,
+      "fetched_at": "2026-10-20T02:01:52+00:00",
+      "file": "openrouter_rankings.html.gz",
+      "http_status": 200,
+      "sha256_raw": "25d017d40313e0029cf912a5c490a41bbc6003427ff67d9d16b7455ba958de77",
+      "status": "ok",
+      "url": "https://openrouter.ai/rankings"
+    }
+  },
+  "runs": [
+    {
+      "finished_at": "2026-10-20T02:50:56+00:00",
+      "http_calls": 1133,
+      "started_at": "2026-10-20T02:01:51+00:00"
+    }
+  ],
+  "schema_version": 1,
+  "snapshot_date": "2026-10-20",
+  "status": "complete"
+}
