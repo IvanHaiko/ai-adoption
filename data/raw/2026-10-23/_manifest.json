@@ -2,11 +2,23 @@
   "collector_version": "0.1.0",
   "legs": {
     "arxiv": {
-      "category": "cs.AI",
-      "error": "ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='oaipmh.arxiv.org', port=443): Read timed out. (read timeout=60.0)\"))",
-      "http_status": 0,
-      "status": "partial",
-      "url": "https://oaipmh.arxiv.org/oai?verb=ListRecords&metadataPrefix=arXiv&set=cs%3Acs%3AAI&from=2026-10-22&until=2026-10-23"
+      "api": "https://oaipmh.arxiv.org/oai",
+      "bytes_raw": 8605430,
+      "bytes_stored": 2030004,
+      "category_counts": {
+        "cs.AI": 763,
+        "cs.CL": 407,
+        "cs.LG": 760
+      },
+      "completed_at": "2026-10-23T11:44:34+00:00",
+      "date_from": "2026-10-22",
+      "date_until": "2026-10-23",
+      "file": "arxiv.jsonl.gz",
+      "metadata_prefix": "arXiv",
+      "pages": 3,
+      "rows": 1930,
+      "sha256_raw": "8a7a8a5434fc1610c206d293c6649d36bd4a5be7a7da9fdb91976108bfb87bcd",
+      "status": "ok"
     },
     "hf_cohort": {
       "attempt_history": [],
@@ -1153,9 +1165,14 @@
       "finished_at": "2026-10-23T02:43:50+00:00",
       "http_calls": 1139,
       "started_at": "2026-10-23T01:51:40+00:00"
+    },
+    {
+      "finished_at": "2026-10-23T11:44:34+00:00",
+      "http_calls": 3,
+      "started_at": "2026-10-23T11:44:23+00:00"
     }
   ],
   "schema_version": 1,
   "snapshot_date": "2026-10-23",
-  "status": "partial"
+  "status": "complete"
 }
