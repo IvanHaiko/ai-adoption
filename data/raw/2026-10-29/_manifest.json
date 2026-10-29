@@ -1,0 +1,1228 @@
+{
+  "collector_version": "0.1.0",
+  "legs": {
+    "arxiv": {
+      "api": "https://oaipmh.arxiv.org/oai",
+      "bytes_raw": 4822315,
+      "bytes_stored": 1126198,
+      "category_counts": {
+        "cs.AI": 420,
+        "cs.CL": 188,
+        "cs.LG": 457
+      },
+      "completed_at": "2026-10-29T02:47:06+00:00",
+      "date_from": "2026-10-28",
+      "date_until": "2026-10-29",
+      "file": "arxiv.jsonl.gz",
+      "metadata_prefix": "arXiv",
+      "pages": 3,
+      "rows": 1065,
+      "sha256_raw": "7d0226723ed356f8acc831848d6f24a63d3e0928418a4b4be81f2b2524925018",
+      "status": "ok"
+    },
+    "hf_cohort": {
+      "attempt_history": [],
+      "bytes_raw": 11622090,
+      "bytes_stored": 1299731,
+      "cohort_id": "hf_lifecycle_20261015_v2",
+      "coverage": {
+        "already_observed_through_discovery": 537,
+        "attempted": 1500,
+        "cohort_size": 1500,
+        "coverage": 0.9346666666666666,
+        "deferred": 0,
+        "deferred_by_reason": {},
+        "failed_by_reason": {
+          "http_error": 42,
+          "identity_mismatch": 56
+        },
+        "observed_only_through_cohort": 865,
+        "successful": 1402
+      },
+      "deferred": [],
+      "failures": [
+        {
+          "attempted_at": "2026-10-29T02:50:00+00:00",
+          "attempts": 1,
+          "hf_id": "BAHATIBlaise/ethine",
+          "http_status": 401,
+          "measured_at": "2026-10-29T02:50:03+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T02:50:24+00:00",
+          "attempts": 1,
+          "hf_id": "Ben-3id/FineTuneV1",
+          "http_status": 401,
+          "measured_at": "2026-10-29T02:50:27+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T02:50:42+00:00",
+          "attempts": 1,
+          "hf_id": "Brite19/AERA-Coder-Hybrid",
+          "http_status": 401,
+          "measured_at": "2026-10-29T02:50:45+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T02:51:00+00:00",
+          "attempts": 1,
+          "hf_id": "CentIo/Cent1-1B",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:51:03+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "CentLabs/Cent1-1B",
+          "response_ids": {
+            "id": "CentLabs/Cent1-1B",
+            "modelId": "CentLabs/Cent1-1B"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:51:24+00:00",
+          "attempts": 1,
+          "hf_id": "Commener/neurosport-llm",
+          "http_status": 401,
+          "measured_at": "2026-10-29T02:51:27+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T02:52:39+00:00",
+          "attempts": 1,
+          "hf_id": "Devseis/endpoint-auditor-1.5b",
+          "http_status": 401,
+          "measured_at": "2026-10-29T02:52:42+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T02:52:42+00:00",
+          "attempts": 1,
+          "hf_id": "Devseis/endpoint-auditor-1.5b-q4f16_1-MLC",
+          "http_status": 401,
+          "measured_at": "2026-10-29T02:52:45+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T02:52:45+00:00",
+          "attempts": 1,
+          "hf_id": "Devseis/endpoint-auditor-1.5b-q4f32_1-MLC",
+          "http_status": 401,
+          "measured_at": "2026-10-29T02:52:48+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T02:53:30+00:00",
+          "attempts": 1,
+          "hf_id": "Furqan697/qwen35-baseline-epoch2",
+          "http_status": 401,
+          "measured_at": "2026-10-29T02:53:33+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T02:53:54+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-020",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:53:57+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-020",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-020",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-020"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:53:57+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-021",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:54:00+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-021",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-021",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-021"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:54:00+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-022",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:54:03+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-022",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-022",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-022"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:54:03+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-023",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:54:06+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-023",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-023",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-023"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:54:06+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-024",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:54:09+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-024",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-024",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-024"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:54:09+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-025",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:54:12+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-025",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-025",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-025"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:54:12+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-026",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:54:15+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-026",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-026",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-026"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:54:15+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-027",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:54:18+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-027",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-027",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-027"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:54:18+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-028",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:54:21+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-028",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-028",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-028"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:54:21+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-029",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:54:24+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-029",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-029",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-029"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:54:24+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-030",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:54:27+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-030",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-030",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-030"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:54:27+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-031",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:54:30+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-031",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-031",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-031"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:54:30+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-032",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:54:33+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-032",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-032",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-032"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:54:33+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-033",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:54:36+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-033",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-033",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-033"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:54:36+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-034",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:54:39+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-034",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-034",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-034"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:54:39+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-035",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:54:42+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-035",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-035",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-035"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:54:42+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-036",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:54:45+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-036",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-036",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-036"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:54:45+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-037",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:54:48+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-037",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-037",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-037"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:54:48+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-038",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:54:51+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-038",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-038",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-038"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:54:51+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-039",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:54:54+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-039",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-039",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-039"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:54:54+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-040",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:54:57+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-040",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-040",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-040"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:54:57+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-041",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:55:00+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-041",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-041",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-041"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:55:00+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-042",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:55:03+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-042",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-042",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-042"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:55:03+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-043",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:55:06+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-043",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-043",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-043"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:55:06+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-044",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:55:09+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-044",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-044",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-044"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:55:09+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-045",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:55:12+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-045",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-045",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-045"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:55:12+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-046",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:55:15+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-046",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-046",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-046"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:55:15+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-047",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:55:18+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-047",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-047",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-047"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:55:18+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-048",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:55:21+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-048",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-048",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-048"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:55:21+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-049",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:55:24+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-049",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-049",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-049"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:55:24+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-050",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:55:27+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-050",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-050",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-050"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:55:27+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-051",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:55:30+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-051",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-051",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-051"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:55:30+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-052",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:55:33+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-052",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-052",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-052"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:55:33+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-053",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:55:36+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-053",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-053",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-053"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:55:36+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-054",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:55:39+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-054",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-054",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-054"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:55:39+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-055",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:55:42+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-055",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-055",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-055"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:55:42+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-056",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:55:45+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-056",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-056",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-056"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:55:45+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-057",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:55:48+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-057",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-057",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-057"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:55:48+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-058",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:55:51+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-058",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-058",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-058"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:55:51+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-059",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:55:54+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-059",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-059",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-059"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:55:54+00:00",
+          "attempts": 1,
+          "hf_id": "HYU-NLP-EVAL/qwen3-4b-rar-medicine-static-r0-matched-dense-seed11-step-060",
+          "http_status": 200,
+          "measured_at": "2026-10-29T02:55:57+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-060",
+          "response_ids": {
+            "id": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-060",
+            "modelId": "HYU-NLP-EVAL/20260928_rar-medicine_static_qwen3-4b_matched_dense_impl-verl_s11_step-060"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T02:57:36+00:00",
+          "attempts": 1,
+          "hf_id": "KarlKinda/Qwen3.8-27B-MeroMero-distill-20260910-030628-9d3440",
+          "http_status": 401,
+          "measured_at": "2026-10-29T02:57:39+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T02:57:42+00:00",
+          "attempts": 1,
+          "hf_id": "KilaAI/kila-coder-1.5b-GGUF",
+          "http_status": 401,
+          "measured_at": "2026-10-29T02:57:45+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T02:57:45+00:00",
+          "attempts": 1,
+          "hf_id": "KilaAI/kila-coder-1.5b-lora",
+          "http_status": 401,
+          "measured_at": "2026-10-29T02:57:48+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:01:18+00:00",
+          "attempts": 1,
+          "hf_id": "POTENTIUM22/potentium-wealth-v2",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:01:21+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:01:21+00:00",
+          "attempts": 1,
+          "hf_id": "PSAISASasda/apeiron-1.0-lora",
+          "http_status": 200,
+          "measured_at": "2026-10-29T03:01:24+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "forever-ai/apeiron-1.0-lora",
+          "response_ids": {
+            "id": "forever-ai/apeiron-1.0-lora",
+            "modelId": "forever-ai/apeiron-1.0-lora"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T03:01:45+00:00",
+          "attempts": 1,
+          "hf_id": "Rajat110704/qwen3.5-4b-artha-router",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:01:48+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:01:54+00:00",
+          "attempts": 1,
+          "hf_id": "RaunakSaha/Orca2.0",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:01:57+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:03:21+00:00",
+          "attempts": 1,
+          "hf_id": "SolenopsisCampo/Xing4.0-29B-A4B-GGUF",
+          "http_status": 200,
+          "measured_at": "2026-10-29T03:03:24+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "Venastine-Research/Xing4.0-29B-A4B-GGUF",
+          "response_ids": {
+            "id": "Venastine-Research/Xing4.0-29B-A4B-GGUF",
+            "modelId": "Venastine-Research/Xing4.0-29B-A4B-GGUF"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T03:04:21+00:00",
+          "attempts": 1,
+          "hf_id": "Tree-AI-lab/kouman-IA-1b",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:04:24+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:04:24+00:00",
+          "attempts": 1,
+          "hf_id": "Tree-AI-lab/kouman-IA-1b-R1",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:04:27+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:05:09+00:00",
+          "attempts": 1,
+          "hf_id": "YiMConsulting/n-atlas-tiv-lora-smoke-v1",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:05:12+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:07:24+00:00",
+          "attempts": 1,
+          "hf_id": "artemyatsyuk/qwen2.5-0.5b-distill-codex-lora",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:07:27+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:07:27+00:00",
+          "attempts": 1,
+          "hf_id": "artnfull/connectailap-artnfull-v1",
+          "http_status": 200,
+          "measured_at": "2026-10-29T03:07:30+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "artnfull/connectailab-artnfull-v1",
+          "response_ids": {
+            "id": "artnfull/connectailab-artnfull-v1",
+            "modelId": "artnfull/connectailab-artnfull-v1"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T03:07:33+00:00",
+          "attempts": 1,
+          "hf_id": "ashwaaaaa/aleph-alpha-kolibri-1-tt",
+          "http_status": 200,
+          "measured_at": "2026-10-29T03:07:36+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "apande-TT/aleph-alpha-kolibri-1-tt",
+          "response_ids": {
+            "id": "apande-TT/aleph-alpha-kolibri-1-tt",
+            "modelId": "apande-TT/aleph-alpha-kolibri-1-tt"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T03:08:00+00:00",
+          "attempts": 1,
+          "hf_id": "azinamotoe/HmarBERT-mini-causal",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:08:03+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:09:42+00:00",
+          "attempts": 1,
+          "hf_id": "cuong1692001/Terminal-complete_16k",
+          "http_status": 200,
+          "measured_at": "2026-10-29T03:09:45+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "cuong1692001/Terminal-complete-16k",
+          "response_ids": {
+            "id": "cuong1692001/Terminal-complete-16k",
+            "modelId": "cuong1692001/Terminal-complete-16k"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T03:10:21+00:00",
+          "attempts": 1,
+          "hf_id": "deer-sec/StagAI-CyberSecurity-26B-A4B-v2-FP16-GGUF",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:10:24+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:10:27+00:00",
+          "attempts": 1,
+          "hf_id": "deer-sec/StagAI-CyberSecurity-26B-A4B-v2-Q4_K_M-GGUF",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:10:30+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:10:33+00:00",
+          "attempts": 1,
+          "hf_id": "deer-sec/StagAI-CyberSecurity-26B-A4B-v2-Q8_0-GGUF",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:10:36+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:10:36+00:00",
+          "attempts": 1,
+          "hf_id": "deniscartin/dravenneflm-v3",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:10:39+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:11:27+00:00",
+          "attempts": 1,
+          "hf_id": "dokoomae/MiniCPM5-1B-CMoE-e8s2a2",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:11:30+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:12:27+00:00",
+          "attempts": 1,
+          "hf_id": "flash-texter-lora/flash-texter-lora",
+          "http_status": 200,
+          "measured_at": "2026-10-29T03:12:30+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "nanotechaicent/flash-texter-lora",
+          "response_ids": {
+            "id": "nanotechaicent/flash-texter-lora",
+            "modelId": "nanotechaicent/flash-texter-lora"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T03:14:30+00:00",
+          "attempts": 1,
+          "hf_id": "fyb1214/Huihui-Qwen3.8-27B-Abliterated-Ternary-Bonsai-NInfer",
+          "http_status": 200,
+          "measured_at": "2026-10-29T03:14:33+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "fyb1214/Huihui-Qwen3.8-27B-Abliterated-Ternary-Bonsai-2-NInfer",
+          "response_ids": {
+            "id": "fyb1214/Huihui-Qwen3.8-27B-Abliterated-Ternary-Bonsai-2-NInfer",
+            "modelId": "fyb1214/Huihui-Qwen3.8-27B-Abliterated-Ternary-Bonsai-2-NInfer"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T03:16:24+00:00",
+          "attempts": 1,
+          "hf_id": "gyawalisanish0/SymboLM-1.5B-v1.0-DSR1-Qwen2.5",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:16:27+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:18:30+00:00",
+          "attempts": 1,
+          "hf_id": "jdominick05/Qwen3.8-27B-24GB-128k-GGUF",
+          "http_status": 200,
+          "measured_at": "2026-10-29T03:18:33+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "jdominick05/Qwen3.8-27B-24GB-262k-GGUF",
+          "response_ids": {
+            "id": "jdominick05/Qwen3.8-27B-24GB-262k-GGUF",
+            "modelId": "jdominick05/Qwen3.8-27B-24GB-262k-GGUF"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T03:19:33+00:00",
+          "attempts": 1,
+          "hf_id": "kataguru/Kataguru-MVP-27B-NVFP4",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:19:36+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:19:36+00:00",
+          "attempts": 1,
+          "hf_id": "kdkyum/family_latent_two_hop",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:19:39+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:19:39+00:00",
+          "attempts": 1,
+          "hf_id": "keepstar/Kali-Lite-8B",
+          "http_status": 200,
+          "measured_at": "2026-10-29T03:19:42+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "Kalicorp/Kali-Lite-8B",
+          "response_ids": {
+            "id": "Kalicorp/Kali-Lite-8B",
+            "modelId": "Kalicorp/Kali-Lite-8B"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T03:22:36+00:00",
+          "attempts": 1,
+          "hf_id": "manjukp6/tara",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:22:39+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:23:03+00:00",
+          "attempts": 1,
+          "hf_id": "mikeljl/lfv2_base_new",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:23:06+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:23:12+00:00",
+          "attempts": 1,
+          "hf_id": "mlemmlem4869/medical-title-qwen3-4b-chat-v1",
+          "http_status": 200,
+          "measured_at": "2026-10-29T03:23:15+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "hoagngn/medical-title-qwen3-4b-chat-v1",
+          "response_ids": {
+            "id": "hoagngn/medical-title-qwen3-4b-chat-v1",
+            "modelId": "hoagngn/medical-title-qwen3-4b-chat-v1"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T03:23:33+00:00",
+          "attempts": 1,
+          "hf_id": "mphd1/pythia6.9b-dolly",
+          "http_status": 200,
+          "measured_at": "2026-10-29T03:23:36+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "mphd1/pythia6.9b-dolly-private",
+          "response_ids": {
+            "id": "mphd1/pythia6.9b-dolly-private",
+            "modelId": "mphd1/pythia6.9b-dolly-private"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T03:23:36+00:00",
+          "attempts": 1,
+          "hf_id": "mr-ltg/gpt-oss-20b-mlx-4Bit",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:23:39+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:26:12+00:00",
+          "attempts": 1,
+          "hf_id": "payam1394/oioxo-coder-35b-a3b",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:26:15+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:27:36+00:00",
+          "attempts": 1,
+          "hf_id": "rawmodels/Qwen3.8-27B-antislop-rft1-GGUF",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:27:39+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:27:39+00:00",
+          "attempts": 1,
+          "hf_id": "rawmodels/Qwen3.8-27B-antislop-semdiv-grpo-NVFP4",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:27:42+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:27:48+00:00",
+          "attempts": 1,
+          "hf_id": "regnant-io/kw5-v2-149m-base",
+          "http_status": 200,
+          "measured_at": "2026-10-29T03:27:51+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "regnant-io/kw5-149M",
+          "response_ids": {
+            "id": "regnant-io/kw5-149M",
+            "modelId": "regnant-io/kw5-149M"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T03:28:54+00:00",
+          "attempts": 1,
+          "hf_id": "shiva123782/Kaveri-Instruct-v1-lora",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:28:57+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:29:21+00:00",
+          "attempts": 1,
+          "hf_id": "sin333/adapter-n11",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:29:24+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:30:18+00:00",
+          "attempts": 1,
+          "hf_id": "sstoica12/acquisition_llama8bins_medmcqa_proximity",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:30:21+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:30:24+00:00",
+          "attempts": 1,
+          "hf_id": "sulaimank/vibevoice-lora-enspa-miami",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:30:27+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:30:27+00:00",
+          "attempts": 1,
+          "hf_id": "summerMC/Cyber-9B-Qwen-AllGDN-Engram",
+          "http_status": 200,
+          "measured_at": "2026-10-29T03:30:30+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "summerAIO/Cyber-9B-Qwen-AllGDN-Engram",
+          "response_ids": {
+            "id": "summerAIO/Cyber-9B-Qwen-AllGDN-Engram",
+            "modelId": "summerAIO/Cyber-9B-Qwen-AllGDN-Engram"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T03:30:30+00:00",
+          "attempts": 1,
+          "hf_id": "suzu89/Xing4.0-29B-A4B-6bit-MLX",
+          "http_status": 200,
+          "measured_at": "2026-10-29T03:30:33+00:00",
+          "reason": "identity_mismatch",
+          "response_id": "TokenAI-zer/Xing4.0-29B-A4B-6bit-MLX",
+          "response_ids": {
+            "id": "TokenAI-zer/Xing4.0-29B-A4B-6bit-MLX",
+            "modelId": "TokenAI-zer/Xing4.0-29B-A4B-6bit-MLX"
+          }
+        },
+        {
+          "attempted_at": "2026-10-29T03:31:48+00:00",
+          "attempts": 1,
+          "hf_id": "tsinghua-sigs-robot-lab/VeriLoop-E2-Q8_0-GGUF",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:31:51+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:32:15+00:00",
+          "attempts": 1,
+          "hf_id": "umixer/Qwen3.8-Flash-Next-oQ4e-mix8-mtp",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:32:18+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:32:24+00:00",
+          "attempts": 1,
+          "hf_id": "uzakotim/lfm2.5-350m-coreml",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:32:27+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:32:36+00:00",
+          "attempts": 1,
+          "hf_id": "voice-box/pirate",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:32:39+00:00",
+          "reason": "http_error"
+        },
+        {
+          "attempted_at": "2026-10-29T03:35:09+00:00",
+          "attempts": 1,
+          "hf_id": "yinheyibei/PTCS-RL",
+          "http_status": 401,
+          "measured_at": "2026-10-29T03:35:12+00:00",
+          "reason": "http_error"
+        }
+      ],
+      "file": "hf_cohort.jsonl.gz",
+      "requested": 1500,
+      "retryable": [],
+      "sha256_raw": "588160c9cdf4f01e6e4a05364d66dd6ddeaeb7ce08ccf9088054838cec0bba1e",
+      "status": "ok",
+      "stored": 1402
+    },
+    "hf_inference_providers": {
+      "api": "https://huggingface.co/api/models",
+      "bytes_raw": 2188847,
+      "bytes_stored": 309555,
+      "file": "hf_inference_providers.jsonl.gz",
+      "mappings": 6567,
+      "max_pages": 20,
+      "max_rows": 20000,
+      "pages": 7,
+      "request_url": "https://huggingface.co/api/models?inference_provider=all&pipeline_tag=text-generation&limit=1000&expand=inferenceProviderMapping",
+      "rows": 6441,
+      "schema_version": 1,
+      "scope": "currently listed text-generation models with >=1 inference provider",
+      "sha256_raw": "bcf9749eeef96bb92ceca95551855cafe39f3649408432cb855a0b8af623d137",
+      "status": "ok"
+    },
+    "hf_models": {
+      "api": "https://huggingface.co/api/models/",
+      "bytes_raw": 2490407,
+      "bytes_stored": 325063,
+      "completed_at": "2026-10-29T02:46:54+00:00",
+      "failures": [
+        {
+          "attempted_at": "2026-10-29T02:46:35+00:00",
+          "error": null,
+          "hf_id": "inference-net/schematron-v2-granite-4.0-h-micro",
+          "http_status": 401
+        },
+        {
+          "attempted_at": "2026-10-29T02:46:35+00:00",
+          "error": null,
+          "hf_id": "inference-net/schematron-v2-llama-3.2-3b",
+          "http_status": 401
+        },
+        {
+          "attempted_at": "2026-10-29T02:46:45+00:00",
+          "error": null,
+          "hf_id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+          "http_status": 401
+        }
+      ],
+      "file": "hf_models.jsonl.gz",
+      "permanent_failures": 3,
+      "requested": 158,
+      "sha256_raw": "095594bab57315879ada32062679e4e7920d81511498b8e4a72974096fb1f7b6",
+      "source_file": "openrouter_models.json.gz",
+      "status": "ok",
+      "stored": 155
+    },
+    "hf_new_models": {
+      "api": "https://huggingface.co/api/models",
+      "bytes_raw": 1098638,
+      "bytes_stored": 150316,
+      "completed_at": "2026-10-29T02:46:56+00:00",
+      "file": "hf_new_models.jsonl.gz",
+      "filter": "text-generation",
+      "pages": 2,
+      "reached_target": true,
+      "rows": 2000,
+      "sha256_raw": "6d22fa88be6495f5efe30a10b271c3f53c01751aa1f5264532a2dba39d4e4a20",
+      "sort": "createdAt",
+      "status": "ok",
+      "target_rows": 2000
+    },
+    "hf_top_models": {
+      "api": "https://huggingface.co/api/models",
+      "bytes_raw": 2773972,
+      "bytes_stored": 503069,
+      "completed_at": "2026-10-29T02:46:56+00:00",
+      "file": "hf_top_models.jsonl.gz",
+      "filter": "text-generation",
+      "pages": 5,
+      "reached_target": true,
+      "rows": 5000,
+      "sha256_raw": "3cf73721465496372629c76bcf0a9cc16501635527fe081fb56556918c0daa2e",
+      "sort": "downloads",
+      "status": "ok",
+      "target_rows": 5000
+    },
+    "openrouter_models": {
+      "attempts": 1,
+      "bytes_raw": 768615,
+      "bytes_stored": 78156,
+      "fetched_at": "2026-10-29T02:46:14+00:00",
+      "file": "openrouter_models.json.gz",
+      "http_status": 200,
+      "sha256_raw": "a1cf4bdbe9c30c0749f85940e0d2758ef5e4d86ee24236e40e4595d572e5d1f6",
+      "status": "ok",
+      "url": "https://openrouter.ai/api/v1/models"
+    },
+    "openrouter_rankings": {
+      "attempts": 1,
+      "bytes_raw": 2530774,
+      "bytes_stored": 268104,
+      "fetched_at": "2026-10-29T02:46:14+00:00",
+      "file": "openrouter_rankings.html.gz",
+      "http_status": 200,
+      "sha256_raw": "84c4943e1ce757c34db097268abe945e1e10058e5c4c26422f929ca3be5c8ccf",
+      "status": "ok",
+      "url": "https://openrouter.ai/rankings"
+    }
+  },
+  "runs": [
+    {
+      "finished_at": "2026-10-29T03:35:36+00:00",
+      "http_calls": 1140,
+      "started_at": "2026-10-29T02:46:14+00:00"
+    }
+  ],
+  "schema_version": 1,
+  "snapshot_date": "2026-10-29",
+  "status": "complete"
+}
