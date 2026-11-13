@@ -46,6 +46,9 @@ MAX_LAG_DAYS = 1
 # Acknowledged permanent losses, at the repository root.
 KNOWN_GAPS = "known_gaps.txt"
 
+# Acknowledged legs that never finished on a day that otherwise exists.
+KNOWN_INCOMPLETE = "known_incomplete.txt"
+
 
 @dataclass(frozen=True)
 class Finding:
@@ -94,6 +97,30 @@ def read_known_gaps(root: Path) -> dict[str, str]:
         if _is_date(date):
             gaps[date] = reason.strip() or "no reason given"
     return gaps
+
+
+def read_known_incomplete(root: Path) -> dict[tuple[str, str], str]:
+    """(day, leg) pairs whose unfinished state has been acknowledged, with the reason.
+
+    The per-leg twin of `read_known_gaps`. A day can exist and still be short a
+    leg that will never finish under that date - the collector only ever works
+    on today. Acknowledging names the leg, so a second leg failing on the same
+    day is still an error.
+    """
+    path = root / KNOWN_INCOMPLETE
+    if not path.exists():
+        return {}
+    known: dict[tuple[str, str], str] = {}
+    for line in path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        parts = line.split(maxsplit=2)
+        if len(parts) < 2 or not _is_date(parts[0]):
+            continue
+        reason = parts[2].strip() if len(parts) == 3 else ""
+        known[(parts[0], parts[1])] = reason or "no reason given"
+    return known
 
 
 def check_gaps(days: list[str], known: dict[str, str] | None = None) -> list[Finding]:
@@ -185,7 +212,38 @@ def _check_leg(root: Path, day: str, leg: str, record: dict) -> list[Finding]:
     return []
 
 
-def check_day(root: Path, day: str) -> list[Finding]:
+def _check_completeness(
+    day: str, manifest: dict, known: dict[tuple[str, str], str]
+) -> list[Finding]:
+    """An unfinished day is an error leg by leg, unless that very leg is acknowledged."""
+    status = manifest.get("status")
+    if status == mf.COMPLETE:
+        return []
+
+    legs = manifest.get("legs", {})
+    unfinished = [leg for leg in mf.LEGS if legs.get(leg, {}).get("status") not in mf.DONE]
+    if not unfinished:
+        # The day says it is not complete and no leg says why: nothing to acknowledge.
+        return [Finding(ERROR, "incomplete", f"status is {status!r}", day)]
+
+    findings = []
+    for leg in unfinished:
+        leg_status = legs.get(leg, {}).get("status")
+        reason = known.get((day, leg))
+        if reason:
+            findings.append(
+                Finding(WARN, "incomplete", f"{leg} is {leg_status!r}, acknowledged: {reason}", day)
+            )
+        else:
+            findings.append(
+                Finding(ERROR, "incomplete", f"status is {status!r}: {leg} is {leg_status!r}", day)
+            )
+    return findings
+
+
+def check_day(
+    root: Path, day: str, known_incomplete: dict[tuple[str, str], str] | None = None
+) -> list[Finding]:
     """Completeness and integrity of a single day."""
     path = paths.manifest_path(root, day)
     if not path.exists():
@@ -195,11 +253,7 @@ def check_day(root: Path, day: str) -> list[Finding]:
     except ValueError as exc:
         return [Finding(ERROR, "manifest", f"unreadable: {exc}", day)]
 
-    findings: list[Finding] = []
-    if manifest.get("status") != mf.COMPLETE:
-        findings.append(
-            Finding(ERROR, "incomplete", f"status is {manifest.get('status')!r}", day)
-        )
+    findings = _check_completeness(day, manifest, known_incomplete or {})
     for leg in mf.LEGS:
         findings.extend(_check_leg(root, day, leg, manifest.get("legs", {}).get(leg, {})))
     return findings
@@ -314,8 +368,9 @@ def audit(
     days = snapshot_days(root)
 
     findings = check_staleness(days, today, max_lag) + check_gaps(days, read_known_gaps(root))
+    known_incomplete = read_known_incomplete(root)
     for day in days:
-        findings.extend(check_day(root, day))
+        findings.extend(check_day(root, day, known_incomplete))
     findings.extend(check_coverage(root, days))
     findings.extend(check_ranking_rows(root, days))
     return findings

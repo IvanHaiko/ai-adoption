@@ -1,0 +1,16 @@
+# Legs that never finished on a day that exists, acknowledged.
+#
+# The per-leg twin of known_gaps.txt. The collector only ever works on today,
+# so a leg still unfinished at midnight UTC stays unfinished under that date
+# for good, and Bronze is never rewritten to pretend otherwise. Without this
+# file one such leg would keep the audit red forever, and an alert that is
+# always red stops being read - then it misses the next real HF gap.
+#
+# One entry per line: date, leg, reason. The audit reports the reason as a
+# warning. Another leg failing on the same day is still an error.
+# Say where the data was recovered from, or that it could not be. Never add a
+# line to silence a leg you have not understood.
+#
+# Format:  YYYY-MM-DD  leg  reason
+
+2026-11-08  arxiv  ReadTimeout on all four runs; window 2026-11-07..2026-11-08 re-harvested into data/backfill/arxiv/2026-11-07_2026-11-08/ on 2026-11-13: ok, 0 records (weekend)

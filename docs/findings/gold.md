@@ -1,10 +1,14 @@
 # Open Model Lifecycle: first Gold findings
 
+> A dated snapshot, kept as written. The same metrics rebuilt on 78 days
+> (through 2026-11-13) are in the [README](../../README.md#findings); the
+> headline 14-day rate moved from 3.6% here to 2.8% there.
+
 Rebuilt from Silver on **2026-10-01 local time**. The analysis cutoff is the
 latest HF snapshot, **2026-09-30 UTC**, not the machine clock. There are 34
 daily Bronze snapshots from 2026-08-28 through 2026-09-30, a separate
 September arXiv OAI datestamp backfill, and cached exact-ID arXiv Atom lookups.
-Commands and definitions are in [`docs/gold_metric_contract.md`](docs/gold_metric_contract.md).
+Commands and definitions are in [`docs/gold_metric_contract.md`](../gold_metric_contract.md).
 
 ## 1. Executive summary
 

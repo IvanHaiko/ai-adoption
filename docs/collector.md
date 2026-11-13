@@ -1,0 +1,349 @@
+# Collector and the Bronze layer
+
+The operational half of the project: what is collected every day, how it is
+stored, and the rules that keep a series which cannot be re-collected honest.
+The [README](../README.md) has the question, the findings and how to run the
+pipeline end to end.
+
+Daily raw snapshots of what the AI industry actually hosts and serves, kept so
+that a usage time series can exist at all.
+
+**Why this runs before anything else is designed.** arXiv hands out its full
+history on request. Usage does not: HuggingFace's `downloads` is a rolling
+30-day figure with no history in the API, and OpenRouter publishes no usage
+history in any form — its rankings page carries two dates. So the usage series
+starts on the day collection starts, and **a missed day cannot be
+reconstructed**. The schema, the warehouse and the DAG can be written whenever;
+this cannot.
+
+## What it collects, daily
+
+| Leg | Source | Stored as |
+|---|---|---|
+| `openrouter_models` | `https://openrouter.ai/api/v1/models` | `openrouter_models.json.gz` |
+| `openrouter_rankings` | `https://openrouter.ai/rankings` | `openrouter_rankings.html.gz` |
+| `hf_models` | `https://huggingface.co/api/models/{id}`, one call per repository | `hf_models.jsonl.gz` |
+| `hf_top_models` | `https://huggingface.co/api/models`, the top 5 000 text-generation repositories by downloads, 5 cursor pages | `hf_top_models.jsonl.gz` |
+| `hf_new_models` | the same endpoint sorted by `createdAt`, 2 000 newest, 2 cursor pages | `hf_new_models.jsonl.gz` |
+| `arxiv` | OAI-PMH `arXiv` metadata in cs.AI, cs.CL, cs.LG sets | `arxiv.jsonl.gz` |
+| `hf_inference_providers` | HF provider-filtered text-generation model list, with expanded mappings | `hf_inference_providers.jsonl.gz` |
+| `hf_cohort` | `https://huggingface.co/api/models/{id}` for a fixed, seeded cohort of 1 500 repositories that keeps being followed after they leave the discovery lists ([tracking](hf_cohort_tracking.md)) | `hf_cohort.jsonl.gz` |
+
+No credentials for the original OpenRouter and HF legs: their endpoints answered
+anonymously on 2026-08-29 with no key present. arXiv OAI-PMH is a public
+metadata interface. `.env.example` explains the one case that would need a key.
+
+## Measured, not assumed
+
+Every number below came from a live request on **2026-08-29**; re-measure
+before quoting it.
+
+- OpenRouter lists **398 models**.
+- **180 of 398 (45%)** carry a non-empty `hugging_face_id`. The field is
+  *present on all 398* and an empty string on 218 of them — testing for
+  presence instead of for a value overstates the link to 100%.
+- Those 180 point at **152 distinct repositories**; several models share one.
+- **151 of 152 resolve.** `microsoft/WizardLM-2-8x22B` answers `401` — gated or
+  withdrawn. It is recorded in the manifest as a failure and never as a zero.
+- A day costs **1.2 MB** on disk gzipped. A year of daily snapshots is
+  ~**440 MB**; the ~110 days to the end of the capstone, ~**132 MB**.
+- A full collection takes **~41 s** and **160 HTTP calls**. A re-run of a
+  complete day takes **0.4 s** and **0 calls**.
+- The ranking leg returns **5 000 rows over 5 pages**, 491 KB of the day.
+  **35%** of those rows carry an `arxiv:` tag and **64%** a `base_model:` tag.
+
+Two counts that must not be added together. The ranking leg produces **5 000
+observations a day**; the number of **distinct repositories** it has ever seen
+is a different, much smaller figure that grows slowly with churn, and it cannot
+be stated until there are enough days to measure the churn. Any row count in
+this README is observations unless it says otherwise; the distinct count will
+be published beside it once measured.
+
+So the OpenRouter ↔ HuggingFace join is **key-based, not fuzzy — for the 45% of
+the catalogue that declares a key.** The other 55% is the project's real
+coverage problem, and it belongs in the README of the finished pipeline too.
+
+## Why there are two list legs
+
+Ranking by downloads is the wrong axis for the question this project asks. A
+model released this week has, by definition, not accumulated downloads yet, so
+a downloads threshold excludes exactly the population whose adoption curve is
+the thesis. Measured 2026-08-29 across 34 000 paged repositories:
+
+| | |
+|---|---|
+| Repositories created in the last 30 days | 8 044 |
+| of them inside the top 1 000 by downloads | 64 (**0.8%**) |
+| of them inside the top 5 000 by downloads | 537 (**6.7%**) |
+| Median age, ranks 1–1 000 | **487 days** |
+| Median age, ranks 10 000–20 000 | 142 days |
+
+The head of the ranking is a year and a half old. So the collector walks the
+list twice: `hf_top_models` for the stable core, `hf_new_models` for arrivals.
+The second leg's first run returned 2 000 repositories aged 0–4 days, **358 of
+them with zero downloads** - rows the ranking leg would never have seen.
+
+`hf_new_models` is sized from arrival rate, not a round number: roughly 460–500
+text-generation repositories are created a day, so 2 000 newest covers about
+four days. One has to miss four consecutive collection days before a new
+repository is never recorded at all.
+
+What that rescues, and what it does not: a repository's *existence* is
+recoverable at any time, because `createdAt` and `base_model` can be read
+retrospectively - the derivative graph can always be rebuilt. Its early
+`downloads` cannot. That early curve is the measurement.
+
+## Why the ranking goes to 5 000
+
+OpenRouter's rankings page carries a top-ten leaderboard - measured on
+2026-08-28, its embedded payload held **20 records across two dates**, about
+ten models a day out of a 398-model catalogue. That is not enough to measure
+adoption, so the ranking comes from HuggingFace instead.
+
+`TOP_N` is set from the download distribution, measured 2026-08-29 by paging
+34 000 repositories:
+
+| top N | share of all downloads in the category | downloads at rank N |
+|---|---|---|
+| 100 | 60.3% | 979 293 |
+| 1 000 | 92.4% | 36 738 |
+| 2 000 | 95.6% | 9 351 |
+| **5 000** | **97.9%** | **1 822** |
+| 10 000 | 98.9% | 635 |
+
+Two things to know before computing a share from this leg.
+
+`downloads` is a rolling 30-day figure, not a daily increment. Differencing it
+gives a noisy pseudo-daily series; the shape of a release curve survives that,
+a precise daily count does not.
+
+**Rank counts repositories, not models.** Much of the tail is quantisations and
+re-uploads of the same weights - `unsloth/...`, `...-GGUF`, `mradermacher/...`
+- so a model's real adoption is spread across derivatives and the head
+understates it. 64% of the 5 000 declare a `base_model:` tag, which is what
+makes rolling them back up to a canonical model possible.
+
+**Coverage in downloads and coverage in repositories are not the same number,
+and the gap is large.** Of the 23 357 derivative repositories in the paged
+34 000, the top 5 000 holds only **13.7%** — against 97.9% of downloads. The
+two answer different questions, and any published figure has to say which one
+it means:
+
+| top N | % of all downloads | % of all derivative repositories |
+|---|---|---|
+| 1 000 | 92.4% | 2.5% |
+| 2 000 | 95.6% | 5.0% |
+| 5 000 | 97.9% | 13.7% |
+
+The derivative repositories outside the top 5 000 contribute **2.6%** of all
+derivative downloads — 0.1–0.7% for each of the twelve largest base models. So
+depth buys almost nothing for measuring *share*, and is the only way to count
+the *ecosystem*. 5 000 is chosen for the first question.
+
+## Layout
+
+```
+data/raw/<YYYY-MM-DD>/          # the UTC date is the day key
+  _manifest.json                # what was asked for and what came back
+  openrouter_models.json.gz
+  openrouter_rankings.html.gz
+  hf_models.jsonl.gz            # one line per repository, not 152 files
+  hf_top_models.jsonl.gz        # one line per cursor page, not 5 000 files
+  hf_new_models.jsonl.gz
+  arxiv.jsonl.gz                 # one line per raw OAI XML response page
+  hf_inference_providers.jsonl.gz # one line per HF provider-list response page
+```
+
+The manifest is what makes the directory self-describing: per leg, the URL,
+HTTP status, byte counts, and the SHA-256 of the bytes as received. For the
+HuggingFace leg it also carries `requested`, `stored` and the list of
+`failures`. A day is `complete` only when every leg is `ok`.
+
+## Bronze rules this enforces
+
+1. **Nothing is reformed.** The OpenRouter payload is stored byte-for-byte. Each
+   HuggingFace line is an envelope (`hf_id`, `fetched_at`, `http_status`)
+   concatenated around the response bytes — the body is never re-serialised.
+   `tests/test_bronze_is_verbatim.py` checks both.
+2. **Absence is not zero.** A repository that returns 401/404 produces no row.
+   It produces a manifest entry.
+3. **Idempotent by day key, and the double run proves it.**
+   `tests/test_idempotence.py` runs the collector twice and asserts the second
+   run made zero network calls and changed zero bytes — including the manifest.
+4. **Polite.** Identifying User-Agent with a contact address, a floor between
+   requests, bounded retries, `Retry-After` honoured. Never a workaround.
+
+## Running it
+
+```bash
+pip install -r requirements-dev.txt
+python -m collector                 # today, UTC
+python -m collector --date 2026-08-28
+pytest -q && ruff check .
+```
+
+Exit code is `0` for a complete day and `1` for a partial one, so the scheduler
+can tell "collected" from "collected some of it".
+
+## Scheduling
+
+`.github/workflows/collect.yml` runs at 06:20, 12:20, 18:20 and 23:40 UTC.
+Every run after the first is a no-op costing zero HTTP calls and about ten
+seconds, so redundancy is close to free and buys the one thing money cannot:
+a missed day cannot be reconstructed.
+
+Four slots rather than two because **the very first scheduled run did not
+happen.** On 2026-08-29 the 06:20 slot produced no run at all: the workflow was
+`active`, the cron had been on the default branch for seven hours, Actions were
+enabled, and GitHub recorded no `schedule` event. GitHub documents that
+scheduled runs are delayed under load and may be dropped. Nothing in this
+repository can prevent that; more slots make it less likely that all of them
+are lost on the same day.
+
+**Known operational risk:** GitHub disables scheduled workflows after 60 days
+without repository activity, and a push made by the workflow's own token is not
+a reliable substitute for a human one. Verify the schedule is still enabled
+monthly. A silently stopped collector is the one failure this project cannot
+recover from.
+
+## Second copy, and knowing the collector is alive
+
+GitHub holds the first copy. A local clone is the second, with full history and
+no credentials — the snapshots are ordinary files in `data/raw/`, so nothing has
+to be unpacked.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\pull_snapshots.ps1
+```
+
+It fast-forwards the clone and then reports what is actually there: how many
+snapshot days, how far the latest one is behind UTC today, whether any day is
+missing from the middle of the range, and whether any day never reached
+`complete`. Exit code `1` on any of those.
+
+Missing a pull costs nothing, which is why this one can live on a laptop that
+sleeps. Its real value is the check: a stopped collector is silent — the
+workflow simply does not run and nothing sends a failure — so running this daily
+caps how long that can go unnoticed at one day.
+
+## Auditing what is on disk
+
+```bash
+python -m collector.audit
+```
+
+The collector cannot see three of its own failure modes, so a separate pass
+looks at the tree from outside. It runs in the `collect` workflow after the
+commit and from `pull_snapshots.ps1`. CI does not run it - CI ignores
+`data/raw` pushes, so it would only re-audit unchanged data - and instead covers
+its rules with `tests/test_audit.py`.
+
+| Check | Catches |
+|---|---|
+| `staleness` | the collector stopped and nothing said so |
+| `gap` | a day absent from the middle of the range |
+| `incomplete` | a day that never reached `complete`, named per unfinished leg |
+| `integrity` | stored bytes that no longer match the SHA-256 the manifest recorded |
+| `coverage` | a day that is `complete` and still thin |
+| `catalogue` | OpenRouter listing far fewer repositories than yesterday |
+| `ranking` | the ranking leg succeeding and still returning a fraction of its rows |
+
+`coverage` is the one worth explaining. A day can pass every other check and
+still be nearly empty: if HuggingFace begins rate-limiting halfway through,
+every individual response is a legitimate answer, the manifest is internally
+consistent, and the day is honestly marked `complete`. Nothing inside the
+collector can tell. Only yesterday's ratio shows it — 30 of 152 against 151 of
+152 the day before. The thresholds (5% warn, 20% error) are **chosen, not
+measured**; there is one day of history so far.
+
+`gap` and `staleness` are deliberately separate. The distance from the last
+snapshot to today is lag; holes are what is missing between the first snapshot
+and the last. Counting the trailing distance as holes would report the same
+absent days twice under two names.
+
+### Acknowledged gaps
+
+A missed day cannot be collected later, so without a way to admit one the audit
+would stay red forever — and an alert that is always red is not read by the
+time the next gap appears. `known_gaps.txt` takes one date per line with a
+reason; those days are reported as warnings, with the reason, instead of
+errors. Acknowledging is not repairing. Never add a date to silence a gap that
+has not been understood.
+
+`known_incomplete.txt` is the same mechanism one level down: a day that exists
+but has a leg that never finished. The collector only works on today, so a leg
+still unfinished at midnight UTC stays unfinished under that date, and the
+finished day is never rewritten. Each line names the date, the **leg** and the
+reason; only that leg turns into a warning, and any other unfinished leg on the
+same day is still an error. The first entry is 2026-11-08, when every arXiv
+request timed out; the window was re-harvested into `data/backfill/arxiv/`
+(0 records - a weekend). An arXiv leg is recoverable this way; an HF leg is not,
+and its reason should say so.
+
+## Partial days
+
+A transient failure (timeout, 5xx, 429) leaves the day `partial` and the next
+run picks up exactly what is missing — it does not re-fetch what already
+landed. `tests/test_resume.py` covers both halves.
+
+## The arXiv leg and the backfill
+
+The daily collector includes arXiv OAI-PMH metadata for `cs.AI`, `cs.CL` and
+`cs.LG` from 2026-10-01. Bronze remains immutable: a finished historical day is
+never reopened, and a retrospective arXiv harvest lives under
+`data/backfill/arxiv/`, visibly separate from data observed on a daily run.
+
+```bash
+python -m collector.arxiv_backfill --date-from 2026-09-20 --date-until 2026-09-22 --category cs.AI
+```
+
+The optional backfill accepts one or more `--category` values and a maximum
+eight-day OAI **datestamp** range. Invoke it separately for adjacent windows.
+It never runs with the daily scheduler. Daily arXiv collection requests yesterday
+and today by UTC datestamp; this one-day overlap tolerates announcement timing.
+OAI returns the latest article version and reports metadata changes, including
+administrative changes. The OAI datestamp is **not** publication time. Its
+`arXiv` metadata format contains submission and update dates. arXiv documents
+the [sets, timestamps, and resumption tokens](https://info.arxiv.org/help/oa/index.html).
+Unlike the former `export.arxiv.org/oai2`, the current endpoint is
+`https://oaipmh.arxiv.org/oai`. Category sets are exact (`cs:cs:AI`, etc.).
+Each Bronze JSONL line wraps one byte-exact base64 XML response with URL,
+fetched time, HTTP status, parsed OAI headers, category, page and token. A
+`noRecordsMatch` OAI response is recorded explicitly. Other OAI errors and HTTP
+failures leave the leg partial. A failed multi-page pass is retried from the
+start because OAI tokens expire daily; the successful file is only written when
+all pages finish. arXiv requests use a three-second minimum interval. The daily
+arXiv leg refuses a past `--date`; use the explicit backfill command to retrieve
+historical metadata without labeling it as a past observation.
+
+The explicit arXiv ID resolver (`python -m collector.arxiv_ids`) is separate
+from OAI datestamp ingestion. It uses the official Atom API's `id_list`
+interface in batches of at most 50 with a three-second request floor, stores
+each raw response, and records resolved, not-found, malformed or retryable
+source-failure status.
+
+## HF inference-provider mappings and the Replicate spike
+
+From 2026-10-01 UTC, the daily collector also preserves current Hugging Face
+Inference Provider mappings for the provider-filtered `text-generation` list.
+Its first observation is a collector date, never a provider launch date. Seven
+bulk pages captured 6,437 repositories and 6,583 mappings on the first day;
+missing models on later filtered lists will remain unconfirmed, not recorded as
+permanent removals. See [the API spike](provider_sources_spike.md) and
+[provider expansion findings](findings/provider-expansion.md).
+Replicate requires an API token even to list public models. An authenticated
+bounded spike found sparse exact HF overlap and no exhaustive open-model scope,
+so no Replicate collector is scheduled yet. The repeatable spike command is
+`python -m scripts.replicate_spike --pages-per-sort 3` with
+`REPLICATE_API_TOKEN` in the environment; it saves public responses under
+`data/spikes/replicate/` without storing the token. Existing Gold metrics are
+unchanged.
+On Windows, an already-open shell can load the saved user variable with
+`$env:REPLICATE_API_TOKEN=[Environment]::GetEnvironmentVariable('REPLICATE_API_TOKEN','User')`
+before running the spike.
+
+## OpenRouter ranking HTML
+
+The archived OpenRouter ranking HTML has useful serialized state, but its
+layout changed during the available history and the meaning of its exposed
+ranking values is not yet verified. No ranking Parquet table is emitted.

@@ -3,7 +3,7 @@
 - **Status:** accepted
 - **Date:** 2026-08-29
 - **Supersedes:** nothing
-- **Revisit on:** ~2026-11-21, when the capstone begins
+- **Revisit on:** ~2026-12-19, after the capstone (moved from ~2026-11-21; see the 2026-11-13 revision)
 
 ## Context
 
@@ -60,6 +60,27 @@ swapping it into `Context`. The key layout is already S3-shaped:
 No abstraction was introduced now to prepare for this. With four call sites,
 the seam is as cheap to cut in November as it is today, and a storage interface
 written against one implementation would be a guess about the second.
+
+## Revision 2026-11-13: the move is deferred past the capstone
+
+Measured 2026-11-13 on 78 days: `data/raw` takes **216 MB** of git history and
+`.git` **236 MB**. A day now costs **2.8-6.1 MB** (last seven days), not
+1.2 MB - the `hf_cohort` leg and large arXiv days added most of it. The largest
+single file is 4.8 MB, far below GitHub's 50/100 MB per-file limits. At about
+4 MB a day the four capstone weeks add roughly 115 MB, to about 350 MB.
+
+The move to S3 is deferred until the capstone is over. Doing it in the first
+week of a four-week build costs one to two days and puts the one irrecoverable
+asset - the daily series - at risk during a storage migration, for a gain
+(faster clones, an S3 line) that does not change what the capstone is judged
+on. The decision is the original one, re-dated; the port remains as small as
+measured above, and the git-era history still stays in place rather than being
+rewritten. Revisit sooner if a single day passes 20 MB or the repository passes
+1 GB.
+
+**Git LFS** was considered and rejected: GitHub's free quota is 1 GB of storage
+and 1 GB of bandwidth a month, which this growth rate and every CI checkout
+would exhaust, and it would not remove the history already committed.
 
 ## Alternatives considered
 

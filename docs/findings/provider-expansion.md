@@ -1,6 +1,6 @@
 # Provider expansion: first observed state (2026-10-01 UTC)
 
-The [API spike](docs/provider_sources_spike.md) defines the interfaces and
+The [API spike](../provider_sources_spike.md) defines the interfaces and
 limits. Gold metrics remain at logic version 1 and are unchanged.
 
 ## HF inference-provider mapping

@@ -139,6 +139,66 @@ def test_a_day_that_never_finished_is_an_error(tmp_path, status):
     assert levels(findings, "incomplete") == [ERROR]
 
 
+def _break_leg(root, day, *legs):
+    """Leave `legs` unfinished on an otherwise collected day, as a timeout would."""
+    path = paths.manifest_path(root, day)
+    manifest = read_json(path)
+    manifest["status"] = "partial"
+    for leg in legs:
+        manifest["legs"][leg] = {"status": "partial", "error": "ReadTimeout"}
+    write_json(path, manifest)
+
+
+def test_an_unfinished_leg_is_named_in_the_error(tmp_path):
+    make_day(tmp_path, "2026-08-29")
+    _break_leg(tmp_path, "2026-08-29", "arxiv")
+
+    incomplete = [f for f in audit(tmp_path, today=TODAY) if f.check == "incomplete"]
+    assert [f.level for f in incomplete] == [ERROR]
+    assert "arxiv" in incomplete[0].message
+
+
+def test_an_acknowledged_unfinished_leg_stops_being_an_error(tmp_path):
+    """A day that exists but can never be finished must be admissible too, or
+    one timeout keeps the audit red for good and hides the next real gap."""
+    make_day(tmp_path, "2026-08-29")
+    _break_leg(tmp_path, "2026-08-29", "arxiv")
+    (tmp_path / "known_incomplete.txt").write_text(
+        "# comment\n2026-08-29  arxiv  timed out, re-harvested into backfill\n",
+        encoding="utf-8",
+    )
+
+    incomplete = [f for f in audit(tmp_path, today=TODAY) if f.check == "incomplete"]
+    assert [f.level for f in incomplete] == [WARN]
+    assert "re-harvested" in incomplete[0].message
+
+
+def test_acknowledging_one_leg_does_not_excuse_another_on_the_same_day(tmp_path):
+    """The HF legs are the irrecoverable ones; an arXiv excuse must not cover them."""
+    make_day(tmp_path, "2026-08-29")
+    _break_leg(tmp_path, "2026-08-29", "arxiv", "hf_models")
+    (tmp_path / "known_incomplete.txt").write_text(
+        "2026-08-29  arxiv  recovered\n", encoding="utf-8"
+    )
+
+    incomplete = [f for f in audit(tmp_path, today=TODAY) if f.check == "incomplete"]
+    by_leg = {
+        leg: f.level for f in incomplete for leg in ("arxiv", "hf_models") if leg in f.message
+    }
+    assert by_leg == {"hf_models": ERROR, "arxiv": WARN}
+
+
+def test_an_acknowledgement_for_another_day_does_not_apply(tmp_path):
+    make_day(tmp_path, "2026-08-28")
+    make_day(tmp_path, "2026-08-29")
+    _break_leg(tmp_path, "2026-08-29", "arxiv")
+    (tmp_path / "known_incomplete.txt").write_text(
+        "2026-08-28  arxiv  wrong day\n", encoding="utf-8"
+    )
+
+    assert levels(audit(tmp_path, today=TODAY), "incomplete") == [ERROR]
+
+
 def test_an_acknowledged_gap_stops_being_an_error(tmp_path):
     """A permanent loss must be admissible, or the audit stays red forever and
     nobody reads it by the time the next gap appears."""
