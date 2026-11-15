@@ -1,4 +1,4 @@
-# Gold metric contract (logic version 1)
+# Gold metric contract (logic version 2)
 
 `python -m gold` fully rebuilds `data/gold/` from the current Silver Parquet
 tables. There is no wall-clock dependency: the latest `hf_repositories`
@@ -67,8 +67,19 @@ eligibility and observation coverage must be reported before comparing groups.
 
 ## Quality rules and future processing
 
+Version 2 preserves `days_to_openrouter` as a **signed observation lag**:
+first OpenRouter catalogue observation minus first positive HF observation.
+A negative lag is valid, for example when HF initially returns 401 while the
+catalogue already declares that exact HF repository. It is not a negative
+launch duration and does not trigger a DQ error. Both source dates are retained.
+`openrouter_observation_order` is `before_hf`, `same_day`, `after_hf`, or
+`not_observed`. The nullable integer `openrouter_transition_days` is populated
+only for `after_hf`; already-observed and same-day listings have no measurable
+subsequent transition. This is still collector-observation timing, not a launch
+date. Existing eligibility and cohort outcome definitions remain unchanged.
+
 The build reports or fails on duplicate HF lifecycle IDs, duplicate event types,
-negative source-to-observation ages or observed durations, inconsistent maturity
+negative source-to-observation ages or subsequent transition durations, inconsistent maturity
 flags, metrics populated for immature windows, and inconsistent route counts.
 Malformed Silver inputs are errors. More history increases follow-up depth; it
 does not remove newest/top sampling bias. Incremental Gold processing becomes

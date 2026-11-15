@@ -1,0 +1,10 @@
+{
+  "query": "timeseries_groups_task",
+  "url": "https://api.cloudflare.com/client/v4/radar/ai/inference/timeseries_groups/task?dateStart=2026-10-16T00%3A00%3A00Z&dateEnd=2026-11-15T00%3A00%3A00Z&format=json&limit=100&aggInterval=1d",
+  "http_status": 200,
+  "sha256": "94280232c5395ba4d9eb5b1dfdd99f306a563240c243cb93c6a20af6e2591645",
+  "file": "data/external/cloudflare-radar/2026-10-16_2026-11-14/timeseries_groups_task/94280232c5395ba4d9eb5b1dfdd99f306a563240c243cb93c6a20af6e2591645/response.json",
+  "fetched_at": "2026-11-15T11:33:53.783529+00:00",
+  "license": "CC-BY-NC-4.0",
+  "success": true
+}

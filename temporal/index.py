@@ -9,7 +9,7 @@ from pathlib import Path
 
 from .archive import archive_files, file_hash, utc_now
 
-INDEXER_VERSION = "2"
+INDEXER_VERSION = "3"
 
 
 def _timestamp(value: str) -> dt.datetime:
@@ -67,7 +67,7 @@ def index_snapshot(root: Path, path: Path) -> dict:
         envelopes = [json.loads(line) for line in payload.splitlines() if line.strip()]
         capture = [page["fetched_at"] for page in envelopes if page.get("fetched_at")]
         response_count = len(envelopes)
-        if source == "hf_models":
+        if source in {"hf_models", "hf_cohort"}:
             observation_count = len(envelopes)
         elif source == "arxiv":
             observation_count = sum(len(page.get("records", [])) for page in envelopes)

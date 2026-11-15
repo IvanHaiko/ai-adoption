@@ -1,0 +1,17 @@
+[
+  {
+    "source": "vercel",
+    "source_name": "Beam 1.0",
+    "hf_repo_id": "reflection/Beam-1.0-501B-A23B",
+    "valid_from": "2026-10-16",
+    "valid_until": "2026-11-14",
+    "recorded_at": "2026-11-15",
+    "reviewer": "Codex project review 2026-11-15",
+    "evidence_url": "https://vercel.com/ai-gateway/models/labs/reflection",
+    "supporting_evidence": [
+      "https://reflection.ai/blog/beam-is-available",
+      "https://huggingface.co/reflection/Beam-1.0-501B-A23B"
+    ],
+    "scope": "Retrospective reviewed identity for pilot; not an as-known-at-time feature. No family or precision variants collapsed."
+  }
+]

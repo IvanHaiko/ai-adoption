@@ -128,6 +128,24 @@ def test_index_rejects_corruption_even_without_baseline(archive):
         build_index(archive)
 
 
+def test_cohort_index_counts_model_envelopes_not_body_fields(archive):
+    folder = archive / "data/raw/2026-09-10"
+    envelopes = [
+        {"hf_id": "org/a", "body": {"id": "org/a", "likes": 3, "downloads": 10}},
+        {"hf_id": "org/b", "body": {"id": "org/b", "likes": 0}},
+    ]
+    leg = write_gzip(folder / "hf_cohort.jsonl.gz",
+                     ("\n".join(json.dumps(row) for row in envelopes) + "\n").encode())
+    manifest = json.loads((folder / "_manifest.json").read_text())
+    manifest["legs"]["hf_cohort"] = leg | {"status": "ok", "stored": 2}
+    write_json(folder / "_manifest.json", manifest)
+    row = next(row for row in build_index(archive)["snapshots"]
+               if row["source"] == "hf_cohort")
+    assert row["model_observation_count"] == 2
+    assert row["source_record_count"] == 2
+    assert row["response_count"] == 2
+
+
 def test_multi_response_capture_interval_and_partial_status_are_preserved(archive):
     folder = archive / "data/raw/2026-09-10"
     pages = [

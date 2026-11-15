@@ -9,6 +9,7 @@ venv/
 data/raw/**/.tmp-*
 data/silver/
 data/gold/
+data/analytics/
 data/temporal_v2/
 scripts/pull_snapshots.log
 

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import pyarrow as pa
 import pyarrow.parquet as pq
+import pytest
 
 from gold.build import build
 
@@ -91,3 +92,29 @@ def test_cohort_matures_from_silver_latest_date_and_reruns_identically(tmp_path)
     before = (tmp_path / "data/gold/model_lifecycle.parquet").read_bytes()
     assert build(tmp_path) == second
     assert (tmp_path / "data/gold/model_lifecycle.parquet").read_bytes() == before
+
+
+@pytest.mark.parametrize("router,lag,transition,order", [
+    (None, None, None, "not_observed"),
+    ("2026-08-31", -1, None, "before_hf"),
+    ("2026-09-01", 0, None, "same_day"),
+    ("2026-09-03", 2, 2, "after_hf"),
+])
+def test_openrouter_observation_order_is_not_a_launch_duration(
+    tmp_path, router, lag, transition, order
+):
+    _fixtures(tmp_path, "2026-09-16")
+    if router:
+        _table(tmp_path / "data/silver", "model_platform_links", [{
+            "target_entity": "Acme/one", "source_entity": "acme/one",
+            "first_seen_date": router,
+        }])
+    summary = build(tmp_path)
+    table = pq.read_table(tmp_path / "data/gold/model_lifecycle.parquet")
+    row = table.to_pylist()[0]
+    assert summary["logic_version"] == "2"
+    assert summary["dq_error_count"] == 0
+    assert row["days_to_openrouter"] == lag
+    assert row["openrouter_transition_days"] == transition
+    assert row["openrouter_observation_order"] == order
+    assert table.schema.field("openrouter_transition_days").type == pa.int64()

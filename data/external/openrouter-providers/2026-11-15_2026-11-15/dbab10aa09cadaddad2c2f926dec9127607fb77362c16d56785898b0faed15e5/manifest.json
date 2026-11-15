@@ -1,0 +1,13 @@
+{
+  "source": "openrouter-providers",
+  "start_date": "2026-11-15",
+  "end_date": "2026-11-15",
+  "modality": null,
+  "period": null,
+  "url": "https://openrouter.ai/api/v1/providers",
+  "http_status": 200,
+  "sha256": "dbab10aa09cadaddad2c2f926dec9127607fb77362c16d56785898b0faed15e5",
+  "fetched_at": "2026-11-15T01:35:41.671480+00:00",
+  "license": null,
+  "scope": "provider catalogue"
+}

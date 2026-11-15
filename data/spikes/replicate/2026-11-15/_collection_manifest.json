@@ -1,0 +1,12 @@
+{
+  "bytes_raw": 326094,
+  "bytes_stored": 65426,
+  "fetched_at": "2026-11-15T11:33:06.629125+00:00",
+  "file": "language_models.json.gz",
+  "http_status": 200,
+  "kind": "bounded_api_spike_collection",
+  "models": 39,
+  "request_url": "https://api.replicate.com/v1/collections/language-models",
+  "schema_version": 1,
+  "sha256_raw": "e5f4bc78a5c6f1babd3397b2b551eb52063a0c53c75fb063745af594893ea31d"
+}

@@ -2,7 +2,7 @@ name: ci
 
 on:
   push:
-    paths-ignore: ["data/raw/**"]
+    paths-ignore: ["data/raw/**", "data/external/**"]
   pull_request:
   workflow_dispatch:
 

@@ -16,7 +16,7 @@ import pyarrow.parquet as pq
 HORIZONS = (7, 14, 30, 60, 90)
 MILESTONE_TOLERANCE_DAYS = 1
 EARLY_AGE_MAX_DAYS = 4
-LOGIC_VERSION = "1"
+LOGIC_VERSION = "2"
 
 LIFECYCLE_COLUMNS = (
     "hf_repo_id",
@@ -39,6 +39,8 @@ LIFECYCLE_COLUMNS = (
     "days_to_first_nonzero",
     "days_to_top5000",
     "days_to_openrouter",
+    "openrouter_transition_days",
+    "openrouter_observation_order",
     "has_arxiv_reference",
     "resolved_arxiv_reference_count",
     "has_openrouter_link",
@@ -148,6 +150,7 @@ def _write(path: Path, name: str, rows: list[dict], columns: tuple[str, ...]) ->
         "days_to_first_nonzero",
         "days_to_top5000",
         "days_to_openrouter",
+        "openrouter_transition_days",
         "resolved_arxiv_reference_count",
         "openrouter_route_count",
         "observed_followup_days",
@@ -269,6 +272,13 @@ def build(root: Path, output: Path | None = None) -> dict:
             "days_to_first_nonzero": _days(first_seen, first_nonzero) if first_nonzero else None,
             "days_to_top5000": _days(first_seen, top) if top else None,
             "days_to_openrouter": _days(first_seen, router) if router else None,
+            "openrouter_transition_days": _days(first_seen, router)
+            if router and router > first_seen else None,
+            "openrouter_observation_order": (
+                "not_observed" if router is None else
+                "before_hf" if router < first_seen else
+                "same_day" if router == first_seen else "after_hf"
+            ),
             "has_arxiv_reference": bool(repo_papers[rid]),
             "resolved_arxiv_reference_count": len(repo_papers[rid] & paper_first.keys()),
             "has_openrouter_link": bool(route_ids[rid]),
@@ -423,7 +433,7 @@ def build(root: Path, output: Path | None = None) -> dict:
         rid = row["hf_repo_id"]
         if row["age_at_first_seen_days"] is not None and row["age_at_first_seen_days"] < 0:
             errors.append(f"{rid}: first seen before source created_at")
-        for field in ("days_to_first_nonzero", "days_to_top5000", "days_to_openrouter"):
+        for field in ("days_to_first_nonzero", "days_to_top5000", "openrouter_transition_days"):
             if row[field] is not None and row[field] < 0:
                 errors.append(f"{rid}: negative {field}")
         if row["openrouter_route_count"] != len(route_ids[rid]):

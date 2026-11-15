@@ -1,0 +1,11 @@
+{
+  "as_of": "2026-11-15",
+  "providers": [
+    {"name": "Wafer", "priority": 1, "evidence": "https://openrouter.ai/providers/", "signal": "OpenRouter-routed token volume; establish exact endpoint links"},
+    {"name": "Inference.net", "priority": 1, "evidence": "https://docs.inference.net/api/api-quickstart", "signal": "Distinguish own serverless from gateway proxy"},
+    {"name": "Tencent Cloud", "priority": 2, "evidence": "https://openrouter.ai/providers/", "signal": "OpenRouter endpoints absent from current HF provider feed"},
+    {"name": "DeepSeek", "priority": 2, "evidence": "https://openrouter.ai/providers/", "signal": "Separate model publisher and serving provider"},
+    {"name": "Akamai Inference", "priority": 3, "announced_at": "2026-10-27", "evidence": "https://www.akamai.com/newsroom/press-release/akamai-launches-ai-inference-service-and-agent-execution-environment", "signal": "Beta catalogue; public usage series not established"},
+    {"name": "E2E Networks Blaze", "priority": 3, "announced_at": "2026-11-02", "evidence": "https://www.e2enetworks.com/blaze", "signal": "Indian serving region and Sarvam models; public usage series not established"}
+  ]
+}

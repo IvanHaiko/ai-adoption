@@ -1,9 +1,8 @@
 name: collect
 
-# Four times a day. Every run after the first is a no-op: a `complete` day is
-# skipped without a single HTTP call, in about ten seconds of runner time. So
-# redundancy here is close to free, and it buys the one thing that cannot be
-# bought later - a day that was missed cannot be reconstructed.
+# Four times a day. The Bronze collector skips a complete day without HTTP
+# calls. The separate gateway step refreshes revisable usage data on every run.
+# Redundancy protects the unrepeatable HF observation series.
 #
 # Four rather than two because on 2026-08-29, the first morning after this
 # repository was created, the 06:20 slot did not fire at all: the workflow was
@@ -52,11 +51,25 @@ jobs:
           python -m collector ${{ inputs.date && format('--date {0}', inputs.date) || '' }}
         continue-on-error: true
 
-      - name: Commit snapshot
+      - name: Collect core gateway history
+        id: gateways
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: python -m gateway.pipeline
+        continue-on-error: true
+
+      - name: Commit collected source archives
+        # A gateway failure cannot prevent publication of successful source legs.
+        if: always()
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/raw
+          for source in openrouter vercel; do
+            if [ -d "data/external/$source" ]; then
+              git add "data/external/$source"
+            fi
+          done
           if git diff --cached --quiet; then
             echo "nothing new to commit"
             exit 0
@@ -83,4 +96,17 @@ jobs:
         if: steps.audit.outcome == 'failure'
         run: |
           echo "::error::bronze audit failed - see the findings above"
+          exit 1
+
+      - name: Publish analytical run summary
+        if: always()
+        run: |
+          if [ -f data/analytics/core_report.md ]; then
+            cat data/analytics/core_report.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Fail if core gateway collection or coverage failed
+        if: steps.gateways.outcome == 'failure'
+        run: |
+          echo "::error::gateway collection or recent-day coverage failed; successful responses were preserved"
           exit 1

@@ -6,9 +6,17 @@ This project follows each one from the day it is first seen and asks whether it
 breaks into the 5,000 most-downloaded within days, weeks or never, and whether
 it reaches a hosted API (OpenRouter). It is a **daily, unrepeatable series**:
 Hugging Face exposes only a rolling 30-day download count and OpenRouter
-publishes no usage history, so the curve exists only because a collector has
+now exposes historical top-50 token totals through its authenticated Datasets API.
+The exact HF and catalogue observation curve exists because a collector has
 snapshotted both every day since **2026-08-28**. A missed day cannot be
 re-collected. arXiv metadata is joined in to see which repositories cite a paper.
+
+The core now follows **HF popularity and usage on OpenRouter and Vercel** as
+two related populations: newly discovered HF repositories, and named models
+with observed gateway traffic. Gateway rows are not restricted to the newest
+HF cohort. OpenRouter supplies token totals; Vercel supplies source-local
+percentages of tokens, requests and spend. Their volumes are never added.
+Cloudflare and Replicate remain bounded experiments, outside the regular job.
 
 ## Architecture
 
@@ -90,15 +98,31 @@ python -m collector.arxiv_ids    # cached exact-ID arXiv lookups; safe to rerun
 python -m silver                 # full replay: Bronze -> Silver Parquet + DQ report
 python -m gold                   # deterministic lifecycle and cohort rebuild
 python -m scripts.make_charts    # README charts and charts.json from Gold
+python -m analytics              # coverage, identity mismatches and hosting marts
+python -m gateway build          # normalize previously archived gateway exports
+python -m gateway.pipeline --offline # core report from existing archives
+python -m scripts.flagship_report # cards for explicitly linked API models
 pytest -q && ruff check .
 ```
 
 The collector runs itself in GitHub Actions (`.github/workflows/collect.yml`);
 the local commands are for rebuilding the analysis from the committed snapshots.
+A separate step in that job refreshes the last seven completed UTC days of
+OpenRouter and Vercel, using `OPENROUTER_API_KEY` from repository Secrets.
+It preserves source revisions and successful responses even when another source
+fails. Reports appear in the Actions run summary and can be rebuilt locally.
+See [regular gateway operation](docs/gateway.md#regular-core-operation).
 A full Silver + Gold replay of 78 days took 2 min 45 s on a laptop
 (2026-11-13).
 
 ## Data layout
+
+The [analytics guide](docs/analytics.md) documents coverage and hosting marts;
+the [gateway guide](docs/gateway.md) documents immutable external exports,
+30-day usage pilots and identity attribution. See the
+[development review](docs/findings/analytics-roadmap-2026-11-15.md) for the
+analytical schema and source priorities. External exports live under
+`data/external/`, separately from daily Bronze; derived marts are gitignored.
 
 | Layer | Where | In git | Grain |
 |---|---|---|---|
@@ -148,8 +172,9 @@ Storage decision and its revisit date: [ADR 0001](docs/adr/0001-snapshots-live-i
   appeared on OpenRouter so far (2026-11-13), too few for a diffusion rate.
 - **arXiv tags are citations, not identity.** An `arxiv:` tag means the model
   card references a paper, not that the paper describes this model.
-- **One open data-quality error.** The 2026-11-13 Gold build reports one row
-  with a negative `days_to_openrouter` (`nex-agi/Nex-N2.6`): the OpenRouter
-  listing was seen before the HF repository. Under investigation.
+- **Observation order differs across platforms.** Gold logic version 2 preserves
+  signed `days_to_openrouter` and reports observation order separately. A route
+  already observed before HF has no measured HF-to-route transition duration.
+  This explains the former negative-lag DQ error for `nex-agi/Nex-N2.6`.
 - **Follow-up is short.** The oldest cohort has about 75 days; 90-day horizons
   are not yet eligible.

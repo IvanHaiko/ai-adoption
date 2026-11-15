@@ -1,0 +1,10 @@
+{
+  "query": "summary_model",
+  "url": "https://api.cloudflare.com/client/v4/radar/ai/inference/summary/model?dateStart=2026-10-16T00%3A00%3A00Z&dateEnd=2026-11-15T00%3A00%3A00Z&format=json&limit=100",
+  "http_status": 200,
+  "sha256": "3574a524a9afcedcc50369a8010ab32c5c5bf95d063397e32c8f33e9e01f2545",
+  "file": "data/external/cloudflare-radar/2026-10-16_2026-11-14/summary_model/3574a524a9afcedcc50369a8010ab32c5c5bf95d063397e32c8f33e9e01f2545/response.json",
+  "fetched_at": "2026-11-15T11:33:51.877285+00:00",
+  "license": "CC-BY-NC-4.0",
+  "success": true
+}

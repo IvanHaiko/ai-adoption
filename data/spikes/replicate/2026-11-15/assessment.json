@@ -1,0 +1,1060 @@
+{
+  "observed_date": "2026-11-15",
+  "comparison_date": "2026-10-01",
+  "sample": {
+    "unique_models": 221,
+    "run_count_populated": 221,
+    "run_count_min": 4,
+    "run_count_median": 20748,
+    "run_count_max": 116621316,
+    "weights_url_populated": 16,
+    "github_url_populated": 95,
+    "paper_url_populated": 80,
+    "exact_hf_links": [
+      {
+        "replicate_id": "bria/image-3.2",
+        "hf_repo_id": "briaai/BRIA-3.2",
+        "in_project_silver": false,
+        "method": "explicit_weights_url",
+        "url": "https://huggingface.co/briaai/BRIA-3.2"
+      },
+      {
+        "replicate_id": "itsukifujii/kalm-embedding-multilingual-mini-instruct-v2-5",
+        "hf_repo_id": "KaLM-Embedding/KaLM-embedding-multilingual-mini-instruct-v2.5",
+        "in_project_silver": false,
+        "method": "explicit_weights_url",
+        "url": "https://huggingface.co/KaLM-Embedding/KaLM-embedding-multilingual-mini-instruct-v2.5"
+      },
+      {
+        "replicate_id": "itsukifujii/kalm-reranker-v1-large-r2",
+        "hf_repo_id": "KaLM-Embedding/KaLM-Reranker-V1-Large-R2",
+        "in_project_silver": false,
+        "method": "explicit_weights_url",
+        "url": "https://huggingface.co/KaLM-Embedding/KaLM-Reranker-V1-Large-R2"
+      },
+      {
+        "replicate_id": "itsukifujii/kalm-reranker-v1-nano-r2",
+        "hf_repo_id": "KaLM-Embedding/KaLM-Reranker-V1-Nano-R2",
+        "in_project_silver": false,
+        "method": "explicit_weights_url",
+        "url": "https://huggingface.co/KaLM-Embedding/KaLM-Reranker-V1-Nano-R2"
+      },
+      {
+        "replicate_id": "itsukifujii/kalm-reranker-v1-small-r2",
+        "hf_repo_id": "KaLM-Embedding/KaLM-Reranker-V1-Small-R2",
+        "in_project_silver": false,
+        "method": "explicit_weights_url",
+        "url": "https://huggingface.co/KaLM-Embedding/KaLM-Reranker-V1-Small-R2"
+      },
+      {
+        "replicate_id": "kamaravichow/maya-2-indic-audio",
+        "hf_repo_id": "maya-research/maya2-native",
+        "in_project_silver": false,
+        "method": "explicit_weights_url",
+        "url": "https://huggingface.co/maya-research/maya2-native"
+      },
+      {
+        "replicate_id": "malerlab/u-must-contin-u",
+        "hf_repo_id": "malerlab/u-must",
+        "in_project_silver": false,
+        "method": "explicit_weights_url",
+        "url": "https://huggingface.co/malerlab/u-must"
+      },
+      {
+        "replicate_id": "malerlab/u-must-image-to-audio",
+        "hf_repo_id": "malerlab/u-must",
+        "in_project_silver": false,
+        "method": "explicit_weights_url",
+        "url": "https://huggingface.co/malerlab/u-must"
+      },
+      {
+        "replicate_id": "malerlab/u-must-midi-to-audio",
+        "hf_repo_id": "malerlab/u-must",
+        "in_project_silver": false,
+        "method": "explicit_weights_url",
+        "url": "https://huggingface.co/malerlab/u-must"
+      },
+      {
+        "replicate_id": "malerlab/u-must-omr",
+        "hf_repo_id": "malerlab/u-must",
+        "in_project_silver": false,
+        "method": "explicit_weights_url",
+        "url": "https://huggingface.co/malerlab/u-must"
+      },
+      {
+        "replicate_id": "nghimestudio/vieneu-tts",
+        "hf_repo_id": "pnnbao-ump/VieNeu-TTS-v3-Turbo",
+        "in_project_silver": false,
+        "method": "explicit_weights_url",
+        "url": "https://huggingface.co/pnnbao-ump/VieNeu-TTS-v3-Turbo"
+      },
+      {
+        "replicate_id": "openai/gpt-oss-120b",
+        "hf_repo_id": "openai/gpt-oss-120b",
+        "in_project_silver": true,
+        "method": "explicit_weights_url",
+        "url": "https://huggingface.co/openai/gpt-oss-120b"
+      },
+      {
+        "replicate_id": "prunaai/flux-fast",
+        "hf_repo_id": "black-forest-labs/FLUX.1-dev",
+        "in_project_silver": false,
+        "method": "explicit_weights_url",
+        "url": "https://huggingface.co/black-forest-labs/FLUX.1-dev"
+      },
+      {
+        "replicate_id": "replicate/fast-flux-trainer",
+        "hf_repo_id": "black-forest-labs/FLUX.1-dev",
+        "in_project_silver": false,
+        "method": "explicit_weights_url",
+        "url": "https://huggingface.co/black-forest-labs/FLUX.1-dev"
+      },
+      {
+        "replicate_id": "replicate/flux-3-klein-image-lora",
+        "hf_repo_id": "black-forest-labs/flux-3-klein-image-base",
+        "in_project_silver": false,
+        "method": "explicit_weights_url",
+        "url": "https://huggingface.co/black-forest-labs/flux-3-klein-image-base"
+      },
+      {
+        "replicate_id": "yanexr/embedding-gemma-2",
+        "hf_repo_id": "google/embeddinggemma-2",
+        "in_project_silver": false,
+        "method": "explicit_weights_url",
+        "url": "https://huggingface.co/google/embeddinggemma-2"
+      }
+    ],
+    "arxiv_links": [
+      {
+        "replicate_id": "qwen/qwen-image-2",
+        "arxiv_id": "2508.02324",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "wan-video/wan-2.7-t2v",
+        "arxiv_id": "2503.20314",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "sprited/scail-2",
+        "arxiv_id": "2606.10804",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "raoumer/srrescgan",
+        "arxiv_id": "2005.00953",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "minzwon/sota-music-tagging-models",
+        "arxiv_id": "2006.00751",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "orpatashnik/styleclip",
+        "arxiv_id": "2103.17249",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "xinntao/esrgan",
+        "arxiv_id": "1809.00219",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "huiyegit/t2i_cl",
+        "arxiv_id": "2107.02423",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "jiupinjia/stylized-neural-painting-oil",
+        "arxiv_id": "2011.08114",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "annahung31/emopia",
+        "arxiv_id": "2108.01374",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "jingyunliang/hcflow-sr",
+        "arxiv_id": "2108.05301",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "lucabeetz/painttransformer",
+        "arxiv_id": "2108.03798",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "allenhung1025/looptest",
+        "arxiv_id": "2108.01576",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "zkx06111/wsrglow",
+        "arxiv_id": "2106.08507",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "yuval-alaluf/restyle_encoder",
+        "arxiv_id": "2104.02699",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "minivision-ai/photo2cartoon",
+        "arxiv_id": "2007.13332",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "eladrich/pixel2style2pixel",
+        "arxiv_id": "2008.00951",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "microsoft/bringing-old-photos-back-to-life",
+        "arxiv_id": "2004.09484",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "jingyunliang/swinir",
+        "arxiv_id": "2108.10257",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "tencentarc/gfpgan",
+        "arxiv_id": "2101.04061",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "meta/ic_gan",
+        "arxiv_id": "2109.05070",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "wonjongg/stylecarigan",
+        "arxiv_id": "2107.04331",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "kvfrans/clipdraw",
+        "arxiv_id": "2106.14843",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "avivga/overlord",
+        "arxiv_id": "2103.14017",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "rinongal/stylegan-nada",
+        "arxiv_id": "2108.00946",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "codeslake/ifan-defocus-deblur",
+        "arxiv_id": "2108.13610",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "yangxy/gpen",
+        "arxiv_id": "2105.06070",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "yuanxunlu/livespeechportraits",
+        "arxiv_id": "2109.10595",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "avivga/zerodim",
+        "arxiv_id": "2106.15610",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "netease-gameai/spatchgan-selfie2anime",
+        "arxiv_id": "2103.16219",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "longguangwang/arbsr",
+        "arxiv_id": "2004.03791",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "huage001/adaattn",
+        "arxiv_id": "2108.03647",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "csyxwei/orojar",
+        "arxiv_id": "2108.07668",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "tengfei-wang/hfgi",
+        "arxiv_id": "2109.06590",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "xl-sr/projected_gan",
+        "arxiv_id": "2111.01007",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "cjwbw/rudalle-sr",
+        "arxiv_id": "2107.10833",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "hohsiangwu/wav2clip",
+        "arxiv_id": "2110.11499",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "pschaldenbrand/style-clip-draw",
+        "arxiv_id": "2111.03133",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "onion-liu/blendgan",
+        "arxiv_id": "2110.11728",
+        "in_project_silver": false
+      }
+    ]
+  },
+  "language_models_collection": {
+    "unique_models": 39,
+    "run_count_populated": 39,
+    "run_count_min": 510,
+    "run_count_median": 1434199,
+    "run_count_max": 432184576,
+    "weights_url_populated": 5,
+    "github_url_populated": 14,
+    "paper_url_populated": 5,
+    "exact_hf_links": [
+      {
+        "replicate_id": "deepseek-ai/deepseek-v3",
+        "hf_repo_id": "deepseek-ai/DeepSeek-V3-0324",
+        "in_project_silver": true,
+        "method": "explicit_weights_url",
+        "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3-0324"
+      },
+      {
+        "replicate_id": "ibm-granite/granite-3.3-8b-instruct",
+        "hf_repo_id": "ibm-granite/granite-3.3-8b-instruct",
+        "in_project_silver": true,
+        "method": "explicit_weights_url",
+        "url": "https://huggingface.co/ibm-granite/granite-3.3-8b-instruct"
+      },
+      {
+        "replicate_id": "ibm-granite/granite-speech-4.1-2b",
+        "hf_repo_id": "ibm-granite/granite-speech-4.1-2b",
+        "in_project_silver": false,
+        "method": "explicit_weights_url",
+        "url": "https://huggingface.co/ibm-granite/granite-speech-4.1-2b"
+      },
+      {
+        "replicate_id": "openai/gpt-oss-120b",
+        "hf_repo_id": "openai/gpt-oss-120b",
+        "in_project_silver": true,
+        "method": "explicit_weights_url",
+        "url": "https://huggingface.co/openai/gpt-oss-120b"
+      },
+      {
+        "replicate_id": "qwen/qwen3-235b-a22b-instruct-2507",
+        "hf_repo_id": "Qwen/Qwen3-235B-A22B-Instruct-2507-FP8",
+        "in_project_silver": true,
+        "method": "explicit_weights_url",
+        "url": "https://huggingface.co/Qwen/Qwen3-235B-A22B-Instruct-2507-FP8/tree/main"
+      }
+    ],
+    "arxiv_links": [
+      {
+        "replicate_id": "replicate/flan-t5-xl",
+        "arxiv_id": "2210.11416",
+        "in_project_silver": false
+      },
+      {
+        "replicate_id": "yorickvp/llava-13b",
+        "arxiv_id": "2310.03744",
+        "in_project_silver": true
+      },
+      {
+        "replicate_id": "replicate/llama-7b",
+        "arxiv_id": "2302.13971",
+        "in_project_silver": true
+      }
+    ]
+  },
+  "common_sample_models": 110,
+  "counter_decreases": 0,
+  "counter_comparisons": [
+    {
+      "replicate_id": "afiaka87/clip-guided-diffusion",
+      "before": 43058,
+      "after": 43058,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "afiaka87/mannequin-gan-3-electric-boogaloo-2",
+      "before": 850,
+      "after": 850,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "alibaba/qwen-image-3",
+      "before": 7787,
+      "after": 12364,
+      "change_between_observations": 4577
+    },
+    {
+      "replicate_id": "alibaba/qwen-image-3-pro",
+      "before": 30612,
+      "after": 62396,
+      "change_between_observations": 31784
+    },
+    {
+      "replicate_id": "alibaba/wan-3",
+      "before": 18781,
+      "after": 84326,
+      "change_between_observations": 65545
+    },
+    {
+      "replicate_id": "alibaba/wan-3-prime",
+      "before": 896,
+      "after": 2133,
+      "change_between_observations": 1237
+    },
+    {
+      "replicate_id": "allenhung1025/looptest",
+      "before": 56840,
+      "after": 56840,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "andreasjansson/clip-age-predictor",
+      "before": 528,
+      "after": 528,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "andreasjansson/cog-markdown-example",
+      "before": 23,
+      "after": 23,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "andreasjansson/music-inpainting-bert",
+      "before": 8582,
+      "after": 8582,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "annahung31/emopia",
+      "before": 3257,
+      "after": 3257,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "avivga/overlord",
+      "before": 984,
+      "after": 984,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "avivga/zerodim",
+      "before": 1837,
+      "after": 1837,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "barakplasma/jev-omni",
+      "before": 508,
+      "after": 9243,
+      "change_between_observations": 8735
+    },
+    {
+      "replicate_id": "bfirsh/resnet",
+      "before": 188,
+      "after": 189,
+      "change_between_observations": 1
+    },
+    {
+      "replicate_id": "bfirsh/vqgan-clip",
+      "before": 6559,
+      "after": 6559,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "bingchenlll/fastgan-pytorch",
+      "before": 3313,
+      "after": 3313,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "bytedance/seedance-2.5",
+      "before": 192670,
+      "after": 387110,
+      "change_between_observations": 194440
+    },
+    {
+      "replicate_id": "cjwbw/clip-guided-diffusion",
+      "before": 4537,
+      "after": 4537,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "cjwbw/clip-guided-diffusion-pokemon",
+      "before": 4883,
+      "after": 4883,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "cjwbw/rudalle-sr",
+      "before": 487974,
+      "after": 488081,
+      "change_between_observations": 107
+    },
+    {
+      "replicate_id": "codeslake/ifan-defocus-deblur",
+      "before": 425983,
+      "after": 459158,
+      "change_between_observations": 33175
+    },
+    {
+      "replicate_id": "csyxwei/orojar",
+      "before": 1873,
+      "after": 1873,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "dribnet/bex-research-portfolio-code",
+      "before": 750,
+      "after": 750,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "dribnet/clipit",
+      "before": 6659,
+      "after": 6659,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "dribnet/pixray",
+      "before": 59040,
+      "after": 59040,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "dribnet/pixray-api",
+      "before": 29225,
+      "after": 29225,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "dribnet/pixray-genesis",
+      "before": 160670,
+      "after": 160670,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "dribnet/pixray-pixel",
+      "before": 19969,
+      "after": 19969,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "dribnet/pixray-text2image",
+      "before": 223784,
+      "after": 223784,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "dribnet/pixray-text2pixel",
+      "before": 104155,
+      "after": 104157,
+      "change_between_observations": 2
+    },
+    {
+      "replicate_id": "dribnet/pixray-tiler",
+      "before": 21304,
+      "after": 21305,
+      "change_between_observations": 1
+    },
+    {
+      "replicate_id": "dribnet/pixray-vqgan",
+      "before": 87433,
+      "after": 87433,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "ekgren/structureddreaming",
+      "before": 4115,
+      "after": 4115,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "eladrich/pixel2style2pixel",
+      "before": 31913,
+      "after": 31913,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "f90/wave-u-net-pytorch",
+      "before": 170,
+      "after": 170,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "ghadjeres/deepbach",
+      "before": 844,
+      "after": 844,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "google/gemini-omni-1.1",
+      "before": 8276,
+      "after": 27442,
+      "change_between_observations": 19166
+    },
+    {
+      "replicate_id": "hautechai/grounding-dino",
+      "before": 3600,
+      "after": 13444,
+      "change_between_observations": 9844
+    },
+    {
+      "replicate_id": "hohsiangwu/wav2clip",
+      "before": 896,
+      "after": 896,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "huage001/adaattn",
+      "before": 490265,
+      "after": 492329,
+      "change_between_observations": 2064
+    },
+    {
+      "replicate_id": "huan/ding-dong",
+      "before": 35,
+      "after": 35,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "huiyegit/t2i_cl",
+      "before": 1180,
+      "after": 1180,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "hzwer/iccv2019-learningtopaint",
+      "before": 2104,
+      "after": 2104,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "ideogram-ai/ideogram-4-5",
+      "before": 45,
+      "after": 7618,
+      "change_between_observations": 7573
+    },
+    {
+      "replicate_id": "ideogram-ai/ideogram-4-5-precise-edit",
+      "before": 71,
+      "after": 24031,
+      "change_between_observations": 23960
+    },
+    {
+      "replicate_id": "iigroup/tedigan",
+      "before": 8597,
+      "after": 8598,
+      "change_between_observations": 1
+    },
+    {
+      "replicate_id": "jingyunliang/hcflow-sr",
+      "before": 223058,
+      "after": 223075,
+      "change_between_observations": 17
+    },
+    {
+      "replicate_id": "jingyunliang/swinir",
+      "before": 6314071,
+      "after": 6323510,
+      "change_between_observations": 9439
+    },
+    {
+      "replicate_id": "jiupinjia/stylized-neural-painting-oil",
+      "before": 6534,
+      "after": 6534,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "karthiksync/blitz",
+      "before": 7,
+      "after": 7,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "kvfrans/clipdraw",
+      "before": 5612,
+      "after": 5612,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "l3das/l3das22_challenge",
+      "before": 228,
+      "after": 228,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "littletry/video-nsfw-filter",
+      "before": 14300,
+      "after": 123756,
+      "change_between_observations": 109456
+    },
+    {
+      "replicate_id": "longguangwang/arbsr",
+      "before": 21301,
+      "after": 21304,
+      "change_between_observations": 3
+    },
+    {
+      "replicate_id": "lucabeetz/painttransformer",
+      "before": 413,
+      "after": 413,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "malerlab/u-must-contin-u",
+      "before": 10,
+      "after": 10,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "malerlab/u-must-image-to-audio",
+      "before": 17,
+      "after": 18,
+      "change_between_observations": 1
+    },
+    {
+      "replicate_id": "malerlab/u-must-midi-to-audio",
+      "before": 9,
+      "after": 11,
+      "change_between_observations": 2
+    },
+    {
+      "replicate_id": "malerlab/u-must-omr",
+      "before": 13,
+      "after": 27,
+      "change_between_observations": 14
+    },
+    {
+      "replicate_id": "mandarobotics/robot-episode-labeler",
+      "before": 15,
+      "after": 15,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "menghanxia/reversiblehalftoning",
+      "before": 364,
+      "after": 364,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "meta/ic_gan",
+      "before": 26714,
+      "after": 26714,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "microsoft/bringing-old-photos-back-to-life",
+      "before": 1270201,
+      "after": 1282835,
+      "change_between_observations": 12634
+    },
+    {
+      "replicate_id": "minivision-ai/photo2cartoon",
+      "before": 3970,
+      "after": 3970,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "minzwon/sota-music-tagging-models",
+      "before": 1903,
+      "after": 1903,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "mistake0316/style-transfer-clip",
+      "before": 1348,
+      "after": 1348,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "mtg/effnet-discogs",
+      "before": 435922,
+      "after": 473090,
+      "change_between_observations": 37168
+    },
+    {
+      "replicate_id": "netease-gameai/spatchgan-selfie2anime",
+      "before": 3079,
+      "after": 3079,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "onesoltech/whisper-video",
+      "before": 12,
+      "after": 12,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "onion-liu/blendgan",
+      "before": 7638,
+      "after": 7638,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "openai/gpt-image-2.5-flare",
+      "before": 1283522,
+      "after": 5889984,
+      "change_between_observations": 4606462
+    },
+    {
+      "replicate_id": "openai/gpt-image-2.5-sunburst",
+      "before": 756524,
+      "after": 4490293,
+      "change_between_observations": 3733769
+    },
+    {
+      "replicate_id": "openai/gpt-oss-120b",
+      "before": 512321,
+      "after": 598052,
+      "change_between_observations": 85731
+    },
+    {
+      "replicate_id": "openai/gpt-oss-20b",
+      "before": 685001,
+      "after": 696079,
+      "change_between_observations": 11078
+    },
+    {
+      "replicate_id": "orpatashnik/styleclip",
+      "before": 1284215,
+      "after": 1284215,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "ouhenio/stylegan3-clip",
+      "before": 6892,
+      "after": 6892,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "proplabs/furniture-removal",
+      "before": 19,
+      "after": 23,
+      "change_between_observations": 4
+    },
+    {
+      "replicate_id": "proplabs/lawn-enhancement",
+      "before": 4,
+      "after": 4,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "proplabs/object-removal",
+      "before": 7,
+      "after": 21,
+      "change_between_observations": 14
+    },
+    {
+      "replicate_id": "proplabs/photo-enhancement",
+      "before": 5,
+      "after": 31,
+      "change_between_observations": 26
+    },
+    {
+      "replicate_id": "proplabs/sky-replacement",
+      "before": 3,
+      "after": 6,
+      "change_between_observations": 3
+    },
+    {
+      "replicate_id": "proplabs/virtual-renovation",
+      "before": 12,
+      "after": 19,
+      "change_between_observations": 7
+    },
+    {
+      "replicate_id": "prunaai/flux-fast",
+      "before": 45001336,
+      "after": 45845376,
+      "change_between_observations": 844040
+    },
+    {
+      "replicate_id": "prunaai/flux-kontext-fast",
+      "before": 24035275,
+      "after": 24330837,
+      "change_between_observations": 295562
+    },
+    {
+      "replicate_id": "prunaai/p-video-2-pro",
+      "before": 154101,
+      "after": 865616,
+      "change_between_observations": 711515
+    },
+    {
+      "replicate_id": "pschaldenbrand/style-clip-draw",
+      "before": 2069,
+      "after": 2069,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "ptran1203/pytorch-animegan",
+      "before": 31945,
+      "after": 31945,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "pvitoria/chromagan",
+      "before": 337816,
+      "after": 337816,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "raoumer/srrescgan",
+      "before": 40747,
+      "after": 40756,
+      "change_between_observations": 9
+    },
+    {
+      "replicate_id": "rinongal/stylegan-nada",
+      "before": 104861,
+      "after": 105101,
+      "change_between_observations": 240
+    },
+    {
+      "replicate_id": "rmokady/clip_prefix_caption",
+      "before": 1744195,
+      "after": 1744201,
+      "change_between_observations": 6
+    },
+    {
+      "replicate_id": "sprited/anisora",
+      "before": 9,
+      "after": 34,
+      "change_between_observations": 25
+    },
+    {
+      "replicate_id": "sprited/scail-2",
+      "before": 23,
+      "after": 269,
+      "change_between_observations": 246
+    },
+    {
+      "replicate_id": "tencentarc/gfpgan",
+      "before": 116343122,
+      "after": 116621316,
+      "change_between_observations": 278194
+    },
+    {
+      "replicate_id": "tengfei-wang/hfgi",
+      "before": 22205,
+      "after": 22205,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "untapped/glance-qwen3-vl-4b",
+      "before": 933,
+      "after": 950,
+      "change_between_observations": 17
+    },
+    {
+      "replicate_id": "wendison/vqmivc",
+      "before": 6282,
+      "after": 6282,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "wonjongg/stylecarigan",
+      "before": 5394,
+      "after": 5394,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "x4nth055/emotion-recognition-using-speech",
+      "before": 244,
+      "after": 244,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "xai/grok-imagine-image-2",
+      "before": 289151,
+      "after": 574977,
+      "change_between_observations": 285826
+    },
+    {
+      "replicate_id": "xinntao/esrgan",
+      "before": 250118,
+      "after": 252855,
+      "change_between_observations": 2737
+    },
+    {
+      "replicate_id": "xl-sr/projected_gan",
+      "before": 9654,
+      "after": 9654,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "yangxy/gpen",
+      "before": 165189,
+      "after": 165256,
+      "change_between_observations": 67
+    },
+    {
+      "replicate_id": "yuanxunlu/livespeechportraits",
+      "before": 9855,
+      "after": 9855,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "yuval-alaluf/restyle_encoder",
+      "before": 101296,
+      "after": 101296,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "yuval-alaluf/sam",
+      "before": 1403666,
+      "after": 1410109,
+      "change_between_observations": 6443
+    },
+    {
+      "replicate_id": "zeke/clip-age-prediction",
+      "before": 421,
+      "after": 421,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "zeke/hello-world",
+      "before": 1202,
+      "after": 1202,
+      "change_between_observations": 0
+    },
+    {
+      "replicate_id": "zkx06111/wsrglow",
+      "before": 1488,
+      "after": 1488,
+      "change_between_observations": 0
+    }
+  ],
+  "verified_payloads": [
+    "latest_version.jsonl.gz",
+    "newest_created.jsonl.gz",
+    "oldest_created.jsonl.gz",
+    "language_models.json.gz"
+  ],
+  "scope": "Biased bounded sample; catalogue total and daily usage unmeasured"
+}
