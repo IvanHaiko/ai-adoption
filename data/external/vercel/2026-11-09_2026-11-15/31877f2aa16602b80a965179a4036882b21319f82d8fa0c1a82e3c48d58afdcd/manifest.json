@@ -1,0 +1,13 @@
+{
+  "source": "vercel",
+  "start_date": "2026-11-09",
+  "end_date": "2026-11-15",
+  "modality": "text",
+  "period": "day",
+  "url": "https://vercel.com/api/ai/leaderboard-export?dataset=models&modality=text&from=2026-11-09&to=2026-11-15",
+  "http_status": 200,
+  "sha256": "31877f2aa16602b80a965179a4036882b21319f82d8fa0c1a82e3c48d58afdcd",
+  "fetched_at": "2026-11-16T03:50:46.140974+00:00",
+  "license": "CC-BY-4.0",
+  "scope": "published top models plus Other"
+}
