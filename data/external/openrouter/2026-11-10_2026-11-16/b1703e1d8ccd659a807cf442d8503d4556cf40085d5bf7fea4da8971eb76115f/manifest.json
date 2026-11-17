@@ -1,0 +1,13 @@
+{
+  "source": "openrouter",
+  "start_date": "2026-11-10",
+  "end_date": "2026-11-16",
+  "modality": "text",
+  "period": "day",
+  "url": "https://openrouter.ai/api/v1/datasets/rankings-daily?start_date=2026-11-10&end_date=2026-11-16&period=day&modality=text",
+  "http_status": 200,
+  "sha256": "b1703e1d8ccd659a807cf442d8503d4556cf40085d5bf7fea4da8971eb76115f",
+  "fetched_at": "2026-11-17T02:44:20.197211+00:00",
+  "license": "CC-BY-4.0",
+  "scope": "published top models plus Other"
+}
